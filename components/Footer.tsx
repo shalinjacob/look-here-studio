@@ -31,7 +31,7 @@ export default function Footer() {
               <h4>ELSEWHERE</h4>
               <a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram →</a>
               <a href="https://pinterest.com" target="_blank" rel="noreferrer">Pinterest →</a>
-              <a href="mailto:hello@lookhere.studio">Email →</a>
+              <a href="mailto:hello@lookherestudio.in">Email →</a>
             </div>
           </div>
 

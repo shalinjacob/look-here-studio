@@ -23,7 +23,7 @@ export default function ContactPage() {
           <p>
             <strong>Email</strong>
             <br />
-            <a href="mailto:hello@lookhere.studio">hello@lookhere.studio</a>
+            <a href="mailto:hello@lookherestudio.in">hello@lookherestudio.in</a>
           </p>
           <p style={{ marginTop: 24 }}>
             <strong>Studio</strong>
