@@ -28,6 +28,31 @@ export async function POST(req: Request) {
   const payload = { name, email, message, source: "look-here-studio", ts: new Date().toISOString() };
 
   try {
+    // 1) Resend — emails the studio directly (reply-to = the enquirer)
+    if (process.env.RESEND_API_KEY) {
+      const to = process.env.CONTACT_TO || "hello@lookherestudio.in";
+      const from = process.env.CONTACT_FROM || "Look Here Studio <onboarding@resend.dev>";
+      const res = await fetch("https://api.resend.com/emails", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          from,
+          to: [to],
+          reply_to: email,
+          subject: `New note from ${name} — lookherestudio.in`,
+          text: `From: ${name} <${email}>\n\n${message}\n\n— sent from the lookherestudio.in contact form`,
+        }),
+      });
+      if (!res.ok) {
+        const detail = await res.text().catch(() => "");
+        throw new Error(`resend ${res.status} ${detail}`);
+      }
+      return NextResponse.json({ ok: true, provider: "resend" });
+    }
+
     if (process.env.CONTACT_WEBHOOK_URL) {
       const res = await fetch(process.env.CONTACT_WEBHOOK_URL, {
         method: "POST",
