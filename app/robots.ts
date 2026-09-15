@@ -3,6 +3,6 @@ import type { MetadataRoute } from "next";
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: { userAgent: "*", allow: "/" },
-    sitemap: "https://lookhere.studio/sitemap.xml",
+    sitemap: "https://lookherestudio.in/sitemap.xml",
   };
 }

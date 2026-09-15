@@ -26,7 +26,7 @@ const sans = Roboto({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://lookhere.studio"),
+  metadataBase: new URL("https://lookherestudio.in"),
   title: {
     default: "LOOK HERE STUDIO — Objects for the home designed to be noticed",
     template: "%s — LOOK HERE STUDIO",

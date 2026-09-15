@@ -3,7 +3,7 @@ import { products } from "@/data/products";
 import { collections } from "@/data/collections";
 import { journal } from "@/data/journal";
 
-const BASE = "https://lookhere.studio";
+const BASE = "https://lookherestudio.in";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
