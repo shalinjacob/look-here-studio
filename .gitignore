@@ -1,0 +1,13 @@
+/node_modules
+/.next
+/out
+/build
+*.log
+.DS_Store
+.env*.local
+next-env.d.ts
+
+# waitlist dev store + env
+data/waitlist.local.json
+.env.local
+data/contact.local.json
