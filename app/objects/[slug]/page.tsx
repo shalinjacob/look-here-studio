@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import SmartImage from "@/components/SmartImage";
+import ProductGallery from "@/components/ProductGallery";
 import SpecTable from "@/components/SpecTable";
 import AddToCart from "@/components/AddToCart";
 import VideoPlayer from "@/components/VideoPlayer";
 import ProductTile from "@/components/ProductTile";
 import Newsletter from "@/components/Newsletter";
-import Reveal from "@/components/Reveal";
 import {
   products,
   getProduct,
@@ -61,24 +60,12 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
       <div className="pdp__spread">
         {/* images */}
         <div>
-          <Reveal className="pdp__gallery-main">
-            <SmartImage
-              src={p.images[0]}
-              alt={p.name}
-              fit={p.imageFit ?? "contain"}
-              fallback={<div className="tile__ph">{p.objectNumber}</div>}
-            />
-          </Reveal>
-          {gallery.length > 1 && (
-            <div className="pdp__thumbs">
-              {gallery.slice(0, 5).map((src) => (
-                <div className="pdp__thumb" key={src}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={src} alt={p.name} />
-                </div>
-              ))}
-            </div>
-          )}
+          <ProductGallery
+            images={gallery}
+            alt={p.name}
+            fit={p.imageFit ?? "contain"}
+            fallbackNumber={p.objectNumber}
+          />
           {p.video && (
             <div className="pdp__video">
               <VideoPlayer src={p.video} poster={p.images[0]} label="IN MOTION" />

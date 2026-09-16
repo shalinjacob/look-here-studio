@@ -8,7 +8,7 @@ export default function Hero() {
   return (
     <section className="hero" aria-label="Look Here Studio">
       <div className="wrap">
-        <h1 className="hero__head" style={{ marginTop: "clamp(8px,2vw,24px)" }}>
+        <h1 className="hero__head">
           OBJECTS FOR{" "}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img className="hero__inline hero__inline--tall" src="/objects/hero-mirror.png" alt="a wavy pink mirror" />{" "}
@@ -25,10 +25,6 @@ export default function Hero() {
           <div className="hero__ctas">
             <CTA href="/objects" variant="stamp">SHOP OBJECTS</CTA>
             <CTA href="/collections/festival-01" variant="link">SEE THE CURRENT DROP</CTA>
-          </div>
-          <div className="hero__scroll">
-            <span aria-hidden>↓</span>
-            SCROLL TO EXPLORE
           </div>
           <div className="hero__aside">
             COLOUR
