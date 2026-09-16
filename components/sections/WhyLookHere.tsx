@@ -19,7 +19,7 @@ export default function WhyLookHere() {
             <div className="why__figure">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/objects/wavy-mirror.jpg" alt="Pink wavy mirror leaning against a wall" />
-              <span className="why__note">SAME<br />SPACES.<br />A LITTLE<br />MORE YOU.</span>
+              <span className="why__note">Same spaces.<br />A little<br />more you.</span>
             </div>
           </div>
 

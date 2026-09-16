@@ -195,7 +195,7 @@ input { font: inherit; }
 .why__head { font-family: var(--display); font-weight: 700; color: var(--ink); letter-spacing: -0.03em; line-height: 1.0; font-size: clamp(40px, 6.5vw, 88px); }
 .why__figure { position: relative; margin-top: clamp(24px, 4vw, 48px); max-width: 460px; }
 .why__figure img { width: 100%; height: auto; }
-.why__note { position: absolute; left: -8px; bottom: 40px; font-family: var(--mono); font-size: 13px; line-height: 1.7; color: var(--navy); transform: rotate(-6deg); }
+.why__note { position: absolute; left: -10px; bottom: 34px; font-family: var(--hand), "Segoe Script", cursive; font-weight: 600; font-size: 30px; line-height: 1.08; letter-spacing: 0.01em; color: var(--ink); transform: rotate(-7deg); }
 .why__body { font-family: var(--mono); font-size: 15px; line-height: 1.75; color: var(--body); }
 .why__body p + p { margin-top: 20px; }
 .why__cta { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--line); }

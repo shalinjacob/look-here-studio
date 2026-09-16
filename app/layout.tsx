@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, IBM_Plex_Mono, Roboto } from "next/font/google";
+import { Inter, IBM_Plex_Mono, Roboto, Caveat } from "next/font/google";
 import { CartProvider } from "@/components/cart/CartContext";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
@@ -22,6 +22,13 @@ const sans = Roboto({
   subsets: ["latin"],
   weight: ["300", "400", "500"],
   variable: "--sans",
+  display: "swap",
+});
+// Handwriting — used only for the margin "notes to self".
+const hand = Caveat({
+  subsets: ["latin"],
+  weight: ["400", "600"],
+  variable: "--hand",
   display: "swap",
 });
 
@@ -62,7 +69,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${display.variable} ${mono.variable} ${sans.variable}`}>
+    <html lang="en" className={`${display.variable} ${mono.variable} ${sans.variable} ${hand.variable}`}>
       <body>
         <a href="#main" className="skip-link">Skip to content</a>
         <CartProvider>
