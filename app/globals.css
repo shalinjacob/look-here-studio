@@ -264,6 +264,26 @@ input { font: inherit; }
 .athome__rule { margin-top: 10px; width: 22px; height: 1px; background: var(--ink); }
 
 /* ==========================================================================
+   NEW IN (feature, two-up)
+   ========================================================================== */
+.newin__title { font-family: var(--display); font-weight: 700; color: var(--ink); letter-spacing: -0.03em; line-height: 1.0; font-size: clamp(32px, 5.5vw, 76px); margin-top: 20px; }
+.newin__sub { font-family: var(--mono); font-size: 14px; color: var(--muted); margin-top: 14px; max-width: 56ch; line-height: 1.7; }
+.newin__grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 4vw, 56px); margin-top: clamp(28px, 4vw, 52px); }
+.feature__img { position: relative; aspect-ratio: 4 / 5; overflow: hidden; background: var(--paper-2); }
+.feature__img img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s var(--ease); }
+.feature__link:hover .feature__img img { transform: scale(1.04); }
+.feature__view { position: absolute; left: 16px; bottom: 16px; background: var(--paper); color: var(--ink); font-family: var(--mono); font-size: 11px; letter-spacing: .12em; padding: 8px 12px; opacity: 0; transform: translateY(6px); transition: opacity .3s var(--ease), transform .3s var(--ease); }
+.feature__link:hover .feature__view { opacity: 1; transform: none; }
+.feature__meta { padding-top: 18px; border-top: 1px solid var(--line); margin-top: 14px; }
+.feature__num { font-family: var(--mono); font-size: 11px; letter-spacing: .14em; color: var(--faint); }
+.feature__name { font-family: var(--display); font-weight: 700; color: var(--ink); letter-spacing: -0.02em; font-size: clamp(22px, 2.8vw, 32px); margin-top: 8px; }
+.feature__cat { font-family: var(--mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
+.feature__line { font-family: var(--mono); font-size: 13px; line-height: 1.6; color: var(--body); margin-top: 12px; max-width: 46ch; }
+.feature__foot { display: flex; justify-content: space-between; align-items: baseline; margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--line-soft); }
+.feature__price { font-family: var(--mono); font-size: 14px; color: var(--ink); }
+.feature__status { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--faint); }
+
+/* ==========================================================================
    CURRENT DROP / COLLECTION (06)
    ========================================================================== */
 .drop { background: var(--paper-2); }
@@ -555,6 +575,7 @@ input { font: inherit; }
   .nav__logo .alogo { width: 96px !important; }
   .nav__burger { display: inline-flex; align-items: center; font-family: var(--mono); font-size: 12px; letter-spacing: .12em; gap: 8px; }
   .tilegrid, .tilegrid--preview, .athome__grid { grid-template-columns: repeat(2, 1fr); }
+  .newin__grid { grid-template-columns: 1fr; gap: 40px; }
   .pdp__process { grid-template-columns: repeat(2, 1fr); }
   .pdp__specgrid, .pdp__goodtoknow { grid-template-columns: 1fr; }
   .process__step, .journal__item { grid-template-columns: 60px 1fr; }

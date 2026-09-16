@@ -4,6 +4,7 @@ import ObjectsPreview from "@/components/sections/ObjectsPreview";
 import MadeHere from "@/components/sections/MadeHere";
 import AtHome from "@/components/sections/AtHome";
 import CurrentDrop from "@/components/sections/CurrentDrop";
+import NewObjects from "@/components/sections/NewObjects";
 import NewsletterSection from "@/components/sections/NewsletterSection";
 
 export default function HomePage() {
@@ -15,6 +16,7 @@ export default function HomePage() {
       <MadeHere />
       <AtHome />
       <CurrentDrop />
+      <NewObjects />
       <NewsletterSection />
     </>
   );
