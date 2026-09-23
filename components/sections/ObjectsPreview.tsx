@@ -9,7 +9,7 @@ export default function ObjectsPreview() {
   return (
     <section className="section" id="objects" aria-label="Objects">
       <div className="wrap">
-        <div className="slabel"><span>03 / OBJECTS</span></div>
+        <div className="slabel"><span>05 / OBJECTS</span></div>
 
         <div className="objects__head">
           <h2 className="objects__title">A few things we&apos;re making.</h2>

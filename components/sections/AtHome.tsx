@@ -15,7 +15,7 @@ export default function AtHome() {
     <section className="section" id="at-home" aria-label="At home">
       <div className="wrap">
         <div className="slabel">
-          <span>05 / AT HOME</span>
+          <span>07 / AT HOME</span>
           <span className="slabel__note">SAME SPACES.<br />A LITTLE<br />MORE YOU.</span>
         </div>
         <h2 className="athome__title">A few ways these objects live in a room.</h2>

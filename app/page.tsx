@@ -12,11 +12,11 @@ export default function HomePage() {
     <>
       <Hero />
       <WhyLookHere />
+      <CurrentDrop />
+      <NewObjects />
       <ObjectsPreview />
       <MadeHere />
       <AtHome />
-      <CurrentDrop />
-      <NewObjects />
       <NewsletterSection />
     </>
   );

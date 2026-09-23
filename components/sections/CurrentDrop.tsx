@@ -10,7 +10,7 @@ export default function CurrentDrop() {
     <section className="drop" id="current-drop" aria-label={c.name}>
       <div className="drop__grid">
         <div className="drop__text">
-          <span className="drop__index">06 / {c.name}</span>
+          <span className="drop__index">03 / {c.name}</span>
           <h2 className="drop__title">{c.title}</h2>
           <p className="drop__intro">{c.intro[0]}</p>
           <p className="drop__tags">DRAWN FROM — {c.drawnFrom.join(" / ")}</p>

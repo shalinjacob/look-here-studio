@@ -21,7 +21,7 @@ export default function NewObjects() {
     <section className="section newin" id="new-in" aria-label="New in">
       <div className="wrap">
         <div className="slabel">
-          <span>07 / NEW IN</span>
+          <span>04 / NEW IN</span>
           <span className="slabel__note">MADE TO ORDER.<br />ONE AT A TIME.</span>
         </div>
         <h2 className="newin__title">Just off the table.</h2>
