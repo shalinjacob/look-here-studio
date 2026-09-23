@@ -751,13 +751,13 @@ export const products: Product[] = [
     price: 7500,
     currency: "INR",
     status: "available",
-    images: ["/objects/cat-heart.jpg"],
-    lifestyleImages: [
+    images: [
       "/lifestyle/cat-heart-1.jpg",
       "/lifestyle/cat-heart-2.jpg",
       "/lifestyle/cat-heart-3.jpg",
     ],
-    imageFit: "contain",
+    lifestyleImages: [],
+    imageFit: "cover",
     leadTime: "Made to order · 2 weeks",
     care: "Dry cloth. Powder-coat is tough; still, be kind.",
     installation: "Two keyholes, sits flush to the wall.",
