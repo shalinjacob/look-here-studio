@@ -66,7 +66,7 @@ const recipients = [
 
 // occasions
 const occasions = [
-  { label: "DIWALI", href: "/collections/festival-01", note: "Festival 01" },
+  { label: "ART LOVERS", href: "/collections/editions", note: "Editions, backlit" },
   { label: "HOUSEWARMING", href: "/objects", note: "For the new wall" },
   { label: "WEDDING", href: "/objects", note: "Two homes becoming one" },
   { label: "JUST BECAUSE", href: "/objects", note: "The best reason" },
@@ -75,16 +75,16 @@ const occasions = [
 // curated edits / hampers
 const edits = [
   {
-    title: "The Diwali Table",
-    blurb: "Everything the coffee table needs on the night. Coasters, a plate for the wall behind it, and something to argue over.",
+    title: "The Coffee Table",
+    blurb: "Everything the coffee table needs. Coasters, a plate for the wall behind it, and something to argue over.",
     slugs: ["kolam-coasters", "a-house-full-of-light", "x-plus-o"],
-    href: "/collections/festival-01",
+    href: "/objects",
   },
   {
     title: "At the Threshold",
     blurb: "For the doorway and the wall beside it. A brass toran that catches the evening, and the quietest of the plates.",
     slugs: ["diya-toran", "jasmine-at-dusk", "motif-coasters"],
-    href: "/collections/festival-01",
+    href: "/objects",
   },
   {
     title: "The New Home",
@@ -244,7 +244,7 @@ export default function GiftGuidePage() {
         </span>
         <div style={{ display: "flex", gap: 32, flexWrap: "wrap" }}>
           <CTA href="/objects" variant="stamp">SHOP ALL OBJECTS</CTA>
-          <CTA href="/collections/festival-01" variant="link">SEE FESTIVAL 01</CTA>
+          <CTA href="/collections/editions" variant="link">SEE EDITIONS</CTA>
         </div>
       </div>
     </div>

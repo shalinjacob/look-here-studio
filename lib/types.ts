@@ -18,6 +18,7 @@ export type FilterTag =
   | "light"
   | "mirror"
   | "frame"
+  | "art"
   | "festival";
 
 export interface ProcessStep {

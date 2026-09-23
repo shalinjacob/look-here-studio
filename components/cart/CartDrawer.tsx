@@ -5,7 +5,10 @@ import Link from "next/link";
 import { useCart } from "./CartContext";
 import { formatPrice } from "@/data/products";
 
-// Slide-over cart. Handles qty change, remove, subtotal, and a checkout stub.
+// Studio WhatsApp number for product requests (India +91). Change here if needed.
+const WHATSAPP_NUMBER = "919380670901";
+
+// Slide-over cart. Handles qty change, remove, subtotal, and a WhatsApp request.
 
 export default function CartDrawer() {
   const { isOpen, closeCart, lines, count, subtotal, currency, setQty, removeItem } =
@@ -118,17 +121,26 @@ export default function CartDrawer() {
                 <span>{formatPrice(subtotal, currency)}</span>
               </div>
               <p className="drawer__note">
-                Taxes and shipping calculated at checkout.
+                We&apos;ll confirm price, stock &amp; delivery on WhatsApp.
               </p>
               <button
                 className="cta cta--stamp drawer__checkout"
-                onClick={() =>
-                  alert(
-                    "Checkout is a stub in this demo. Connect Shopify or Stripe here — see README."
-                  )
-                }
+                onClick={() => {
+                  const items = lines
+                    .map(
+                      (l) =>
+                        `• ${l.name} ×${l.qty} — ${formatPrice(l.price * l.qty, l.currency)}`
+                    )
+                    .join("\n");
+                  const msg =
+                    `Hi Look Here Studio! I'd like to request these objects:\n\n` +
+                    `${items}\n\nSubtotal: ${formatPrice(subtotal, currency)}\n\n` +
+                    `Name:\nDelivery city:`;
+                  const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+                  window.open(url, "_blank", "noopener,noreferrer");
+                }}
               >
-                <span className="cta__label">CHECKOUT</span>
+                <span className="cta__label">SEND PRODUCT REQUEST</span>
                 <span className="cta__arrow">→</span>
               </button>
               <Link href="/objects" className="drawer__continue" onClick={closeCart}>

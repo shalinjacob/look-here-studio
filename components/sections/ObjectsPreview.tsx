@@ -30,7 +30,7 @@ export default function ObjectsPreview() {
           <span className="objects__foot-links">
             <Link href="/objects">SPACES</Link>
             <Link href="/objects">OBJECTS</Link>
-            <Link href="/collections/festival-01">FESTIVAL</Link>
+            <Link href="/collections/editions">EDITIONS</Link>
           </span>
         </div>
       </div>
