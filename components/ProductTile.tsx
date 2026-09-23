@@ -14,6 +14,8 @@ export default function ProductTile({
   product: Product;
   delay?: number;
 }) {
+  // second image = lifestyle context revealed on hover (Mejuri "shop the look")
+  const hoverSrc = p.lifestyleImages[0] ?? p.images[1];
   return (
     <Reveal as="article" delay={delay} className="tile">
       <Link href={`/objects/${p.slug}`} className="tile__link">
@@ -25,6 +27,10 @@ export default function ProductTile({
             className="tile__img"
             fallback={<div className="tile__ph">{p.objectNumber}</div>}
           />
+          {hoverSrc && (
+            /* eslint-disable-next-line @next/next/no-img-element */
+            <img className="tile__img tile__img--hover" src={hoverSrc} alt="" loading="lazy" />
+          )}
           <span className="tile__open" aria-hidden>
             OPEN →
           </span>

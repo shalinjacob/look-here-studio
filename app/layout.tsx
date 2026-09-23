@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, IBM_Plex_Mono, Roboto, Caveat } from "next/font/google";
 import { CartProvider } from "@/components/cart/CartContext";
+import AnnounceBar from "@/components/AnnounceBar";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import CartDrawer from "@/components/cart/CartDrawer";
@@ -73,6 +74,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <a href="#main" className="skip-link">Skip to content</a>
         <CartProvider>
+          <AnnounceBar />
           <Nav />
           <main id="main">{children}</main>
           <Footer />
