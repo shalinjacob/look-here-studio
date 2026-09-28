@@ -41,8 +41,8 @@ const recipients = [
   {
     tag: "THE HOST",
     line: "Feeds twelve, owns four chairs.",
-    copy: "Coasters that survive a party, a brass toran for the door, and a game to settle who does the dishes.",
-    slug: "kolam-coasters",
+    copy: "Coasters that survive a party, and a solid-brass game to settle who does the dishes.",
+    slug: "x-plus-o",
   },
   {
     tag: "THE ONE WHO HAS EVERYTHING",
@@ -53,8 +53,8 @@ const recipients = [
   {
     tag: "THE DESIGN OBSESSIVE",
     line: "Will clock the finish. Judge accordingly.",
-    copy: "Etched brass wall plates and an organic-shaped mirror. Things that hold up to a long, close look.",
-    slug: "a-house-full-of-light",
+    copy: "Backlit art editions and an organic-shaped mirror. Things that hold up to a long, close look.",
+    slug: "blood-moon",
   },
   {
     tag: "THE NEW ADDRESS",
@@ -76,15 +76,15 @@ const occasions = [
 const edits = [
   {
     title: "The Coffee Table",
-    blurb: "Everything the coffee table needs. Coasters, a plate for the wall behind it, and something to argue over.",
-    slugs: ["kolam-coasters", "a-house-full-of-light", "x-plus-o"],
+    blurb: "Everything the coffee table needs. Coasters, a little light, and something to argue over.",
+    slugs: ["x-plus-o", "patterned-coasters", "acrylic-lamp"],
     href: "/objects",
   },
   {
-    title: "At the Threshold",
-    blurb: "For the doorway and the wall beside it. A brass toran that catches the evening, and the quietest of the plates.",
-    slugs: ["diya-toran", "jasmine-at-dusk", "motif-coasters"],
-    href: "/objects",
+    title: "The Gallery Wall",
+    blurb: "A backlit art edition, a cat with a heart cut out of it, and a set of floating frames.",
+    slugs: ["blood-moon", "cat-got-your-heart", "square-frame"],
+    href: "/collections/editions",
   },
   {
     title: "The New Home",

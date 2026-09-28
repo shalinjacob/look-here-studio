@@ -49,7 +49,6 @@ export const metadata: Metadata = {
     "clocks",
     "wall objects",
     "Bengaluru design",
-    "Diwali objects",
   ],
   openGraph: {
     title: "LOOK HERE STUDIO",

@@ -37,24 +37,8 @@ export const journal: JournalPost[] = [
     ],
   },
   {
-    slug: "festival-without-the-clichs",
-    index: "003",
-    title: "Doing Diwali without the clichés",
-    date: "2026-09-02",
-    category: "Collection",
-    excerpt:
-      "How do you design for a festival of light without reaching for marigolds and orange gradients?",
-    readingTime: "5 min",
-    body: [
-      "Diwali gifting has a look, and you know it the moment you see it: marigolds, diyas rendered in gold foil, a gradient somewhere between turmeric and traffic cone.",
-      "None of that is wrong. It's just been done, thoroughly, by everyone. So for Festival 01 we started from the ideas underneath the festival instead of its packaging: light, thresholds, kolam, jasmine, gathering.",
-      "The Kolam Constellation plate takes the drawing you'd make at the doorstep and sends it up among the stars, etched in brass. The Diya Toran stretches the oil lamp into a hanging line down the threshold.",
-      "The rule we set ourselves: designed for the festival, not designed to disappear after it. If you'd happily leave it up in February, we got it right.",
-    ],
-  },
-  {
     slug: "in-defence-of-the-slightly-wrong",
-    index: "004",
+    index: "003",
     title: "In defence of the slightly wrong",
     date: "2026-09-10",
     category: "Object",
@@ -70,7 +54,7 @@ export const journal: JournalPost[] = [
   },
   {
     slug: "notes-from-the-laser-bed",
-    index: "005",
+    index: "004",
     title: "Notes from the laser bed",
     date: "2026-09-08",
     category: "Process",
@@ -86,7 +70,7 @@ export const journal: JournalPost[] = [
   },
   {
     slug: "why-we-make-things-in-small-runs",
-    index: "006",
+    index: "005",
     title: "Why we make things in small runs",
     date: "2026-09-01",
     category: "Studio",
@@ -102,7 +86,7 @@ export const journal: JournalPost[] = [
   },
   {
     slug: "brass-gets-better-when-you-ignore-it",
-    index: "007",
+    index: "006",
     title: "Brass gets better when you ignore it",
     date: "2026-08-25",
     category: "Material",
@@ -111,14 +95,14 @@ export const journal: JournalPost[] = [
     readingTime: "3 min",
     body: [
       "New brass is loud. Mirror-bright, a little showy, trying hard. Left alone, it calms down — the shine softens, the tone deepens, and it slowly starts to look like it belongs to you.",
-      "That's patina, and most brass products fight it with a thick lacquer that freezes the factory shine in place forever. We mostly don't. The torans and coasters are meant to age.",
+      "That's patina, and most brass products fight it with a thick lacquer that freezes the factory shine in place forever. We mostly don't. Our brass pieces are meant to age.",
       "If you love the bright look, a minute with a cloth and some polish brings it right back. If you love the softened one, do nothing — the more honest option, and free.",
       "It's the rare object that improves while you neglect it. Enjoy that. It is not going to happen with your phone.",
     ],
   },
   {
     slug: "coasters-deserve-better",
-    index: "008",
+    index: "007",
     title: "Coasters deserve better",
     date: "2026-08-12",
     category: "Object",
@@ -128,13 +112,13 @@ export const journal: JournalPost[] = [
     body: [
       "Coasters are the last thing anyone designs and the first thing anyone reaches for. Cork, or a freebie from a bank, or nothing at all — a ring on the wood and a small domestic argument ten minutes later.",
       "That seemed backwards. The object that meets every cup, every day, every guest, somehow gets the least thought. So we gave it the most.",
-      "Ours carry a kolam, a set of festival motifs, a banana leaf cut clean through brass. They catch the light under a glass and look, honestly, better with a ring of condensation on them than without.",
+      "Ours come wavy-edged, each with its own pattern — stripes, checks, ripples, no two the same. They catch the light under a glass and look, honestly, better with a ring of condensation on them than without.",
       "Small object, bigger day. That's the whole coaster manifesto, and we're standing by it.",
     ],
   },
   {
     slug: "what-a-good-gift-actually-is",
-    index: "009",
+    index: "008",
     title: "What a good gift actually is",
     date: "2026-09-14",
     category: "Gifting",
@@ -150,7 +134,7 @@ export const journal: JournalPost[] = [
   },
   {
     slug: "made-here-in-bengaluru",
-    index: "010",
+    index: "009",
     title: "Made here. In Bengaluru.",
     date: "2026-07-20",
     category: "Studio",
