@@ -311,7 +311,14 @@ input { font: inherit; }
 .drop__strip { display: grid; grid-template-columns: 1fr 1fr; }
 .drop__strip figure { position: relative; aspect-ratio: 3 / 2; overflow: hidden; background: var(--paper); }
 .drop__strip img { width: 100%; height: 100%; object-fit: contain; padding: 14px; }
-.drop__strip figcaption { position: absolute; left: 16px; bottom: 16px; font-family: var(--mono); font-size: 11px; letter-spacing: .1em; color: var(--ink); }
+.drop__strip figcaption { position: absolute; left: 16px; bottom: 16px; z-index: 2; font-family: var(--mono); font-size: 11px; letter-spacing: .1em; color: var(--ink); transition: color .4s var(--ease); }
+/* hover-to-light-up: lit image fades in over the framed (off) one */
+.drop__litimg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .5s var(--ease); z-index: 1; padding: 0 !important; }
+.drop__lit:hover .drop__litimg { opacity: 1; }
+.drop__lit:hover figcaption { color: var(--paper); }
+.drop__hint { position: absolute; left: 14px; bottom: 14px; z-index: 2; font-family: var(--mono); font-size: 10.5px; letter-spacing: .12em; color: var(--ink); background: color-mix(in srgb, var(--paper) 82%, transparent); padding: 5px 9px; transition: opacity .3s var(--ease); }
+.drop__lit:hover .drop__hint { opacity: 0; }
+@media (hover: none) { .drop__litimg { display: none; } .drop__hint { display: none; } }
 
 /* ==========================================================================
    NEWSLETTER
