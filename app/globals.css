@@ -318,7 +318,16 @@ input { font: inherit; }
 .drop__lit:hover figcaption { color: var(--paper); }
 .drop__hint { position: absolute; left: 14px; bottom: 14px; z-index: 2; font-family: var(--mono); font-size: 10.5px; letter-spacing: .12em; color: var(--ink); background: color-mix(in srgb, var(--paper) 82%, transparent); padding: 5px 9px; transition: opacity .3s var(--ease); }
 .drop__lit:hover .drop__hint { opacity: 0; }
-@media (hover: none) { .drop__litimg { display: none; } .drop__hint { display: none; } }
+/* touch devices can't hover -> gently auto-cross-fade off<->lit on a loop */
+@media (hover: none) {
+  .drop__litimg { display: block; opacity: 1; animation: drop-breathe 5.5s var(--ease) infinite; }
+  .drop__hint { display: none; }
+}
+@keyframes drop-breathe {
+  0%, 14% { opacity: 0; }
+  42%, 70% { opacity: 1; }
+  92%, 100% { opacity: 0; }
+}
 
 /* ==========================================================================
    NEWSLETTER
