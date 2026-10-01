@@ -5,6 +5,7 @@ import CTA from "@/components/CTA";
 import Reveal from "@/components/Reveal";
 import { collections, getCollection } from "@/data/collections";
 import { getProduct } from "@/data/products";
+import { ogImage } from "@/lib/site";
 
 export function generateStaticParams() {
   return collections.map((c) => ({ slug: c.slug }));
@@ -13,7 +14,12 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   const c = getCollection(params.slug);
   if (!c) return { title: "Collection not found" };
-  return { title: c.seoTitle, description: c.seoDescription };
+  return {
+    title: c.seoTitle,
+    description: c.seoDescription,
+    alternates: { canonical: `/collections/${c.slug}` },
+    openGraph: { title: `${c.seoTitle} — LOOK HERE STUDIO`, description: c.seoDescription, url: `/collections/${c.slug}`, images: [ogImage(c.slug)] },
+  };
 }
 
 export default function CollectionPage({ params }: { params: { slug: string } }) {

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { journal, getPost } from "@/data/journal";
+import { ogImage } from "@/lib/site";
 
 export function generateStaticParams() {
   return journal.map((p) => ({ slug: p.slug }));
@@ -10,7 +11,12 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   const post = getPost(params.slug);
   if (!post) return { title: "Note not found" };
-  return { title: post.title, description: post.excerpt };
+  return {
+    title: post.title,
+    description: post.excerpt,
+    alternates: { canonical: `/journal/${post.slug}` },
+    openGraph: { type: "article", title: post.title, description: post.excerpt, url: `/journal/${post.slug}`, publishedTime: post.date, images: [ogImage("home")] },
+  };
 }
 
 function fmt(d: string) {

@@ -3,6 +3,7 @@ import CatalogueGrid from "@/components/CatalogueGrid";
 import { products } from "@/data/products";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/objects" },
   title: "Objects",
   description: "Things for walls, tables, shelves and wherever else. The full Look Here Studio catalogue.",
 };

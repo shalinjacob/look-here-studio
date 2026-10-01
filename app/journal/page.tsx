@@ -3,6 +3,7 @@ import Link from "next/link";
 import { journal } from "@/data/journal";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/journal" },
   title: "Journal",
   description: "Notes from Look Here Studio — on objects, materials, mistakes and the occasional small rant.",
 };

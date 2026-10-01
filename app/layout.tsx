@@ -6,6 +6,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import CartDrawer from "@/components/cart/CartDrawer";
 import "./globals.css";
+import { SITE_URL, ogImage } from "@/lib/site";
 
 const display = Inter({
   subsets: ["latin"],
@@ -36,7 +37,7 @@ const hand = Caveat({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://lookherestudio.in"),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "LOOK HERE STUDIO — Objects for the home designed to be noticed",
     template: "%s — LOOK HERE STUDIO",
@@ -58,8 +59,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     siteName: "LOOK HERE STUDIO",
+    images: [ogImage("home")],
   },
-  twitter: { card: "summary_large_image", title: "LOOK HERE STUDIO", description: "Objects for the home designed to be noticed." },
+  twitter: { card: "summary_large_image", title: "LOOK HERE STUDIO", description: "Objects for the home designed to be noticed.", images: ["/og/home.jpg"] },
   robots: { index: true, follow: true },
 };
 

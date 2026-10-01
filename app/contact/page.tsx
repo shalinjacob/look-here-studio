@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/contact" },
   title: "Contact",
   description: "Say hello to Look Here Studio — commissions, stockist enquiries, or just to tell us which object you'd put where.",
 };

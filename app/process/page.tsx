@@ -3,6 +3,7 @@ import VideoPlayer from "@/components/VideoPlayer";
 import CTA from "@/components/CTA";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/process" },
   title: "Process — From sheet to object",
   description: "How Look Here Studio objects are made: material, cut, print, finish, assemble, test, pack. Mostly here, between the machines and the mistakes.",
 };

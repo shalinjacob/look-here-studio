@@ -4,9 +4,7 @@ import { useEffect } from "react";
 import Link from "next/link";
 import { useCart } from "./CartContext";
 import { formatPrice } from "@/data/products";
-
-// Studio WhatsApp number for product requests (India +91). Change here if needed.
-const WHATSAPP_NUMBER = "919380670901";
+import { WHATSAPP_NUMBER } from "@/lib/site";
 
 // Slide-over cart. Handles qty change, remove, subtotal, and a WhatsApp request.
 

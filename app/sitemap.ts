@@ -2,8 +2,7 @@ import type { MetadataRoute } from "next";
 import { products } from "@/data/products";
 import { collections } from "@/data/collections";
 import { journal } from "@/data/journal";
-
-const BASE = "https://lookherestudio.in";
+import { SITE_URL as BASE } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();

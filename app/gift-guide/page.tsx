@@ -11,6 +11,7 @@ import {
 } from "@/data/products";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/gift-guide" },
   title: "The Gift Guide",
   description:
     "Gifts that get noticed — objects for the home, sorted by budget, by the person you're buying for, and by the occasion. From Look Here Studio, Bengaluru.",

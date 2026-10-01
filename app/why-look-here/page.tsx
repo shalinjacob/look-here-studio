@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import CTA from "@/components/CTA";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/why-look-here" },
   title: "Why Look Here",
   description: "Why the studio exists — a small design label from a signage and fabrication background in Bengaluru, making playful objects for the home in small runs.",
 };

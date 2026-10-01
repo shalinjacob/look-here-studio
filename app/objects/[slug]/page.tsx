@@ -7,6 +7,8 @@ import AddToCart from "@/components/AddToCart";
 import VideoPlayer from "@/components/VideoPlayer";
 import ProductTile from "@/components/ProductTile";
 import Newsletter from "@/components/Newsletter";
+import JsonLd from "@/components/JsonLd";
+import { SITE_URL, SITE_NAME, ogImage } from "@/lib/site";
 import {
   products,
   getProduct,
@@ -16,6 +18,12 @@ import {
   formatPrice,
   isPurchasable,
 } from "@/data/products";
+
+const AVAILABILITY: Partial<Record<string, string>> = {
+  available: "https://schema.org/InStock",
+  preorder: "https://schema.org/PreOrder",
+  "sold-out": "https://schema.org/OutOfStock",
+};
 
 export function generateStaticParams() {
   return products.map((p) => ({ slug: p.slug }));
@@ -27,7 +35,14 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   return {
     title: p.seoTitle,
     description: p.seoDescription,
-    openGraph: { title: `${p.name} — LOOK HERE STUDIO`, description: p.shortDescription, images: p.images },
+    alternates: { canonical: `/objects/${p.slug}` },
+    openGraph: {
+      title: `${p.name} — LOOK HERE STUDIO`,
+      description: p.shortDescription,
+      url: `/objects/${p.slug}`,
+      images: [ogImage(p.slug)],
+    },
+    twitter: { card: "summary_large_image", images: [`/og/${p.slug}.jpg`] },
   };
 }
 
@@ -39,6 +54,43 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
   const related = getRelated(p.slug, 3);
   const buyable = isPurchasable(p);
   const gallery = [...p.images, ...p.lifestyleImages];
+
+  // Structured data — lets Google show price/availability/images in results.
+  // No offer is emitted while a price isn't set (coming-soon / waitlist).
+  const url = `${SITE_URL}/objects/${p.slug}`;
+  const productLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: p.name,
+    description: p.seoDescription,
+    image: gallery.map((src) => `${SITE_URL}${src}`),
+    sku: `LHS-${p.objectNumber}`,
+    category: p.category,
+    material: p.material,
+    color: p.colour,
+    brand: { "@type": "Brand", name: SITE_NAME },
+    url,
+    ...(p.price != null && AVAILABILITY[p.status]
+      ? {
+          offers: {
+            "@type": "Offer",
+            price: p.price,
+            priceCurrency: p.currency,
+            availability: AVAILABILITY[p.status],
+            url,
+            seller: { "@id": `${SITE_URL}/#store` },
+          },
+        }
+      : {}),
+  };
+  const crumbsLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Objects", item: `${SITE_URL}/objects` },
+      { "@type": "ListItem", position: 2, name: p.name, item: url },
+    ],
+  };
 
   const specs = [
     { label: "TYPE", value: p.category },
@@ -52,6 +104,8 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
 
   return (
     <article className="pdp wrap">
+      <JsonLd data={productLd} />
+      <JsonLd data={crumbsLd} />
       <div className="pdp__top">
         <Link href="/objects" className="pdp__back">← OBJECTS</Link>
         <span className="pdp__marker">OBJECT {p.objectNumber}</span>
