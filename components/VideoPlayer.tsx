@@ -9,10 +9,13 @@ export default function VideoPlayer({
   src,
   poster,
   label,
+  aspect,
 }: {
   src: string;
   poster: string;
   label?: string;
+  /** CSS aspect-ratio for the frame, e.g. "16 / 9" (default 16 / 10) */
+  aspect?: string;
 }) {
   const ref = useRef<HTMLVideoElement>(null);
   const [started, setStarted] = useState(false);
@@ -26,7 +29,7 @@ export default function VideoPlayer({
 
   return (
     <div className="video">
-      <div className="video__frame">
+      <div className="video__frame" style={aspect ? { aspectRatio: aspect } : undefined}>
         <video
           ref={ref}
           src={src}
