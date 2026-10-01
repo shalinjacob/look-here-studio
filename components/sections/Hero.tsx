@@ -11,13 +11,13 @@ export default function Hero() {
         <h1 className="hero__head">
           OBJECTS FOR{" "}
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img className="hero__inline hero__inline--tall" src="/objects/hero-mirror.png" alt="a wavy pink mirror" />{" "}
+          <img className="hero__inline hero__inline--tall" src="/objects/hero-mirror.webp" width={251} height={360} fetchPriority="high" alt="a wavy pink mirror" />{" "}
           WALLS, TABLES,{" "}
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img className="hero__inline hero__inline--wide" src="/objects/hero-coasters.png" alt="patterned coasters" />{" "}
+          <img className="hero__inline hero__inline--wide" src="/objects/hero-coasters.webp" width={360} height={338} fetchPriority="high" alt="patterned coasters" />{" "}
           SHELVES AND EVERYWHERE{" "}
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img className="hero__inline" src="/objects/hero-lamp.png" alt="a sculptural acrylic lamp" />{" "}
+          <img className="hero__inline" src="/objects/hero-lamp.webp" width={247} height={298} fetchPriority="high" alt="a sculptural acrylic lamp" />{" "}
           THAT COULD USE A LITTLE MORE YOU.
         </h1>
 

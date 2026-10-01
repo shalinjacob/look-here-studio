@@ -46,8 +46,8 @@ export interface Product {
   price: number | null; // null => "PRICE COMING SOON"
   currency: "INR";
   status: ProductStatus;
-  images: string[]; // /objects/*.jpg — first is primary
-  lifestyleImages: string[]; // /lifestyle/*.jpg
+  images: string[]; // /objects/*.webp — first is primary
+  lifestyleImages: string[]; // /lifestyle/*.webp
   /** how the primary image sits in tiles/hero: contain (cutouts) or cover (photos) */
   imageFit?: "contain" | "cover";
   /** optional product video (mp4 under /public/media) */

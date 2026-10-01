@@ -13,10 +13,10 @@ export const collections: Collection[] = [
     ],
     drawnFrom: ["old masters", "botany", "collage", "the slightly surreal"],
     note: "Wall art that turns itself on.",
-    heroImage: "/objects/blood-moon.jpg",
+    heroImage: "/objects/blood-moon.webp",
     gallery: [
-      "/objects/pomegranate-study.jpg",
-      "/objects/smoke-and-feathers.jpg",
+      "/objects/pomegranate-study.webp",
+      "/objects/smoke-and-feathers.webp",
     ],
     productSlugs: [
       "old-habits",

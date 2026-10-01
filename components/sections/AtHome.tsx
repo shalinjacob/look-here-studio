@@ -29,6 +29,8 @@ export default function AtHome() {
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={p.lifestyleImages[0] ?? p.images[0]}
+                    loading="lazy"
+                    decoding="async"
                     alt={`${p.name} in a room`}
                   />
                   <span className="athome__view">VIEW OBJECT →</span>

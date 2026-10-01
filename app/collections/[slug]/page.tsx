@@ -41,14 +41,14 @@ export default function CollectionPage({ params }: { params: { slug: string } })
           </div>
           <div className="drop__hero">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={c.heroImage} alt={`${c.name} hero`} />
+            <img src={c.heroImage} alt={`${c.name} hero`} loading="lazy" decoding="async" />
           </div>
         </div>
         <div className="drop__strip">
           {c.gallery.map((src, i) => (
             <figure key={src}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={src} alt={`${c.name} detail`} />
+              <img src={src} alt={`${c.name} detail`} loading="lazy" decoding="async" />
               {i === 1 && <figcaption>{c.note.toUpperCase()}</figcaption>}
             </figure>
           ))}

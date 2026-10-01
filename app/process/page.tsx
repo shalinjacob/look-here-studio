@@ -33,7 +33,7 @@ export default function ProcessPage() {
       <div style={{ marginTop: "clamp(32px,5vw,64px)" }}>
         <VideoPlayer
           src="/media/process-film.mp4"
-          poster="/media/process-poster.jpg"
+          poster="/media/process-poster.webp"
           label="PROCESS FILM 01 / FROM SHEET TO OBJECT"
         />
       </div>

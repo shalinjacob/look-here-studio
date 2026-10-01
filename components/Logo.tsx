@@ -10,8 +10,8 @@ import SmartImage from "./SmartImage";
 // render exists at the default path (or the `src` you pass), it's used instead
 // — drop the file in /public and it appears with no code change.
 //
-//   default stacked path: /logo-stacked.png
-//   default inline path:  /logo-inline.png
+//   default stacked path: /logo-stacked.webp
+//   default inline path:  /logo-inline.webp
 // Pass src={undefined via preferSvg} or delete the file to keep the SVG.
 // ---------------------------------------------------------------------------
 
@@ -19,7 +19,7 @@ type Variant = "stacked" | "inline";
 
 interface LogoProps {
   variant?: Variant;
-  /** raster override path; defaults to /logo-<variant>.png */
+  /** raster override path; defaults to /logo-<variant>.webp */
   src?: string;
   /** force the SVG even if a raster file exists */
   preferSvg?: boolean;
@@ -61,7 +61,7 @@ export default function Logo({
 
   if (preferSvg) return svg;
 
-  const resolved = src ?? `/logo-${variant}.png`;
+  const resolved = src ?? `/logo-${variant}.webp`;
   return <SmartImage src={resolved} alt={title} fallback={svg} fit="contain" />;
 }
 

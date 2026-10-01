@@ -16,7 +16,7 @@ import { useEffect, useRef, useState } from "react";
 let uid = 0;
 
 export default function AnimatedLogo({
-  src = "/logo-stacked.png",
+  src = "/logo-stacked.webp",
   alt = "LOOK HERE STUDIO",
   width = 560,
   className,
@@ -110,6 +110,9 @@ export default function AnimatedLogo({
           src={src}
           alt={alt}
           className="alogo__img"
+          width={480}
+          height={480}
+          fetchPriority="high"
           draggable={false}
           style={playing ? { filter: `url(#${filterId})` } : undefined}
         />

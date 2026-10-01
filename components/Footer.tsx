@@ -8,7 +8,7 @@ export default function Footer() {
           <div>
             <Link href="/" className="footer__logo" aria-label="Look Here Studio — home">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/logo-stacked.png" alt="LOOK HERE STUDIO" />
+              <img src="/logo-stacked.webp" alt="LOOK HERE STUDIO" loading="lazy" decoding="async" />
             </Link>
             <p className="footer__sub">BENGALURU / INDIA</p>
           </div>

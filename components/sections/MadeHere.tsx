@@ -27,7 +27,7 @@ export default function MadeHere() {
           <Reveal>
             <VideoPlayer
               src="/media/process-film.mp4"
-              poster="/media/process-poster.jpg"
+              poster="/media/process-poster.webp"
               label="PROCESS FILM 01 / FROM SHEET TO OBJECT"
             />
           </Reveal>

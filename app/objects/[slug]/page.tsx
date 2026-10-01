@@ -139,7 +139,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
           </div>
           <div className="pdp__athome">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={p.lifestyleImages[0]} alt={`${p.name} in a room`} />
+            <img src={p.lifestyleImages[0]} alt={`${p.name} in a room`} loading="lazy" decoding="async" />
           </div>
         </section>
       )}

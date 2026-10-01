@@ -153,7 +153,7 @@ export default function GiftGuidePage() {
                 {p && (
                   <Link href={`/objects/${p.slug}`} className="person__img">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={p.images[0]} alt={p.name} />
+                    <img src={p.images[0]} alt={p.name} loading="lazy" decoding="async" />
                   </Link>
                 )}
               </Reveal>
@@ -188,7 +188,7 @@ export default function GiftGuidePage() {
                   return p ? (
                     <Link href={`/objects/${p.slug}`} key={s} className="edit__thumb" title={p.name}>
                       {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={p.images[0]} alt={p.name} />
+                      <img src={p.images[0]} alt={p.name} loading="lazy" decoding="async" />
                     </Link>
                   ) : null;
                 })}

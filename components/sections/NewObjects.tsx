@@ -38,6 +38,8 @@ export default function NewObjects() {
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={p.lifestyleImages[0] ?? p.images[0]}
+                    loading="lazy"
+                    decoding="async"
                     alt={p.name}
                   />
                   <span className="feature__view">VIEW OBJECT →</span>
