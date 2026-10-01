@@ -4,7 +4,7 @@ import Reveal from "../Reveal";
 import { getProduct } from "@/data/products";
 
 // 05 / AT HOME — lifestyle-in-space. Each image links to the featured product.
-const SLUGS = ["sculptural-lamp", "kiss-wall-piece", "layered-wall-clock"];
+const SLUGS = ["cat-got-your-heart", "kiss-wall-piece", "layered-wall-clock"];
 
 export default function AtHome() {
   const items = SLUGS.map(getProduct).filter(Boolean) as NonNullable<
