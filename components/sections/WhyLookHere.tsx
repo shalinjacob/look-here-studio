@@ -18,7 +18,7 @@ export default function WhyLookHere() {
             </Reveal>
             <div className="why__figure">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/objects/wavy-mirror.webp" alt="Pink wavy mirror leaning against a wall" loading="lazy" decoding="async" />
+              <img src="/objects/wavy-mirror.webp" width={564} height={703} alt="Pink wavy mirror leaning against a wall" loading="lazy" decoding="async" />
               <span className="why__note">Same spaces.<br />A little<br />more you.</span>
             </div>
           </div>

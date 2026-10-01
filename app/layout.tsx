@@ -9,7 +9,7 @@ import "./globals.css";
 
 const display = Inter({
   subsets: ["latin"],
-  weight: ["500", "700", "800", "900"],
+  weight: ["500", "700", "800"],
   variable: "--display",
   display: "swap",
 });
@@ -24,6 +24,7 @@ const sans = Roboto({
   weight: ["300", "400", "500"],
   variable: "--sans",
   display: "swap",
+  preload: false,
 });
 // Handwriting — used only for the margin "notes to self".
 const hand = Caveat({
@@ -31,6 +32,7 @@ const hand = Caveat({
   weight: ["400", "600"],
   variable: "--hand",
   display: "swap",
+  preload: false,
 });
 
 export const metadata: Metadata = {
