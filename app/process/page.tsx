@@ -36,7 +36,7 @@ export default function ProcessPage() {
           src="/media/process-film-02.mp4"
           poster="/media/process-film-02-poster.webp"
           aspect="16 / 9"
-          label="PROCESS FILM 01 / FROM SHEET TO OBJECT"
+          label="PROCESS FILM 01 / FROM PROCESS TO OBJECT"
         />
       </div>
 
