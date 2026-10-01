@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FACEBOOK_URL } from "@/lib/site";
 
 export default function Footer() {
   return (
@@ -30,6 +31,7 @@ export default function Footer() {
             <div className="footer__col">
               <h4>ELSEWHERE</h4>
               <a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram →</a>
+              <a href={FACEBOOK_URL} target="_blank" rel="noreferrer">Facebook →</a>
               <a href="https://pinterest.com" target="_blank" rel="noreferrer">Pinterest →</a>
               <a href="mailto:hello@lookherestudio.in">Email →</a>
             </div>

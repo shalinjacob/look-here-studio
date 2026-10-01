@@ -8,7 +8,7 @@ import CurrentDrop from "@/components/sections/CurrentDrop";
 import NewObjects from "@/components/sections/NewObjects";
 import NewsletterSection from "@/components/sections/NewsletterSection";
 import JsonLd from "@/components/JsonLd";
-import { SITE_URL, SITE_NAME, EMAIL, WHATSAPP_NUMBER } from "@/lib/site";
+import { SITE_URL, SITE_NAME, EMAIL, WHATSAPP_NUMBER, FACEBOOK_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
@@ -37,6 +37,7 @@ const orgLd = {
       },
       areaServed: "IN",
       currenciesAccepted: "INR",
+      sameAs: [FACEBOOK_URL],
     },
     {
       "@type": "WebSite",
