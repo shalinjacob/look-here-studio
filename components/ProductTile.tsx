@@ -1,7 +1,7 @@
 import Link from "next/link";
 import SmartImage from "./SmartImage";
 import Reveal from "./Reveal";
-import { STATUS_LABEL, formatPrice, isPurchasable } from "@/data/products";
+import { STATUS_LABEL, formatPrice, isPurchasable, hasPriceRange } from "@/data/products";
 import type { Product } from "@/lib/types";
 
 // The clickable object tile used across the site. The whole tile is the link —
@@ -41,7 +41,9 @@ export default function ProductTile({
           <span className="tile__cat">{p.category}</span>
           <div className="tile__foot">
             <span className="tile__price">
-              {isPurchasable(p) ? formatPrice(p.price, p.currency) : STATUS_LABEL[p.status]}
+              {isPurchasable(p)
+                ? `${hasPriceRange(p) ? "FROM " : ""}${formatPrice(p.price, p.currency)}`
+                : STATUS_LABEL[p.status]}
             </span>
           </div>
         </div>

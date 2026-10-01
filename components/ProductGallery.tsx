@@ -5,7 +5,10 @@ import SmartImage from "./SmartImage";
 
 // Interactive product gallery: main image + clickable thumbnails + prev/next
 // arrows + keyboard (←/→). Falls back to a single static image when there's
-// only one.
+// only one. Listens for GALLERY_SHOW (detail = image src) so a variant picker
+// can jump it to the matching photo.
+
+export const GALLERY_SHOW = "lhs:gallery-show";
 
 export default function ProductGallery({
   images,
@@ -21,6 +24,15 @@ export default function ProductGallery({
   const [i, setI] = useState(0);
   const many = images.length > 1;
   const go = (d: number) => setI((prev) => (prev + d + images.length) % images.length);
+
+  useEffect(() => {
+    const onShow = (e: Event) => {
+      const idx = images.indexOf((e as CustomEvent<string>).detail);
+      if (idx >= 0) setI(idx);
+    };
+    window.addEventListener(GALLERY_SHOW, onShow);
+    return () => window.removeEventListener(GALLERY_SHOW, onShow);
+  }, [images]);
 
   useEffect(() => {
     if (!many) return;

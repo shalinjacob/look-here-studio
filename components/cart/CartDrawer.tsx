@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import Link from "next/link";
-import { useCart } from "./CartContext";
+import { useCart, lineId } from "./CartContext";
 import { formatPrice } from "@/data/products";
 import { WHATSAPP_NUMBER } from "@/lib/site";
 
@@ -57,7 +57,7 @@ export default function CartDrawer() {
           <>
             <ul className="drawer__lines">
               {lines.map((l) => (
-                <li className="cartline" key={l.slug}>
+                <li className="cartline" key={lineId(l)}>
                   <Link
                     href={`/objects/${l.slug}`}
                     className="cartline__thumb"
@@ -77,12 +77,13 @@ export default function CartDrawer() {
                       </Link>
                       <button
                         className="cartline__remove"
-                        onClick={() => removeItem(l.slug)}
+                        onClick={() => removeItem(lineId(l))}
                         aria-label={`Remove ${l.name}`}
                       >
                         ✕
                       </button>
                     </div>
+                    {l.variant && <span className="cartline__variant">{l.variant}</span>}
                     {l.status === "preorder" && (
                       <span className="cartline__tag">Preorder</span>
                     )}
@@ -90,7 +91,7 @@ export default function CartDrawer() {
                       <div className="qty" role="group" aria-label={`Quantity for ${l.name}`}>
                         <button
                           className="qty__btn"
-                          onClick={() => setQty(l.slug, l.qty - 1)}
+                          onClick={() => setQty(lineId(l), l.qty - 1)}
                           aria-label="Decrease quantity"
                         >
                           −
@@ -98,7 +99,7 @@ export default function CartDrawer() {
                         <span className="qty__val" aria-live="polite">{l.qty}</span>
                         <button
                           className="qty__btn"
-                          onClick={() => setQty(l.slug, l.qty + 1)}
+                          onClick={() => setQty(lineId(l), l.qty + 1)}
                           aria-label="Increase quantity"
                         >
                           +
@@ -127,7 +128,7 @@ export default function CartDrawer() {
                   const items = lines
                     .map(
                       (l) =>
-                        `• ${l.name} ×${l.qty} — ${formatPrice(l.price * l.qty, l.currency)}`
+                        `• ${l.name}${l.variant ? ` (${l.variant})` : ""} ×${l.qty} — ${formatPrice(l.price * l.qty, l.currency)}`
                     )
                     .join("\n");
                   const msg =

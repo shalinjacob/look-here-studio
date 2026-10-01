@@ -451,6 +451,19 @@ input { font: inherit; }
 .addcart__btn { min-width: 200px; justify-content: center; }
 .addcart__view { font-family: var(--mono); font-size: 12px; letter-spacing: .12em; color: var(--ink); }
 .addcart__view:hover { text-decoration: underline; }
+/* variant picker (e.g. Four-Letter Words) */
+.variants { border: 0; padding: 0; margin: 0 0 22px; min-width: 0; }
+.variants__legend { font-family: var(--mono); font-size: 11px; letter-spacing: .16em; color: var(--muted); margin-bottom: 10px; padding: 0; }
+.variants__list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.variants__opt { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; text-align: left; padding: 12px 14px; border: 1px solid var(--line, rgba(0,0,0,.18)); background: transparent; color: var(--ink); cursor: pointer; transition: border-color .15s, background .15s; }
+.variants__opt:hover { border-color: var(--ink); }
+.variants__opt.is-active { border-color: var(--ink); background: var(--ink); color: var(--paper); }
+.variants__label { font-family: var(--display); font-weight: 800; font-size: 15px; letter-spacing: .02em; }
+.variants__meta { font-family: var(--mono); font-size: 11px; letter-spacing: .04em; opacity: .75; }
+.variants__custom { display: flex; flex-direction: column; gap: 6px; margin-top: 12px; font-family: var(--mono); font-size: 11px; letter-spacing: .12em; color: var(--muted); }
+.variants__custom input { font-family: var(--display); font-weight: 800; font-size: 18px; letter-spacing: .06em; text-transform: uppercase; padding: 10px 12px; border: 1px solid var(--ink); background: transparent; color: var(--ink); }
+.variants__custom small { font-size: 11px; letter-spacing: .02em; }
+.cartline__variant { display: block; font-family: var(--mono); font-size: 11px; letter-spacing: .08em; color: var(--muted); margin-top: 2px; }
 .pdp__leadtime { font-family: var(--mono); font-size: 12px; color: var(--faint); margin-top: 14px; }
 
 .pdp__section { margin-top: clamp(48px, 8vw, 100px); }

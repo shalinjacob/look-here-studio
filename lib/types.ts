@@ -27,6 +27,18 @@ export interface ProcessStep {
   note?: string;
 }
 
+/** a selectable version of one product (e.g. which word a panel spells) */
+export interface ProductVariant {
+  id: string;
+  label: string; // "LOVE + MORE"
+  note?: string; // "Set of two panels"
+  price: number;
+  /** gallery image to jump to when this variant is picked */
+  image?: string;
+  /** customer types their own text (confirmed on WhatsApp) */
+  custom?: boolean;
+}
+
 export interface Product {
   id: string;
   objectNumber: string; // "001"
@@ -50,6 +62,8 @@ export interface Product {
   lifestyleImages: string[]; // /lifestyle/*.webp
   /** how the primary image sits in tiles/hero: contain (cutouts) or cover (photos) */
   imageFit?: "contain" | "cover";
+  /** optional versions to choose from; `price` is then the starting price */
+  variants?: ProductVariant[];
   /** optional product video (mp4 under /public/media) */
   video?: string;
   collection?: string; // collection slug

@@ -17,6 +17,7 @@ import {
   STATUS_LABEL,
   formatPrice,
   isPurchasable,
+  hasPriceRange,
 } from "@/data/products";
 
 const AVAILABILITY: Partial<Record<string, string>> = {
@@ -135,6 +136,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
 
           <div className="pdp__statusrow">
             <span className={`pdp__price${p.price == null ? " pdp__price--soon" : ""}`}>
+              {hasPriceRange(p) ? "FROM " : ""}
               {formatPrice(p.price, p.currency)}
             </span>
             <span className="pdp__status">{STATUS_LABEL[p.status]}</span>

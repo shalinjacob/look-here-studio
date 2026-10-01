@@ -172,31 +172,42 @@ export const products: Product[] = [
   {
     id: "p008",
     objectNumber: "008",
-    slug: "kiss-wall-piece",
-    name: "KISS Wall Piece",
-    shortName: "KISS",
+    slug: "four-letter-words",
+    name: "Four-Letter Words",
+    shortName: "Four-Letter Words",
     category: "Wall Object",
     subcategory: "Typographic",
     tags: ["wall"],
-    shortDescription: "Four letters, cut clean out of a glossy panel.",
+    shortDescription: "Pick a four-letter word. We cut it clean through.",
     description:
-      "A glossy lacquered panel with KISS routed straight through it, so the wall behind becomes the letters. Reads as art from across the room and as a small instruction up close.",
+      "A glossy lacquered panel with a four-letter word routed straight through it, so the wall behind becomes the letters. Lean it, hang it, or pair two up to say something longer: LOVE + MORE, LOOK + HERE, or KISS on its own. Want your own word? Tell us and we'll cut it. Reads as art from across the room and as a small instruction up close.",
     material: "Lacquered MDF",
     finish: "High gloss",
-    colour: "Blush pink / white",
-    dimensions: "400 × 500 × 40 mm",
-    price: 11000,
+    colour: "Blush pink / cream",
+    dimensions: "Each panel approx. 400 × 500 × 40 mm",
+    price: 8300,
     currency: "INR",
     status: "available",
-    images: ["/objects/kiss-wall-piece.webp"],
+    images: [
+      "/objects/words-look-here.webp",
+      "/objects/words-love-more.webp",
+      "/objects/kiss-wall-piece.webp",
+    ],
     lifestyleImages: ["/lifestyle/athome-kiss.webp"],
+    imageFit: "cover",
+    variants: [
+      { id: "look-here", label: "LOOK + HERE", note: "Set of two", price: 8300, image: "/objects/words-look-here.webp" },
+      { id: "love-more", label: "LOVE + MORE", note: "Set of two", price: 8300, image: "/objects/words-love-more.webp" },
+      { id: "kiss", label: "KISS", note: "Set of two", price: 8300, image: "/objects/kiss-wall-piece.webp" },
+      { id: "custom", label: "YOUR WORDS", note: "Set of two, your call", price: 8300, custom: true },
+    ],
     leadTime: "Made to order · 2 weeks",
     care: "Gloss shows dust. A dry microfibre cloth keeps it sharp.",
-    installation: "French cleat, sits flush.",
+    installation: "French cleat, sits flush. Or just lean it.",
     featured: false,
     process: STD_PROCESS,
-    seoTitle: "KISS Wall Piece — a routed typographic panel",
-    seoDescription: "A glossy lacquered wall panel with KISS cut clean through it.",
+    seoTitle: "Four-Letter Words — glossy typographic wall panels",
+    seoDescription: "Glossy lacquered wall panels with a four-letter word cut clean through: LOOK HERE, LOVE MORE, KISS, or your own word. Made to order in Bengaluru."
   },
   {
     id: "p009",
@@ -668,6 +679,11 @@ export const STATUS_CTA: Record<ProductStatus, string> = {
 };
 
 /** can this product be added to the cart? */
+/** true when a product's variants are priced differently (show "FROM") */
+export function hasPriceRange(p: Product): boolean {
+  return new Set((p.variants ?? []).map((v) => v.price)).size > 1;
+}
+
 export function isPurchasable(p: Product): boolean {
   return (p.status === "available" || p.status === "preorder") && p.price != null;
 }

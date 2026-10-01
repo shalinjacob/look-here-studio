@@ -24,7 +24,13 @@ export interface CartLine {
   image: string;
   status: string;
   qty: number;
+  /** chosen variant, e.g. "LOVE + MORE" */
+  variant?: string;
 }
+
+/** a line is one product + one variant */
+export const lineId = (l: Pick<CartLine, "slug" | "variant">) =>
+  l.variant ? `${l.slug}::${l.variant}` : l.slug;
 
 interface CartState {
   lines: CartLine[];
@@ -32,8 +38,8 @@ interface CartState {
 
 type Action =
   | { type: "ADD"; line: Omit<CartLine, "qty">; qty: number }
-  | { type: "REMOVE"; slug: string }
-  | { type: "SET_QTY"; slug: string; qty: number }
+  | { type: "REMOVE"; id: string }
+  | { type: "SET_QTY"; id: string; qty: number }
   | { type: "CLEAR" }
   | { type: "HYDRATE"; state: CartState };
 
@@ -44,11 +50,12 @@ function reducer(state: CartState, action: Action): CartState {
     case "HYDRATE":
       return action.state;
     case "ADD": {
-      const existing = state.lines.find((l) => l.slug === action.line.slug);
+      const id = lineId(action.line);
+      const existing = state.lines.find((l) => lineId(l) === id);
       if (existing) {
         return {
           lines: state.lines.map((l) =>
-            l.slug === action.line.slug ? { ...l, qty: l.qty + action.qty } : l
+            lineId(l) === id ? { ...l, qty: l.qty + action.qty } : l
           ),
         };
       }
@@ -57,11 +64,11 @@ function reducer(state: CartState, action: Action): CartState {
     case "SET_QTY":
       return {
         lines: state.lines
-          .map((l) => (l.slug === action.slug ? { ...l, qty: action.qty } : l))
+          .map((l) => (lineId(l) === action.id ? { ...l, qty: action.qty } : l))
           .filter((l) => l.qty > 0),
       };
     case "REMOVE":
-      return { lines: state.lines.filter((l) => l.slug !== action.slug) };
+      return { lines: state.lines.filter((l) => lineId(l) !== action.id) };
     case "CLEAR":
       return { lines: [] };
     default:
@@ -77,10 +84,17 @@ interface CartContextValue {
   isOpen: boolean;
   openCart: () => void;
   closeCart: () => void;
-  addItem: (product: Product, qty?: number) => void;
-  removeItem: (slug: string) => void;
-  setQty: (slug: string, qty: number) => void;
+  addItem: (product: Product, qty?: number, variant?: ChosenVariant) => void;
+  /** takes a line id (see lineId) */
+  removeItem: (id: string) => void;
+  setQty: (id: string, qty: number) => void;
   clear: () => void;
+}
+
+export interface ChosenVariant {
+  label: string;
+  price: number;
+  image?: string;
 }
 
 const CartContext = createContext<CartContextValue | null>(null);
@@ -111,7 +125,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     }
   }, [state, ready]);
 
-  const addItem = useCallback((product: Product, qty = 1) => {
+  const addItem = useCallback((product: Product, qty = 1, variant?: ChosenVariant) => {
     if (product.price == null) return;
     dispatch({
       type: "ADD",
@@ -119,10 +133,11 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       line: {
         slug: product.slug,
         name: product.name,
-        price: product.price,
+        price: variant?.price ?? product.price,
         currency: product.currency,
-        image: product.images[0],
+        image: variant?.image ?? product.images[0],
         status: product.status,
+        variant: variant?.label,
       },
     });
     setIsOpen(true);
@@ -140,8 +155,8 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       openCart: () => setIsOpen(true),
       closeCart: () => setIsOpen(false),
       addItem,
-      removeItem: (slug) => dispatch({ type: "REMOVE", slug }),
-      setQty: (slug, qty) => dispatch({ type: "SET_QTY", slug, qty }),
+      removeItem: (id) => dispatch({ type: "REMOVE", id }),
+      setQty: (id, qty) => dispatch({ type: "SET_QTY", id, qty }),
       clear: () => dispatch({ type: "CLEAR" }),
     };
   }, [state, isOpen, addItem]);
