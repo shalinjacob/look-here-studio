@@ -209,7 +209,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         <div className="pdp__goodtoknow">
           <div><p className="gtk__label">Care</p><p className="gtk__value">{p.care}</p></div>
           <div><p className="gtk__label">Installation</p><p className="gtk__value">{p.installation}</p></div>
-          <div><p className="gtk__label">Shipping</p><p className="gtk__value">Ships across India. {p.leadTime}.</p></div>
+          <div><p className="gtk__label">Shipping</p><p className="gtk__value">Free shipping across India. {p.leadTime}. <Link href="/shipping-returns">Shipping &amp; returns →</Link></p></div>
           <div><p className="gtk__label">Customisation</p><p className="gtk__value">Colour and size tweaks possible on made-to-order pieces — just ask.</p></div>
         </div>
       </section>

@@ -6,7 +6,7 @@ import { SITE_URL as BASE } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
-  const staticRoutes = ["", "/objects", "/gift-guide", "/process", "/why-look-here", "/journal", "/contact"];
+  const staticRoutes = ["", "/objects", "/gift-guide", "/process", "/why-look-here", "/journal", "/contact", "/shipping-returns"];
   return [
     ...staticRoutes.map((r) => ({ url: `${BASE}${r}`, lastModified: now, priority: r === "" ? 1 : 0.8 })),
     ...collections.map((c) => ({ url: `${BASE}/collections/${c.slug}`, lastModified: now, priority: 0.7 })),

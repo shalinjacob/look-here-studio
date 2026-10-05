@@ -27,6 +27,7 @@ export default function Footer() {
               <Link href="/why-look-here">Why Look Here</Link>
               <Link href="/journal">Journal</Link>
               <Link href="/contact">Contact</Link>
+              <Link href="/shipping-returns">Shipping &amp; returns</Link>
             </div>
             <div className="footer__col">
               <h4>ELSEWHERE</h4>

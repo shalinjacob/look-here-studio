@@ -484,6 +484,7 @@ input { font: inherit; }
 .pdp__goodtoknow { display: grid; grid-template-columns: repeat(2,1fr); gap: 24px 48px; }
 .gtk__label { font-family: var(--mono); font-size: 11px; letter-spacing: .14em; color: var(--faint); text-transform: uppercase; }
 .gtk__value { font-family: var(--mono); font-size: 13.5px; color: var(--body); margin-top: 6px; line-height: 1.6; }
+.gtk__value a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; white-space: nowrap; }
 
 /* spec table */
 .spec { border-top: 1px solid var(--ink); }
@@ -528,6 +529,15 @@ input { font: inherit; }
 .article__body { margin-top: clamp(32px,5vw,56px); }
 .article__body p { font-family: var(--mono); font-size: 15px; line-height: 1.85; color: var(--body); }
 .article__body p + p { margin-top: 22px; }
+.policy h2 { font-family: var(--display); font-weight: 700; color: var(--ink); letter-spacing: -0.02em; font-size: clamp(22px,3vw,28px); margin-top: clamp(40px,6vw,64px); margin-bottom: 18px; }
+.policy h2:first-child { margin-top: 0; }
+.policy ul { list-style: none; padding: 0; margin: 0; }
+.policy li { font-family: var(--mono); font-size: 15px; line-height: 1.85; color: var(--body); padding-left: 22px; position: relative; }
+.policy li + li { margin-top: 12px; }
+.policy li::before { content: "→"; position: absolute; left: 0; color: var(--faint); }
+.policy ul + p { margin-top: 22px; }
+.policy strong { color: var(--ink); font-weight: 600; }
+.policy a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
 
 /* ==========================================================================
    CONTACT
