@@ -39,8 +39,8 @@ const hand = Caveat({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "LOOK HERE STUDIO — Objects for the home designed to be noticed",
-    template: "%s — LOOK HERE STUDIO",
+    default: "Look Here Studio — Design objects for the home, made in Bengaluru",
+    template: "%s — Look Here Studio",
   },
   description:
     "An independent design studio in Bengaluru making playful, graphic objects for the home — mirrors, clocks, lights, wall pieces — using colour, reflection, type, shape and light. Made in small runs.",

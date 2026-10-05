@@ -8,7 +8,7 @@ import CurrentDrop from "@/components/sections/CurrentDrop";
 import NewObjects from "@/components/sections/NewObjects";
 import NewsletterSection from "@/components/sections/NewsletterSection";
 import JsonLd from "@/components/JsonLd";
-import { SITE_URL, SITE_NAME, EMAIL, WHATSAPP_NUMBER, FACEBOOK_URL, INSTAGRAM_URL } from "@/lib/site";
+import { SITE_URL, SITE_NAME, BRAND_NAME, EMAIL, WHATSAPP_NUMBER, FACEBOOK_URL, INSTAGRAM_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
@@ -20,8 +20,8 @@ const orgLd = {
     {
       "@type": "Store",
       "@id": `${SITE_URL}/#store`,
-      name: SITE_NAME,
-      alternateName: "Look Here Studio",
+      name: BRAND_NAME,
+      alternateName: [SITE_NAME, "Look Here", "lookherestudio"],
       url: SITE_URL,
       logo: `${SITE_URL}/logo-stacked.png`,
       image: `${SITE_URL}/og/home.jpg`,
@@ -43,7 +43,9 @@ const orgLd = {
       "@type": "WebSite",
       "@id": `${SITE_URL}/#website`,
       url: SITE_URL,
-      name: SITE_NAME,
+      // Google uses this (homepage WebSite name) as the site name in results
+      name: BRAND_NAME,
+      alternateName: [SITE_NAME, "lookherestudio.in"],
       publisher: { "@id": `${SITE_URL}/#store` },
     },
   ],

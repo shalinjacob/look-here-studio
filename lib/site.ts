@@ -2,6 +2,8 @@
 // there), so every absolute URL (sitemap, canonical, OG, JSON-LD) uses this.
 export const SITE_URL = "https://www.lookherestudio.in";
 export const SITE_NAME = "LOOK HERE STUDIO";
+/** title-case brand name for search: Google site name, titles, product brand */
+export const BRAND_NAME = "Look Here Studio";
 export const WHATSAPP_NUMBER = "919380670901";
 export const EMAIL = "hello@lookherestudio.in";
 export const FACEBOOK_URL = "https://www.facebook.com/profile.php?id=61594915473017";

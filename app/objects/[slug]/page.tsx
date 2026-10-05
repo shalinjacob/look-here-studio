@@ -8,7 +8,7 @@ import VideoPlayer from "@/components/VideoPlayer";
 import ProductTile from "@/components/ProductTile";
 import Newsletter from "@/components/Newsletter";
 import JsonLd from "@/components/JsonLd";
-import { SITE_URL, SITE_NAME, ogImage } from "@/lib/site";
+import { SITE_URL, BRAND_NAME, ogImage } from "@/lib/site";
 import {
   products,
   getProduct,
@@ -69,7 +69,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
     category: p.category,
     material: p.material,
     color: p.colour,
-    brand: { "@type": "Brand", name: SITE_NAME },
+    brand: { "@type": "Brand", name: BRAND_NAME },
     url,
     ...(p.price != null && AVAILABILITY[p.status]
       ? {
