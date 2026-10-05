@@ -37,7 +37,9 @@ export function GET() {
         ["g:material", p.material],
         ["g:color", p.colour],
       ];
-      return `    <item>\n${fields.map(([k, v]) => `      <${k}>${esc(v)}</${k}>`).join("\n")}\n    </item>`;
+      // Free shipping anywhere in India (see /shipping-returns)
+      const shipping = `      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>`;
+      return `    <item>\n${fields.map(([k, v]) => `      <${k}>${esc(v)}</${k}>`).join("\n")}\n${shipping}\n    </item>`;
     });
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
