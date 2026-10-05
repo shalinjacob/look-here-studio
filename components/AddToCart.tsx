@@ -17,9 +17,13 @@ export default function AddToCart({ product }: { product: Product }) {
   const variants = product.variants ?? [];
   const [vid, setVid] = useState(variants[0]?.id);
   const [word, setWord] = useState("");
+  const fields = product.personalise ?? [];
+  const [values, setValues] = useState<Record<string, string>>({});
   const canBuy = isPurchasable(product);
   const v = variants.find((x) => x.id === vid);
-  const needsWord = !!v?.custom && word.trim().length === 0;
+  const needsWord =
+    (!!v?.custom && word.trim().length === 0) ||
+    fields.some((f) => !(values[f.id] ?? "").trim());
 
   if (!canBuy) {
     return (
@@ -39,6 +43,14 @@ export default function AddToCart({ product }: { product: Product }) {
 
   function handleAdd() {
     if (needsWord) return;
+    if (fields.length > 0) {
+      addItem(product, 1, {
+        label: fields.map((f) => `${f.cartLabel}: ${values[f.id].trim()}`).join(" · "),
+        price: product.price!,
+      });
+      setAdded(true);
+      return;
+    }
     addItem(
       product,
       1,
@@ -89,6 +101,27 @@ export default function AddToCart({ product }: { product: Product }) {
               <small>We&apos;ll confirm the lettering with you on WhatsApp.</small>
             </label>
           )}
+        </fieldset>
+      )}
+
+      {fields.length > 0 && (
+        <fieldset className="variants">
+          <legend className="variants__legend">MAKE IT YOURS</legend>
+          {fields.map((f) => (
+            <label key={f.id} className="variants__custom variants__custom--free">
+              <span>{f.label}</span>
+              <input
+                value={values[f.id] ?? ""}
+                onChange={(e) => {
+                  setValues((s) => ({ ...s, [f.id]: e.target.value.slice(0, f.maxLength) }));
+                  setAdded(false);
+                }}
+                placeholder={f.placeholder}
+                maxLength={f.maxLength}
+              />
+            </label>
+          ))}
+          <small className="variants__note">We&apos;ll confirm the lettering and colour with you on WhatsApp.</small>
         </fieldset>
       )}
 

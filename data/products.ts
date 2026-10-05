@@ -645,6 +645,41 @@ export const products: Product[] = [
     seoTitle: "Love More — mirror-gold typographic wall lettering",
     seoDescription: "Chunky mirror-gold “LOVE MORE” dimensional letters for the wall.",
   },
+  {
+    id: "p034",
+    objectNumber: "034",
+    slug: "custom-lightbox",
+    name: "Custom Lightbox",
+    shortName: "Custom Lightbox",
+    category: "Wall Object",
+    subcategory: "Light",
+    tags: ["wall", "light"],
+    shortDescription: "Your line, lit up. Any words, any language, any colour.",
+    description:
+      "A long, slim lightbox for the home with the words of your choice set across a glowing face. A favourite line of poetry, a family saying, a name, a quiet instruction to yourself. In Hindi, English, or whatever your house speaks, in the colour you want the room to turn after dark. Off, it's a crisp black-framed panel. On, it's the thing everyone asks about.",
+    material: "Black metal frame, diffused acrylic face, LED",
+    finish: "Matte black frame",
+    colour: "Light colour of your choice",
+    dimensions: "900 × 150 × 60 mm",
+    price: 9500,
+    currency: "INR",
+    status: "available",
+    images: ["/objects/custom-lightbox-1.webp", "/objects/custom-lightbox-2.webp"],
+    lifestyleImages: [],
+    imageFit: "cover",
+    personalise: [
+      { id: "text", label: "YOUR TEXT (ANY LANGUAGE)", cartLabel: "Text", placeholder: "e.g. Bol ke lab azaad hain tere", maxLength: 60 },
+      { id: "colour", label: "LIGHT COLOUR", cartLabel: "Colour", placeholder: "e.g. warm amber, red", maxLength: 30 },
+    ],
+    leadTime: "Made to order · 2 weeks",
+    care: "Dust the face with a dry microfibre cloth. Unplug before cleaning.",
+    installation: "Wall-mounted on two brackets. Plugs into a regular socket.",
+    featured: false,
+    process: STD_PROCESS,
+    seoTitle: "Custom Lightbox — a personalised LED light box for the home",
+    seoDescription:
+      "A slim LED lightbox with your own words in any language (Hindi, English and more) and any light colour. 900 × 150 mm. Made to order in Bengaluru.",
+  },
 ];
 
 // --- helpers ---------------------------------------------------------------

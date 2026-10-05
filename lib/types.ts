@@ -39,6 +39,16 @@ export interface ProductVariant {
   custom?: boolean;
 }
 
+/** a free-text detail the customer fills in before adding (confirmed on WhatsApp) */
+export interface PersonaliseField {
+  id: string;
+  label: string; // "YOUR TEXT"
+  /** short name used in the cart line + WhatsApp message */
+  cartLabel: string; // "Text"
+  placeholder: string;
+  maxLength: number;
+}
+
 export interface Product {
   id: string;
   objectNumber: string; // "001"
@@ -64,6 +74,8 @@ export interface Product {
   imageFit?: "contain" | "cover";
   /** optional versions to choose from; `price` is then the starting price */
   variants?: ProductVariant[];
+  /** free-text fields to fill in before adding to cart (custom text, colour…) */
+  personalise?: PersonaliseField[];
   /** optional product video (mp4 under /public/media) */
   video?: string;
   collection?: string; // collection slug
