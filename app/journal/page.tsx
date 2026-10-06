@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { journal } from "@/data/journal";
+import { publishedPosts as journal } from "@/data/journal";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/journal" },
-  title: "Journal",
-  description: "Notes from Look Here Studio — on objects, materials, mistakes and the occasional small rant.",
+  title: { absolute: "Journal: Design, Materials & Gifting Notes | Look Here Studio" },
+  description: "Notes from a Bengaluru design studio on acrylic, brass, light, gifting and the occasional small rant.",
 };
 
 function fmt(d: string) {

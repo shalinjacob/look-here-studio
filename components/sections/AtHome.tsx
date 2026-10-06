@@ -2,6 +2,7 @@ import Link from "next/link";
 import CTA from "../CTA";
 import Reveal from "../Reveal";
 import { getProduct } from "@/data/products";
+import { altFor } from "@/data/images";
 
 // 05 / AT HOME — lifestyle-in-space. Each image links to the featured product.
 const SLUGS = ["cat-got-your-heart", "four-letter-words", "layered-wall-clock"];
@@ -31,7 +32,7 @@ export default function AtHome() {
                     src={p.lifestyleImages[0] ?? p.images[0]}
                     loading="lazy"
                     decoding="async"
-                    alt={`${p.name} in a room`}
+                    alt={altFor(p.lifestyleImages[0] ?? p.images[0], `${p.name} in a room`)}
                   />
                   <span className="athome__view">VIEW OBJECT →</span>
                 </div>

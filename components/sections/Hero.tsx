@@ -11,13 +11,13 @@ export default function Hero() {
         <h1 className="hero__head">
           OBJECTS FOR{" "}
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img className="hero__inline hero__inline--tall" src="/objects/hero-mirror.webp" width={251} height={360} fetchPriority="high" alt="a wavy pink mirror" />{" "}
+          <img className="hero__inline hero__inline--tall" src="/objects/hero-mirror.webp" width={251} height={360} fetchPriority="high" alt="Pink Wavy Mirror: organic wavy-edged mirror in a hot-pink frame" />{" "}
           WALLS, TABLES,{" "}
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img className="hero__inline hero__inline--wide" src="/objects/hero-coasters.webp" width={360} height={338} fetchPriority="high" alt="patterned coasters" />{" "}
+          <img className="hero__inline hero__inline--wide" src="/objects/hero-coasters.webp" width={360} height={338} fetchPriority="high" alt="Patterned Coasters: wavy-edged resin coasters in bright patterns" />{" "}
           SHELVES AND EVERYWHERE{" "}
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img className="hero__inline" src="/objects/hero-lamp.webp" width={247} height={298} fetchPriority="high" alt="a sculptural acrylic lamp" />{" "}
+          <img className="hero__inline" src="/objects/hero-lamp.webp" width={247} height={298} fetchPriority="high" alt="Sculptural pink acrylic lamp with glowing gourd-shaped cut-outs" />{" "}
           THAT COULD USE A LITTLE MORE YOU.
         </h1>
 

@@ -8,9 +8,9 @@ import { EMAIL, WHATSAPP_NUMBER } from "@/lib/site";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/shipping-returns" },
-  title: "Shipping & Returns",
+  title: { absolute: "Shipping & Returns: Free India-Wide Shipping | Look Here Studio" },
   description:
-    "Free shipping across India on every Look Here Studio order. Made to order and dispatched within 10 working days. 7-day returns on unused standard objects, with free pickup.",
+    "Free shipping across India. Made to order and dispatched within 10 working days. 7-day returns on unused standard objects; damage replaced or refunded.",
 };
 
 const WA = `https://wa.me/${WHATSAPP_NUMBER}`;

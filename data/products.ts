@@ -1,4 +1,4 @@
-import type { Product, ProductStatus, FilterTag } from "@/lib/types";
+import type { Product, ProductStatus, FilterTag, Occasion } from "@/lib/types";
 
 // ---------------------------------------------------------------------------
 // The catalogue.
@@ -31,6 +31,7 @@ export const products: Product[] = [
     category: "Wall Object",
     subcategory: "Clock",
     tags: ["wall"],
+    occasions: ["housewarming"],
     shortDescription: "A clock that reads like a sunset, one layer at a time.",
     description:
       "A wall clock built from stacked, wavy layers that step down into the dial — so the time sits at the bottom of a small warm crater. It tells the time. It also quietly changes the wall it's on.",
@@ -43,13 +44,13 @@ export const products: Product[] = [
     status: "available",
     images: ["/objects/layer-clock.webp"],
     lifestyleImages: [],
-    leadTime: "Made to order, dispatched within 10 working days",
+    leadTime: "Made to order · dispatched within 10 working days",
     care: "Wipe with a dry cloth. Keep out of direct rain, obviously.",
     installation: "Single wall screw. Silent sweep movement, 1 × AA.",
     featured: true,
     process: STD_PROCESS,
-    seoTitle: "Layer Clock — a layered wall clock",
-    seoDescription: "A wall clock built from stacked wavy layers. Made in small runs.",
+    seoTitle: "Layer Clock: Layered Orange Wall Clock, 30 cm",
+    seoDescription: "A wall clock built from stacked wavy layers in a terracotta-to-orange gradient. 30 × 30 cm, silent sweep. Made to order in Bengaluru, {price}.",
   },
   {
     id: "p003",
@@ -60,6 +61,7 @@ export const products: Product[] = [
     category: "Table Object",
     subcategory: "Light",
     tags: ["light", "table"],
+    occasions: ["just-because"],
     shortDescription: "One sheet of acrylic, one chrome bulb, no fuss.",
     description:
       "A table lamp that's basically a single slab of fluorescent acrylic with a mirror-tipped bulb reaching over the top. The acrylic edge-glows where the light catches it. Half lamp, half small orange event on your desk.",
@@ -73,13 +75,13 @@ export const products: Product[] = [
     images: ["/objects/acrylic-lamp-1.webp", "/objects/acrylic-lamp-2.webp"],
     lifestyleImages: [],
     imageFit: "cover",
-    leadTime: "Made to order, dispatched within 10 working days",
+    leadTime: "Made to order · dispatched within 10 working days",
     care: "Acrylic scratches — wipe with a soft damp cloth only.",
     installation: "Plugs in. Globe bulb included.",
     featured: true,
     process: STD_PROCESS,
-    seoTitle: "Acrylic Lamp — a fluorescent acrylic table lamp",
-    seoDescription: "A single-sheet fluorescent acrylic table lamp with a chrome-tipped bulb.",
+    seoTitle: "Acrylic Lamp: Fluorescent Orange Table Lamp",
+    seoDescription: "One slab of 20 mm fluorescent acrylic and a mirror-tipped bulb. A table lamp that edge-glows. Made to order in Bengaluru, {price}.",
   },
   {
     id: "p005",
@@ -90,6 +92,7 @@ export const products: Product[] = [
     category: "Wall Object",
     subcategory: "Frame",
     tags: ["wall", "frame"],
+    occasions: ["housewarming", "wedding"],
     shortDescription: "A frame that folds around a corner instead of avoiding it.",
     description:
       "A hinged wooden frame designed to wrap the corner of a room — the one spot everyone ignores. Two openings, one fold, and suddenly the awkward corner is the most interesting part of the wall.",
@@ -102,13 +105,13 @@ export const products: Product[] = [
     status: "available",
     images: ["/objects/corner-frame.webp"],
     lifestyleImages: [],
-    leadTime: "Made to order, dispatched within 10 working days",
+    leadTime: "Made to order · dispatched within 10 working days",
     care: "Re-oil once a year if it looks thirsty.",
     installation: "Two screws, one per wall.",
     featured: true,
     process: STD_PROCESS,
-    seoTitle: "Corner Frame — a folding corner photo frame",
-    seoDescription: "A hinged walnut frame that wraps the corner of a room.",
+    seoTitle: "Corner Frame: Walnut Corner Photo Frame",
+    seoDescription: "A hinged walnut frame that wraps the corner of a room, with two A4 openings and museum glass. Made to order in Bengaluru, {price}.",
   },
   {
     id: "p006",
@@ -132,13 +135,13 @@ export const products: Product[] = [
     images: ["/objects/square-frame-1.webp", "/objects/square-frame-2.webp"],
     lifestyleImages: [],
     imageFit: "cover",
-    leadTime: "Made to order, dispatched within 10 working days",
+    leadTime: "Made to order · dispatched within 10 working days",
     care: "Glass cleaner on the cloth, never on the glass.",
     installation: "One screw each. Template included.",
     featured: true,
     process: STD_PROCESS,
-    seoTitle: "Square Frame — oversized-mount frames, set of three",
-    seoDescription: "A set of three oversized square frames with tiny floating windows.",
+    seoTitle: "Square Frame: Set of 3 Oversized-Mount Frames",
+    seoDescription: "Three 30 cm brushed-aluminium frames with tiny floating windows. Small photo, all the drama. Made to order, {price}.",
   },
   {
     id: "p007",
@@ -149,6 +152,7 @@ export const products: Product[] = [
     category: "Wall Object",
     subcategory: "Frame",
     tags: ["wall", "frame"],
+    occasions: ["housewarming"],
     shortDescription: "For the photobooth strip you never knew where to put.",
     description:
       "A tall brushed-metal frame sized exactly for a photobooth strip. Four small moments, one long object. Finally somewhere to put the good ones.",
@@ -162,13 +166,13 @@ export const products: Product[] = [
     images: ["/objects/strip-frame-1.webp"],
     lifestyleImages: [],
     imageFit: "cover",
-    leadTime: "Made to order, dispatched within 10 working days",
+    leadTime: "Made to order · dispatched within 10 working days",
     care: "Fingerprints wipe off with a dry cloth.",
     installation: "Keyhole mount, single screw.",
     featured: true,
     process: STD_PROCESS,
-    seoTitle: "Strip Frame — a photobooth-strip frame",
-    seoDescription: "A tall brushed-steel frame sized for a photobooth strip.",
+    seoTitle: "Strip Frame: Photobooth Strip Frame in Steel",
+    seoDescription: "A tall brushed stainless-steel frame sized exactly for a photobooth strip. Finally somewhere for the good ones. Made to order, {price}.",
   },
   {
     id: "p008",
@@ -179,6 +183,7 @@ export const products: Product[] = [
     category: "Wall Object",
     subcategory: "Typographic",
     tags: ["wall"],
+    occasions: ["housewarming", "wedding"],
     shortDescription: "Pick a four-letter word. We cut it clean through.",
     description:
       "A glossy lacquered panel with a four-letter word routed straight through it, so the wall behind becomes the letters. Lean it, hang it, or pair two up to say something longer: LOVE + MORE, LOOK + HERE, or KISS on its own. Want your own word? Tell us and we'll cut it. Reads as art from across the room and as a small instruction up close.",
@@ -202,13 +207,13 @@ export const products: Product[] = [
       { id: "kiss", label: "KISS", note: "Set of two", price: 8300, image: "/objects/kiss-wall-piece.webp" },
       { id: "custom", label: "YOUR WORDS", note: "Set of two, your call", price: 8300, custom: true },
     ],
-    leadTime: "Made to order, dispatched within 10 working days",
+    leadTime: "Made to order · dispatched within 10 working days",
     care: "Gloss shows dust. A dry microfibre cloth keeps it sharp.",
     installation: "French cleat, sits flush. Or just lean it.",
     featured: false,
     process: STD_PROCESS,
-    seoTitle: "Four-Letter Words — glossy typographic wall panels",
-    seoDescription: "Glossy lacquered wall panels with a four-letter word cut clean through: LOOK HERE, LOVE MORE, KISS, or your own word. Made to order in Bengaluru."
+    seoTitle: "Four-Letter Words: Custom Word Wall Art Panels",
+    seoDescription: "Glossy lacquered panels with a four-letter word cut clean through: LOVE + MORE, LOOK + HERE, KISS or your own. Set of two, {price}.",
   },
   {
     id: "p009",
@@ -219,6 +224,7 @@ export const products: Product[] = [
     category: "Wall Object",
     subcategory: "Clock",
     tags: ["wall"],
+    occasions: ["just-because"],
     shortDescription: "A little Memphis moment that also tells the time.",
     description:
       "Overlapping cut shapes in primary colours with a yellow dial floating on top. Part clock, part small painting that happens to have hands. Cheerfully unbothered by whether it matches your sofa.",
@@ -231,13 +237,13 @@ export const products: Product[] = [
     status: "available",
     images: ["/objects/layered-wall-clock.webp"],
     lifestyleImages: ["/lifestyle/athome-layered-clock.webp"],
-    leadTime: "Made to order, dispatched within 10 working days",
+    leadTime: "Made to order · dispatched within 10 working days",
     care: "Soft dry cloth.",
     installation: "Single screw. Silent sweep movement.",
     featured: false,
     process: STD_PROCESS,
-    seoTitle: "Layered Wall Clock — a Memphis-style acrylic clock",
-    seoDescription: "Overlapping primary shapes with a floating dial. A clock that's also a small painting.",
+    seoTitle: "Layered Wall Clock: Memphis-Style Acrylic Clock",
+    seoDescription: "Overlapping primary-colour acrylic shapes with a floating yellow dial. 34 cm. Part clock, part small painting. Made to order, {price}.",
   },
   {
     id: "p011",
@@ -248,6 +254,7 @@ export const products: Product[] = [
     category: "Wall Object",
     subcategory: "Mirror",
     tags: ["wall", "mirror"],
+    occasions: ["housewarming"],
     shortDescription: "A mirror shaped like a good mood.",
     description:
       "An organic, wavy-edged mirror in a hot-pink lacquer frame. Small enough for an entryway, loud enough to notice on the way out. Checks how you look, improves how the wall looks.",
@@ -260,13 +267,13 @@ export const products: Product[] = [
     status: "available",
     images: ["/objects/wavy-mirror.webp"],
     lifestyleImages: [],
-    leadTime: "Made to order, dispatched within 10 working days",
+    leadTime: "Made to order · dispatched within 10 working days",
     care: "Glass cleaner on the cloth, never on the frame.",
     installation: "Two D-rings, wire hung.",
     featured: false,
     process: STD_PROCESS,
-    seoTitle: "Pink Wavy Mirror — an organic-shaped wall mirror",
-    seoDescription: "An organic wavy-edged mirror in a hot-pink lacquer frame.",
+    seoTitle: "Pink Wavy Mirror: Organic Wall Mirror",
+    seoDescription: "An organic wavy-edged mirror in a hot-pink lacquer frame, 50 × 60 cm. A mirror shaped like a good mood. Made to order, {price}.",
   },
   {
     id: "p012",
@@ -290,13 +297,13 @@ export const products: Product[] = [
     images: ["/objects/ripple-mirror.webp"],
     lifestyleImages: [],
     imageFit: "cover",
-    leadTime: "Made to order, dispatched within 10 working days",
+    leadTime: "Made to order · dispatched within 10 working days",
     care: "Glass cleaner on the cloth, never on the frame.",
     installation: "Leans against the wall, or wall-fixed with the included bracket.",
     featured: false,
     process: STD_PROCESS,
-    seoTitle: "Ripple Mirror — a full-length rippling mirror in butter yellow",
-    seoDescription: "A tall leaning mirror framed by stacked rippling layers, in soft butter yellow.",
+    seoTitle: "Ripple Mirror: Full-Length Wavy Mirror, Butter Yellow",
+    seoDescription: "A tall leaning mirror framed by stacked rippling layers in soft butter yellow. 80 × 160 cm. Made to order in Bengaluru, {price}.",
   },
   {
     id: "p013",
@@ -307,6 +314,7 @@ export const products: Product[] = [
     category: "Table Object",
     subcategory: "Tabletop",
     tags: ["table"],
+    occasions: ["just-because"],
     shortDescription: "Set of four. Each one a different small argument.",
     description:
       "Four wavy-edged coasters, each with its own pattern — stripes, checks, ripples. No two the same, on purpose. The rings your glass leaves actually look good on these.",
@@ -319,13 +327,13 @@ export const products: Product[] = [
     status: "available",
     images: ["/objects/patterned-coasters.webp"],
     lifestyleImages: [],
-    leadTime: "Made to order, dispatched within 10 working days",
+    leadTime: "Made to order · dispatched within 10 working days",
     care: "Hand wash. Cork keeps your table safe.",
     installation: "None. Put a drink on it.",
     featured: false,
     process: STD_PROCESS,
-    seoTitle: "Patterned Coasters — a set of four wavy coasters",
-    seoDescription: "Four wavy-edged patterned coasters, no two the same.",
+    seoTitle: "Patterned Coasters: Set of 4 Wavy Resin Coasters",
+    seoDescription: "Four wavy-edged cast-resin coasters with cork bases, no two the same. Coasters deserve better. Made to order, {price}.",
   },
   {
     id: "p024",
@@ -336,6 +344,7 @@ export const products: Product[] = [
     category: "Table Object",
     subcategory: "Game",
     tags: ["table"],
+    occasions: ["wedding", "just-because"],
     shortDescription: "Brass noughts and crosses. Someone always cheats.",
     description:
       "A marble board and a set of solid brass Xs and Os — noughts and crosses for the coffee table. It settles nothing and starts everything. The most unnecessary thing we make, which is exactly why it exists.",
@@ -350,13 +359,13 @@ export const products: Product[] = [
     lifestyleImages: [],
     imageFit: "cover",
     video: "/media/x-plus-o.mp4",
-    leadTime: "Made to order, dispatched within 10 working days",
+    leadTime: "Made to order · dispatched within 10 working days",
     care: "Wipe the board; polish the pieces if you like.",
     installation: "None. Just don't lose the pieces.",
     featured: false,
     process: STD_PROCESS,
-    seoTitle: "X + O — a brass noughts-and-crosses set",
-    seoDescription: "A marble board with solid brass Xs and Os. Wonderfully unnecessary.",
+    seoTitle: "X + O: Brass & Marble Noughts and Crosses",
+    seoDescription: "A marble board with solid brass Xs and Os. Wonderfully unnecessary, and a gift for the one who has everything. Made to order, {price}.",
   },
   {
     id: "p025",
@@ -367,6 +376,7 @@ export const products: Product[] = [
     category: "Wall Object",
     subcategory: "Wall art",
     tags: ["wall"],
+    occasions: ["just-because"],
     shortDescription: "A cat, mid-stretch, with a heart cut clean out of it.",
     description:
       "A single sheet of steel cut into a cat mid-stretch, tail up, with a heart lifted straight out of its middle — so the wall behind becomes the heart. In a matte black that reads as a clean silhouette from across the room. Sentimental, but it refuses to be soppy about it.",
@@ -384,13 +394,13 @@ export const products: Product[] = [
     ],
     lifestyleImages: [],
     imageFit: "cover",
-    leadTime: "Made to order, dispatched within 10 working days",
+    leadTime: "Made to order · dispatched within 10 working days",
     care: "Dry cloth. Powder-coat is tough; still, be kind.",
     installation: "Two keyholes, sits flush to the wall.",
     featured: false,
     process: STD_PROCESS,
-    seoTitle: "Cat Got Your Heart — a matte-black steel cat wall object",
-    seoDescription: "A laser-cut steel cat with a heart cut out of its middle, in matte black.",
+    seoTitle: "Cat Got Your Heart: Black Metal Cat Wall Art",
+    seoDescription: "A laser-cut matte-black steel cat with a heart cut out, so your wall becomes the heart. 50 × 46 cm. Made to order, {price}.",
   },
   {
     id: "p033",
@@ -418,13 +428,13 @@ export const products: Product[] = [
     ],
     lifestyleImages: [],
     imageFit: "cover",
-    leadTime: "Made to order, dispatched within 10 working days",
+    leadTime: "Made to order · dispatched within 10 working days",
     care: "Dry cloth. Powder-coat is tough; still, be kind.",
     installation: "Keyhole fixings, sits a few millimetres off the wall for a soft shadow.",
     featured: false,
     process: STD_PROCESS,
-    seoTitle: "Small Planet — a white steel stargazer wall art piece",
-    seoDescription: "Laser-cut white steel wall art: two friends on a tiny planet under a sky of stars. Made to order in Bengaluru for nurseries, kids' rooms and living rooms.",
+    seoTitle: "Small Planet: White Metal Wall Art for Kids' Rooms",
+    seoDescription: "Laser-cut white steel wall art: two friends on a tiny planet under the stars. For nurseries, kids' rooms and living rooms. {price}.",
   },
   {
     id: "p026",
@@ -435,6 +445,7 @@ export const products: Product[] = [
     category: "Wall Object",
     subcategory: "Frame",
     tags: ["wall", "frame"],
+    custom: true,
     shortDescription: "Your paddle, framed like it won something. Made to order.",
     description:
       "A deep wooden shadow box that turns a pickleball paddle into wall art — court lines, acrylic mounts, and the ball floating beside it. Personalise it: a club crest, a final score, the names of whoever you keep losing to. Made to order, one at a time.",
@@ -444,7 +455,7 @@ export const products: Product[] = [
     dimensions: "300 × 600 × 60 mm",
     price: 9500,
     currency: "INR",
-    status: "preorder",
+    status: "available",
     images: ["/objects/pickleball-shadow-box.webp"],
     lifestyleImages: [
       "/lifestyle/pickleball-1.webp",
@@ -452,13 +463,13 @@ export const products: Product[] = [
       "/lifestyle/pickleball-3.webp",
     ],
     imageFit: "cover",
-    leadTime: "Made to order, dispatched within 10 working days",
+    leadTime: "Made to order · dispatched within 10 working days",
     care: "Dust the glass. Don't actually play with the framed one.",
     installation: "Two wall fixings; hangs like a picture.",
     featured: false,
     process: STD_PROCESS,
-    seoTitle: "Pickleball Shadow Box — a custom framed paddle display",
-    seoDescription: "A made-to-order wooden shadow box that frames a pickleball paddle, personalised with names, scores or a club crest.",
+    seoTitle: "Pickleball Shadow Box: Personalised Paddle Frame",
+    seoDescription: "Your paddle, framed like it won something. Oak shadow box with court lines, personalised with names, scores or a club crest. {price}.",
   },
   // --- EDITIONS · art prints in an LED slim (edge-lit) frame -----------------
   {
@@ -484,13 +495,13 @@ export const products: Product[] = [
     lifestyleImages: [],
     imageFit: "contain",
     collection: "editions",
-    leadTime: "Made to order, dispatched within 10 working days",
+    leadTime: "Made to order · dispatched within 10 working days",
     care: "Dust the acrylic face with a dry cloth.",
     installation: "Plugs in; hangs flush or leans on a shelf.",
     featured: false,
     process: STD_PROCESS,
-    seoTitle: "Old Habits — a backlit old-master art print",
-    seoDescription: "An old-master portrait with an anachronistic twist, in an LED slim frame.",
+    seoTitle: "Old Habits: Backlit Old-Master Wall Art (A2)",
+    seoDescription: "An old-master portrait with an anachronistic twist, in an edge-lit LED slim frame. A2. Made to order in Bengaluru, {price}.",
   },
   {
     id: "p028",
@@ -515,13 +526,13 @@ export const products: Product[] = [
     lifestyleImages: [],
     imageFit: "contain",
     collection: "editions",
-    leadTime: "Made to order, dispatched within 10 working days",
+    leadTime: "Made to order · dispatched within 10 working days",
     care: "Dust the acrylic face with a dry cloth.",
     installation: "Plugs in; hangs flush or leans on a shelf.",
     featured: false,
     process: STD_PROCESS,
-    seoTitle: "Smoke & Feathers — a backlit collage art print",
-    seoDescription: "A Renaissance portrait collaged with a parrot, orchids and a monochrome hand, in an LED slim frame.",
+    seoTitle: "Smoke & Feathers: Backlit Collage Wall Art (A2)",
+    seoDescription: "A Renaissance portrait collaged with a parrot and orchids, in an edge-lit LED slim frame. A2. Made to order, {price}.",
   },
   {
     id: "p029",
@@ -546,13 +557,13 @@ export const products: Product[] = [
     lifestyleImages: [],
     imageFit: "contain",
     collection: "editions",
-    leadTime: "Made to order, dispatched within 10 working days",
+    leadTime: "Made to order · dispatched within 10 working days",
     care: "Dust the acrylic face with a dry cloth.",
     installation: "Plugs in; hangs flush or leans on a shelf.",
     featured: false,
     process: STD_PROCESS,
-    seoTitle: "Pomegranate Study — a backlit botanical art print",
-    seoDescription: "A botanical plate of the pomegranate (Punica granatum) in an LED slim frame.",
+    seoTitle: "Pomegranate Study: Backlit Botanical Wall Art (A2)",
+    seoDescription: "A botanical pomegranate plate in an edge-lit LED slim frame. A2. Light it up and the wall glows. Made to order, {price}.",
   },
   {
     id: "p030",
@@ -577,13 +588,13 @@ export const products: Product[] = [
     lifestyleImages: [],
     imageFit: "contain",
     collection: "editions",
-    leadTime: "Made to order, dispatched within 10 working days",
+    leadTime: "Made to order · dispatched within 10 working days",
     care: "Dust the acrylic face with a dry cloth.",
     installation: "Plugs in; hangs flush or leans on a shelf.",
     featured: false,
     process: STD_PROCESS,
-    seoTitle: "Blood Moon — a backlit figurative art print",
-    seoDescription: "A moody figurative painting with egrets and a red moon, in an LED slim frame.",
+    seoTitle: "Blood Moon: Backlit LED Wall Art Print (A2)",
+    seoDescription: "Egrets under a red moon, in an edge-lit LED slim frame. A2. One very moody moon for your wall. Made to order, {price}.",
   },
   {
     id: "p031",
@@ -594,6 +605,7 @@ export const products: Product[] = [
     category: "Wall Object",
     subcategory: "Mirror",
     tags: ["wall", "mirror"],
+    occasions: ["wedding"],
     shortDescription: "A wavy oxblood mirror that compliments you back.",
     description:
       "A glossy, wavy-edged mirror in deep oxblood, with a round mirror at its centre and “well, look at you” curving around the rim. Equal parts mirror and small daily hype-man — it checks your outfit and quietly improves your ego on the way out.",
@@ -607,13 +619,13 @@ export const products: Product[] = [
     images: ["/objects/well-look-at-you.webp"],
     lifestyleImages: [],
     imageFit: "cover",
-    leadTime: "Made to order, dispatched within 10 working days",
+    leadTime: "Made to order · dispatched within 10 working days",
     care: "Glass cleaner on the cloth, never on the frame.",
     installation: "Two D-rings, wire hung.",
     featured: false,
     process: STD_PROCESS,
-    seoTitle: "Well, Look At You — a wavy oxblood statement mirror",
-    seoDescription: "A glossy oxblood wavy mirror with “well, look at you” around the rim.",
+    seoTitle: "Well, Look At You: Oxblood Wavy Statement Mirror",
+    seoDescription: "A glossy oxblood wavy mirror with “well, look at you” around the rim. 60 × 60 cm. Made to order in Bengaluru, {price}.",
   },
   {
     id: "p032",
@@ -624,6 +636,7 @@ export const products: Product[] = [
     category: "Wall Object",
     subcategory: "Typographic",
     tags: ["wall"],
+    occasions: ["wedding"],
     shortDescription: "Two words, in chunky mirror-gold. Subtle as a hug.",
     description:
       "“LOVE MORE” in fat, rounded, stacked letters with a mirror-gold finish — a little disco, a little sincere. Big enough to run a wall, cheerful enough to get away with saying it out loud. Reads across a room and catches every bit of afternoon light.",
@@ -637,13 +650,13 @@ export const products: Product[] = [
     images: ["/objects/love-more.webp", "/objects/love-more-2.webp"],
     lifestyleImages: [],
     imageFit: "cover",
-    leadTime: "Made to order, dispatched within 10 working days",
+    leadTime: "Made to order · dispatched within 10 working days",
     care: "Dust the faces with a dry microfibre cloth.",
     installation: "French cleat; sits flush and level.",
     featured: false,
     process: STD_PROCESS,
-    seoTitle: "Love More — mirror-gold typographic wall lettering",
-    seoDescription: "Chunky mirror-gold “LOVE MORE” dimensional letters for the wall.",
+    seoTitle: "Love More: Mirror-Gold Wall Lettering",
+    seoDescription: "Chunky mirror-gold LOVE MORE dimensional letters for the wall, 90 × 62 cm. A wedding or housewarming statement. Made to order, {price}.",
   },
   {
     id: "p034",
@@ -654,6 +667,7 @@ export const products: Product[] = [
     category: "Wall Object",
     subcategory: "Light",
     tags: ["wall", "light"],
+    custom: true,
     shortDescription: "Your line, lit up. Any words, any language, any colour.",
     description:
       "A long, slim lightbox for the home with the words of your choice set across a glowing face. A favourite line of poetry, a family saying, a name, a quiet instruction to yourself. In Hindi, English, or whatever your house speaks, in the colour you want the room to turn after dark. Off, it's a crisp black-framed panel. On, it's the thing everyone asks about.",
@@ -671,14 +685,13 @@ export const products: Product[] = [
       { id: "text", label: "YOUR TEXT (ANY LANGUAGE)", cartLabel: "Text", placeholder: "e.g. Bol ke lab azaad hain tere", maxLength: 60 },
       { id: "colour", label: "LIGHT COLOUR", cartLabel: "Colour", placeholder: "e.g. warm amber, red", maxLength: 30 },
     ],
-    leadTime: "Made to order, dispatched within 10 working days",
+    leadTime: "Made to order · dispatched within 10 working days",
     care: "Dust the face with a dry microfibre cloth. Unplug before cleaning.",
     installation: "Wall-mounted on two brackets. Plugs into a regular socket.",
     featured: false,
     process: STD_PROCESS,
-    seoTitle: "Custom Lightbox — a personalised LED light box for the home",
-    seoDescription:
-      "A slim LED lightbox with your own words in any language (Hindi, English and more) and any light colour. 900 × 150 mm. Made to order in Bengaluru.",
+    seoTitle: "Custom Lightbox: Personalised LED Light Box Sign",
+    seoDescription: "A slim LED lightbox with your words in any language and any light colour. 90 × 15 cm. Signage skills, aimed at home. {price}.",
   },
 ];
 
@@ -732,20 +745,40 @@ export const FILTERS: { key: FilterTag | "all"; label: string }[] = [
 // --- status → UI -----------------------------------------------------------
 
 export const STATUS_LABEL: Record<ProductStatus, string> = {
-  available: "Available",
-  preorder: "Preorder",
+  available: "Made to order",
+  preorder: "Made to order",
   "coming-soon": "Coming soon",
-  "sold-out": "Sold out",
-  waitlist: "Waitlist",
+  // never claim "sold out": nothing is stocked, everything is made to order
+  "sold-out": "Taking a short break",
+  waitlist: "Taking a short break",
 };
+
+/** the badge shown next to the price */
+export function badge(p: Product): string {
+  if (!isPurchasable(p)) return p.price == null ? STATUS_LABEL["coming-soon"] : STATUS_LABEL.waitlist;
+  return p.custom ? "Made to order · personalised" : "Made to order";
+}
+
+/** custom/personalised pieces are final sale (see /shipping-returns) */
+export function isFinalSale(p: Product): boolean {
+  return !!p.custom;
+}
+
+/** meta description with live values filled in from product data */
+export function metaDescription(p: Product): string {
+  return p.seoDescription.replace("{price}", formatPrice(p.price, p.currency));
+}
+
+export const UNAVAILABLE_LINE =
+  "Taking a short break from the laser bed. Tell us you want one and you'll hear first.";
 
 /** button copy driven entirely by status (never hardcode per page) */
 export const STATUS_CTA: Record<ProductStatus, string> = {
   available: "ADD TO CART",
-  preorder: "PREORDER",
+  preorder: "ADD TO CART",
   "coming-soon": "TELL ME WHEN",
-  "sold-out": "JOIN WAITLIST",
-  waitlist: "JOIN WAITLIST",
+  "sold-out": "TELL ME FIRST",
+  waitlist: "TELL ME FIRST",
 };
 
 /** can this product be added to the cart? */
@@ -755,7 +788,11 @@ export function hasPriceRange(p: Product): boolean {
 }
 
 export function isPurchasable(p: Product): boolean {
-  return (p.status === "available" || p.status === "preorder") && p.price != null;
+  return (
+    p.orderable !== false &&
+    (p.status === "available" || p.status === "preorder") &&
+    p.price != null
+  );
 }
 
 export function formatPrice(price: number | null, currency = "INR"): string {
@@ -765,4 +802,16 @@ export function formatPrice(price: number | null, currency = "INR"): string {
     currency,
     maximumFractionDigits: 0,
   }).format(price);
+}
+
+// --- occasions (gift guide → /objects?occasion=…) --------------------------
+
+export const OCCASIONS: { key: Occasion; label: string; note: string }[] = [
+  { key: "housewarming", label: "HOUSEWARMING", note: "For the new wall" },
+  { key: "wedding", label: "WEDDING", note: "Two homes becoming one" },
+  { key: "just-because", label: "JUST BECAUSE", note: "The best reason" },
+];
+
+export function getByOccasion(o: Occasion): Product[] {
+  return products.filter((p) => p.occasions?.includes(o));
 }

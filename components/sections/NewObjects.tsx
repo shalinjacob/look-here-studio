@@ -5,8 +5,9 @@ import {
   getProduct,
   formatPrice,
   isPurchasable,
-  STATUS_LABEL,
+  badge,
 } from "@/data/products";
+import { altFor } from "@/data/images";
 
 // 07 / NEW IN — a two-up feature for the newest objects (made to order).
 const SLUGS = ["cat-got-your-heart", "pickleball-shadow-box"];
@@ -40,7 +41,7 @@ export default function NewObjects() {
                     src={p.lifestyleImages[0] ?? p.images[0]}
                     loading="lazy"
                     decoding="async"
-                    alt={p.name}
+                    alt={altFor(p.lifestyleImages[0] ?? p.images[0], p.name)}
                   />
                   <span className="feature__view">VIEW OBJECT →</span>
                 </div>
@@ -51,9 +52,9 @@ export default function NewObjects() {
                   <p className="feature__line">{p.shortDescription}</p>
                   <div className="feature__foot">
                     <span className="feature__price">
-                      {isPurchasable(p) ? formatPrice(p.price, p.currency) : STATUS_LABEL[p.status]}
+                      {isPurchasable(p) ? formatPrice(p.price, p.currency) : badge(p)}
                     </span>
-                    <span className="feature__status">{STATUS_LABEL[p.status]}</span>
+                    <span className="feature__status">{badge(p)}</span>
                   </div>
                 </div>
               </Link>

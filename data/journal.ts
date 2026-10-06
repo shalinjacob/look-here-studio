@@ -148,8 +148,86 @@ export const journal: JournalPost[] = [
       "Designed here. Made here. Changed several times here. When we say “made here,” we mean the room we're standing in.",
     ],
   },
+  {
+    // DRAFT stub: not routed, listed or in the sitemap until written.
+    // Link to: /objects/x-plus-o, /objects/layered-wall-clock, /objects/layer-clock, /objects/four-letter-words, /objects/pickleball-shadow-box
+    slug: "unique-diwali-gift-ideas-for-home",
+    index: "010",
+    title: "Unique Diwali Gift Ideas for the Home (That Aren't Another Scented Candle)",
+    date: "2026-10-06",
+    category: "Guide",
+    excerpt: "Diwali gifts for the home that people actually keep: clocks, mirrors, backlit art and a brass game, sorted by who you're buying for. Order by 14 Oct.",
+    description: "Diwali gifts for the home that people actually keep: clocks, mirrors, backlit art and a brass game, sorted by who you're buying for. Order by 14 Oct.",
+    readingTime: "",
+    draft: true,
+    outline: ["Why home objects make good Diwali gifts", "For the friend who has everything (X + O, Layered Wall Clock)", "For the new address (Layer Clock, Four-Letter Words)", "For the design obsessive (Editions)", "For the pickleball-obsessed friend (Pickleball Shadow Box)", "Order by Wed 14 Oct for delivery before Diwali", "Missed it? The Gift Promise", "FAQ: delivery, gift notes, personalisation"],
+    body: [],
+  },
+  {
+    // DRAFT stub: not routed, listed or in the sitemap until written.
+    // Link to: /objects/old-habits, /objects/smoke-and-feathers, /objects/pomegranate-study, /objects/blood-moon
+    slug: "led-wall-art-india",
+    index: "011",
+    title: "LED Wall Art in India: What Backlit Art Is and Where to Hang It",
+    date: "2026-10-06",
+    category: "Guide",
+    excerpt: "What edge-lit LED slim-frame art is, where backlit wall art works best at home, and how to power and care for it. With our four Editions.",
+    description: "What edge-lit LED slim-frame art is, where backlit wall art works best at home, and how to power and care for it. With our four Editions.",
+    readingTime: "",
+    draft: true,
+    outline: ["What edge-lit LED slim frames are", "The four Editions", "Where backlit art works (dark corners, hallways, bedrooms)", "Power, cables and care", "FAQ"],
+    body: [],
+  },
+  {
+    // DRAFT stub: not routed, listed or in the sitemap until written.
+    // Link to: /objects/pickleball-shadow-box
+    slug: "pickleball-gifts-india",
+    index: "012",
+    title: "Pickleball Gifts in India for the Player Who Already Has Every Paddle",
+    date: "2026-10-06",
+    category: "Guide",
+    excerpt: "A pickleball gift that isn't another paddle: a personalised oak shadow box that frames theirs, with names, scores or a club crest.",
+    description: "A pickleball gift that isn't another paddle: a personalised oak shadow box that frames theirs, with names, scores or a club crest.",
+    readingTime: "",
+    draft: true,
+    outline: ["Why frame a paddle", "Personalisation ideas (crest, score, names)", "Size and materials (oak, acrylic mounts, 30 × 60 cm)", "Made to order, dispatched within 10 working days", "FAQ"],
+    body: [],
+  },
+  {
+    // DRAFT stub: not routed, listed or in the sitemap until written.
+    // Link to: /objects/layer-clock, /objects/layered-wall-clock
+    slug: "acrylic-wall-clocks",
+    index: "013",
+    title: "Acrylic Wall Clocks: Why Acrylic Isn't Plastic (and How to Choose One)",
+    date: "2026-10-06",
+    category: "Guide",
+    excerpt: "Acrylic vs MDF vs metal wall clocks, choosing a size for your wall, silent sweep movements and care. From a Bengaluru studio that makes them.",
+    description: "Acrylic vs MDF vs metal wall clocks, choosing a size for your wall, silent sweep movements and care. From a Bengaluru studio that makes them.",
+    readingTime: "",
+    draft: true,
+    outline: ["Acrylic vs MDF vs metal", "Choosing a size for your wall", "Silent sweep movements", "Care", "Our two clocks"],
+    body: [],
+  },
+  {
+    // DRAFT stub: not routed, listed or in the sitemap until written.
+    // Link to: /objects/four-letter-words, /objects/layer-clock, /objects/strip-frame, /objects/patterned-coasters
+    slug: "housewarming-gift-ideas-renters-india",
+    index: "014",
+    title: "Housewarming Gift Ideas in India for Renters (No Painting Required)",
+    date: "2026-10-06",
+    category: "Guide",
+    excerpt: "Rental-friendly housewarming gifts: lean-it panels, single-screw clocks and frames, sorted by budget from ₹3,200 to ₹9,500.",
+    description: "Rental-friendly housewarming gifts: lean-it panels, single-screw clocks and frames, sorted by budget from ₹3,200 to ₹9,500.",
+    readingTime: "",
+    draft: true,
+    outline: ["Rental-friendly decor (lean-it panels, single-screw clocks, frames)", "Gifts by budget (₹3,200 to ₹9,500)", "Picking colours for someone else's home", "Link to the gift guide"],
+    body: [],
+  },
 ];
 
+/** live posts only: drafts are never routed, listed or put in the sitemap */
+export const publishedPosts = journal.filter((p) => !p.draft);
+
 export function getPost(slug: string): JournalPost | undefined {
-  return journal.find((p) => p.slug === slug);
+  return publishedPosts.find((p) => p.slug === slug);
 }

@@ -1,7 +1,8 @@
 import Link from "next/link";
 import SmartImage from "./SmartImage";
 import Reveal from "./Reveal";
-import { STATUS_LABEL, formatPrice, isPurchasable, hasPriceRange } from "@/data/products";
+import { badge, formatPrice, isPurchasable, hasPriceRange } from "@/data/products";
+import { altFor, isRender } from "@/data/images";
 import type { Product } from "@/lib/types";
 
 // The clickable object tile used across the site. The whole tile is the link —
@@ -22,15 +23,16 @@ export default function ProductTile({
         <div className={`tile__frame${p.imageFit === "cover" ? " tile__frame--cover" : ""}`}>
           <SmartImage
             src={p.images[0]}
-            alt={p.name}
+            alt={altFor(p.images[0], p.name)}
             fit={p.imageFit ?? "contain"}
             className="tile__img"
             fallback={<div className="tile__ph">{p.objectNumber}</div>}
           />
           {hoverSrc && (
             /* eslint-disable-next-line @next/next/no-img-element */
-            <img className="tile__img tile__img--hover" src={hoverSrc} alt="" loading="lazy" />
+            <img className="tile__img tile__img--hover" src={hoverSrc} alt={altFor(hoverSrc, p.name)} loading="lazy" />
           )}
+          {isRender(p.images[0]) && <span className="render-tag">Visualisation</span>}
           <span className="tile__open" aria-hidden>
             OPEN →
           </span>
@@ -43,7 +45,7 @@ export default function ProductTile({
             <span className="tile__price">
               {isPurchasable(p)
                 ? `${hasPriceRange(p) ? "FROM " : ""}${formatPrice(p.price, p.currency)}`
-                : STATUS_LABEL[p.status]}
+                : badge(p)}
             </span>
           </div>
         </div>

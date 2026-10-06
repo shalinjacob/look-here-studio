@@ -1,5 +1,6 @@
 import CTA from "../CTA";
 import { getCollection } from "@/data/collections";
+import { altFor } from "@/data/images";
 
 // 06 / CURRENT DROP — the featured collection (Editions: art in LED slim frames).
 // Hovering any image lights the frame up (swaps to the "-lit" version).
@@ -23,7 +24,7 @@ export default function CurrentDrop() {
         </div>
         <div className="drop__hero drop__lit">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={c.heroImage} alt={`${c.name} — ${c.title}`} loading="lazy" decoding="async" />
+          <img src={c.heroImage} alt={altFor(c.heroImage, `${c.name} — ${c.title}`)} loading="lazy" decoding="async" />
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img className="drop__litimg" src={lit(c.heroImage)} alt="" aria-hidden loading="lazy" decoding="async" />
           <span className="drop__hint" aria-hidden>HOVER TO LIGHT ↯</span>
@@ -33,7 +34,7 @@ export default function CurrentDrop() {
         {c.gallery.map((src, i) => (
           <figure key={src} className="drop__lit">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={src} alt={`${c.name} detail`} loading="lazy" decoding="async" />
+            <img src={src} alt={altFor(src, `${c.name} detail`)} loading="lazy" decoding="async" />
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img className="drop__litimg" src={lit(src)} alt="" aria-hidden loading="lazy" decoding="async" />
             {i === 1 && <figcaption>{c.note.toUpperCase()}</figcaption>}
