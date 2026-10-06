@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/shipping-returns" },
   title: "Shipping & Returns",
   description:
-    "Free shipping across India on every Look Here Studio order. 7-day returns on unused in-stock objects, with free pickup. Damaged in transit? We replace or refund.",
+    "Free shipping across India on every Look Here Studio order. Made to order and dispatched within 10 working days. 7-day returns on unused standard objects, with free pickup.",
 };
 
 const WA = `https://wa.me/${WHATSAPP_NUMBER}`;
@@ -23,8 +23,9 @@ export default function ShippingReturnsPage() {
         <div className="pagehead__row"><span>SHIPPING &amp; RETURNS</span><span>INDIA-WIDE / FREE</span></div>
         <h1 className="pagehead__title">Getting it to you. And back, if it has to.</h1>
         <p className="pagehead__sub">
-          The short version: shipping is free, unused in-stock objects can come back within
-          7 days, and anything that arrives damaged gets replaced or refunded.
+          The short version: shipping is free, everything is dispatched within 10 working
+          days, unused standard objects can come back within 7 days, and anything that
+          arrives damaged gets replaced or refunded.
         </p>
       </div>
 
@@ -33,8 +34,7 @@ export default function ShippingReturnsPage() {
           <h2>Shipping</h2>
           <ul>
             <li><strong>Free on every order</strong>, anywhere in India. No minimum, no surprise fee at the end.</li>
-            <li><strong>In-stock objects</strong> are dispatched within <strong>7–10 days</strong> of your order being confirmed.</li>
-            <li><strong>Made-to-order objects</strong> are made after you order. Each product page shows its lead time (usually 1–3 weeks), and we dispatch as soon as it&apos;s done.</li>
+            <li>Every object is <strong>made to order, and dispatched within 10 working days</strong> of your order being confirmed.</li>
             <li>Once your order ships, we send you the courier and tracking details on WhatsApp or email.</li>
             <li>Everything is packed corners-first, with acrylic and mirrors in protective film. Peel it off when it reaches you.</li>
             <li>We currently ship within India only. If you&apos;re outside India, <Link href="/contact">write to us</Link> and we&apos;ll see what we can do.</li>
@@ -49,7 +49,7 @@ export default function ShippingReturnsPage() {
 
           <h2>Returns</h2>
           <ul>
-            <li>You can return <strong>unused in-stock objects within 7 days of delivery</strong>, in their original packaging.</li>
+            <li>You can return <strong>unused standard objects within 7 days of delivery</strong>, in their original packaging.</li>
             <li>To start a return, message us on <a href={WA} target="_blank" rel="noreferrer">WhatsApp</a> or email <a href={`mailto:${EMAIL}`}>{EMAIL}</a> with your name and order details.</li>
             <li><strong>We arrange the pickup and pay for it</strong>. You don&apos;t need to find a courier.</li>
             <li>Once the object reaches us and we&apos;ve checked it, we refund you to your original payment method within <strong>7 working days</strong>.</li>
@@ -57,9 +57,7 @@ export default function ShippingReturnsPage() {
 
           <h2>What can&apos;t be returned</h2>
           <ul>
-            <li><strong>Made-to-order objects</strong>, which are made specifically for you after you order. The product page says &ldquo;Made to order&rdquo; on these.</li>
-            <li><strong>Custom and personalised pieces</strong>, such as Four-Letter Words with your own text or a Pickleball Shadow Box built around your paddle.</li>
-            <li><strong>Preorders</strong>, which are also made for you.</li>
+            <li><strong>Custom and personalised pieces</strong>: anything made with your own text, colour or object, such as a Custom Lightbox, Four-Letter Words in your own words, or a Pickleball Shadow Box built around your paddle.</li>
           </ul>
           <p>
             These are final sale unless they arrive damaged or aren&apos;t what you ordered. In
@@ -71,7 +69,7 @@ export default function ShippingReturnsPage() {
             <li>Please <strong>record a video while you unbox</strong>. It makes a claim quick and painless.</li>
             <li>Tell us <strong>within 48 hours of delivery</strong>, with the unboxing video and a few photos of the damage, on <a href={WA} target="_blank" rel="noreferrer">WhatsApp</a> or by email.</li>
             <li>We&apos;ll <strong>replace the object or refund you in full</strong>, whichever you prefer, and arrange the pickup at our cost.</li>
-            <li>This applies to every order, including made-to-order and custom pieces.</li>
+            <li>This applies to every order, including custom pieces.</li>
           </ul>
 
           <h2>Questions</h2>
