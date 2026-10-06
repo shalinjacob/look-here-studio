@@ -37,8 +37,7 @@ export default function TermsPage() {
           <h2>Prices and payment</h2>
           <p>
             Prices are shown in Indian rupees (₹). Nothing is paid on this website. Once we&apos;ve
-            confirmed your order on WhatsApp, we send you payment details and you pay by bank transfer
-            or UPI.
+            confirmed your order on WhatsApp, we send you the payment details there.
           </p>
 
           <h2>Shipping</h2>

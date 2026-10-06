@@ -158,7 +158,34 @@ async function subscribe(signup: Signup): Promise<string> {
     return "webhook";
   }
 
-  // 5) Dev fallback — append to a local file so you can test without a provider.
+  // 5) Email each sign-up to the studio via Resend (same key as the contact form)
+  if (process.env.RESEND_API_KEY && process.env.WAITLIST_NOTIFY_TO) {
+    const from = process.env.CONTACT_FROM || "Look Here Studio <onboarding@resend.dev>";
+    const lines = [
+      `Email: ${email}`,
+      `WhatsApp: ${signup.phone ?? "—"} (opted in: ${signup.whatsappOptIn ? "yes" : "no"})`,
+      `List: ${signup.foundingList ? "Founding List" : "Waitlist"}`,
+      `Object: ${signup.productSlug ?? "—"}`,
+      `Source: ${signup.source ?? "—"}`,
+    ];
+    const res = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        from,
+        to: process.env.WAITLIST_NOTIFY_TO.split(",").map((s) => s.trim()),
+        subject: `${signup.foundingList ? "Founding List" : "Waitlist"} sign-up: ${email}`,
+        text: lines.join("\n"),
+      }),
+    });
+    if (!res.ok) throw new Error(`resend ${res.status}`);
+    return "resend-email";
+  }
+
+  // 6) Dev fallback — append to a local file so you can test without a provider.
   if (process.env.NODE_ENV !== "production") {
     const file = path.join(process.cwd(), "data", "waitlist.local.json");
     let list: (Signup & { ts: string })[] = [];

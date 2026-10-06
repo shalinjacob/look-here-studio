@@ -40,9 +40,9 @@ export default function PrivacyPage() {
 
           <h2>Payments</h2>
           <p>
-            We don&apos;t take payments on this website. After we confirm your order on WhatsApp, you
-            pay by bank transfer or UPI, and we keep the payment reference for our records. We will
-            never ask for your card details, an OTP or your UPI PIN.
+            We don&apos;t take payments on this website. Payment is arranged with you on WhatsApp after
+            we confirm your order, and we keep the payment reference for our records. We will never
+            ask for your card details, an OTP or a PIN.
           </p>
 
           <h2>Why we use it</h2>
