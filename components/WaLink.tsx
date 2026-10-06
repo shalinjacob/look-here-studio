@@ -12,7 +12,7 @@ export default function WaLink({
   ariaLabel,
 }: {
   text: string;
-  location: "product" | "cart" | "floating" | "banner" | "at-home" | "announce";
+  location: "product" | "floating" | "banner" | "at_home" | "contact";
   className?: string;
   children: React.ReactNode;
   ariaLabel?: string;

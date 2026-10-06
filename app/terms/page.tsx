@@ -22,6 +22,12 @@ export default function TermsPage() {
 
       <div className="article" style={{ marginTop: "clamp(32px,5vw,64px)" }}>
         <div className="article__body policy">
+          <h2>How ordering works</h2>
+          <p>
+            Your cart sends us an order request on WhatsApp. An order is confirmed only when we
+            confirm the price, details and dispatch date with you there.
+          </p>
+
           <h2>Made to order</h2>
           <p>
             Every object is made to order in our Bengaluru studio and dispatched within 10 working
@@ -30,8 +36,9 @@ export default function TermsPage() {
 
           <h2>Prices and payment</h2>
           <p>
-            Prices are shown in Indian rupees (₹). We confirm your order, including the total, with
-            you on WhatsApp before you pay, then send a secure payment link.
+            Prices are shown in Indian rupees (₹). Nothing is paid on this website. Once we&apos;ve
+            confirmed your order on WhatsApp, we send you payment details and you pay by bank transfer
+            or UPI.
           </p>
 
           <h2>Shipping</h2>

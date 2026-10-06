@@ -195,7 +195,7 @@ export default function GiftGuidePage() {
           <div className="serv">
             <h3 className="serv__title">A note, not a novel.</h3>
             <p className="serv__copy">
-              Add a note in your cart and we&apos;ll write it on a card by hand.
+              Add a message in your cart and we&apos;ll write it on a card by hand.
               Keep it short; the object is doing the talking.
             </p>
           </div>

@@ -3,8 +3,7 @@ import Link from "next/link";
 import CTA from "@/components/CTA";
 import { EMAIL, WHATSAPP_NUMBER } from "@/lib/site";
 
-// Keep in step with Merchant Center (Settings → Shipping and returns) — Google
-// checks that what's configured there matches this page.
+// Keep in step with the return-policy structured data in lib/structuredData.ts.
 
 export const metadata: Metadata = {
   alternates: { canonical: "/shipping-returns" },

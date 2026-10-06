@@ -15,18 +15,22 @@ function requestMessage(lines: CartLine[], subtotal: number, currency: string, g
       return `• ${l.name}${variant} ×${l.qty} — ${formatPrice(l.price * l.qty, l.currency)}`;
     })
     .join("\n");
-  const personal = lines
-    .filter((l) => l.personalised)
-    .map((l) => `${l.name}: ${l.variant ?? "details to share on WhatsApp"}`)
-    .join("; ");
+  // Only when the cart holds a personalisable product. Text the product page
+  // collected goes in; otherwise it's left blank for the customer to type.
+  const personalisation = lines.some((l) => l.personalisable)
+    ? `Personalisation: ${lines
+        .filter((l) => l.personalised && l.variant)
+        .map((l) => `${l.name}: ${l.variant}`)
+        .join("; ")}\n`
+    : "";
   return (
     `Hi Look Here Studio! I'd like to order:\n\n` +
     `${items}\n` +
     `Subtotal: ${formatPrice(subtotal, currency)} (free shipping)\n\n` +
     `Gift: ${gift ? "Yes" : "No"}\n` +
     `Gift note: ${gift && giftNote.trim() ? giftNote.trim() : "—"}\n` +
-    `Personalisation: ${personal || "—"}\n\n` +
-    `Name:\nDelivery city + pincode:`
+    personalisation +
+    `\nName:\nDelivery city + pincode:`
   );
 }
 
@@ -168,7 +172,13 @@ export default function CartDrawer() {
               <button
                 className="cta cta--stamp drawer__checkout"
                 onClick={() => {
-                  track("whatsapp_click", { location: "cart", value: subtotal, currency });
+                  // the main conversion: fired (as a beacon) before WhatsApp opens
+                  track("generate_lead", {
+                    value: subtotal,
+                    currency,
+                    lead_source: "whatsapp_cart",
+                    items: lines.map((l) => ({ item_id: l.slug, item_name: l.name, item_variant: l.variant, price: l.price, quantity: l.qty })),
+                  });
                   const url = waLink(requestMessage(lines, subtotal, currency, gift, giftNote));
                   window.open(url, "_blank", "noopener,noreferrer");
                 }}
@@ -176,6 +186,17 @@ export default function CartDrawer() {
                 <span className="cta__label">SEND PRODUCT REQUEST</span>
                 <span className="cta__arrow">→</span>
               </button>
+              <div className="drawer__fine">
+                <p>Made to order · dispatched within 10 working days · Free shipping across India</p>
+                <p>
+                  7-day returns on unused standard objects; personalised pieces are final sale.{" "}
+                  <Link href="/shipping-returns" onClick={closeCart}>Shipping &amp; returns</Link>
+                </p>
+                <p>
+                  <Link href="/terms" onClick={closeCart}>Terms</Link> ·{" "}
+                  <Link href="/privacy" onClick={closeCart}>Privacy</Link>
+                </p>
+              </div>
               <Link href="/objects" className="drawer__continue" onClick={closeCart}>
                 keep looking
               </Link>

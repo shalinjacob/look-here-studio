@@ -15,7 +15,7 @@ import CampaignCard from "@/components/campaign/CampaignCard";
 import { SITE_URL, BRAND_NAME, ogImage } from "@/lib/site";
 import { altFor, isRender } from "@/data/images";
 import { gaItem } from "@/lib/analytics";
-import { SKU, schemaAvailability, shippingDetailsLd, returnPolicyLd } from "@/lib/merchant";
+import { SKU, schemaAvailability, finalSaleReturnPolicyLd } from "@/lib/structuredData";
 import {
   products,
   getProduct,
@@ -65,9 +65,8 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
       ? "7-day returns on unused pieces, with free pickup (your-own-words versions are final sale)."
       : "7-day returns on unused pieces, with free pickup.";
 
-  // Structured data for Google merchant listings (server-rendered). Shares its
-  // availability/shipping/returns values with the feed via lib/merchant.
-  // No offer is emitted while a price isn't set.
+  // Product structured data for Google Search product snippets, in the server
+  // HTML. No offer is emitted while a price isn't set.
   const url = `${SITE_URL}/objects/${p.slug}`;
   const productLd = {
     "@context": "https://schema.org",
@@ -92,8 +91,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
             availability: schemaAvailability(p),
             itemCondition: "https://schema.org/NewCondition",
             seller: { "@id": `${SITE_URL}/#store` },
-            shippingDetails: shippingDetailsLd,
-            hasMerchantReturnPolicy: returnPolicyLd(p),
+            ...finalSaleReturnPolicyLd(p),
           },
         }
       : {}),
@@ -168,8 +166,8 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
               <>
                 <p className="pdp__leadtime">{p.leadTime}</p>
                 <p className="pdp__ordernote">
-                  No payment yet: your cart sends us a WhatsApp message, we confirm the
-                  details in minutes, then send a secure payment link.
+                  Nothing to pay here: your cart sends us a WhatsApp message, we confirm the
+                  details in minutes, then send you payment details.
                 </p>
               </>
             )}
@@ -233,7 +231,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
             </p>
             <WaLink
               text={`Hi! Here's my ${p.name} at home:`}
-              location="at-home"
+              location="at_home"
               className="cta cta--link"
             >
               <span className="cta__label">Share your wall on WhatsApp</span>

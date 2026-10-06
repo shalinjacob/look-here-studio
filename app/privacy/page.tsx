@@ -32,6 +32,7 @@ export default function PrivacyPage() {
           <h2>What we collect</h2>
           <ul>
             <li><strong>Order details</strong>: your name, phone/WhatsApp number, email, delivery address and what you ordered, including any personalisation and gift note.</li>
+            <li><strong>WhatsApp messages</strong>: our order conversations with you.</li>
             <li><strong>Sign-ups</strong>: your email, and your WhatsApp number if you choose to give it, when you join the Founding List or ask to hear about an object.</li>
             <li><strong>Messages</strong>: what you send us through the contact form, email or WhatsApp.</li>
             <li><strong>Analytics cookies</strong>, if enabled: how the site is used (pages viewed, objects added to cart), collected by tools such as Google Analytics and Meta Pixel.</li>
@@ -39,8 +40,9 @@ export default function PrivacyPage() {
 
           <h2>Payments</h2>
           <p>
-            Payments are processed by our payment provider. We never see or store your card or bank
-            details.
+            We don&apos;t take payments on this website. After we confirm your order on WhatsApp, you
+            pay by bank transfer or UPI, and we keep the payment reference for our records. We will
+            never ask for your card details, an OTP or your UPI PIN.
           </p>
 
           <h2>Why we use it</h2>
@@ -54,7 +56,7 @@ export default function PrivacyPage() {
           <h2>Who we share it with</h2>
           <ul>
             <li>Our courier, to deliver your order.</li>
-            <li>Our payment provider, to take payment.</li>
+            <li>WhatsApp (Meta), the channel we use for order conversations.</li>
             <li>Email, analytics and advertising tools, if enabled, which process data on our behalf.</li>
           </ul>
           <p>We don&apos;t sell your data.</p>

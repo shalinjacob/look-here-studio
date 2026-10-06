@@ -4,12 +4,10 @@
 // the studio holidays below.
 // ---------------------------------------------------------------------------
 
-/** Studio holidays (YYYY-MM-DD, IST). Seeded from Karnataka public lists;
- *  OWNER to confirm the studio's actual days off. */
+/** Studio holidays (YYYY-MM-DD, IST). Seeded from Karnataka public lists.
+ *  20, 21 and 26 Oct 2026 are working days (owner-confirmed). OWNER to confirm
+ *  November and December. */
 export const STUDIO_HOLIDAYS = [
-  "2026-10-20",
-  "2026-10-21",
-  "2026-10-26",
   "2026-11-10",
   "2026-11-27",
   "2026-12-25",

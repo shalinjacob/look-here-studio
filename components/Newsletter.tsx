@@ -66,7 +66,7 @@ export default function Newsletter({
         setError(d.error || "something broke on our end. try again.");
         return;
       }
-      track("generate_lead", { source: source ?? "site", ...(productSlug ? { item_id: productSlug } : {}) });
+      track("join_waitlist", { list: foundingList ? "founding" : "waitlist", ...(productSlug ? { productSlug } : {}) });
       setDone(true);
     } catch {
       setError("couldn't reach us. check your connection and try again.");

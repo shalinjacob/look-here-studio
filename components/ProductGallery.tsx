@@ -54,6 +54,7 @@ export default function ProductGallery({
           src={images[i]}
           alt={altFor(images[i], alt)}
           fit={fit}
+          priority={i === 0}
           fallback={<div className="tile__ph">{fallbackNumber}</div>}
         />
         {isRender(images[i]) && <span className="render-tag">Visualisation</span>}

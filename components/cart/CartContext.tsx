@@ -13,8 +13,8 @@ import type { Product } from "@/lib/types";
 import { track, gaItem } from "@/lib/analytics";
 
 // ---------------------------------------------------------------------------
-// Central cart state. localStorage-backed for this demo; swap the persistence
-// + the `checkout` stub for Shopify / Stripe when ready (see README).
+// Central cart state, localStorage-backed (items + gift option). Ordering is
+// WhatsApp-only: the drawer turns the cart into a WhatsApp request.
 // ---------------------------------------------------------------------------
 
 export interface CartLine {
@@ -29,6 +29,8 @@ export interface CartLine {
   variant?: string;
   /** variant holds the customer's own text (custom word, lightbox text…) */
   personalised?: boolean;
+  /** the product can be personalised (adds a Personalisation line to the request) */
+  personalisable?: boolean;
 }
 
 export const GIFT_NOTE_MAX = 150;
@@ -154,7 +156,10 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
         image: variant?.image ?? product.images[0],
         status: product.status,
         variant: variant?.label,
-        ...(variant?.personalised || product.custom ? { personalised: true } : {}),
+        ...(variant?.personalised ? { personalised: true } : {}),
+        ...(product.custom || product.personalise?.length || product.variants?.some((v) => v.custom)
+          ? { personalisable: true }
+          : {}),
       },
     });
     const price = variant?.price ?? product.price;

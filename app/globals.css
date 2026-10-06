@@ -760,3 +760,7 @@ input { font: inherit; }
   .promisecard-page { padding: 0; gap: 0; display: block; }
   .promisecard { max-width: none; width: 105mm; height: 148mm; aspect-ratio: auto; border: none; box-shadow: none; page-break-after: always; break-after: page; }
 }
+
+/* cart small print */
+.drawer__fine { margin-top: 14px; display: grid; gap: 4px; font-family: var(--mono); font-size: 11px; line-height: 1.6; color: var(--muted); }
+.drawer__fine a { color: var(--ink); text-decoration: underline; text-underline-offset: 2px; }

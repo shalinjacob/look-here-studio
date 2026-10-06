@@ -5,7 +5,7 @@ import { publishedPosts } from "@/data/journal";
 import { edits } from "@/data/edits";
 import { SITE_URL as BASE } from "@/lib/site";
 
-// Indexable pages only. Cart, checkout, order, feed and the printable
+// Indexable pages only. The feed, draft journal posts and the printable
 // gift-promise card are deliberately left out.
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
