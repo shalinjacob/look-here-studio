@@ -4,8 +4,8 @@ import CTA from "@/components/CTA";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/process" },
-  title: "Process — From sheet to object",
-  description: "How Look Here Studio objects are made: material, cut, print, finish, assemble, test, pack. Mostly here, between the machines and the mistakes.",
+  title: { absolute: "How Our Objects Are Made: Laser, Acrylic, Metal | Look Here Studio" },
+  description: "From sheet to object: how Look Here pieces are cut, printed, finished and tested in our Bengaluru studio.",
 };
 
 const STEPS: [string, string, string][] = [

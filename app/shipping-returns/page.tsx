@@ -3,14 +3,13 @@ import Link from "next/link";
 import CTA from "@/components/CTA";
 import { EMAIL, WHATSAPP_NUMBER } from "@/lib/site";
 
-// Keep in step with Merchant Center (Settings → Shipping and returns) — Google
-// checks that what's configured there matches this page.
+// Keep in step with the return-policy structured data in lib/structuredData.ts.
 
 export const metadata: Metadata = {
   alternates: { canonical: "/shipping-returns" },
-  title: "Shipping & Returns",
+  title: { absolute: "Shipping & Returns: Free India-Wide Shipping | Look Here Studio" },
   description:
-    "Free shipping across India on every Look Here Studio order. Made to order and dispatched within 10 working days. 7-day returns on unused standard objects, with free pickup.",
+    "Free shipping across India. Made to order and dispatched within 10 working days. 7-day returns on unused standard objects; damage replaced or refunded.",
 };
 
 const WA = `https://wa.me/${WHATSAPP_NUMBER}`;

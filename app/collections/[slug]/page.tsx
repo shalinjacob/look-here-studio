@@ -4,8 +4,9 @@ import ProductTile from "@/components/ProductTile";
 import CTA from "@/components/CTA";
 import Reveal from "@/components/Reveal";
 import { collections, getCollection } from "@/data/collections";
-import { getProduct } from "@/data/products";
+import { getProduct, formatPrice } from "@/data/products";
 import { ogImage } from "@/lib/site";
+import { altFor } from "@/data/images";
 
 export function generateStaticParams() {
   return collections.map((c) => ({ slug: c.slug }));
@@ -14,11 +15,13 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   const c = getCollection(params.slug);
   if (!c) return { title: "Collection not found" };
+  const first = getProduct(c.productSlugs[0]);
+  const description = c.seoDescription.replace("{price}", formatPrice(first?.price ?? null));
   return {
-    title: c.seoTitle,
-    description: c.seoDescription,
+    title: { absolute: c.seoTitle },
+    description,
     alternates: { canonical: `/collections/${c.slug}` },
-    openGraph: { title: `${c.seoTitle} — LOOK HERE STUDIO`, description: c.seoDescription, url: `/collections/${c.slug}`, images: [ogImage(c.slug)] },
+    openGraph: { title: c.seoTitle, description, url: `/collections/${c.slug}`, images: [ogImage(c.slug)] },
   };
 }
 
@@ -47,14 +50,14 @@ export default function CollectionPage({ params }: { params: { slug: string } })
           </div>
           <div className="drop__hero">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={c.heroImage} alt={`${c.name} hero`} loading="lazy" decoding="async" />
+            <img src={c.heroImage} alt={altFor(c.heroImage, `${c.name} hero`)} loading="lazy" decoding="async" />
           </div>
         </div>
         <div className="drop__strip">
           {c.gallery.map((src, i) => (
             <figure key={src}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={src} alt={`${c.name} detail`} loading="lazy" decoding="async" />
+              <img src={src} alt={altFor(src, `${c.name} detail`)} loading="lazy" decoding="async" />
               {i === 1 && <figcaption>{c.note.toUpperCase()}</figcaption>}
             </figure>
           ))}

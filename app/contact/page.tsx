@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
-import { FACEBOOK_URL, INSTAGRAM_URL } from "@/lib/site";
+import { FACEBOOK_URL, INSTAGRAM_URL, PINTEREST_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/contact" },
-  title: "Contact",
-  description: "Say hello to Look Here Studio — commissions, stockist enquiries, or just to tell us which object you'd put where.",
+  title: { absolute: "Contact Look Here Studio, Bengaluru" },
+  description:
+    "Commissions, custom words, corporate and wedding gifting, or a question about an object. WhatsApp +91 93806 70901 or hello@lookherestudio.in.",
 };
 
 export default function ContactPage() {
@@ -38,8 +39,12 @@ export default function ContactPage() {
             <a href={INSTAGRAM_URL} target="_blank" rel="noreferrer">Instagram</a>
             {" · "}
             <a href={FACEBOOK_URL} target="_blank" rel="noreferrer">Facebook</a>
-            {" · "}
-            <a href="https://pinterest.com" target="_blank" rel="noreferrer">Pinterest</a>
+            {PINTEREST_URL && (
+              <>
+                {" · "}
+                <a href={PINTEREST_URL} target="_blank" rel="noreferrer">Pinterest</a>
+              </>
+            )}
           </p>
           <p style={{ marginTop: 24, color: "var(--muted)" }}>
             No daily emails. We also have jobs.

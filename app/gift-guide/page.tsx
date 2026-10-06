@@ -3,18 +3,21 @@ import Link from "next/link";
 import ProductTile from "@/components/ProductTile";
 import CTA from "@/components/CTA";
 import Reveal from "@/components/Reveal";
+import { altFor } from "@/data/images";
 import {
   products,
   getProduct,
   isPurchasable,
   formatPrice,
+  OCCASIONS,
 } from "@/data/products";
+import { edits, editTotal } from "@/data/edits";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/gift-guide" },
-  title: "The Gift Guide",
+  title: { absolute: "Unique Home Decor Gift Ideas in India | Look Here Studio Gift Guide" },
   description:
-    "Gifts that get noticed — objects for the home, sorted by budget, by the person you're buying for, and by the occasion. From Look Here Studio, Bengaluru.",
+    "Housewarming, wedding and Diwali gifts that aren't another scented candle. Sorted by budget, person and occasion. Gift-wrapped, free shipping.",
 };
 
 // budget tiers, computed from the catalogue (buyable = available/preorder w/ price)
@@ -68,37 +71,8 @@ const recipients = [
 // occasions
 const occasions = [
   { label: "ART LOVERS", href: "/collections/editions", note: "Editions, backlit" },
-  { label: "HOUSEWARMING", href: "/objects", note: "For the new wall" },
-  { label: "WEDDING", href: "/objects", note: "Two homes becoming one" },
-  { label: "JUST BECAUSE", href: "/objects", note: "The best reason" },
+  ...OCCASIONS.map((o) => ({ label: o.label, href: `/objects?occasion=${o.key}`, note: o.note })),
 ];
-
-// curated edits / hampers
-const edits = [
-  {
-    title: "The Coffee Table",
-    blurb: "Everything the coffee table needs. Coasters, a little light, and something to argue over.",
-    slugs: ["x-plus-o", "patterned-coasters", "acrylic-lamp"],
-    href: "/objects",
-  },
-  {
-    title: "The Gallery Wall",
-    blurb: "A backlit art edition, a cat with a heart cut out of it, and a set of floating frames.",
-    slugs: ["blood-moon", "cat-got-your-heart", "square-frame"],
-    href: "/collections/editions",
-  },
-  {
-    title: "The New Home",
-    blurb: "A housewarming that isn't another scented candle. A mirror, a frame, and a clock worth glancing at.",
-    slugs: ["pink-wavy-mirror", "strip-frame", "layer-clock"],
-    href: "/objects",
-  },
-];
-
-function editTotal(slugs: string[]) {
-  const total = slugs.reduce((n, s) => n + (getProduct(s)?.price ?? 0), 0);
-  return formatPrice(total);
-}
 
 export default function GiftGuidePage() {
   return (
@@ -154,7 +128,7 @@ export default function GiftGuidePage() {
                 {p && (
                   <Link href={`/objects/${p.slug}`} className="person__img">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={p.images[0]} alt={p.name} loading="lazy" decoding="async" />
+                    <img src={p.images[0]} alt={altFor(p.images[0], p.name)} loading="lazy" decoding="async" />
                   </Link>
                 )}
               </Reveal>
@@ -182,14 +156,14 @@ export default function GiftGuidePage() {
         <div className="slabel"><span>04 / READY-MADE EDITS</span><span className="slabel__note">WE ALREADY DID THE THINKING.</span></div>
         <div className="giftedits">
           {edits.map((e, i) => (
-            <Reveal as="article" key={e.title} delay={(i % 3) * 70} className="edit">
+            <Reveal as="article" key={e.slug} delay={(i % 3) * 70} className="edit">
               <div className="edit__thumbs">
                 {e.slugs.map((s) => {
                   const p = getProduct(s);
                   return p ? (
                     <Link href={`/objects/${p.slug}`} key={s} className="edit__thumb" title={p.name}>
                       {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={p.images[0]} alt={p.name} loading="lazy" decoding="async" />
+                      <img src={p.images[0]} alt={altFor(p.images[0], p.name)} loading="lazy" decoding="async" />
                     </Link>
                   ) : null;
                 })}
@@ -198,8 +172,8 @@ export default function GiftGuidePage() {
                 <h3 className="edit__title">{e.title}</h3>
                 <p className="edit__blurb">{e.blurb}</p>
                 <div className="edit__foot">
-                  <span className="edit__total">{editTotal(e.slugs)}</span>
-                  <CTA href={e.href} variant="link">SHOP THE EDIT</CTA>
+                  <span className="edit__total">{formatPrice(editTotal(e))}</span>
+                  <CTA href={`/gift-guide/edits/${e.slug}`} variant="link">SHOP THE EDIT</CTA>
                 </div>
               </div>
             </Reveal>
@@ -215,13 +189,13 @@ export default function GiftGuidePage() {
             <h3 className="serv__title">Wrapped properly.</h3>
             <p className="serv__copy">
               We box everything in the good stuff — recycled, rigid, no bubble
-              wrap graveyard. Tick &ldquo;this is a gift&rdquo; at checkout.
+              wrap graveyard. Tick &ldquo;this is a gift&rdquo; in your cart.
             </p>
           </div>
           <div className="serv">
             <h3 className="serv__title">A note, not a novel.</h3>
             <p className="serv__copy">
-              Add a message at checkout and we&apos;ll write it on a card by hand.
+              Add a message in your cart and we&apos;ll write it on a card by hand.
               Keep it short; the object is doing the talking.
             </p>
           </div>

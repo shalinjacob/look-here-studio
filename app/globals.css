@@ -667,3 +667,100 @@ input { font: inherit; }
   *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* ==========================================================================
+   WEBSITE BRIEF (Oct 2026): campaign banner, WhatsApp, gifting, policies
+   ========================================================================== */
+
+/* Diwali / Gift Promise strip (sits above the announce bar) */
+.campaign { background: var(--paper); border-bottom: 1px solid var(--line); }
+.campaign__inner { display: block; padding: 9px 16px; text-align: center; font-family: var(--mono); font-size: 12px; line-height: 1.5; color: var(--ink); }
+.campaign__inner strong { font-weight: 600; }
+.campaign__body { color: var(--body); }
+.campaign__clock { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.campaign__cta { white-space: nowrap; text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 560px) { .campaign__body { display: none; } }
+
+.campaign-card { display: grid; gap: 4px; margin-top: 22px; padding: 14px 16px; border: 1px solid var(--ink); font-family: var(--mono); font-size: 12px; line-height: 1.55; color: var(--body); }
+.campaign-card__title { font-family: var(--display); font-weight: 700; font-size: 15px; color: var(--ink); }
+.campaign-card__cta { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+
+/* ordering note under Add to cart */
+.pdp__ordernote { font-family: var(--mono); font-size: 12px; line-height: 1.6; color: var(--muted); margin-top: 8px; max-width: 46ch; }
+
+/* "Visualisation" label on rendered images */
+.render-tag { position: absolute; left: 10px; top: 10px; z-index: 3; font-family: var(--mono); font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink); background: rgba(246,244,236,.92); padding: 4px 8px; pointer-events: none; }
+.pdp__athome { position: relative; }
+
+/* At home: empty state */
+.athome-empty { display: grid; gap: 16px; padding: clamp(20px,3vw,32px); border: 1px dashed var(--line); }
+.athome-empty__body { font-family: var(--mono); font-size: 14px; line-height: 1.8; color: var(--body); max-width: 60ch; }
+
+/* floating "Ask on WhatsApp" (product pages) — below the drawer (z 300) */
+.wa-float { position: fixed; right: 16px; bottom: 16px; z-index: 90; display: inline-flex; align-items: center; gap: 8px; padding: 11px 15px; border-radius: 999px; background: var(--ink); color: var(--paper); font-family: var(--mono); font-size: 12px; letter-spacing: .06em; box-shadow: 0 6px 20px rgba(0,0,0,.18); transition: transform .2s var(--ease); }
+.wa-float:hover { transform: translateY(-2px); }
+.wa-float:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+@media (max-width: 560px) { .wa-float { padding: 12px; } .wa-float__label { position: absolute; left: -9999px; } .pdp { padding-bottom: 72px; } }
+
+/* cart: gift option */
+.gift { margin-bottom: 12px; font-family: var(--mono); font-size: 12px; color: var(--body); }
+.gift__check { display: flex; align-items: center; gap: 8px; cursor: pointer; }
+.gift__check input { width: 16px; height: 16px; accent-color: var(--ink); }
+.gift__note { display: grid; gap: 6px; margin-top: 10px; }
+.gift__note textarea { width: 100%; resize: vertical; font-family: var(--mono); font-size: 13px; padding: 8px 10px; border: 1px solid var(--line); background: transparent; color: var(--ink); }
+.gift__note textarea:focus { outline: none; border-color: var(--ink); }
+.gift__note small { justify-self: end; color: var(--faint); font-size: 11px; }
+
+/* gift-guide edits */
+.editbuy { display: grid; gap: 14px; justify-items: start; margin-top: clamp(32px,5vw,56px); padding-top: 24px; border-top: 1px solid var(--line); }
+.editbuy__choose { display: grid; gap: 6px; font-family: var(--mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.editbuy__choose select { font-family: var(--mono); font-size: 14px; letter-spacing: 0; text-transform: none; padding: 10px 12px; border: 1px solid var(--ink); background: transparent; color: var(--ink); max-width: 100%; }
+.editbuy__total { font-family: var(--mono); font-size: 14px; color: var(--body); }
+.editbuy__total strong { color: var(--ink); font-size: 18px; }
+.editbuy__fine { font-family: var(--mono); font-size: 12px; color: var(--muted); margin-top: 14px; max-width: 60ch; line-height: 1.7; }
+
+/* /objects?occasion= */
+.catalogue__occasion { font-family: var(--mono); font-size: 13px; color: var(--body); margin-top: 18px; }
+.catalogue__occasion strong { color: var(--ink); }
+.catalogue__occasion-clear { margin-left: 10px; font-size: 12px; color: var(--muted); text-decoration: underline; text-underline-offset: 3px; }
+
+/* Founding List extras */
+.newsletter__intro { font-family: var(--mono); font-size: 14px; line-height: 1.8; color: var(--body); max-width: 60ch; margin: 18px auto 0; }
+.newsletter__extra { display: grid; gap: 10px; margin-top: 18px; text-align: left; }
+.newsletter__label--visible { position: static; font-family: var(--mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.newsletter__input--phone { border-bottom: 1px solid var(--line); padding-bottom: 8px; }
+.newsletter__optin { display: flex; align-items: flex-start; gap: 10px; font-family: var(--mono); font-size: 12px; line-height: 1.6; color: var(--body); cursor: pointer; }
+.newsletter__optin input { margin-top: 3px; width: 16px; height: 16px; flex: none; accent-color: var(--ink); }
+
+/* policy drafts */
+.draftline { font-family: var(--mono) !important; font-size: 12px !important; letter-spacing: .08em; text-transform: uppercase; color: var(--ink) !important; border: 1px solid var(--ink); display: inline-block; padding: 4px 10px; }
+
+/* Gift Promise form */
+.promiseform { display: grid; gap: 16px; margin-top: clamp(32px,5vw,56px); padding: clamp(20px,3vw,32px); border: 1px solid var(--line); max-width: 560px; }
+.promiseform__title { font-family: var(--display); font-weight: 700; font-size: 22px; color: var(--ink); }
+.promiseform label { display: grid; gap: 6px; font-family: var(--mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.promiseform input, .promiseform select { font-family: var(--mono); font-size: 15px; letter-spacing: 0; text-transform: none; padding: 10px 12px; border: 1px solid var(--ink); background: transparent; color: var(--ink); }
+.promiseform .cta { justify-self: start; }
+.promiseform__fine { font-family: var(--mono); font-size: 11px; color: var(--faint); }
+
+/* Gift Promise printable card (A6 per side) */
+.promisecard-page { padding-block: clamp(24px,4vw,56px); display: grid; gap: 24px; justify-items: center; }
+.promisecard__actions { width: 100%; max-width: 420px; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+.promisecard { width: 100%; max-width: 420px; aspect-ratio: 105 / 148; background: #fff; border: 1px solid var(--line); box-shadow: 0 8px 30px rgba(0,0,0,.08); padding: 10%; display: flex; flex-direction: column; justify-content: center; gap: 20px; }
+.promisecard--front { align-items: center; text-align: center; }
+.promisecard__logo { width: 46%; height: auto; }
+.promisecard__headline { font-family: var(--display); font-weight: 700; font-size: clamp(22px,6vw,30px); line-height: 1.1; letter-spacing: -0.02em; color: var(--ink); }
+.promisecard__text { font-family: var(--mono); font-size: 15px; line-height: 1.8; color: var(--ink); }
+.promisecard__from { font-family: var(--hand), cursive; font-size: 28px; color: var(--ink); }
+.promisecard__foot { margin-top: auto; font-family: var(--mono); font-size: 10px; letter-spacing: .1em; color: var(--faint); }
+@media print {
+  @page { size: A6 portrait; margin: 0; }
+  .campaign, .announce, .nav, .footer, .drawer, .wa-float, .no-print, .skip-link { display: none !important; }
+  body { background: #fff; }
+  .promisecard-page { padding: 0; gap: 0; display: block; }
+  .promisecard { max-width: none; width: 105mm; height: 148mm; aspect-ratio: auto; border: none; box-shadow: none; page-break-after: always; break-after: page; }
+}
+
+/* cart small print */
+.drawer__fine { margin-top: 14px; display: grid; gap: 4px; font-family: var(--mono); font-size: 11px; line-height: 1.6; color: var(--muted); }
+.drawer__fine a { color: var(--ink); text-decoration: underline; text-underline-offset: 2px; }

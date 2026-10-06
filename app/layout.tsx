@@ -5,6 +5,9 @@ import AnnounceBar from "@/components/AnnounceBar";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import CartDrawer from "@/components/cart/CartDrawer";
+import Analytics from "@/components/Analytics";
+import { CampaignClock } from "@/components/campaign/CampaignClock";
+import CampaignStrip from "@/components/campaign/CampaignStrip";
 import "./globals.css";
 import { SITE_URL, ogImage } from "@/lib/site";
 
@@ -39,11 +42,11 @@ const hand = Caveat({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Look Here Studio — Design objects for the home, made in Bengaluru",
-    template: "%s — Look Here Studio",
+    default: "Look Here Studio: Playful Home Decor, Made in Bengaluru",
+    template: "%s | Look Here Studio",
   },
   description:
-    "An independent design studio in Bengaluru making playful, graphic objects for the home — mirrors, clocks, lights, wall pieces — using colour, reflection, type, shape and light. Made in small runs.",
+    "Mirrors, clocks, lamps, backlit wall art and wall pieces, made to order in Bengaluru and dispatched within 10 working days. Free shipping across India.",
   keywords: [
     "design studio",
     "home objects",
@@ -65,6 +68,10 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
+// Re-render pages at most every 10 minutes so the campaign banner's first paint
+// reflects the current IST date (the client then syncs to the exact server time).
+export const revalidate = 600;
+
 export const viewport: Viewport = {
   themeColor: "#f6f4ec",
   width: "device-width",
@@ -76,13 +83,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${display.variable} ${mono.variable} ${sans.variable} ${hand.variable}`}>
       <body>
         <a href="#main" className="skip-link">Skip to content</a>
+        <CampaignClock initialNow={Date.now()}>
         <CartProvider>
+          <CampaignStrip />
           <AnnounceBar />
           <Nav />
           <main id="main">{children}</main>
           <Footer />
           <CartDrawer />
         </CartProvider>
+        </CampaignClock>
+        <Analytics />
       </body>
     </html>
   );

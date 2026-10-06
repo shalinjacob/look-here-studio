@@ -21,6 +21,9 @@ export type FilterTag =
   | "art"
   | "festival";
 
+/** gift-guide occasions (/objects?occasion=…) */
+export type Occasion = "housewarming" | "wedding" | "just-because";
+
 export interface ProcessStep {
   step: string; // "01"
   label: string; // "CUT"
@@ -74,6 +77,11 @@ export interface Product {
   imageFit?: "contain" | "cover";
   /** optional versions to choose from; `price` is then the starting price */
   variants?: ProductVariant[];
+  /** false = genuinely can't be ordered right now (shows the waitlist). Default true. */
+  orderable?: boolean;
+  /** made with the customer's own text/object: final sale (see /shipping-returns) */
+  custom?: boolean;
+  occasions?: Occasion[];
   /** free-text fields to fill in before adding to cart (custom text, colour…) */
   personalise?: PersonaliseField[];
   /** optional product video (mp4 under /public/media) */
@@ -113,4 +121,10 @@ export interface JournalPost {
   excerpt: string;
   readingTime: string;
   body: string[]; // paragraphs
+  /** unpublished stub: not routed, listed or in the sitemap */
+  draft?: boolean;
+  /** meta description (falls back to excerpt) */
+  description?: string;
+  /** draft outline: planned H2s */
+  outline?: string[];
 }

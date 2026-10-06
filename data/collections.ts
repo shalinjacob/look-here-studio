@@ -24,9 +24,10 @@ export const collections: Collection[] = [
       "pomegranate-study",
       "blood-moon",
     ],
-    seoTitle: "Editions — art in an LED slim frame",
+    seoTitle: "LED Backlit Wall Art Prints (A2) | Editions | Look Here Studio",
+    // {price} is filled from the first product's price
     seoDescription:
-      "Look Here Studio's Editions: a small run of prints set into edge-lit LED slim frames.",
+      "Old masters, botany and collage set in edge-lit LED slim frames. Plug it in and the room changes. Made to order in Bengaluru, {price}.",
   },
 ];
 

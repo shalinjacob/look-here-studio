@@ -4,8 +4,9 @@ import { products } from "@/data/products";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/objects" },
-  title: "Objects",
-  description: "Things for walls, tables, shelves and wherever else. The full Look Here Studio catalogue.",
+  title: { absolute: "Shop Home Decor Objects: Mirrors, Clocks, Wall Art | Look Here Studio" },
+  description:
+    "Every Look Here object: wall clocks, wavy mirrors, LED wall art, frames and table pieces. Made to order in Bengaluru, free shipping across India.",
 };
 
 export default function ObjectsPage() {
@@ -19,7 +20,6 @@ export default function ObjectsPage() {
         <h1 className="pagehead__title">Objects</h1>
         <p className="pagehead__sub">Things for walls, tables, shelves and wherever else.</p>
       </div>
-
       <CatalogueGrid products={products} />
     </section>
   );

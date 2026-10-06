@@ -8,23 +8,27 @@ import VideoPlayer from "@/components/VideoPlayer";
 import ProductTile from "@/components/ProductTile";
 import Newsletter from "@/components/Newsletter";
 import JsonLd from "@/components/JsonLd";
+import TrackView from "@/components/TrackView";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import WaLink from "@/components/WaLink";
+import CampaignCard from "@/components/campaign/CampaignCard";
 import { SITE_URL, BRAND_NAME, ogImage } from "@/lib/site";
+import { altFor, isRender } from "@/data/images";
+import { gaItem } from "@/lib/analytics";
+import { SKU, schemaAvailability, finalSaleReturnPolicyLd } from "@/lib/structuredData";
 import {
   products,
   getProduct,
   getAdjacent,
   getRelated,
-  STATUS_LABEL,
+  badge,
+  metaDescription,
+  isFinalSale,
+  UNAVAILABLE_LINE,
   formatPrice,
   isPurchasable,
   hasPriceRange,
 } from "@/data/products";
-
-const AVAILABILITY: Partial<Record<string, string>> = {
-  available: "https://schema.org/InStock",
-  preorder: "https://schema.org/PreOrder",
-  "sold-out": "https://schema.org/OutOfStock",
-};
 
 export function generateStaticParams() {
   return products.map((p) => ({ slug: p.slug }));
@@ -34,11 +38,11 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   const p = getProduct(params.slug);
   if (!p) return { title: "Object not found" };
   return {
-    title: p.seoTitle,
-    description: p.seoDescription,
+    title: { absolute: `${p.seoTitle} | ${BRAND_NAME}` },
+    description: metaDescription(p),
     alternates: { canonical: `/objects/${p.slug}` },
     openGraph: {
-      title: `${p.name} — LOOK HERE STUDIO`,
+      title: `${p.name} | ${BRAND_NAME}`,
       description: p.shortDescription,
       url: `/objects/${p.slug}`,
       images: [ogImage(p.slug)],
@@ -55,31 +59,39 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
   const related = getRelated(p.slug, 3);
   const buyable = isPurchasable(p);
   const gallery = [...p.images, ...p.lifestyleImages];
+  const returnsLine = isFinalSale(p)
+    ? "Personalised, so it\u2019s final sale unless it arrives damaged."
+    : p.variants?.some((v) => v.custom)
+      ? "7-day returns on unused pieces, with free pickup (your-own-words versions are final sale)."
+      : "7-day returns on unused pieces, with free pickup.";
 
-  // Structured data — lets Google show price/availability/images in results.
-  // No offer is emitted while a price isn't set (coming-soon / waitlist).
+  // Product structured data for Google Search product snippets, in the server
+  // HTML. No offer is emitted while a price isn't set.
   const url = `${SITE_URL}/objects/${p.slug}`;
   const productLd = {
     "@context": "https://schema.org",
     "@type": "Product",
     name: p.name,
-    description: p.seoDescription,
+    description: p.description,
     image: gallery.map((src) => `${SITE_URL}${src}`),
-    sku: `LHS-${p.objectNumber}`,
+    sku: SKU(p),
+    mpn: SKU(p),
     category: p.category,
     material: p.material,
     color: p.colour,
     brand: { "@type": "Brand", name: BRAND_NAME },
     url,
-    ...(p.price != null && AVAILABILITY[p.status]
+    ...(p.price != null
       ? {
           offers: {
             "@type": "Offer",
+            url,
             price: p.price,
             priceCurrency: p.currency,
-            availability: AVAILABILITY[p.status],
-            url,
+            availability: schemaAvailability(p),
+            itemCondition: "https://schema.org/NewCondition",
             seller: { "@id": `${SITE_URL}/#store` },
+            ...finalSaleReturnPolicyLd(p),
           },
         }
       : {}),
@@ -106,6 +118,10 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
   return (
     <article className="pdp wrap">
       <JsonLd data={productLd} />
+      <TrackView
+        event="view_item"
+        params={{ currency: p.currency, value: p.price ?? undefined, items: [gaItem(p)] }}
+      />
       <JsonLd data={crumbsLd} />
       <div className="pdp__top">
         <Link href="/objects" className="pdp__back">← OBJECTS</Link>
@@ -139,15 +155,24 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
               {hasPriceRange(p) ? "FROM " : ""}
               {formatPrice(p.price, p.currency)}
             </span>
-            <span className="pdp__status">{STATUS_LABEL[p.status]}</span>
+            <span className="pdp__status">{badge(p)}</span>
           </div>
 
           <p className="pdp__lead">{p.shortDescription}</p>
 
           <div className="pdp__actions">
             <AddToCart product={p} />
-            <p className="pdp__leadtime">{p.leadTime}</p>
+            {buyable && (
+              <>
+                <p className="pdp__leadtime">{p.leadTime}</p>
+                <p className="pdp__ordernote">
+                  Nothing to pay here: your cart sends us a WhatsApp message, we confirm the
+                  details in minutes, then send you payment details.
+                </p>
+              </>
+            )}
           </div>
+          {buyable && <CampaignCard />}
         </aside>
       </div>
 
@@ -186,19 +211,35 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         </ol>
       </section>
 
-      {/* AT HOME */}
-      {p.lifestyleImages[0] && (
-        <section className="pdp__section">
-          <div className="pdp__section-head">
-            <span className="pdp__section-tag">AT HOME</span>
-            <span className="pdp__section-rule" aria-hidden />
-          </div>
+      {/* AT HOME — real in-room photos, or an invitation to send one */}
+      <section className="pdp__section">
+        <div className="pdp__section-head">
+          <span className="pdp__section-tag">AT HOME</span>
+          <span className="pdp__section-rule" aria-hidden />
+        </div>
+        {p.lifestyleImages[0] ? (
           <div className="pdp__athome">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={p.lifestyleImages[0]} alt={`${p.name} in a room`} loading="lazy" decoding="async" />
+            <img src={p.lifestyleImages[0]} alt={altFor(p.lifestyleImages[0], `${p.name} in a room`)} loading="lazy" decoding="async" />
+            {isRender(p.lifestyleImages[0]) && <span className="render-tag">Visualisation</span>}
           </div>
-        </section>
-      )}
+        ) : (
+          <div className="athome-empty">
+            <p className="athome-empty__body">
+              Coming soon: real walls, real rooms. Got one on yours? Send us a photo and we
+              might feature it (with your permission).
+            </p>
+            <WaLink
+              text={`Hi! Here's my ${p.name} at home:`}
+              location="at_home"
+              className="cta cta--link"
+            >
+              <span className="cta__label">Share your wall on WhatsApp</span>
+              <span className="cta__arrow">→</span>
+            </WaLink>
+          </div>
+        )}
+      </section>
 
       {/* GOOD TO KNOW */}
       <section className="pdp__section">
@@ -209,7 +250,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         <div className="pdp__goodtoknow">
           <div><p className="gtk__label">Care</p><p className="gtk__value">{p.care}</p></div>
           <div><p className="gtk__label">Installation</p><p className="gtk__value">{p.installation}</p></div>
-          <div><p className="gtk__label">Shipping</p><p className="gtk__value">Free shipping across India. {p.leadTime}. <Link href="/shipping-returns">Shipping &amp; returns →</Link></p></div>
+          <div><p className="gtk__label">Shipping &amp; returns</p><p className="gtk__value">Free shipping across India. {p.leadTime}. {returnsLine} <Link href="/shipping-returns">Shipping &amp; returns →</Link></p></div>
           <div><p className="gtk__label">Customisation</p><p className="gtk__value">Colour and size tweaks possible on made-to-order pieces — just ask.</p></div>
         </div>
       </section>
@@ -222,11 +263,9 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
             <span className="pdp__section-rule" aria-hidden />
           </div>
           <p className="pdp__waitlist-line">
-            {p.status === "sold-out"
-              ? "This one sold out. Get told when the next run lands."
-              : "Not ready yet. Want to know the moment it is?"}
+            {p.price == null ? "Not ready yet. Want to know the moment it is?" : UNAVAILABLE_LINE}
           </p>
-          <Newsletter id={`wl-${p.slug}`} compact cta="TELL ME FIRST" />
+          <Newsletter id={`wl-${p.slug}`} compact cta="TELL ME FIRST" productSlug={p.slug} source="product" />
         </section>
       )}
 
@@ -260,6 +299,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
           </Link>
         ) : <span />}
       </nav>
+      <FloatingWhatsApp name={p.name} url={url} />
     </article>
   );
 }

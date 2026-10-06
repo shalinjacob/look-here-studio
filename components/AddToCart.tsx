@@ -47,6 +47,7 @@ export default function AddToCart({ product }: { product: Product }) {
       addItem(product, 1, {
         label: fields.map((f) => `${f.cartLabel}: ${values[f.id].trim()}`).join(" · "),
         price: product.price!,
+        personalised: true,
       });
       setAdded(true);
       return;
@@ -56,6 +57,7 @@ export default function AddToCart({ product }: { product: Product }) {
       1,
       v && {
         label: v.custom ? `${v.label}: ${word.trim().toUpperCase()}` : v.label,
+        personalised: !!v.custom,
         price: v.price,
         image: v.image,
       }
