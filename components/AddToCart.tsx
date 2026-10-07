@@ -69,7 +69,7 @@ export default function AddToCart({ product }: { product: Product }) {
     <div className="addcart-wrap">
       {variants.length > 0 && (
         <fieldset className="variants">
-          <legend className="variants__legend">CHOOSE YOUR WORD</legend>
+          <legend className="variants__legend">{product.variantLegend ?? "CHOOSE YOUR WORD"}</legend>
           <div className="variants__list">
             {variants.map((x) => (
               <button

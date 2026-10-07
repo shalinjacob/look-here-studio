@@ -82,6 +82,8 @@ export interface Product {
   imageFit?: "contain" | "cover";
   /** optional versions to choose from; `price` is then the starting price */
   variants?: ProductVariant[];
+  /** heading above the variant picker (default "CHOOSE YOUR WORD") */
+  variantLegend?: string;
   /** false = genuinely can't be ordered right now (shows the waitlist). Default true. */
   orderable?: boolean;
   /** made with the customer's own text/object: final sale (see /shipping-returns) */
