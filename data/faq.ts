@@ -15,13 +15,20 @@ const nm = (p: Product) => (THE.test(p.name) ? `the ${p.name}` : p.name);
 const is = (p: Product) => (PLURAL.test(p.name) ? "are" : "is");
 const it = (p: Product) => (PLURAL.test(p.name) ? "they" : "it");
 
+/** a note every variant shares ("per ledge", "set of two"), else none */
+const sharedNote = (p: Product) => {
+  const notes = new Set((p.variants ?? []).map((v) => v.note?.split(",")[0].toLowerCase()));
+  return notes.size === 1 ? [...notes][0] : undefined;
+};
+const title = (label: string) => label.toLowerCase().replace(/(^|\s)\S/g, (c) => c.toUpperCase());
+
 const isLight = (p: Product) => p.tags.includes("light") || /LED|lightbox/i.test(p.material);
 
 export function productFaq(p: Product): QA[] {
   const faq: QA[] = [
     {
       q: `How much ${is(p)} ${nm(p)}, and how long ${PLURAL.test(p.name) ? "do" : "does"} ${it(p)} take?`,
-      a: `${formatPrice(p.price, p.currency)}${p.variants?.length ? " (" + p.variants[0].note?.toLowerCase() + ")" : ""}. ${PLURAL.test(p.name) ? "They're" : "It's"} made to order in our Bengaluru studio and dispatched within 10 working days of your order being confirmed, with free shipping anywhere in India.`,
+      a: `${formatPrice(p.price, p.currency)}${sharedNote(p) ? " (" + sharedNote(p) + ")" : ""}. ${PLURAL.test(p.name) ? "They're" : "It's"} made to order in our Bengaluru studio and dispatched within 10 working days of your order being confirmed, with free shipping anywhere in India.`,
     },
     {
       q: `What ${is(p)} ${nm(p)} made of, and how big ${is(p)} ${it(p)}?`,
@@ -47,6 +54,13 @@ export function productFaq(p: Product): QA[] {
     faq.push({
       q: `What colours does ${nm(p)} come in?`,
       a: `${p.variants.map((v) => v.label.charAt(0) + v.label.slice(1).toLowerCase()).join(", ")}, all at the same price. Pick yours on the product page. Want a different colour? Ask us on WhatsApp.`,
+    });
+  } else if (p.variantLegend && p.variants?.length) {
+    // a fixed set of designs (e.g. quotes): list them, don't promise tweaks
+    const noun = p.variantLegend.replace(/^CHOOSE YOUR /, "").toLowerCase();
+    faq.push({
+      q: `Which ${noun}s does ${nm(p)} come in?`,
+      a: `${p.variants.map((v) => `${title(v.label)}${v.note ? ` (${v.note.toLowerCase()})` : ""}`).join(", ")}. All the same price; pick yours on the product page.`,
     });
   } else {
     faq.push({
