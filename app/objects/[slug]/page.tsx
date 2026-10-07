@@ -255,7 +255,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
           <div><p className="gtk__label">Care</p><p className="gtk__value">{p.care}</p></div>
           <div><p className="gtk__label">Installation</p><p className="gtk__value">{p.installation}</p></div>
           <div><p className="gtk__label">Shipping &amp; returns</p><p className="gtk__value">Free shipping across India. {p.leadTime}. {returnsLine} <Link href="/shipping-returns">Shipping &amp; returns →</Link></p></div>
-          <div><p className="gtk__label">Customisation</p><p className="gtk__value">Colour and size tweaks possible on made-to-order pieces — just ask.</p></div>
+          <div><p className="gtk__label">Customisation</p><p className="gtk__value">{p.variantLegend && !p.variantLegend.includes("COLOUR") ? "Available in the designs shown above." : "Colour and size tweaks possible on made-to-order pieces — just ask."}</p></div>
         </div>
       </section>
 
