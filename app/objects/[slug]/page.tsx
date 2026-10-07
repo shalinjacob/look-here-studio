@@ -12,6 +12,8 @@ import TrackView from "@/components/TrackView";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import WaLink from "@/components/WaLink";
 import CampaignCard from "@/components/campaign/CampaignCard";
+import Faq from "@/components/Faq";
+import { productFaq, faqLd } from "@/data/faq";
 import { SITE_URL, BRAND_NAME, ogImage } from "@/lib/site";
 import { altFor, isRender } from "@/data/images";
 import { gaItem } from "@/lib/analytics";
@@ -59,6 +61,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
   const related = getRelated(p.slug, 3);
   const buyable = isPurchasable(p);
   const gallery = [...p.images, ...p.lifestyleImages];
+  const faq = productFaq(p);
   const returnsLine = isFinalSale(p)
     ? "Personalised, so it\u2019s final sale unless it arrives damaged."
     : p.variants?.some((v) => v.custom)
@@ -123,6 +126,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         params={{ currency: p.currency, value: p.price ?? undefined, items: [gaItem(p)] }}
       />
       <JsonLd data={crumbsLd} />
+      <JsonLd data={faqLd(faq)} />
       <div className="pdp__top">
         <Link href="/objects" className="pdp__back">← OBJECTS</Link>
         <span className="pdp__marker">OBJECT {p.objectNumber}</span>
@@ -268,6 +272,15 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
           <Newsletter id={`wl-${p.slug}`} compact cta="TELL ME FIRST" productSlug={p.slug} source="product" />
         </section>
       )}
+
+      {/* QUESTIONS — answer-first, for people and answer engines */}
+      <section className="pdp__section" id="questions">
+        <div className="pdp__section-head">
+          <span className="pdp__section-tag">QUESTIONS</span>
+          <span className="pdp__section-rule" aria-hidden />
+        </div>
+        <Faq items={faq} />
+      </section>
 
       {/* YOU MAY ALSO LIKE */}
       {related.length > 0 && (

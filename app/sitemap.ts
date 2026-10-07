@@ -18,6 +18,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...collections.map((c) => ({ url: `${BASE}/collections/${c.slug}`, lastModified: now, priority: 0.7 })),
     ...edits.map((e) => ({ url: `${BASE}/gift-guide/edits/${e.slug}`, lastModified: now, priority: 0.6 })),
     ...products.map((p) => ({ url: `${BASE}/objects/${p.slug}`, lastModified: now, priority: 0.6 })),
-    ...publishedPosts.map((j) => ({ url: `${BASE}/journal/${j.slug}`, lastModified: new Date(j.date), priority: 0.5 })),
+    ...publishedPosts.map((j) => ({ url: `${BASE}/journal/${j.slug}`, lastModified: new Date(j.updated ?? j.date), priority: 0.5 })),
   ];
 }

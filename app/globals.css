@@ -764,3 +764,18 @@ input { font: inherit; }
 /* cart small print */
 .drawer__fine { margin-top: 14px; display: grid; gap: 4px; font-family: var(--mono); font-size: 11px; line-height: 1.6; color: var(--muted); }
 .drawer__fine a { color: var(--ink); text-decoration: underline; text-underline-offset: 2px; }
+
+/* ==========================================================================
+   AEO: answer-first journal posts + FAQs
+   ========================================================================== */
+.article__answer { margin-top: clamp(24px,4vw,40px); padding: 18px 20px; border-left: 3px solid var(--ink); background: var(--paper-2); font-family: var(--mono); font-size: 16px; line-height: 1.8; color: var(--ink); }
+.article__body h2, .article__faq h2, .article__products h2 { font-family: var(--display); font-weight: 700; color: var(--ink); letter-spacing: -0.02em; font-size: clamp(22px,3vw,28px); margin: clamp(36px,5vw,56px) 0 16px; }
+.article__body a, .article__answer a, .faq__a a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+.faq { border-top: 1px solid var(--line); }
+.faq__item { border-bottom: 1px solid var(--line); }
+.faq__q { cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 16px; padding: 16px 0; font-family: var(--mono); font-size: 14px; font-weight: 600; color: var(--ink); }
+.faq__q::-webkit-details-marker { display: none; }
+.faq__q::after { content: "+"; font-weight: 400; transition: transform .2s var(--ease); }
+.faq__item[open] .faq__q::after { transform: rotate(45deg); }
+.faq__q:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.faq__a { padding: 0 0 18px; font-family: var(--mono); font-size: 14px; line-height: 1.8; color: var(--body); max-width: 70ch; }

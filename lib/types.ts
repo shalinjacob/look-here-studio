@@ -42,6 +42,11 @@ export interface ProductVariant {
   custom?: boolean;
 }
 
+export interface QA {
+  q: string;
+  a: string;
+}
+
 /** a free-text detail the customer fills in before adding (confirmed on WhatsApp) */
 export interface PersonaliseField {
   id: string;
@@ -123,6 +128,16 @@ export interface JournalPost {
   body: string[]; // paragraphs
   /** unpublished stub: not routed, listed or in the sitemap */
   draft?: boolean;
+  /** last substantive edit (ISO), for "Updated" + dateModified */
+  updated?: string;
+  /** answer-first lead: 2–3 sentences that directly answer the post's question */
+  answer?: string;
+  /** question-led sections (paragraph text supports [label](/path) links and
+   *  {price:slug} tokens filled from product data) */
+  sections?: { heading: string; paras: string[] }[];
+  faq?: QA[];
+  /** products the post mentions (shown as tiles + internal links) */
+  products?: string[];
   /** meta description (falls back to excerpt) */
   description?: string;
   /** draft outline: planned H2s */
