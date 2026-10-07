@@ -53,6 +53,11 @@ export const IMAGES: Record<string, ImageMeta> = {
   "/objects/pomegranate-study-lit.webp": { alt: "Pomegranate Study: botanical pomegranate print in an LED slim frame (lit)" },
   "/objects/blood-moon.webp": { alt: "Blood Moon: reclining figure and egrets under a red moon, art print in an LED slim frame (unlit)" },
   "/objects/blood-moon-lit.webp": { alt: "Blood Moon: egrets under a red moon, backlit art print in an LED slim frame (lit)" },
+  "/objects/quote-frame-no-rules.webp": { alt: "Slim LED Quote Frame: \u201cThis house has NO RULES about what belongs together\u201d in black on cream, backlit above a wooden console in an entryway" },
+  "/objects/quote-frame-more-colour.webp": { alt: "Slim LED Quote Frame: \u201cWe could all use MORE COLOUR than we think we need\u201d in blue on yellow, backlit in a marble powder room" },
+  "/objects/quote-frame-less-sense.webp": { alt: "Slim LED Quote Frame: \u201cSometimes you need LESS SENSE and a little more fun\u201d in green on blush, backlit beside a dining table" },
+  "/objects/quote-frame-little-joys.webp": { alt: "Slim LED Quote Frame: \u201cLife needs LITTLE JOYS in places you don\u2019t expect\u201d in blue on cream, backlit above a carved wooden sofa" },
+  "/objects/quote-frame-more-room.webp": { alt: "Slim LED Quote Frame: \u201cThere\u2019s always MORE ROOM for one more bad idea\u201d in red on cream, backlit in an office meeting room" },
   "/objects/custom-lightbox-1.webp": { alt: "Custom Lightbox: slim black LED light box glowing red with custom Hindi words" },
   "/objects/custom-lightbox-2.webp": { alt: "Custom Lightbox: slim black LED light box glowing amber with custom English words" },
 };
