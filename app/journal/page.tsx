@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { publishedPosts as journal } from "@/data/journal";
+import { publishedPosts as journal, readingTime } from "@/data/journal";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/journal" },
@@ -29,7 +29,7 @@ export default function JournalPage() {
               <h2 className="journal__title">{post.title}</h2>
               <p className="journal__excerpt">{post.excerpt}</p>
             </div>
-            <span className="journal__meta">{post.category}<br />{fmt(post.date)}<br />{post.readingTime}</span>
+            <span className="journal__meta">{post.category}<br />{fmt(post.date)}<br />{readingTime(post)}</span>
           </Link>
         ))}
       </div>
