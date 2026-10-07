@@ -9,7 +9,7 @@ import { plain } from "@/lib/richText";
 // ---------------------------------------------------------------------------
 
 // "the Layer Clock" but "X + O", "Old Habits"; "are" for plural names
-const THE = /(Clock|Lamp|Frame|Mirror|Box|Lightbox|Coasters)$/;
+const THE = /(Clock|Lamp|Frame|Mirror|Box|Lightbox|Coasters|Ledge)$/;
 const PLURAL = /(Coasters|Words)$/;
 const nm = (p: Product) => (THE.test(p.name) ? `the ${p.name}` : p.name);
 const is = (p: Product) => (PLURAL.test(p.name) ? "are" : "is");
