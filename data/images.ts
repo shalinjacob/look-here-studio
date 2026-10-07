@@ -17,6 +17,10 @@ export const IMAGES: Record<string, ImageMeta> = {
   "/lifestyle/athome-layered-clock.webp": { alt: "Layered Wall Clock hanging above a desk with books and plants" },
   "/objects/acrylic-lamp-1.webp": { alt: "Acrylic Lamp: fluorescent orange acrylic table lamp with a mirror-tipped bulb arching over the top (view 1)" },
   "/objects/acrylic-lamp-2.webp": { alt: "Acrylic Lamp: fluorescent orange acrylic table lamp glowing on a desk (view 2)" },
+  // AI-generated visualisations (owner-requested lifestyle scenes) — labelled on site
+  "/lifestyle/clear-ledge-frames.webp": { alt: "Clear Ledge: three clear acrylic ledges stacked on a wall, holding framed prints, a vase, books and a small plant", isRender: true },
+  "/lifestyle/clear-ledge-kitchen.webp": { alt: "Clear Ledge in a kitchen, holding glass spice jars, a brass bowl and a potted herb above the counter", isRender: true },
+  "/lifestyle/clear-ledge-vinyl.webp": { alt: "Two Clear Ledges displaying vinyl record sleeves above a turntable", isRender: true },
   "/objects/square-frame-1.webp": { alt: "Square Frame: set of three brushed-silver square frames hung in a vertical row, small prints floating in wide mounts" },
   "/objects/square-frame-2.webp": { alt: "Square Frame: three brushed-silver frames above a sideboard, each with a small floating print" },
   "/objects/strip-frame-1.webp": { alt: "Strip Frame: tall brushed-steel frame holding a four-photo photobooth strip" },

@@ -9,7 +9,7 @@ import { plain } from "@/lib/richText";
 // ---------------------------------------------------------------------------
 
 // "the Layer Clock" but "X + O", "Old Habits"; "are" for plural names
-const THE = /(Clock|Lamp|Frame|Mirror|Box|Lightbox|Coasters)$/;
+const THE = /(Clock|Lamp|Frame|Mirror|Box|Lightbox|Coasters|Ledge)$/;
 const PLURAL = /(Coasters|Words)$/;
 const nm = (p: Product) => (THE.test(p.name) ? `the ${p.name}` : p.name);
 const is = (p: Product) => (PLURAL.test(p.name) ? "are" : "is");
@@ -25,7 +25,7 @@ export function productFaq(p: Product): QA[] {
     },
     {
       q: `What ${is(p)} ${nm(p)} made of, and how big ${is(p)} ${it(p)}?`,
-      a: `${p.material}, with a ${p.finish.toLowerCase()} finish. Size: ${p.dimensions}. Colour: ${p.colour}.`,
+      a: `${p.material}. Finish: ${p.finish}. Size: ${p.dimensions}. Colour: ${p.colour}.`,
     },
     {
       q: isLight(p) ? `Does ${nm(p)} need power, and how is ${it(p)} installed?` : `How do I ${p.tags.includes("wall") ? "hang" : "set up"} ${nm(p)}?`,
@@ -42,6 +42,11 @@ export function productFaq(p: Product): QA[] {
         : p.variants?.some((v) => v.custom)
           ? `Yes. Choose "${p.variants.find((v) => v.custom)!.label}" and type your own words; we'll confirm the lettering with you on WhatsApp before we cut it.`
           : `Yes, that's the point of it. Tell us the details on WhatsApp after you send your request, and we'll confirm everything before we start making it.`,
+    });
+  } else if (p.variantLegend?.includes("COLOUR") && p.variants?.length) {
+    faq.push({
+      q: `What colours does ${nm(p)} come in?`,
+      a: `${p.variants.map((v) => v.label.charAt(0) + v.label.slice(1).toLowerCase()).join(", ")}, all at the same price. Pick yours on the product page. Want a different colour? Ask us on WhatsApp.`,
     });
   } else {
     faq.push({
