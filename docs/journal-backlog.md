@@ -19,7 +19,6 @@ Mark an item `[x]` once its draft branch exists. Add new ideas at the bottom.
 ## New questions
 - [ ] custom-name-lightbox-for-home — Custom name or quote lightbox for home in India: what to write and where to put it
 - [ ] how-to-hang-a-heavy-mirror — How to choose and hang a statement mirror (wavy, full-length, lettered)
-- [ ] corner-photo-frame-ideas — What to do with an empty corner: corner frame and styling ideas
 - [ ] wedding-gift-ideas-home-decor-india — Wedding gifts for the couple's new home (that aren't steel utensils)
 - [ ] metal-wall-art-india — Laser-cut metal wall art: how it's made, how to hang it, how to clean it
 - [ ] photobooth-strip-frame — How to display photobooth strips and small prints
