@@ -67,8 +67,17 @@ export const IMAGES: Record<string, ImageMeta> = {
 // Off The Wall tee images are generated from their filenames:
 //   /wearables/tee-<design>-<colour>-<front|back>.webp  → mock-up (a visualisation)
 //   /wearables/tee-<design>-art.webp                     → the flat artwork
+//   /wearables/tee-<design>-<photo|detail>.webp          → photographed mock-up / print close-up
 const TEE_COLOUR: Record<string, string> = { black: "black", white: "white", cream: "off-white", green: "dark green" };
 function teeMeta(src: string): ImageMeta | undefined {
+  const ph = src.match(/^\/wearables\/tee-(.+?)-(photo|detail)\.webp$/);
+  if (ph) {
+    const t = tees.find((x) => x.slug === `tee-${ph[1]}`);
+    const name = t?.name ?? "Off The Wall tee";
+    return ph[2] === "photo"
+      ? { alt: `${name}: ${t?.colour.toLowerCase() ?? ""} oversized T-shirt, front and back (print on the front)` }
+      : { alt: `${name}: close-up of the print on the front of the T-shirt` };
+  }
   const m = src.match(/^\/wearables\/tee-(.+?)-(?:(black|white|cream|green)-(front|back)|art)\.webp$/);
   if (!m) return undefined;
   const p = tees.find((t) => t.slug === `tee-${m[1]}`);

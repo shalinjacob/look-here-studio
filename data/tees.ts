@@ -5,7 +5,8 @@ import type { Product } from "@/lib/types";
 // Generated from ~/Downloads/look-here-studio-tees (designs.py placement plan +
 // mock-ups); edit copy here freely. Every tee: 100% cotton, 190–240 GSM,
 // regular (₹1,499) or oversized (₹1,799), XS–XXL, colour per design.
-// Mock-ups are visualisations (labelled on site) until real photos replace them.
+// Photographed mock-ups (owner-supplied, *-photo/-detail) lead where they exist;
+// the rest are studio renders (*-front/-back) until photos replace them.
 // ---------------------------------------------------------------------------
 
 export const TEE_PRICE = 1499;
@@ -90,10 +91,10 @@ export const tees: Product[] = [
     slug: "stay-weird",
     name: "Stay Weird",
     copy: "A grey cat, a red toadstool and a crescent moon, under a big 'Stay Weird' in storybook lettering. For people who'd rather be interesting than normal.",
-    why: "Text-led art wants to be read face-on, so it goes big on the front. The crescent moon is lifted onto the sleeve as a quiet wink for people who notice.",
-    placement: "Full front, sleeve",
-    colours: [{"id": "black", "label": "Black", "image": "/wearables/tee-stay-weird-black-front.webp"}],
-    images: ["/wearables/tee-stay-weird-black-front.webp", "/wearables/tee-stay-weird-art.webp"],
+    why: "Text-led art wants to be read face-on, so it goes big on the front of a black tee: the lettering across the chest, the cat and its toadstool right under it.",
+    placement: "Full front",
+    colours: [{"id": "black", "label": "Black", "image": "/wearables/tee-stay-weird-photo.webp"}],
+    images: ["/wearables/tee-stay-weird-photo.webp", "/wearables/tee-stay-weird-detail.webp", "/wearables/tee-stay-weird-art.webp"],
   }),
   tee({
     n: 2,
@@ -109,11 +110,11 @@ export const tees: Product[] = [
     n: 3,
     slug: "crane",
     name: "Night Crane",
-    copy: "A red-crowned crane sweeps across a night-time city skyline, wings wide over the water. Calm, graphic and very good from behind.",
-    why: "The crane's wingspan fills the shoulders on the back, flying away as you walk. A small crane on the left chest carries the story to the front.",
-    placement: "Left chest, full back",
-    colours: [{"id": "black", "label": "Black", "image": "/wearables/tee-crane-black-back.webp"}, {"id": "green", "label": "Dark green", "image": "/wearables/tee-crane-green-back.webp"}],
-    images: ["/wearables/tee-crane-black-back.webp", "/wearables/tee-crane-black-front.webp", "/wearables/tee-crane-green-back.webp", "/wearables/tee-crane-art.webp"],
+    copy: "A red-crowned crane sweeps across a night-time city skyline, wings wide over the water. Calm, graphic and big across the chest.",
+    why: "The crane's wingspan needs width, so it flies across the whole front, wings breaking out over the skyline. The back stays plain and lets the bird do the talking.",
+    placement: "Full front",
+    colours: [{"id": "black", "label": "Black", "image": "/wearables/tee-crane-photo.webp"}],
+    images: ["/wearables/tee-crane-photo.webp", "/wearables/tee-crane-detail.webp", "/wearables/tee-crane-art.webp"],
   }),
   tee({
     n: 4,
@@ -122,8 +123,8 @@ export const tees: Product[] = [
     copy: "A black horse in halftone, set against stripes of blue, yellow and pink, like a screen print pulled off an old poster.",
     why: "A halftone, screen-print style portrait is a classic front graphic: square, centred and big, like a vintage poster tee.",
     placement: "Full front",
-    colours: [{"id": "cream", "label": "Off-white", "image": "/wearables/tee-horse-cream-front.webp"}, {"id": "white", "label": "White", "image": "/wearables/tee-horse-white-front.webp"}],
-    images: ["/wearables/tee-horse-cream-front.webp", "/wearables/tee-horse-white-front.webp", "/wearables/tee-horse-art.webp"],
+    colours: [{"id": "cream", "label": "Off-white", "image": "/wearables/tee-horse-photo.webp"}],
+    images: ["/wearables/tee-horse-photo.webp", "/wearables/tee-horse-detail.webp", "/wearables/tee-horse-art.webp"],
   }),
   tee({
     n: 5,
@@ -140,10 +141,10 @@ export const tees: Product[] = [
     slug: "woman-cheetah",
     name: "Walking The Cat",
     copy: "A woman in a corset and baggy jeans walks her cheetah like it's a Tuesday. Painted in a glossy, retro illustration style.",
-    why: "On a cream tee the art's cream background disappears, so she walks straight across the shirt, set off-centre as if she's mid-stride. The cheetah's head peeks out at the back of the neck.",
-    placement: "Full front, back neck",
-    colours: [{"id": "cream", "label": "Off-white", "image": "/wearables/tee-woman-cheetah-cream-front.webp"}],
-    images: ["/wearables/tee-woman-cheetah-cream-front.webp", "/wearables/tee-woman-cheetah-cream-back.webp", "/wearables/tee-woman-cheetah-art.webp"],
+    why: "On an off-white tee the art's cream background disappears, so she walks straight across the front, cheetah on a lead, as if she's mid-stride.",
+    placement: "Full front",
+    colours: [{"id": "cream", "label": "Off-white", "image": "/wearables/tee-woman-cheetah-photo.webp"}],
+    images: ["/wearables/tee-woman-cheetah-photo.webp", "/wearables/tee-woman-cheetah-detail.webp", "/wearables/tee-woman-cheetah-art.webp"],
   }),
   tee({
     n: 7,
@@ -170,10 +171,10 @@ export const tees: Product[] = [
     slug: "skull-roses",
     name: "Memento Mori",
     copy: "A skull crowned by a coiled snake, with red roses in an ivy-covered stone arch. A memento mori for people who like a bit of drama.",
-    why: "Gothic band-tee logic: a small skull crest on the chest, and the full skull, roses and serpent shrine taking the back.",
-    placement: "Left chest, full back",
-    colours: [{"id": "black", "label": "Black", "image": "/wearables/tee-skull-roses-black-back.webp"}],
-    images: ["/wearables/tee-skull-roses-black-back.webp", "/wearables/tee-skull-roses-black-front.webp", "/wearables/tee-skull-roses-art.webp"],
+    why: "Gothic band-tee logic: the full skull, roses and stone arch go big on the front of a black tee, like the cover of a record you'd play loud.",
+    placement: "Full front",
+    colours: [{"id": "black", "label": "Black", "image": "/wearables/tee-skull-roses-photo.webp"}],
+    images: ["/wearables/tee-skull-roses-photo.webp", "/wearables/tee-skull-roses-detail.webp", "/wearables/tee-skull-roses-art.webp"],
   }),
   tee({
     n: 10,
@@ -190,20 +191,20 @@ export const tees: Product[] = [
     slug: "reaper-stay-positive",
     name: "Stay Positive",
     copy: "The Grim Reaper holds up a scroll that says 'stay positive'. Dark humour, delivered with excellent penmanship.",
-    why: "The joke lands twice. A cheerful 'stay positive' on the chest, then the reveal of who's saying it on the back.",
-    placement: "Left chest, full back",
-    colours: [{"id": "white", "label": "White", "image": "/wearables/tee-reaper-stay-positive-white-back.webp"}, {"id": "cream", "label": "Off-white", "image": "/wearables/tee-reaper-stay-positive-cream-back.webp"}],
-    images: ["/wearables/tee-reaper-stay-positive-white-back.webp", "/wearables/tee-reaper-stay-positive-white-front.webp", "/wearables/tee-reaper-stay-positive-cream-back.webp", "/wearables/tee-reaper-stay-positive-art.webp"],
+    why: "Dark humour works best face-on, so the Reaper meets people head-on with his cheerful little sign, big on the front of a black tee.",
+    placement: "Full front",
+    colours: [{"id": "black", "label": "Black", "image": "/wearables/tee-reaper-stay-positive-photo.webp"}],
+    images: ["/wearables/tee-reaper-stay-positive-photo.webp", "/wearables/tee-reaper-stay-positive-detail.webp", "/wearables/tee-reaper-stay-positive-art.webp"],
   }),
   tee({
     n: 12,
     slug: "nuns-umbrella",
     name: "Sisters",
     copy: "Two nuns share an umbrella and a cigarette on a misty cobbled street, in black and white. A film still that tells its own story.",
-    why: "The tall, cinematic black-and-white photo reads like a film still, so it runs down the back as a vertical panel. The umbrella alone is the teaser on the front.",
-    placement: "Left chest, full back",
-    colours: [{"id": "white", "label": "White", "image": "/wearables/tee-nuns-umbrella-white-back.webp"}],
-    images: ["/wearables/tee-nuns-umbrella-white-back.webp", "/wearables/tee-nuns-umbrella-white-front.webp", "/wearables/tee-nuns-umbrella-art.webp"],
+    why: "The tall, cinematic black-and-white photo reads like a film still, so it runs down the front of a black tee, where the grey mist melts into the fabric.",
+    placement: "Full front",
+    colours: [{"id": "black", "label": "Black", "image": "/wearables/tee-nuns-umbrella-photo.webp"}],
+    images: ["/wearables/tee-nuns-umbrella-photo.webp", "/wearables/tee-nuns-umbrella-detail.webp", "/wearables/tee-nuns-umbrella-art.webp"],
   }),
   tee({
     n: 13,
@@ -264,5 +265,15 @@ export const tees: Product[] = [
     placement: "Full back",
     colours: [{"id": "white", "label": "White", "image": "/wearables/tee-more-room-white-back.webp"}, {"id": "cream", "label": "Off-white", "image": "/wearables/tee-more-room-cream-back.webp"}],
     images: ["/wearables/tee-more-room-white-back.webp", "/wearables/tee-more-room-cream-back.webp", "/wearables/tee-more-room-art.webp"],
+  }),
+  tee({
+    n: 19,
+    slug: "dancing-skeletons",
+    name: "Danse Macabre",
+    copy: "Two skeletons dance ballet on a block of sunshine yellow: pointe shoes, perfect posture, no muscles required.",
+    why: "The yellow block is a stage, so it goes big and centred on the front, where the dancers can perform to the whole room.",
+    placement: "Full front",
+    colours: [{"id": "cream", "label": "Off-white", "image": "/wearables/tee-dancing-skeletons-photo.webp"}],
+    images: ["/wearables/tee-dancing-skeletons-photo.webp", "/wearables/tee-dancing-skeletons-detail.webp"],
   }),
 ];
