@@ -14,6 +14,8 @@ import WaLink from "@/components/WaLink";
 import CampaignCard from "@/components/campaign/CampaignCard";
 import Faq from "@/components/Faq";
 import { productFaq, faqLd } from "@/data/faq";
+import { categoriesFor } from "@/data/categories";
+import { publishedPosts } from "@/data/journal";
 import { SITE_URL, BRAND_NAME, ogImage } from "@/lib/site";
 import { altFor, isRender } from "@/data/images";
 import { gaItem } from "@/lib/analytics";
@@ -62,6 +64,8 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
   const buyable = isPurchasable(p);
   const gallery = [...p.images, ...p.lifestyleImages];
   const faq = productFaq(p);
+  const cats = categoriesFor(p.slug);
+  const reading = publishedPosts.filter((j) => j.products?.includes(p.slug));
   const returnsLine = isFinalSale(p)
     ? "Personalised, so it\u2019s final sale unless it arrives damaged."
     : p.variants?.some((v) => v.custom)
@@ -152,7 +156,15 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         <aside className="pdp__info">
           <p className="pdp__num">OBJECT {p.objectNumber}</p>
           <h1 className="pdp__name">{p.name}</h1>
-          <p className="pdp__cat">{p.category}</p>
+          <p className="pdp__cat">
+            {p.category}
+            {cats.map((c) => (
+              <span key={c.slug}>
+                {" · "}
+                <Link href={`/${c.slug}`} className="pdp__catlink">{c.name}</Link>
+              </span>
+            ))}
+          </p>
 
           <div className="pdp__statusrow">
             <span className={`pdp__price${p.price == null ? " pdp__price--soon" : ""}`}>
@@ -281,6 +293,23 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         </div>
         <Faq items={faq} />
       </section>
+
+      {/* READ MORE — journal posts about this object */}
+      {reading.length > 0 && (
+        <section className="pdp__section">
+          <div className="pdp__section-head">
+            <span className="pdp__section-tag">READ MORE</span>
+            <span className="pdp__section-rule" aria-hidden />
+          </div>
+          <ul className="readmore">
+            {reading.map((j) => (
+              <li key={j.slug}>
+                <Link href={`/journal/${j.slug}`}>{j.title} →</Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       {/* YOU MAY ALSO LIKE */}
       {related.length > 0 && (
