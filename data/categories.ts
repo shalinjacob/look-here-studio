@@ -146,7 +146,7 @@ export const categories: Category[] = [
       { q: "Do you do corporate or wedding gifting?", a: "Yes, made to order in small runs. [Tell us what you need](/contact)." },
     ],
     products: ["custom-lightbox", "four-letter-words", "pickleball-shadow-box"],
-    posts: ["what-a-good-gift-actually-is", "why-we-make-things-in-small-runs"],
+    posts: ["unique-diwali-gift-ideas-for-home", "what-a-good-gift-actually-is", "why-we-make-things-in-small-runs"],
   },
   {
     slug: "frames-and-shelves",
