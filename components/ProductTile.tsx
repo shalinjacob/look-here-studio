@@ -2,7 +2,7 @@ import Link from "next/link";
 import SmartImage from "./SmartImage";
 import Reveal from "./Reveal";
 import { badge, formatPrice, isPurchasable, hasPriceRange } from "@/data/products";
-import { altFor, isRender } from "@/data/images";
+import { altFor } from "@/data/images";
 import type { Product } from "@/lib/types";
 
 // The clickable object tile used across the site. The whole tile is the link —
@@ -32,7 +32,6 @@ export default function ProductTile({
             /* eslint-disable-next-line @next/next/no-img-element */
             <img className="tile__img tile__img--hover" src={hoverSrc} alt={altFor(hoverSrc, p.name)} loading="lazy" />
           )}
-          {isRender(p.images[0]) && <span className="render-tag">Visualisation</span>}
           <span className="tile__open" aria-hidden>
             OPEN →
           </span>

@@ -19,7 +19,8 @@ export type FilterTag =
   | "mirror"
   | "frame"
   | "art"
-  | "festival";
+  | "festival"
+  | "tee";
 
 /** gift-guide occasions (/objects?occasion=…) */
 export type Occasion = "housewarming" | "wedding" | "just-because";
@@ -57,6 +58,26 @@ export interface PersonaliseField {
   maxLength: number;
 }
 
+/** one choice inside a product option (e.g. "Oversized", "L", "Black") */
+export interface OptionChoice {
+  id: string;
+  label: string;
+  note?: string;
+  /** added to the product price (e.g. oversized +300) */
+  priceDelta?: number;
+  /** gallery image to jump to when chosen */
+  image?: string;
+}
+
+/** an independent choice the buyer makes (fit, size, colour…) */
+export interface ProductOption {
+  id: string;
+  legend: string; // "CHOOSE YOUR FIT"
+  choices: OptionChoice[];
+  /** no default: the buyer must pick (e.g. size) */
+  required?: boolean;
+}
+
 export interface Product {
   id: string;
   objectNumber: string; // "001"
@@ -84,6 +105,10 @@ export interface Product {
   variants?: ProductVariant[];
   /** heading above the variant picker (default "CHOOSE YOUR WORD") */
   variantLegend?: string;
+  /** several independent choices (fit × size × colour); price = price + deltas */
+  options?: ProductOption[];
+  /** show a size chart on the product page */
+  sizeChart?: "tee";
   /** false = genuinely can't be ordered right now (shows the waitlist). Default true. */
   orderable?: boolean;
   /** made with the customer's own text/object: final sale (see /shipping-returns) */

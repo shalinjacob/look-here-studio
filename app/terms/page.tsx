@@ -50,6 +50,13 @@ export default function TermsPage() {
             these terms.
           </p>
 
+          <h2>T-shirts</h2>
+          <p>
+            Off The Wall tees are printed to order. Sizes can be exchanged free within 7 days as set out
+            in our <Link href="/shipping-returns">Shipping &amp; Returns policy</Link>. Print colours can
+            vary slightly from screen to fabric.
+          </p>
+
           <h2>Personalisation</h2>
           <p>
             For personalised pieces (your own words, text, colour or object), we confirm the details
@@ -59,7 +66,7 @@ export default function TermsPage() {
 
           <h2>Photos and visualisations</h2>
           <p>
-            Some images are visualisations rather than photographs, and are labelled as such. Your
+            Some images are mock-ups or visualisations rather than photographs. Your
             piece is made to the specifications on its product page. Handmade objects, natural
             materials and screens can show small variations in colour and finish.
           </p>

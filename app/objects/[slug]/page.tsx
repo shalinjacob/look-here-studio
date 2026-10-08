@@ -13,11 +13,12 @@ import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import WaLink from "@/components/WaLink";
 import CampaignCard from "@/components/campaign/CampaignCard";
 import Faq from "@/components/Faq";
+import SizeChart from "@/components/SizeChart";
 import { productFaq, faqLd } from "@/data/faq";
 import { categoriesFor } from "@/data/categories";
 import { publishedPosts } from "@/data/journal";
 import { SITE_URL, BRAND_NAME, ogImage } from "@/lib/site";
-import { altFor, isRender } from "@/data/images";
+import { altFor } from "@/data/images";
 import { gaItem } from "@/lib/analytics";
 import { SKU, schemaAvailability, finalSaleReturnPolicyLd } from "@/lib/structuredData";
 import {
@@ -66,7 +67,9 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
   const faq = productFaq(p);
   const cats = categoriesFor(p.slug);
   const reading = publishedPosts.filter((j) => j.products?.includes(p.slug));
-  const returnsLine = isFinalSale(p)
+  const returnsLine = p.sizeChart
+    ? "Free size exchange within 7 days (unworn, unwashed, tags on)."
+    : isFinalSale(p)
     ? "Personalised, so it\u2019s final sale unless it arrives damaged."
     : p.variants?.some((v) => v.custom)
       ? "7-day returns on unused pieces, with free pickup (your-own-words versions are final sale)."
@@ -157,10 +160,10 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
           <p className="pdp__num">OBJECT {p.objectNumber}</p>
           <h1 className="pdp__name">{p.name}</h1>
           <p className="pdp__cat">
-            {p.category}
-            {cats.map((c) => (
+            {cats.some((c) => c.name === p.category) ? null : p.category}
+            {cats.map((c, i) => (
               <span key={c.slug}>
-                {" · "}
+                {i > 0 || !cats.some((x) => x.name === p.category) ? " · " : ""}
                 <Link href={`/${c.slug}`} className="pdp__catlink">{c.name}</Link>
               </span>
             ))}
@@ -210,6 +213,17 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         <SpecTable rows={specs} />
       </section>
 
+      {/* SIZE CHART (tees) */}
+      {p.sizeChart && (
+        <section className="pdp__section" id="size-chart">
+          <div className="pdp__section-head">
+            <span className="pdp__section-tag">SIZE CHART</span>
+            <span className="pdp__section-rule" aria-hidden />
+          </div>
+          <SizeChart />
+        </section>
+      )}
+
       {/* HOW IT'S MADE */}
       <section className="pdp__section">
         <div className="pdp__section-head">
@@ -237,7 +251,6 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
           <div className="pdp__athome">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={p.lifestyleImages[0]} alt={altFor(p.lifestyleImages[0], `${p.name} in a room`)} loading="lazy" decoding="async" />
-            {isRender(p.lifestyleImages[0]) && <span className="render-tag">Visualisation</span>}
           </div>
         ) : (
           <div className="athome-empty">
@@ -265,9 +278,9 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         </div>
         <div className="pdp__goodtoknow">
           <div><p className="gtk__label">Care</p><p className="gtk__value">{p.care}</p></div>
-          <div><p className="gtk__label">Installation</p><p className="gtk__value">{p.installation}</p></div>
+          <div><p className="gtk__label">{p.sizeChart ? "Print placement" : "Installation"}</p><p className="gtk__value">{p.installation}</p></div>
           <div><p className="gtk__label">Shipping &amp; returns</p><p className="gtk__value">Free shipping across India. {p.leadTime}. {returnsLine} <Link href="/shipping-returns">Shipping &amp; returns →</Link></p></div>
-          <div><p className="gtk__label">Customisation</p><p className="gtk__value">{p.variantLegend && !p.variantLegend.includes("COLOUR") ? "Available in the designs shown above." : "Colour and size tweaks possible on made-to-order pieces — just ask."}</p></div>
+          <div><p className="gtk__label">Customisation</p><p className="gtk__value">{p.sizeChart ? "Need a bulk run for a team or event? Ask us on WhatsApp." : p.variantLegend && !p.variantLegend.includes("COLOUR") ? "Available in the designs shown above." : "Colour and size tweaks possible on made-to-order pieces — just ask."}</p></div>
         </div>
       </section>
 

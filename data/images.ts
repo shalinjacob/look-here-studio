@@ -1,3 +1,5 @@
+import { tees } from "./tees";
+
 // ---------------------------------------------------------------------------
 // Per-image metadata, keyed by public path: descriptive alt text, and
 // `isRender` for renders/visualisations (shown with a "Visualisation" label and
@@ -62,12 +64,28 @@ export const IMAGES: Record<string, ImageMeta> = {
   "/objects/custom-lightbox-2.webp": { alt: "Custom Lightbox: slim black LED light box glowing amber with custom English words" },
 };
 
+// Off The Wall tee images are generated from their filenames:
+//   /wearables/tee-<design>-<colour>-<front|back>.webp  → mock-up (a visualisation)
+//   /wearables/tee-<design>-art.webp                     → the flat artwork
+const TEE_COLOUR: Record<string, string> = { black: "black", white: "white", cream: "off-white", green: "dark green" };
+function teeMeta(src: string): ImageMeta | undefined {
+  const m = src.match(/^\/wearables\/tee-(.+?)-(?:(black|white|cream|green)-(front|back)|art)\.webp$/);
+  if (!m) return undefined;
+  const p = tees.find((t) => t.slug === `tee-${m[1]}`);
+  const name = p?.name ?? "Off The Wall tee";
+  if (!m[2]) return { alt: `${name}: the artwork` };
+  return {
+    alt: `${name}: ${TEE_COLOUR[m[2]]} T-shirt, ${m[3]} view (${p?.finish.replace(/^Printed: /, "printed on the ") ?? ""})`,
+    isRender: true,
+  };
+}
+
 export function altFor(src: string | undefined, fallback: string): string {
-  const m = src ? IMAGES[src] : undefined;
-  const alt = m?.alt ?? fallback;
-  return m?.isRender ? `${alt} (visualisation)` : alt;
+  const m = src ? IMAGES[src] ?? teeMeta(src) : undefined;
+  // renders are tracked (isRender) but not labelled on site (owner's decision)
+  return m?.alt ?? fallback;
 }
 
 export function isRender(src: string | undefined): boolean {
-  return !!(src && IMAGES[src]?.isRender);
+  return !!(src && (IMAGES[src] ?? teeMeta(src))?.isRender);
 }

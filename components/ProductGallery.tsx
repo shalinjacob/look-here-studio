@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import SmartImage from "./SmartImage";
-import { altFor, isRender } from "@/data/images";
+import { altFor } from "@/data/images";
 
 // Interactive product gallery: main image + clickable thumbnails + prev/next
 // arrows + keyboard (←/→). Falls back to a single static image when there's
@@ -57,7 +57,6 @@ export default function ProductGallery({
           priority={i === 0}
           fallback={<div className="tile__ph">{fallbackNumber}</div>}
         />
-        {isRender(images[i]) && <span className="render-tag">Visualisation</span>}
         {many && (
           <>
             <button

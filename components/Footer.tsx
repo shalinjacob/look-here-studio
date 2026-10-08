@@ -19,6 +19,7 @@ export default function Footer() {
               <h4>SHOP</h4>
               <Link href="/objects">Objects</Link>
               <Link href="/collections/editions">Editions</Link>
+              <Link href="/off-the-wall">Off The Wall tees</Link>
               <Link href="/gift-guide">Gift guide</Link>
               <Link href="/process">Process</Link>
             </div>

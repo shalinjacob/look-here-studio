@@ -5,7 +5,7 @@ import CTA from "@/components/CTA";
 import Reveal from "@/components/Reveal";
 import { altFor } from "@/data/images";
 import {
-  products,
+  homeObjects as products,
   getProduct,
   isPurchasable,
   formatPrice,

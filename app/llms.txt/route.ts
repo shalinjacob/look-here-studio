@@ -1,4 +1,4 @@
-import { products, isPurchasable, formatPrice } from "@/data/products";
+import { products, isPurchasable, formatPrice, isTee } from "@/data/products";
 import { publishedPosts } from "@/data/journal";
 import { edits } from "@/data/edits";
 import { categories } from "@/data/categories";
@@ -11,8 +11,11 @@ import { plain } from "@/lib/richText";
 export const dynamic = "force-static";
 
 export function GET() {
+  const line = (p: (typeof products)[number]) =>
+    `- [${p.name}](${SITE_URL}/objects/${p.slug}): ${p.shortDescription} ${formatPrice(p.price, p.currency)}${p.options ? " (regular; oversized +₹300)" : ""}.`;
+  const teeLines = products.filter((p) => isTee(p) && isPurchasable(p)).map(line).join("\n");
   const items = products
-    .filter(isPurchasable)
+    .filter((p) => isPurchasable(p) && !isTee(p))
     .map(
       (p) =>
         `- [${p.name}](${SITE_URL}/objects/${p.slug}): ${p.shortDescription} ${formatPrice(p.price, p.currency)}${p.variants?.length ? ` (${p.variants[0].note?.toLowerCase()})` : ""}. ${p.material}; ${p.dimensions}.${p.custom || p.personalise?.length ? " Personalised." : ""}`
@@ -43,6 +46,12 @@ ${categories.map((c) => `- [${c.name}](${SITE_URL}/${c.slug}): ${plain(c.answer)
 ## Objects
 
 ${items}
+
+## Off The Wall: art T-shirts
+
+The studio's artwork printed on 100% cotton (190–240 GSM) tees, regular or oversized fit, sizes XS–XXL, with prints placed on the front, back, chest and sleeve. Made to order, dispatched within 10 working days. Free size exchange within 7 days (unworn, unwashed, tags on). [All tees](${SITE_URL}/off-the-wall)
+
+${teeLines}
 
 ## Gifting
 
