@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, IBM_Plex_Mono, Roboto, Caveat } from "next/font/google";
+import localFont from "next/font/local";
 import { CartProvider } from "@/components/cart/CartContext";
 import AnnounceBar from "@/components/AnnounceBar";
 import Nav from "@/components/Nav";
@@ -11,29 +11,26 @@ import CampaignStrip from "@/components/campaign/CampaignStrip";
 import "./globals.css";
 import { SITE_URL, ogImage } from "@/lib/site";
 
-const display = Inter({
-  subsets: ["latin"],
-  weight: ["500", "700", "800"],
+// Fonts are self-hosted (app/fonts, latin subset) so builds never depend on
+// fetching Google Fonts. Inter and Caveat are variable fonts (one file covers
+// the weight range). Licences: OFL (Inter, IBM Plex Mono, Caveat).
+const display = localFont({
+  src: [{ path: "./fonts/Inter-var.woff2", weight: "500 800", style: "normal" }],
   variable: "--display",
   display: "swap",
 });
-const mono = IBM_Plex_Mono({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
+const mono = localFont({
+  src: [
+    { path: "./fonts/IBMPlexMono-400.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/IBMPlexMono-500.woff2", weight: "500", style: "normal" },
+    { path: "./fonts/IBMPlexMono-600.woff2", weight: "600", style: "normal" },
+  ],
   variable: "--mono",
   display: "swap",
 });
-const sans = Roboto({
-  subsets: ["latin"],
-  weight: ["300", "400", "500"],
-  variable: "--sans",
-  display: "swap",
-  preload: false,
-});
 // Handwriting — used only for the margin "notes to self".
-const hand = Caveat({
-  subsets: ["latin"],
-  weight: ["400", "600"],
+const hand = localFont({
+  src: [{ path: "./fonts/Caveat-var.woff2", weight: "400 600", style: "normal" }],
   variable: "--hand",
   display: "swap",
   preload: false,
@@ -80,7 +77,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${display.variable} ${mono.variable} ${sans.variable} ${hand.variable}`}>
+    <html lang="en" className={`${display.variable} ${mono.variable} ${hand.variable}`}>
       <body>
         <a href="#main" className="skip-link">Skip to content</a>
         <CampaignClock initialNow={Date.now()}>
