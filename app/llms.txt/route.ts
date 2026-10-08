@@ -1,6 +1,7 @@
 import { products, isPurchasable, formatPrice } from "@/data/products";
 import { publishedPosts } from "@/data/journal";
 import { edits } from "@/data/edits";
+import { categories } from "@/data/categories";
 import { SITE_URL, BRAND_NAME, EMAIL, INSTAGRAM_URL, FACEBOOK_URL } from "@/lib/site";
 import { plain } from "@/lib/richText";
 
@@ -35,6 +36,10 @@ export function GET() {
 - Personalisation: custom words, text in any language, colours and sizes on many pieces. Corporate and wedding gifting in small runs.
 - Contact: WhatsApp +91 93806 70901, email ${EMAIL}. Instagram ${INSTAGRAM_URL}. Facebook ${FACEBOOK_URL}.
 
+## Categories
+
+${categories.map((c) => `- [${c.name}](${SITE_URL}/${c.slug}): ${plain(c.answer)}`).join("\n")}
+
 ## Objects
 
 ${items}
@@ -52,6 +57,7 @@ ${posts}
 ## Pages
 
 - [All objects](${SITE_URL}/objects)
+- [FAQ: ordering, delivery, returns, gifting](${SITE_URL}/faq)
 - [Editions: backlit LED art prints](${SITE_URL}/collections/editions)
 - [How objects are made](${SITE_URL}/process)
 - [About the studio](${SITE_URL}/why-look-here)

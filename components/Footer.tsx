@@ -27,6 +27,7 @@ export default function Footer() {
               <Link href="/why-look-here">Why Look Here</Link>
               <Link href="/journal">Journal</Link>
               <Link href="/contact">Contact</Link>
+              <Link href="/faq">FAQ</Link>
               <Link href="/shipping-returns">Shipping &amp; returns</Link>
               <Link href="/privacy">Privacy</Link>
               <Link href="/terms">Terms</Link>

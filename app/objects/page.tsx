@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import CatalogueGrid from "@/components/CatalogueGrid";
 import { products } from "@/data/products";
+import { categories } from "@/data/categories";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/objects" },
@@ -20,6 +22,13 @@ export default function ObjectsPage() {
         <h1 className="pagehead__title">Objects</h1>
         <p className="pagehead__sub">Things for walls, tables, shelves and wherever else.</p>
       </div>
+
+      <nav className="catnav" aria-label="Shop by category">
+        <span className="catnav__label">SHOP BY CATEGORY</span>
+        {categories.map((c) => (
+          <Link key={c.slug} href={`/${c.slug}`} className="catnav__link">{c.name}</Link>
+        ))}
+      </nav>
       <CatalogueGrid products={products} />
     </section>
   );
