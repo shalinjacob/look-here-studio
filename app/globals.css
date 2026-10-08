@@ -790,3 +790,20 @@ input { font: inherit; }
 .readmore a { font-family: var(--mono); font-size: 14px; line-height: 1.6; color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
 .catlinks { font-family: var(--mono); font-size: 13px; line-height: 2; color: var(--muted); }
 .catlinks a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+
+/* multi-option picker (fit / size / colour) */
+.variants__list--compact { grid-template-columns: repeat(auto-fill, minmax(84px, 1fr)); }
+.variants__list--compact .variants__opt { padding: 10px 12px; align-items: center; }
+.variants__total { font-family: var(--mono); font-size: 13px; color: var(--ink); margin: 4px 0 14px; }
+
+/* tee size chart */
+.sizechart__toggles { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 14px; }
+.sizechart__tab { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; padding: 8px 14px; border: 1px solid var(--line); color: var(--muted); background: transparent; cursor: pointer; }
+.sizechart__tab.is-active { border-color: var(--ink); color: var(--ink); }
+.sizechart__unit { margin-left: auto; font-family: var(--mono); font-size: 12px; color: var(--ink); text-decoration: underline; text-underline-offset: 3px; background: none; border: 0; cursor: pointer; }
+.sizechart__scroll { overflow-x: auto; }
+.sizechart__table { width: 100%; min-width: 440px; border-collapse: collapse; font-family: var(--mono); font-size: 13px; color: var(--body); }
+.sizechart__table th { text-align: left; font-weight: 600; color: var(--ink); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; padding: 10px 8px; border-bottom: 1px solid var(--ink); }
+.sizechart__table td { padding: 10px 8px; border-bottom: 1px solid var(--line-soft); }
+.sizechart__table td:first-child { color: var(--ink); font-weight: 600; }
+.sizechart__note { margin-top: 14px; font-family: var(--mono); font-size: 12px; line-height: 1.7; color: var(--muted); max-width: 70ch; }

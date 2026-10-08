@@ -31,9 +31,16 @@ export const siteFaq: { group: string; items: QA[] }[] = [
     ],
   },
   {
+    group: "Off The Wall tees",
+    items: [
+      { q: "What are Off The Wall tees?", a: "Our art, made to wear: 100% cotton tees (190–240 GSM), regular or oversized, XS–XXL, with each design placed where it works best on the body. [See all tees](/off-the-wall)." },
+      { q: "Can I exchange a tee for another size?", a: "Yes, free within 7 days of delivery if it's unworn, unwashed and the tags are on. Tees aren't refundable unless damaged or wrong." },
+    ],
+  },
+  {
     group: "Returns & damage",
     items: [
-      { q: "Can I return something?", a: "Unused standard objects can be returned within 7 days of delivery, in their original packaging. We arrange the pickup and pay for it, and refund you within 7 working days of receiving it. Full details on [shipping and returns](/shipping-returns)." },
+      { q: "Can I return something?", a: "Unused standard objects (not tees, which are size-exchange only) can be returned within 7 days of delivery, in their original packaging. We arrange the pickup and pay for it, and refund you within 7 working days of receiving it. Full details on [shipping and returns](/shipping-returns)." },
       { q: "Can personalised pieces be returned?", a: "Custom and personalised pieces are final sale, unless they arrive damaged or aren't what you ordered." },
       { q: "What if my order arrives damaged?", a: "Record a video while you unbox, and tell us within 48 hours of delivery with the video and photos. We'll replace it or refund you in full, and arrange the pickup at our cost." },
     ],

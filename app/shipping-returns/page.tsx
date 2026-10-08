@@ -63,6 +63,13 @@ export default function ShippingReturnsPage() {
             that case the section below applies.
           </p>
 
+          <h2>T-shirts (Off The Wall)</h2>
+          <ul>
+            <li><strong>Free size exchange within 7 days</strong> of delivery, as long as the tee is unworn, unwashed and the tags are still on. Message us on <a href={WA} target="_blank" rel="noreferrer">WhatsApp</a> and we arrange the pickup.</li>
+            <li>Tees are made to order, so they can be exchanged for another size but <strong>aren&apos;t refundable</strong>, unless they arrive damaged or aren&apos;t what you ordered (see below).</li>
+            <li>Not sure of your size? Every tee page has a size chart in inches and cm.</li>
+          </ul>
+
           <h2>Damaged or wrong item</h2>
           <ul>
             <li>Please <strong>record a video while you unbox</strong>. It makes a claim quick and painless.</li>

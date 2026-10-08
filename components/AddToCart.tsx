@@ -19,11 +19,20 @@ export default function AddToCart({ product }: { product: Product }) {
   const [word, setWord] = useState("");
   const fields = product.personalise ?? [];
   const [values, setValues] = useState<Record<string, string>>({});
+  const options = product.options ?? [];
+  const [chosen, setChosen] = useState<Record<string, string>>(() =>
+    Object.fromEntries(options.filter((o) => !o.required).map((o) => [o.id, o.choices[0].id]))
+  );
   const canBuy = isPurchasable(product);
   const v = variants.find((x) => x.id === vid);
+  const missing = options.filter((o) => !chosen[o.id]);
+  const optionPrice =
+    (product.price ?? 0) +
+    options.reduce((n, o) => n + (o.choices.find((c) => c.id === chosen[o.id])?.priceDelta ?? 0), 0);
   const needsWord =
     (!!v?.custom && word.trim().length === 0) ||
-    fields.some((f) => !(values[f.id] ?? "").trim());
+    fields.some((f) => !(values[f.id] ?? "").trim()) ||
+    missing.length > 0;
 
   if (!canBuy) {
     return (
@@ -41,8 +50,26 @@ export default function AddToCart({ product }: { product: Product }) {
     if (img) window.dispatchEvent(new CustomEvent(GALLERY_SHOW, { detail: img }));
   }
 
+  function choose(optionId: string, choiceId: string) {
+    setChosen((s) => ({ ...s, [optionId]: choiceId }));
+    setAdded(false);
+    const img = options.find((o) => o.id === optionId)?.choices.find((c) => c.id === choiceId)?.image;
+    if (img) window.dispatchEvent(new CustomEvent(GALLERY_SHOW, { detail: img }));
+  }
+
   function handleAdd() {
     if (needsWord) return;
+    if (options.length > 0) {
+      const picked = options.map((o) => o.choices.find((c) => c.id === chosen[o.id])!);
+      const colour = picked.find((c) => c.image);
+      addItem(product, 1, {
+        label: picked.map((c) => c.label).join(" · "),
+        price: optionPrice,
+        image: colour?.image,
+      });
+      setAdded(true);
+      return;
+    }
     if (fields.length > 0) {
       addItem(product, 1, {
         label: fields.map((f) => `${f.cartLabel}: ${values[f.id].trim()}`).join(" · "),
@@ -67,6 +94,38 @@ export default function AddToCart({ product }: { product: Product }) {
 
   return (
     <div className="addcart-wrap">
+      {options.map((o) => (
+        <fieldset className="variants" key={o.id}>
+          <legend className="variants__legend">{o.legend}</legend>
+          <div className="variants__list variants__list--compact">
+            {o.choices.map((c) => (
+              <button
+                key={c.id}
+                type="button"
+                className={`variants__opt${chosen[o.id] === c.id ? " is-active" : ""}`}
+                aria-pressed={chosen[o.id] === c.id}
+                onClick={() => choose(o.id, c.id)}
+              >
+                <span className="variants__label">{c.label}</span>
+                {(c.note || c.priceDelta !== undefined) && (
+                  <span className="variants__meta">
+                    {[c.note, c.priceDelta !== undefined && formatPrice((product.price ?? 0) + c.priceDelta, product.currency)]
+                      .filter(Boolean)
+                      .join(" · ")}
+                  </span>
+                )}
+              </button>
+            ))}
+          </div>
+        </fieldset>
+      ))}
+      {options.length > 0 && (
+        <p className="variants__total">
+          {missing.length > 0
+            ? `Pick your ${missing.map((o) => o.legend.replace(/^CHOOSE YOUR /, "").toLowerCase()).join(" and ")}`
+            : formatPrice(optionPrice, product.currency)}
+        </p>
+      )}
       {variants.length > 0 && (
         <fieldset className="variants">
           <legend className="variants__legend">{product.variantLegend ?? "CHOOSE YOUR WORD"}</legend>

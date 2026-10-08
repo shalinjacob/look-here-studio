@@ -9,6 +9,7 @@ import AnimatedLogo from "./AnimatedLogo";
 const LINKS = [
   { href: "/", label: "HOME" },
   { href: "/objects", label: "OBJECTS" },
+  { href: "/off-the-wall", label: "OFF THE WALL" },
   { href: "/gift-guide", label: "GIFTS" },
   { href: "/why-look-here", label: "WHY LOOK HERE" },
   { href: "/process", label: "PROCESS" },

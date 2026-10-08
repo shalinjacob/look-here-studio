@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import CatalogueGrid from "@/components/CatalogueGrid";
-import { products } from "@/data/products";
+import { homeObjects as products } from "@/data/products";
 import { categories } from "@/data/categories";
 import Link from "next/link";
 

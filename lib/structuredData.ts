@@ -28,10 +28,27 @@ export const standardReturnPolicyLd = {
   merchantReturnLink: `${SITE_URL}/shipping-returns`,
 };
 
-/** custom/personalised pieces are final sale, so their Offer overrides the
- *  store policy rather than inheriting a return it doesn't allow */
+/** tees: free size exchange within 7 days (no refunds unless damaged/wrong) */
+const teeExchangeLd = {
+  hasMerchantReturnPolicy: {
+    "@type": "MerchantReturnPolicy",
+    applicableCountry: "IN",
+    returnPolicyCountry: "IN",
+    returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
+    merchantReturnDays: 7,
+    returnMethod: "https://schema.org/ReturnByMail",
+    returnFees: "https://schema.org/FreeReturn",
+    refundType: "https://schema.org/ExchangeRefund",
+    merchantReturnLink: `${SITE_URL}/shipping-returns`,
+  },
+};
+
+/** custom/personalised pieces are final sale and tees are exchange-only, so
+ *  their Offer overrides the store policy rather than inheriting one it doesn't allow */
 export const finalSaleReturnPolicyLd = (p: Product) =>
-  isFinalSale(p)
+  p.sizeChart
+    ? teeExchangeLd
+    : isFinalSale(p)
     ? {
         hasMerchantReturnPolicy: {
           "@type": "MerchantReturnPolicy",

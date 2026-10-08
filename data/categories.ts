@@ -21,6 +21,38 @@ export interface Category {
 
 export const categories: Category[] = [
   {
+    slug: "off-the-wall",
+    name: "Off The Wall",
+    metaTitle: "Off The Wall: Art T-Shirts, Regular & Oversized | Look Here Studio",
+    metaDescription:
+      "The studio's art, made to wear: 100% cotton printed tees, regular or oversized, XS–XXL, with prints placed on the front, back, chest and sleeve. Made in Bengaluru.",
+    answer:
+      "Off The Wall is Look Here Studio's art, made to wear: printed 100% cotton tees (190–240 GSM) in a regular fit ({price:tee-crane}) or oversized, sizes XS to XXL. Every design is placed where it works best on the body, on the front, the back, the chest or the sleeve. Made to order in Bengaluru and dispatched within 10 working days.",
+    sections: [
+      {
+        heading: "Why isn't every print on the front?",
+        paras: [
+          "Because a tee isn't a poster. A crane with a big wingspan belongs across the shoulders; a single carnation belongs where a buttonhole flower goes; a joke lands better when the punchline is on the back. Each tee page tells you where its art is printed, and why.",
+          "The quote tees come straight from our [Slim LED Quote Frame](/objects/slim-led-quote-frame): the same lines, set for cotton.",
+        ],
+      },
+      {
+        heading: "Regular or oversized?",
+        paras: [
+          "Regular sits close without clinging. Oversized has dropped shoulders and a wider chest, and falls loose and boxy. Each tee page has the full size chart in inches and cm.",
+        ],
+      },
+    ],
+    faq: [
+      { q: "What sizes do the tees come in?", a: "XS, S, M, L, XL and XXL, in a regular or oversized fit. Every tee page has a size chart." },
+      { q: "Can I exchange a tee for a different size?", a: "Yes, free within 7 days of delivery, as long as it's unworn, unwashed and the tags are on. See [shipping and returns](/shipping-returns)." },
+      { q: "What are the tees made of?", a: "100% cotton, 190–240 GSM." },
+      { q: "Can I order tees in bulk for a team or event?", a: "Yes. [Tell us what you need](/contact) or ask on WhatsApp." },
+    ],
+    products: ["tee-stay-weird", "tee-cat-butterfly", "tee-crane", "tee-horse", "tee-astronaut", "tee-woman-cheetah", "tee-margarita", "tee-carnation", "tee-skull-roses", "tee-winged-skeleton", "tee-reaper-stay-positive", "tee-nuns-umbrella", "tee-snake-knot", "tee-no-rules", "tee-more-colour", "tee-less-sense", "tee-little-joys", "tee-more-room"],
+    posts: [],
+  },
+  {
     slug: "wall-clocks",
     name: "Wall clocks",
     metaTitle: "Designer Wall Clocks, Made in Bengaluru | Look Here Studio",

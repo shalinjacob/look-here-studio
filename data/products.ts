@@ -1,4 +1,5 @@
 import type { Product, ProductStatus, FilterTag, Occasion } from "@/lib/types";
+import { tees } from "./tees";
 
 // ---------------------------------------------------------------------------
 // The catalogue.
@@ -21,7 +22,7 @@ const STD_PROCESS = [
   { step: "05", label: "PACK", note: "corners first, always" },
 ];
 
-export const products: Product[] = [
+const objects: Product[] = [
   {
     id: "p001",
     objectNumber: "001",
@@ -750,6 +751,12 @@ export const products: Product[] = [
   },
 ];
 
+/** everything we sell: home objects + Off The Wall tees */
+export const products: Product[] = [...objects, ...tees];
+/** home objects only (the /objects catalogue, gift guide, home page) */
+export const homeObjects: Product[] = objects;
+export const isTee = (p: Product) => p.category === "Off The Wall";
+
 // --- helpers ---------------------------------------------------------------
 
 export function getProduct(slug: string): Product | undefined {
@@ -770,20 +777,23 @@ export function getRelated(slug: string, count = 3): Product[] {
   const p = getProduct(slug);
   if (!p) return [];
   const primary = p.tags[0];
-  const pool = products.filter(
+  const range = isTee(p) ? tees : objects;
+  const pool = range.filter(
     (x) => x.slug !== slug && x.tags.includes(primary)
   );
-  const fill = products.filter(
+  const fill = range.filter(
     (x) => x.slug !== slug && !pool.includes(x)
   );
   return [...pool, ...fill].slice(0, count);
 }
 
 export function getAdjacent(slug: string) {
-  const i = products.findIndex((p) => p.slug === slug);
+  const p = getProduct(slug);
+  const list = p && isTee(p) ? tees : objects; // stay within the same range
+  const i = list.findIndex((x) => x.slug === slug);
   return {
-    prev: i > 0 ? products[i - 1] : undefined,
-    next: i >= 0 && i < products.length - 1 ? products[i + 1] : undefined,
+    prev: i > 0 ? list[i - 1] : undefined,
+    next: i >= 0 && i < list.length - 1 ? list[i + 1] : undefined,
   };
 }
 
@@ -839,6 +849,7 @@ export const STATUS_CTA: Record<ProductStatus, string> = {
 /** can this product be added to the cart? */
 /** true when a product's variants are priced differently (show "FROM") */
 export function hasPriceRange(p: Product): boolean {
+  if (p.options?.some((o) => o.choices.some((c) => c.priceDelta))) return true;
   return new Set((p.variants ?? []).map((v) => v.price)).size > 1;
 }
 
