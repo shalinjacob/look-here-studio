@@ -12,7 +12,7 @@ posts. Never invent specs, stats, reviews or studio claims.
 Mark an item `[x]` once its draft branch exists. Add new ideas at the bottom.
 
 ## Already stubbed in data/journal.ts (draft: true, outline provided)
-- [ ] unique-diwali-gift-ideas-for-home — Unique Diwali gift ideas for the home
+- [x] unique-diwali-gift-ideas-for-home — Unique Diwali gift ideas for the home
 - [ ] led-wall-art-india — LED wall art in India: what backlit art is and where to hang it
 - [ ] pickleball-gifts-india — Pickleball gifts in India for the player who has every paddle
 - [ ] acrylic-wall-clocks — Acrylic wall clocks: how to choose one

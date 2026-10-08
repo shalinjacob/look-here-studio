@@ -425,19 +425,77 @@ export const journal: JournalPost[] = [
     products: ["custom-lightbox", "four-letter-words", "love-more"],
   },
   {
-    // DRAFT stub: not routed, listed or in the sitemap until written.
-    // Link to: /objects/x-plus-o, /objects/layered-wall-clock, /objects/layer-clock, /objects/four-letter-words, /objects/pickleball-shadow-box
     slug: "unique-diwali-gift-ideas-for-home",
     index: "010",
-    title: "Unique Diwali Gift Ideas for the Home (That Aren't Another Scented Candle)",
-    date: "2026-10-06",
-    category: "Guide",
-    excerpt: "Diwali gifts for the home that people actually keep: clocks, mirrors, backlit art and a gold-and-marble game, sorted by who you're buying for. Order by 14 Oct.",
-    description: "Diwali gifts for the home that people actually keep: clocks, mirrors, backlit art and a gold-and-marble game, sorted by who you're buying for. Order by 14 Oct.",
+    title: "Unique Diwali gift ideas for the home (that aren't another scented candle)",
+    date: "2026-10-08",
+    updated: "2026-10-08",
+    category: "Gifting",
+    excerpt:
+      "Diwali gifts for the home that people actually keep: clocks, lightboxes, word panels and a gold-and-marble-look game, sorted by who you're buying for.",
+    description:
+      "Unique Diwali gifts for the home, sorted by who you're buying for: clocks, personalised lightboxes, word panels and a table game. Order by 14 Oct for Diwali 2026.",
     readingTime: "",
-    draft: true,
-    outline: ["Why home objects make good Diwali gifts", "For the friend who has everything (X + O, Layered Wall Clock)", "For the new address (Layer Clock, Four-Letter Words)", "For the design obsessive (Editions)", "For the pickleball-obsessed friend (Pickleball Shadow Box)", "Order by Wed 14 Oct for delivery before Diwali", "Missed it? The Gift Promise", "FAQ: delivery, gift notes, personalisation"],
+    answer:
+      "The best Diwali gifts for the home are objects people will see every day but would never buy for themselves: a clock that's also a small painting, their own words lit up on the wall, a table game that starts arguments. Pick for the person, not the price, and for Diwali 2026 order by Wednesday 14 October so it arrives before the 8th.",
     body: [],
+    sections: [
+      {
+        heading: "Why give something for the home this Diwali?",
+        paras: [
+          "Diwali already comes with sweets, dry fruits and a respectable mountain of candles. A home object lasts longer than all of them. It goes up on the wall or onto the coffee table and quietly reminds them of you every time they walk past, which is the whole point of a gift.",
+          "It also suits the festival. Diwali is about the home: cleaning it, lighting it, filling it with people. Something that makes the home a little more theirs fits right in.",
+        ],
+      },
+      {
+        heading: "What do you give the friend who has everything?",
+        paras: [
+          "Something gloriously unnecessary. [X + O](/objects/x-plus-o) ({price:x-plus-o}) is noughts and crosses for the coffee table, made in acrylic with a marble-look board and brass-look pieces. It settles nothing and starts everything, which is exactly what you want at a Diwali card party.",
+          "Or the [Layered Wall Clock](/objects/layered-wall-clock) ({price:layered-wall-clock}): overlapping primary-colour shapes with a floating yellow dial. Part clock, part small Memphis painting, and very hard to already own.",
+        ],
+      },
+      {
+        heading: "What's a good gift for someone in a new home?",
+        paras: [
+          "New homes have bare walls and no idea what to put on them. The [Layer Clock](/objects/layer-clock) ({price:layer-clock}) is warm, calm and useful from day one. [Four-Letter Words](/objects/four-letter-words) ({price:four-letter-words} for a set of two panels) says something on the wall: LOOK + HERE, LOVE + MORE, KISS, or a pair of words you choose for them. They can lean the panels on a shelf if they're renting and not ready to drill.",
+          "More ideas in our [housewarming picks](/objects?occasion=housewarming) and the [new home edit](/gift-guide/edits/the-new-home).",
+        ],
+      },
+      {
+        heading: "What about the person who loves design?",
+        paras: [
+          "Give them art that does something. Our [Editions](/collections/editions) are prints set in slim LED frames, so the picture glows rather than just hanging there: an old-master portrait with an anachronistic twist, a botanical pomegranate study, a collage, a very moody moon. Each is A2 and {price:blood-moon}. Fitting, for the festival of lights.",
+        ],
+      },
+      {
+        heading: "Is there a personalised Diwali gift?",
+        paras: [
+          "Yes, and it's the gift people remember. The [Custom Lightbox](/objects/custom-lightbox) ({price:custom-lightbox}) lights up any words you like, in any language and any light colour: a family saying, a line of poetry, their name. For the pickleball-obsessed, the [Pickleball Shadow Box](/objects/pickleball-shadow-box) ({price:pickleball-shadow-box}) frames their paddle with names, a score or a club crest. See all [personalised gifts](/personalised-gifts).",
+          "Personalised pieces are made just for them, so they're final sale unless they arrive damaged. We confirm the wording with you on WhatsApp before we make anything.",
+        ],
+      },
+      {
+        heading: "When should I order for Diwali 2026?",
+        paras: [
+          "Diwali is on Sunday 8 November 2026. Everything we make is made to order and dispatched within 10 working days of your order being confirmed, so order by Wednesday 14 October and it arrives before the 8th. Shipping is free anywhere in India.",
+          "Tick “This is a gift” in your cart and add a short note, and we'll handwrite it on a card.",
+        ],
+      },
+      {
+        heading: "Missed the cut-off?",
+        paras: [
+          "Give a [Gift Promise](/gift-promise). Order the object, then print or forward a card on the day that says what's coming and when it leaves the studio. The real thing follows soon after.",
+        ],
+      },
+    ],
+    faq: [
+      { q: "What is a good Diwali gift for the home?", a: "Something they'll see every day but wouldn't buy themselves: a statement clock, a lightbox with their own words, a word panel for a bare wall, or a table game for card night. See our [gift guide](/gift-guide) for more, sorted by budget." },
+      { q: "Is there a Diwali gift under ₹5,000?", a: "Yes: [X + O](/objects/x-plus-o) ({price:x-plus-o}) or the [Patterned Coasters](/objects/patterned-coasters) ({price:patterned-coasters} for a set of four)." },
+      { q: "When do I need to order for delivery before Diwali 2026?", a: "By Wednesday 14 October 2026. Everything is made to order and dispatched within 10 working days, with free shipping across India." },
+      { q: "Can you add a gift note?", a: "Yes. Tick “This is a gift” in your cart and add a note; we handwrite it on a card." },
+      { q: "Can I personalise a Diwali gift?", a: "Yes, with the [Custom Lightbox](/objects/custom-lightbox), [Four-Letter Words](/objects/four-letter-words) or the [Pickleball Shadow Box](/objects/pickleball-shadow-box). We confirm the details on WhatsApp before we make it." },
+    ],
+    products: ["x-plus-o", "layered-wall-clock", "four-letter-words", "custom-lightbox", "pickleball-shadow-box"],
   },
   {
     // DRAFT stub: not routed, listed or in the sitemap until written.
