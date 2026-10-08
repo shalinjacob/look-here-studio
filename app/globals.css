@@ -410,7 +410,7 @@ input { font: inherit; }
 .filter { font-family: var(--mono); font-size: 11px; letter-spacing: .14em; color: var(--muted); padding: 8px 14px; border: 1px solid var(--line); background: transparent; transition: all .2s var(--ease); }
 .filter:hover { color: var(--ink); border-color: var(--ink); }
 .filter.is-active { background: var(--ink); color: var(--paper); border-color: var(--ink); }
-.catalogue__count { font-family: var(--mono); font-size: 12px; color: var(--faint); margin-bottom: 24px; }
+.catalogue__count { font-family: var(--mono); font-size: 12px; color: var(--faint); margin-top: clamp(28px, 4vw, 48px); margin-bottom: 24px; }
 
 /* ==========================================================================
    PRODUCT DETAIL
