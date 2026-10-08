@@ -24,7 +24,7 @@ export default function Hero() {
         <div className="hero__foot">
           <div className="hero__ctas">
             <CTA href="/objects" variant="stamp">SHOP OBJECTS</CTA>
-            <CTA href="/collections/editions" variant="link">SEE THE CURRENT DROP</CTA>
+            <CTA href="/collections/editions" variant="link">SEE THE EDITIONS</CTA>
           </div>
           <div className="hero__aside">
             COLOUR
