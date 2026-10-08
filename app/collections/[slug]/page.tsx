@@ -44,9 +44,6 @@ export default function CollectionPage({ params }: { params: { slug: string } })
               <p className="drop__intro" key={para}>{para}</p>
             ))}
             <p className="drop__tags">DRAWN FROM — {c.drawnFrom.join(" / ")}</p>
-            <div className="drop__cta">
-              <CTA href="#objects" variant="link">SHOP THE DROP</CTA>
-            </div>
           </div>
           <div className="drop__hero">
             {/* eslint-disable-next-line @next/next/no-img-element */}

@@ -34,7 +34,7 @@ export const IMAGES: Record<string, ImageMeta> = {
   "/objects/love-more.webp": { alt: "Love More: chunky mirror-gold LOVE MORE letters on a living-room wall" },
   "/objects/love-more-2.webp": { alt: "Love More: mirror-gold LOVE MORE letters above a kitchen counter" },
   "/objects/patterned-coasters.webp": { alt: "Patterned Coasters: four wavy-edged patterned resin coasters with cork bases" },
-  "/objects/x-plus-o.webp": { alt: "X + O: white marble noughts-and-crosses board with solid brass Xs and Os" },
+  "/objects/x-plus-o.webp": { alt: "X + O: marble-look noughts-and-crosses board with gold Xs and Os, all made in acrylic" },
   "/lifestyle/cat-heart-1.webp": { alt: "Cat Got Your Heart: matte-black steel cat silhouette mid-stretch with a heart cut out, above a sideboard" },
   "/lifestyle/cat-heart-2.webp": { alt: "Cat Got Your Heart: black steel cat with a heart cut out, on a dining-room wall" },
   "/lifestyle/cat-heart-3.webp": { alt: "Cat Got Your Heart: black steel cat wall art among framed pictures in a living room" },

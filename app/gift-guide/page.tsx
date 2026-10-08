@@ -45,13 +45,13 @@ const recipients = [
   {
     tag: "THE HOST",
     line: "Feeds twelve, owns four chairs.",
-    copy: "Coasters that survive a party, and a solid-brass game to settle who does the dishes.",
+    copy: "Coasters that survive a party, and a gold-and-marble game to settle who does the dishes.",
     slug: "x-plus-o",
   },
   {
     tag: "THE ONE WHO HAS EVERYTHING",
     line: "So get them something slightly unnecessary.",
-    copy: "A clock that's also a small painting, or noughts-and-crosses in solid brass. Useful was never the point.",
+    copy: "A clock that's also a small painting, or noughts-and-crosses that looks like an heirloom. Useful was never the point.",
     slug: "layered-wall-clock",
   },
   {
