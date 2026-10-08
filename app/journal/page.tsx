@@ -5,7 +5,7 @@ import { publishedPosts as journal, readingTime } from "@/data/journal";
 export const metadata: Metadata = {
   alternates: { canonical: "/journal" },
   title: { absolute: "Journal: Design, Materials & Gifting Notes | Look Here Studio" },
-  description: "Notes from a Bengaluru design studio on acrylic, brass, light, gifting and the occasional small rant.",
+  description: "Notes from a Bengaluru design studio on acrylic, metal, light, gifting and the occasional small rant.",
 };
 
 function fmt(d: string) {

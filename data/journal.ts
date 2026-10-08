@@ -128,7 +128,7 @@ export const journal: JournalPost[] = [
         heading: "Why do most home objects disappear?",
         paras: [
           "Most objects try to disappear into usefulness: do the job, ask nothing, be forgotten. We keep making things that refuse to do that.",
-          "The [Layered Wall Clock](/objects/layered-wall-clock) is a small Memphis painting that happens to have hands. [X + O](/objects/x-plus-o) is noughts-and-crosses in solid brass on marble, permanently mid-argument. [Well, Look At You](/objects/well-look-at-you) is a mirror that compliments you back.",
+          "The [Layered Wall Clock](/objects/layered-wall-clock) is a small Memphis painting that happens to have hands. [X + O](/objects/x-plus-o) is noughts-and-crosses that looks like brass on marble, permanently mid-argument. [Well, Look At You](/objects/well-look-at-you) is a mirror that compliments you back.",
         ],
       },
       {
@@ -146,7 +146,7 @@ export const journal: JournalPost[] = [
       },
     ],
     faq: [
-      { q: "What counts as a statement piece in home decor?", a: "An object that does a normal job in an unexpected form, so it gets noticed: a clock that reads like a painting, a mirror with lettering, a brass game on the coffee table." },
+      { q: "What counts as a statement piece in home decor?", a: "An object that does a normal job in an unexpected form, so it gets noticed: a clock that reads like a painting, a mirror with lettering, a gold-and-marble game on the coffee table." },
       { q: "How many statement pieces should a room have?", a: "Usually one per wall or surface, with calmer objects around it so it has room to work." },
     ],
     products: ["layered-wall-clock", "x-plus-o", "well-look-at-you"],
@@ -189,7 +189,7 @@ export const journal: JournalPost[] = [
     ],
     faq: [
       { q: "Where are Look Here objects made?", a: "In our own studio in Bengaluru: cut, finished, assembled and packed in-house." },
-      { q: "What materials do you laser-cut?", a: "Mostly acrylic, steel and MDF, plus wood for frames and brass for [X + O](/objects/x-plus-o)." },
+      { q: "What materials do you laser-cut?", a: "Mostly acrylic (including the brass-look [X + O](/objects/x-plus-o)), steel and MDF, plus wood for frames." },
       { q: "How long does it take to make an object?", a: "Everything is made to order and dispatched within 10 working days of your order being confirmed." },
     ],
     products: ["cat-got-your-heart", "small-planet", "layer-clock"],
@@ -246,43 +246,43 @@ export const journal: JournalPost[] = [
   {
     slug: "brass-gets-better-when-you-ignore-it",
     index: "006",
-    title: "Does brass tarnish? Patina, polish, and why we don't lacquer ours",
+    title: "Does brass tarnish? Real brass vs brass-look acrylic",
     date: "2026-08-25",
-    updated: "2026-10-07",
+    updated: "2026-10-08",
     category: "Material",
     excerpt:
-      "On patina, and why we don't lacquer the life out of our brass.",
+      "On patina, polish, and why our X + O only looks like brass.",
     description:
-      "Yes, unlacquered brass darkens over time. That patina is harmless, and a little polish brings the shine back. How to care for brass, and why we let ours age.",
+      "Yes, unlacquered brass darkens over time. How patina works, how to clean brass, and when a brass-look acrylic piece is the easier choice for everyday use.",
     readingTime: "",
     answer:
-      "Yes. Unlacquered brass slowly darkens as it reacts with the air and your hands. That patina is harmless and, to our eyes, an improvement. If you prefer it bright, a soft cloth and a little brass polish bring the shine back in a minute.",
+      "Yes. Unlacquered brass slowly darkens as it reacts with the air and your hands. That patina is harmless, and a soft cloth with a little brass polish brings the shine back. If you want the gold look without the upkeep, a brass-look acrylic piece, like our [X + O](/objects/x-plus-o), gives you the look and needs only a wipe.",
     body: [],
     sections: [
       {
         heading: "What is patina?",
         paras: [
-          "New brass is loud: mirror-bright, a little showy, trying hard. Left alone, it calms down. The shine softens, the tone deepens, and it slowly starts to look like it belongs to you. That change is patina.",
-        ],
-      },
-      {
-        heading: "Why don't you lacquer your brass?",
-        paras: [
-          "Most brass products are sealed under a thick lacquer that freezes the factory shine in place. We mostly don't. Our brass is meant to age, and you get to decide how far.",
+          "New brass is loud: mirror-bright, a little showy, trying hard. Left alone, it calms down. The shine softens, the tone deepens and it slowly starts to look lived-in. That change is patina, and plenty of people love it.",
         ],
       },
       {
         heading: "How do I clean brass?",
         paras: [
-          "To restore the shine, rub gently with a soft cloth and a little brass polish, then buff dry. To keep the softened look, do nothing at all: the more honest option, and free.",
-          "It's the rare object that improves while you neglect it. Enjoy that. It isn't going to happen with your phone.",
+          "To restore the shine, rub gently with a soft cloth and a little brass polish, then buff dry. To keep the softened look, do nothing at all. Lacquered brass is different: it's sealed, so skip the polish and just dust it.",
+        ],
+      },
+      {
+        heading: "Real brass or brass-look?",
+        paras: [
+          "Real brass is heavy and changes with time, which is the charm and the chore. Brass-look acrylic gives you the warm gold colour in something lighter that doesn't need polishing, which suits things that get handled every day.",
+          "That's why our [X + O](/objects/x-plus-o) noughts-and-crosses set is made entirely in acrylic: a marble-look board with brass-look Xs and Os. It looks like an heirloom on the coffee table, and looking after it is a quick wipe with a soft, slightly damp cloth. More on the material in [Is acrylic plastic?](/journal/acrylic-is-not-plastic)",
         ],
       },
     ],
     faq: [
       { q: "Does brass go dark over time?", a: "Unlacquered brass does. It's a natural, harmless patina, not damage." },
       { q: "How do I make brass shiny again?", a: "A soft cloth and a little brass polish, then buff dry." },
-      { q: "Which Look Here object is brass?", a: "[X + O](/objects/x-plus-o): solid brass Xs and Os on a white marble board." },
+      { q: "Is the Look Here X + O made of brass?", a: "No. [X + O](/objects/x-plus-o) is made entirely in acrylic: a marble-look board with brass-look Xs and Os. Wipe it with a soft, slightly damp cloth." },
     ],
     products: ["x-plus-o"],
   },
@@ -432,8 +432,8 @@ export const journal: JournalPost[] = [
     title: "Unique Diwali Gift Ideas for the Home (That Aren't Another Scented Candle)",
     date: "2026-10-06",
     category: "Guide",
-    excerpt: "Diwali gifts for the home that people actually keep: clocks, mirrors, backlit art and a brass game, sorted by who you're buying for. Order by 14 Oct.",
-    description: "Diwali gifts for the home that people actually keep: clocks, mirrors, backlit art and a brass game, sorted by who you're buying for. Order by 14 Oct.",
+    excerpt: "Diwali gifts for the home that people actually keep: clocks, mirrors, backlit art and a gold-and-marble game, sorted by who you're buying for. Order by 14 Oct.",
+    description: "Diwali gifts for the home that people actually keep: clocks, mirrors, backlit art and a gold-and-marble game, sorted by who you're buying for. Order by 14 Oct.",
     readingTime: "",
     draft: true,
     outline: ["Why home objects make good Diwali gifts", "For the friend who has everything (X + O, Layered Wall Clock)", "For the new address (Layer Clock, Four-Letter Words)", "For the design obsessive (Editions)", "For the pickleball-obsessed friend (Pickleball Shadow Box)", "Order by Wed 14 Oct for delivery before Diwali", "Missed it? The Gift Promise", "FAQ: delivery, gift notes, personalisation"],

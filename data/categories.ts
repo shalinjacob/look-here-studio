@@ -175,16 +175,16 @@ export const categories: Category[] = [
   {
     slug: "table-decor",
     name: "Table decor",
-    metaTitle: "Designer Table Decor: Lamp, Coasters & Brass Game | Look Here Studio",
+    metaTitle: "Designer Table Decor: Lamp, Coasters & Table Game | Look Here Studio",
     metaDescription:
-      "A fluorescent acrylic table lamp, wavy patterned coasters and a brass-and-marble noughts and crosses set. Made to order in Bengaluru, free shipping in India.",
+      "A fluorescent acrylic table lamp, wavy patterned coasters and a gold-and-marble-look acrylic noughts and crosses set. Made to order in Bengaluru, free shipping.",
     answer:
-      "For tables and shelves, Look Here Studio makes the [Acrylic Lamp](/objects/acrylic-lamp), a glowing slab of fluorescent orange acrylic ({price:acrylic-lamp}), [Patterned Coasters](/objects/patterned-coasters), four wavy resin coasters with cork bases ({price:patterned-coasters}), and [X + O](/objects/x-plus-o), noughts and crosses in solid brass on marble ({price:x-plus-o}). All made to order in Bengaluru.",
+      "For tables and shelves, Look Here Studio makes the [Acrylic Lamp](/objects/acrylic-lamp), a glowing slab of fluorescent orange acrylic ({price:acrylic-lamp}), [Patterned Coasters](/objects/patterned-coasters), four wavy resin coasters with cork bases ({price:patterned-coasters}), and [X + O](/objects/x-plus-o), noughts and crosses in acrylic that looks like brass on marble ({price:x-plus-o}). All made to order in Bengaluru.",
     sections: [
       {
         heading: "What makes a good coffee-table object?",
         paras: [
-          "Something people pick up. The coasters get used every day, the brass game starts arguments, and the lamp makes the corner glow. Read more in [Do you really need coasters?](/journal/coasters-deserve-better) and [Does brass tarnish?](/journal/brass-gets-better-when-you-ignore-it).",
+          "Something people pick up. The coasters get used every day, the X + O board starts arguments, and the lamp makes the corner glow. Read more in [Do you really need coasters?](/journal/coasters-deserve-better) and [Real brass or brass-look acrylic?](/journal/brass-gets-better-when-you-ignore-it).",
         ],
       },
     ],

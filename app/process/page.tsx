@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 const STEPS: [string, string, string][] = [
-  ["01", "MATERIAL", "Acrylic, brass, mirror, MDF. We pick the material for what it does with light, not what's cheapest."],
+  ["01", "MATERIAL", "Acrylic, steel, mirror, MDF. We pick the material for what it does with light, not what's cheapest."],
   ["02", "CUT", "Laser and CNC. One clean pass where we can; test cuts on offcuts where we can't."],
   ["03", "PRINT", "Screen, UV and etch. Colour goes on — or, with acrylic, all the way through."],
   ["04", "FINISH", "Flame-polishing, brushing, deburring. The part nobody sees and everybody feels."],

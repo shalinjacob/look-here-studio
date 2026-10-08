@@ -49,7 +49,7 @@ export const siteFaq: { group: string; items: QA[] }[] = [
     group: "The studio",
     items: [
       { q: "Where is Look Here Studio?", a: "In Bengaluru, Karnataka, India. Everything is designed and made in our own studio, which grew out of a signage workshop. [More about us](/why-look-here)." },
-      { q: "What materials do you use?", a: "Mostly acrylic, steel and MDF, plus mirror glass, wood, brass and LED light. See [how our objects are made](/process)." },
+      { q: "What materials do you use?", a: "Mostly acrylic, steel and MDF, plus mirror glass, wood and LED light. See [how our objects are made](/process)." },
     ],
   },
 ];
