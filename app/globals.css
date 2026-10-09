@@ -114,15 +114,25 @@ input { font: inherit; }
 .nav__link:hover::after, .nav__link[aria-current="page"]::after { transform: scaleX(1); }
 .nav__link:hover { color: var(--ink); }
 .nav__burger { display: none; }
+.nav__shop { position: relative; display: flex; }
+.nav__shopbtn { background: none; border: 0; cursor: pointer; }
+.nav__caret { font-size: 9px; margin-left: 4px; display: inline-block; transition: transform .2s var(--ease); }
+.nav__shop.is-open .nav__caret { transform: rotate(180deg); }
+.nav__shopmenu { position: absolute; top: 100%; left: 50%; transform: translate(-50%, -4px); min-width: 190px; padding: 14px 20px; margin-top: 10px; display: grid; gap: 12px; background: var(--paper); border: 1px solid var(--line); z-index: 60; opacity: 0; visibility: hidden; transition: opacity .2s var(--ease), transform .2s var(--ease), visibility .2s; }
+.nav__shopmenu::before { content: ""; position: absolute; left: 0; right: 0; top: -12px; height: 12px; }
+.nav__shop.is-open .nav__shopmenu { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
+.nav__shopmenu .nav__link { white-space: nowrap; justify-self: start; }
 .nav__mobile-cta { display: none; }
 
 /* mobile menu */
 .mobilemenu { position: fixed; inset: 0; z-index: 200; background: var(--paper); transform: translateY(-100%); transition: transform .4s var(--ease), visibility .4s; visibility: hidden; pointer-events: none; overflow-y: auto; display: flex; flex-direction: column; padding: 24px var(--gutter); }
 .mobilemenu.is-open { transform: none; visibility: visible; pointer-events: auto; }
 .mobilemenu__head { display: flex; justify-content: space-between; align-items: center; }
+.mobilemenu__group { font-family: var(--mono); font-size: 12px; letter-spacing: .16em; color: var(--muted); margin-top: 8px; }
 .mobilemenu__close { font-family: var(--mono); font-size: 13px; letter-spacing: .14em; }
 .mobilemenu__links { display: flex; flex-direction: column; gap: 6px; margin-top: clamp(24px, 8vh, 64px); }
 .mobilemenu__link { font-family: var(--display); font-weight: 700; letter-spacing: -0.02em; font-size: clamp(30px, 9vw, 48px); color: var(--ink); padding-block: 8px; border-bottom: 1px solid var(--line-soft); }
+.mobilemenu__link--sub { padding-left: 20px; font-size: clamp(24px, 7vw, 38px); }
 .mobilemenu__foot { margin-top: auto; font-family: var(--mono); font-size: 12px; color: var(--muted); letter-spacing: .1em; }
 
 /* ==========================================================================

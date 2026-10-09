@@ -20,7 +20,7 @@ export default function MadeHere() {
               print — mostly here, between the machines and the mistakes.
             </p>
             <div className="made__foot">
-              <CTA href="/process" variant="link">SEE HOW WE MAKE</CTA>
+              <CTA href="/why-look-here#process" variant="link">SEE HOW WE MAKE</CTA>
             </div>
           </div>
 

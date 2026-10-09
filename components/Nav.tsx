@@ -6,13 +6,14 @@ import { useEffect, useState } from "react";
 import { useCart } from "./cart/CartContext";
 import AnimatedLogo from "./AnimatedLogo";
 
-const LINKS = [
-  { href: "/", label: "HOME" },
+const SHOP = [
   { href: "/objects", label: "OBJECTS" },
   { href: "/off-the-wall", label: "OFF THE WALL" },
   { href: "/gift-guide", label: "GIFTS" },
+];
+
+const AFTER_SHOP = [
   { href: "/why-look-here", label: "WHY LOOK HERE" },
-  { href: "/process", label: "PROCESS" },
   { href: "/journal", label: "JOURNAL" },
   { href: "/contact", label: "CONTACT" },
 ];
@@ -21,10 +22,19 @@ export default function Nav() {
   const pathname = usePathname();
   const { count, openCart } = useCart();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [shopOpen, setShopOpen] = useState(false);
 
   useEffect(() => {
     setMenuOpen(false);
+    setShopOpen(false);
   }, [pathname]);
+
+  useEffect(() => {
+    if (!shopOpen) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setShopOpen(false);
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [shopOpen]);
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
@@ -33,6 +43,13 @@ export default function Nav() {
 
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
+  const inShop = SHOP.some((l) => isActive(l.href)) || pathname.startsWith("/collections");
+
+  const link = (l: { href: string; label: string }) => (
+    <Link key={l.href} href={l.href} className="nav__link" aria-current={isActive(l.href) ? "page" : undefined}>
+      {l.label}
+    </Link>
+  );
 
   return (
     <>
@@ -66,16 +83,28 @@ export default function Nav() {
           </div>
 
           <div className="nav__links">
-            {LINKS.map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                className="nav__link"
-                aria-current={isActive(l.href) ? "page" : undefined}
+            {link({ href: "/", label: "HOME" })}
+            <div
+              className={`nav__shop${shopOpen ? " is-open" : ""}`}
+              onMouseEnter={() => setShopOpen(true)}
+              onMouseLeave={() => setShopOpen(false)}
+              onBlur={(e) => { if (!e.currentTarget.contains(e.relatedTarget as Node)) setShopOpen(false); }}
+            >
+              <button
+                className="nav__link nav__shopbtn"
+                aria-expanded={shopOpen}
+                aria-controls="nav-shop-menu"
+                aria-current={inShop ? "page" : undefined}
+                // hover already opened it for mouse users; keyboard (detail 0) toggles
+                onClick={(e) => setShopOpen((o) => (e.detail === 0 ? !o : true))}
               >
-                {l.label}
-              </Link>
-            ))}
+                SHOP <span className="nav__caret" aria-hidden>▾</span>
+              </button>
+              <div className="nav__shopmenu" id="nav-shop-menu">
+                {SHOP.map(link)}
+              </div>
+            </div>
+            {AFTER_SHOP.map(link)}
           </div>
         </div>
       </nav>
@@ -91,7 +120,14 @@ export default function Nav() {
           </button>
         </div>
         <div className="mobilemenu__links">
-          {LINKS.map((l) => (
+          <Link href="/" className="mobilemenu__link">HOME</Link>
+          <span className="mobilemenu__group">SHOP</span>
+          {SHOP.map((l) => (
+            <Link key={l.href} href={l.href} className="mobilemenu__link mobilemenu__link--sub">
+              {l.label}
+            </Link>
+          ))}
+          {AFTER_SHOP.map((l) => (
             <Link key={l.href} href={l.href} className="mobilemenu__link">
               {l.label}
             </Link>

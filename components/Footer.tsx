@@ -21,7 +21,7 @@ export default function Footer() {
               <Link href="/collections/editions">Editions</Link>
               <Link href="/off-the-wall">Off The Wall tees</Link>
               <Link href="/gift-guide">Gift guide</Link>
-              <Link href="/process">Process</Link>
+              <Link href="/why-look-here#process">Process</Link>
             </div>
             <div className="footer__col">
               <h4>STUDIO</h4>
