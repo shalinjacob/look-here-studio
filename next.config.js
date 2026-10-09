@@ -19,6 +19,8 @@ const nextConfig = {
       { source: "/objects/tee-less-sense", destination: "/off-the-wall", permanent: true },
       { source: "/objects/tee-little-joys", destination: "/off-the-wall", permanent: true },
       { source: "/objects/tee-more-room", destination: "/off-the-wall", permanent: true },
+      // Process merged into Why Look Here (Oct 2026)
+      { source: "/process", destination: "/why-look-here#process", permanent: true },
     ];
   },
 };

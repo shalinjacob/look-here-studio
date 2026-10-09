@@ -11,7 +11,7 @@ import { SITE_URL as BASE } from "@/lib/site";
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
   const staticRoutes = [
-    "", "/objects", "/gift-guide", "/gift-promise", "/process", "/why-look-here",
+    "", "/objects", "/gift-guide", "/gift-promise", "/why-look-here",
     "/journal", "/contact", "/faq", "/shipping-returns", "/privacy", "/terms",
   ];
   return [
