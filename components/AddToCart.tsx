@@ -5,10 +5,23 @@ import { useCart } from "./cart/CartContext";
 import { STATUS_CTA, WISHLIST_CTA, canOrderNow, formatPrice, hasPriceRange } from "@/data/products";
 import type { Product } from "@/lib/types";
 import { GALLERY_SHOW } from "./ProductGallery";
+import { SITE_URL, waLink } from "@/lib/site";
+import { track } from "@/lib/analytics";
+
+/** pre-filled WhatsApp message for the wishlist: names the object, asks for name + pincode */
+function wishlistMessage(p: Product) {
+  return [
+    `Hi Look Here Studio! I'd like to join the wishlist for the ${p.name} (${p.objectNumber}).`,
+    `${SITE_URL}/objects/${p.slug}`,
+    "",
+    "My name: ",
+    "My pincode: ",
+  ].join("\n");
+}
 
 // Status-driven action. Purchasable (available/preorder) => add to cart with
-// clear feedback + VIEW CART. Otherwise (or in wishlist mode) => scroll to the
-// on-page wishlist sign-up.
+// clear feedback + VIEW CART. Otherwise (or in wishlist mode) => opens WhatsApp
+// with a pre-filled wishlist message asking for name + pincode.
 // Products with `variants` get a picker first; picking one also jumps the
 // gallery to that variant's photo (via the "lhs:gallery-show" event).
 
@@ -37,7 +50,13 @@ export default function AddToCart({ product }: { product: Product }) {
 
   if (!canBuy) {
     return (
-      <a href="#waitlist" className="cta cta--stamp addcart__btn">
+      <a
+        href={waLink(wishlistMessage(product))}
+        target="_blank"
+        rel="noreferrer"
+        className="cta cta--stamp addcart__btn"
+        onClick={() => track("whatsapp_click", { location: "product" })}
+      >
         <span className="cta__label">{WISHLIST_CTA}</span>
         <span className="cta__arrow">→</span>
       </a>

@@ -3,7 +3,7 @@ import { formatPrice, isFinalSale } from "./products";
 import { plain } from "@/lib/richText";
 import { WISHLIST_MODE } from "@/lib/site";
 
-const WISHLIST_HOW = `Right now we're taking wishlist sign-ups: tap "Join the wishlist" and leave your email (and WhatsApp, if you like). We'll message you as soon as it's ready to order. Nothing is paid on the website.`;
+const WISHLIST_HOW = `Right now we're taking wishlist sign-ups: tap "Join the wishlist" and it opens WhatsApp with a message ready to send; just add your name and pincode. We'll message you as soon as it's ready to order. Nothing is paid on the website.`;
 
 // ---------------------------------------------------------------------------
 // Product-page FAQs, built only from facts already in the product data and the
