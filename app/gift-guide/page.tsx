@@ -189,13 +189,13 @@ export default function GiftGuidePage() {
             <h3 className="serv__title">Wrapped properly.</h3>
             <p className="serv__copy">
               We box everything in the good stuff — recycled, rigid, no bubble
-              wrap graveyard. Tick &ldquo;this is a gift&rdquo; in your cart.
+              wrap graveyard. Just tell us it&apos;s a gift.
             </p>
           </div>
           <div className="serv">
             <h3 className="serv__title">A note, not a novel.</h3>
             <p className="serv__copy">
-              Add a message in your cart and we&apos;ll write it on a card by hand.
+              Send us a message and we&apos;ll write it on a card by hand.
               Keep it short; the object is doing the talking.
             </p>
           </div>

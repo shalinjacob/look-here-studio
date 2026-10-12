@@ -1,4 +1,5 @@
 import type { QA } from "@/lib/types";
+import { WISHLIST_MODE } from "@/lib/site";
 
 // The /faq hub. Answers restate the published policies (/shipping-returns,
 // /terms) and how ordering works — keep them in step if a policy changes.
@@ -6,7 +7,7 @@ export const siteFaq: { group: string; items: QA[] }[] = [
   {
     group: "Ordering & payment",
     items: [
-      { q: "How do I order from Look Here Studio?", a: "Add objects to your cart and tap “Send product request”. That opens WhatsApp with your order filled in. We confirm the price, details and dispatch date with you there, then send you payment details." },
+      { q: "How do I order from Look Here Studio?", a: WISHLIST_MODE ? "Right now we're taking wishlist sign-ups: tap “Join the wishlist” on any product and leave your email (and WhatsApp, if you like). We'll message you as soon as it's ready to order, confirm the details there, then send you payment details." : "Add objects to your cart and tap “Send product request”. That opens WhatsApp with your order filled in. We confirm the price, details and dispatch date with you there, then send you payment details." },
       { q: "Can I pay on the website?", a: "No. Nothing is paid on the website. Payment is arranged on WhatsApp after we confirm your order. We'll never ask for your card details, an OTP or a PIN." },
       { q: "When is my order confirmed?", a: "When we confirm the price, details and dispatch date with you on WhatsApp." },
       { q: "Can I ask a question before ordering?", a: "Of course. WhatsApp +91 93806 70901 or email hello@lookherestudio.in, or use the “Ask on WhatsApp” button on any product page." },
@@ -48,7 +49,7 @@ export const siteFaq: { group: string; items: QA[] }[] = [
   {
     group: "Gifting",
     items: [
-      { q: "Can you add a gift note?", a: "Yes. Tick “This is a gift” in your cart and add a short note; we handwrite it on a card." },
+      { q: "Can you add a gift note?", a: "Yes. Tell us it's a gift when you order and add a short note; we handwrite it on a card." },
       { q: "Do you have gift ideas?", a: "Our [gift guide](/gift-guide) sorts objects by budget, person and occasion, with ready-made edits of three objects at their usual prices." },
     ],
   },
