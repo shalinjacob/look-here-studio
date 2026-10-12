@@ -1,6 +1,9 @@
 import type { Product, QA } from "@/lib/types";
 import { formatPrice, isFinalSale } from "./products";
 import { plain } from "@/lib/richText";
+import { WISHLIST_MODE } from "@/lib/site";
+
+const WISHLIST_HOW = `Right now we're taking wishlist sign-ups: tap "Join the wishlist" and leave your email (and WhatsApp, if you like). We'll message you as soon as it's ready to order. Nothing is paid on the website.`;
 
 // ---------------------------------------------------------------------------
 // Product-page FAQs, built only from facts already in the product data and the
@@ -48,7 +51,7 @@ function teeFaq(p: Product): QA[] {
     },
     {
       q: `How do I order?`,
-      a: `Pick your fit, size and colour, add it to your cart and tap "Send product request". That opens WhatsApp with your order filled in. We confirm the details, then send you payment details. Nothing is paid on the website.`,
+      a: WISHLIST_MODE ? WISHLIST_HOW : `Pick your fit, size and colour, add it to your cart and tap "Send product request". That opens WhatsApp with your order filled in. We confirm the details, then send you payment details. Nothing is paid on the website.`,
     },
   ];
 }
@@ -75,7 +78,7 @@ export function productFaq(p: Product): QA[] {
     faq.push({
       q: `Can I personalise ${nm(p)}?`,
       a: p.personalise?.length
-        ? `Yes. Add your ${p.personalise.map((f) => f.cartLabel.toLowerCase()).join(" and ")} on the product page before adding it to your cart, and we'll confirm the details with you on WhatsApp before we make it.`
+        ? `Yes. Tell us your ${p.personalise.map((f) => f.cartLabel.toLowerCase()).join(" and ")} when you order, and we'll confirm the details with you on WhatsApp before we make it.`
         : p.variants?.some((v) => v.custom)
           ? `Yes. Choose "${p.variants.find((v) => v.custom)!.label}" and type your own words; we'll confirm the lettering with you on WhatsApp before we cut it.`
           : `Yes, that's the point of it. Tell us the details on WhatsApp after you send your request, and we'll confirm everything before we start making it.`,
@@ -108,7 +111,7 @@ export function productFaq(p: Product): QA[] {
     },
     {
       q: `How do I order ${nm(p)}?`,
-      a: `Add it to your cart and tap "Send product request". That opens WhatsApp with your order filled in. We confirm the details, then send you payment details. Nothing is paid on the website.`,
+      a: WISHLIST_MODE ? WISHLIST_HOW : `Add it to your cart and tap "Send product request". That opens WhatsApp with your order filled in. We confirm the details, then send you payment details. Nothing is paid on the website.`,
     }
   );
   return faq;

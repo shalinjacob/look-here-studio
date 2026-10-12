@@ -160,14 +160,14 @@ export const categories: Category[] = [
       {
         heading: "How does personalisation work?",
         paras: [
-          "For the Custom Lightbox and Four-Letter Words, type your text on the product page before adding it to your cart. For the Pickleball Shadow Box, share the details on WhatsApp after you send your request. Either way, we confirm everything with you on WhatsApp before we start making it.",
+          "For the Custom Lightbox, Four-Letter Words and Pickleball Shadow Box, you tell us your text or details when you order. Either way, we confirm everything with you on WhatsApp before we start making it.",
           "For more gift ideas, see [What makes a good gift?](/journal/what-a-good-gift-actually-is) or the [gift guide](/gift-guide).",
         ],
       },
     ],
     faq: [
       { q: "Can personalised gifts be returned?", a: "Personalised pieces are final sale, unless they arrive damaged or aren't what you ordered. See [shipping and returns](/shipping-returns)." },
-      { q: "Can you add a gift note?", a: "Yes. Tick “This is a gift” in your cart and add a short note; we handwrite it on a card." },
+      { q: "Can you add a gift note?", a: "Yes. Tell us it's a gift when you order and add a short note; we handwrite it on a card." },
       { q: "Do you do corporate or wedding gifting?", a: "Yes, made to order in small runs. [Tell us what you need](/contact)." },
     ],
     products: ["custom-lightbox", "four-letter-words", "pickleball-shadow-box"],

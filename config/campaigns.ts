@@ -22,6 +22,8 @@ export const BANNER_B = {
   href: "/gift-promise",
 };
 
+import { WISHLIST_MODE } from "@/lib/site";
+
 export type CampaignState = "countdown" | "gift-promise" | "none";
 
 const CUTOFF_MS = Date.parse(DIWALI_CUTOFF);
@@ -30,6 +32,7 @@ const END_MS = Date.parse(DIWALI_END);
 /** which banner shows at a given instant (absolute time, so the zone of the
  *  server or browser running this doesn't matter) */
 export function campaignState(nowMs: number): CampaignState {
+  if (WISHLIST_MODE) return "none"; // no order-by banners while we're only taking wishlist sign-ups
   if (nowMs <= CUTOFF_MS) return "countdown";
   if (nowMs <= END_MS) return "gift-promise";
   return "none";

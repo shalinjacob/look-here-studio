@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
 import CTA from "@/components/CTA";
 import { products, isPurchasable } from "@/data/products";
-import { BRAND_NAME } from "@/lib/site";
+import { BRAND_NAME, WISHLIST_MODE } from "@/lib/site";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/gift-promise" },
   title: { absolute: `Gift Promise: Give It on Diwali, Delivered Soon After | ${BRAND_NAME}` },
   description:
-    "Missed the Diwali cut-off? Order now and hand over a printable Gift Promise card on the day. The object follows, made to order and dispatched within 10 working days.",
+    WISHLIST_MODE
+      ? "Hand over a printable Gift Promise card on the day, and join the wishlist for the object. We'll message you as soon as it's ready to order."
+      : "Missed the Diwali cut-off? Order now and hand over a printable Gift Promise card on the day. The object follows, made to order and dispatched within 10 working days.",
 };
 
 // OWNER: the "change your mind before we start making it" line is a promise to
@@ -23,6 +25,15 @@ export default function GiftPromisePage() {
 
       <div className="article" style={{ marginTop: "clamp(32px,5vw,64px)" }}>
         <div className="article__body">
+          {WISHLIST_MODE ? (
+          <p>
+            Want to give something that isn&apos;t ready yet? Join the wishlist on the
+            object&apos;s page and we&apos;ll message you as soon as it&apos;s ready to order.
+            Meanwhile, make a Gift Promise card below to print or forward on the day, so
+            they know something is being made for them. Once you order, it&apos;s made in
+            Bengaluru and dispatched within 10 working days.
+          </p>
+          ) : (
           <p>
             Diwali got here faster than our lasers. So: order the object now, and we&apos;ll send
             you a Gift Promise card to print or forward on the day. It shows what&apos;s coming and
@@ -30,14 +41,23 @@ export default function GiftPromisePage() {
             dispatched within 10 working days. Change your mind before we start making it? Just
             tell us.
           </p>
+          )}
         </div>
 
         <div className="policy article__body" style={{ marginTop: "clamp(32px,5vw,56px)" }}>
           <h2>How it works</h2>
           <ul>
-            <li>Pick the object and order it as usual. Tick &ldquo;This is a gift&rdquo; in your cart.</li>
+            {WISHLIST_MODE ? (
+              <li>Pick the object and tap &ldquo;Join the wishlist&rdquo; on its page.</li>
+            ) : (
+              <li>Pick the object and order it as usual. Tick &ldquo;This is a gift&rdquo; in your cart.</li>
+            )}
             <li>Make the card below, then print it or send it on WhatsApp.</li>
-            <li>Hand it over on the day. The object follows, with tracking sent to you.</li>
+            <li>
+              {WISHLIST_MODE
+                ? "Hand it over on the day. We message you when it's ready to order, and the object follows."
+                : "Hand it over on the day. The object follows, with tracking sent to you."}
+            </li>
           </ul>
         </div>
 

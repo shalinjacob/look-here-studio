@@ -2,7 +2,7 @@ import { products, isPurchasable, formatPrice, isTee } from "@/data/products";
 import { publishedPosts } from "@/data/journal";
 import { edits } from "@/data/edits";
 import { categories } from "@/data/categories";
-import { SITE_URL, BRAND_NAME, EMAIL, INSTAGRAM_URL, FACEBOOK_URL } from "@/lib/site";
+import { SITE_URL, BRAND_NAME, EMAIL, INSTAGRAM_URL, FACEBOOK_URL, WISHLIST_MODE } from "@/lib/site";
 import { plain } from "@/lib/richText";
 
 // /llms.txt — a plain-language summary of the studio for AI assistants and
@@ -57,7 +57,7 @@ ${teeLines}
 
 - [Gift guide](${SITE_URL}/gift-guide): gifts sorted by budget, person and occasion. Gift notes are handwritten on a card.
 ${edits.map((e) => `- [${e.title}](${SITE_URL}/gift-guide/edits/${e.slug}): ${e.blurb}`).join("\n")}
-- [Gift Promise](${SITE_URL}/gift-promise): order now, give a printable card on the day, the object follows.
+- [Gift Promise](${SITE_URL}/gift-promise): ${WISHLIST_MODE ? "give a printable card on the day and join the wishlist for the object" : "order now, give a printable card on the day, the object follows"}.
 
 ## Journal
 
