@@ -17,3 +17,8 @@ export const waLink = (text: string) =>
 
 /** 1200x630 JPG share card generated into /public/og */
 export const ogImage = (slug: string) => ({ url: `/og/${slug}.jpg`, width: 1200, height: 630 });
+
+/** Wishlist mode (owner, Oct 2026): every product's action is JOIN THE WISHLIST
+ *  (email/WhatsApp sign-up) instead of adding to the cart. Prices stay visible.
+ *  Set to false to reopen ordering. */
+export const WISHLIST_MODE = true;

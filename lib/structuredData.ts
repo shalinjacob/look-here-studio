@@ -1,6 +1,6 @@
 import type { Product } from "./types";
 import { isFinalSale, isPurchasable } from "@/data/products";
-import { SITE_URL } from "./site";
+import { SITE_URL, WISHLIST_MODE } from "./site";
 
 // ---------------------------------------------------------------------------
 // Values for Google Search structured data. Product pages target *product
@@ -14,7 +14,11 @@ export const SKU = (p: Product) => `LHS-${p.objectNumber}`;
  *  reads as InStock (MadeToOrder isn't in Google's list); the page explains the
  *  10-working-day lead time. */
 export const schemaAvailability = (p: Product) =>
-  isPurchasable(p) ? "https://schema.org/InStock" : "https://schema.org/OutOfStock";
+  !isPurchasable(p)
+    ? "https://schema.org/OutOfStock"
+    : WISHLIST_MODE
+      ? "https://schema.org/PreOrder" // wishlist mode: sign up now, order when it opens
+      : "https://schema.org/InStock";
 
 /** the store-wide policy, declared once on the #store node */
 export const standardReturnPolicyLd = {

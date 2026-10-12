@@ -32,6 +32,7 @@ import {
   UNAVAILABLE_LINE,
   formatPrice,
   isPurchasable,
+  canOrderNow,
   hasPriceRange,
 } from "@/data/products";
 
@@ -62,7 +63,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
 
   const { prev, next } = getAdjacent(p.slug);
   const related = getRelated(p.slug, 3);
-  const buyable = isPurchasable(p);
+  const buyable = canOrderNow(p);
   const gallery = [...p.images, ...p.lifestyleImages];
   const faq = productFaq(p);
   const cats = categoriesFor(p.slug);
@@ -284,17 +285,17 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         </div>
       </section>
 
-      {/* WAITLIST (only when not purchasable) */}
+      {/* WISHLIST (whenever it can't be ordered right now) */}
       {!buyable && (
         <section className="pdp__section pdp__waitlist" id="waitlist">
           <div className="pdp__section-head">
-            <span className="pdp__section-tag">WAITLIST</span>
+            <span className="pdp__section-tag">WISHLIST</span>
             <span className="pdp__section-rule" aria-hidden />
           </div>
           <p className="pdp__waitlist-line">
-            {p.price == null ? "Not ready yet. Want to know the moment it is?" : UNAVAILABLE_LINE}
+            {p.price == null || !isPurchasable(p) ? (p.price == null ? "Not ready yet. Want to know the moment it is?" : UNAVAILABLE_LINE) : "Join the wishlist and we\u2019ll message you as soon as it\u2019s ready to order."}
           </p>
-          <Newsletter id={`wl-${p.slug}`} compact cta="TELL ME FIRST" productSlug={p.slug} source="product" />
+          <Newsletter id={`wl-${p.slug}`} compact cta="JOIN THE WISHLIST" productSlug={p.slug} source="product" />
         </section>
       )}
 
