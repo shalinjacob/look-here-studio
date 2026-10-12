@@ -1,3 +1,4 @@
+import { WISHLIST_MODE } from "@/lib/site";
 import type { Product, ProductStatus, FilterTag, Occasion } from "@/lib/types";
 import { tees } from "./tees";
 
@@ -841,9 +842,9 @@ export const UNAVAILABLE_LINE =
 export const STATUS_CTA: Record<ProductStatus, string> = {
   available: "ADD TO CART",
   preorder: "ADD TO CART",
-  "coming-soon": "TELL ME WHEN",
-  "sold-out": "TELL ME FIRST",
-  waitlist: "TELL ME FIRST",
+  "coming-soon": "JOIN THE WISHLIST",
+  "sold-out": "JOIN THE WISHLIST",
+  waitlist: "JOIN THE WISHLIST",
 };
 
 /** can this product be added to the cart? */
@@ -851,6 +852,13 @@ export const STATUS_CTA: Record<ProductStatus, string> = {
 export function hasPriceRange(p: Product): boolean {
   if (p.options?.some((o) => o.choices.some((c) => c.priceDelta))) return true;
   return new Set((p.variants ?? []).map((v) => v.price)).size > 1;
+}
+
+export const WISHLIST_CTA = "JOIN THE WISHLIST";
+
+/** can this be ordered right now? false for everything while WISHLIST_MODE is on */
+export function canOrderNow(p: Product): boolean {
+  return !WISHLIST_MODE && isPurchasable(p);
 }
 
 export function isPurchasable(p: Product): boolean {

@@ -2,12 +2,13 @@
 
 import { useState } from "react";
 import { useCart } from "./cart/CartContext";
-import { STATUS_CTA, isPurchasable, formatPrice, hasPriceRange } from "@/data/products";
+import { STATUS_CTA, WISHLIST_CTA, canOrderNow, formatPrice, hasPriceRange } from "@/data/products";
 import type { Product } from "@/lib/types";
 import { GALLERY_SHOW } from "./ProductGallery";
 
 // Status-driven action. Purchasable (available/preorder) => add to cart with
-// clear feedback + VIEW CART. Otherwise => scroll to the on-page waitlist.
+// clear feedback + VIEW CART. Otherwise (or in wishlist mode) => scroll to the
+// on-page wishlist sign-up.
 // Products with `variants` get a picker first; picking one also jumps the
 // gallery to that variant's photo (via the "lhs:gallery-show" event).
 
@@ -23,7 +24,7 @@ export default function AddToCart({ product }: { product: Product }) {
   const [chosen, setChosen] = useState<Record<string, string>>(() =>
     Object.fromEntries(options.filter((o) => !o.required).map((o) => [o.id, o.choices[0].id]))
   );
-  const canBuy = isPurchasable(product);
+  const canBuy = canOrderNow(product);
   const v = variants.find((x) => x.id === vid);
   const missing = options.filter((o) => !chosen[o.id]);
   const optionPrice =
@@ -37,7 +38,7 @@ export default function AddToCart({ product }: { product: Product }) {
   if (!canBuy) {
     return (
       <a href="#waitlist" className="cta cta--stamp addcart__btn">
-        <span className="cta__label">{STATUS_CTA[product.status]}</span>
+        <span className="cta__label">{WISHLIST_CTA}</span>
         <span className="cta__arrow">→</span>
       </a>
     );
