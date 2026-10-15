@@ -9,7 +9,7 @@ import NewObjects from "@/components/sections/NewObjects";
 import NewsletterSection from "@/components/sections/NewsletterSection";
 import JsonLd from "@/components/JsonLd";
 import { standardReturnPolicyLd } from "@/lib/structuredData";
-import { SITE_URL, SITE_NAME, BRAND_NAME, EMAIL, WHATSAPP_NUMBER, FACEBOOK_URL, INSTAGRAM_URL, PINTEREST_URL } from "@/lib/site";
+import { SITE_URL, SITE_NAME, BRAND_NAME, EMAIL, WHATSAPP_NUMBER, INSTAGRAM_URL, PINTEREST_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
@@ -39,7 +39,7 @@ const orgLd = {
       areaServed: "IN",
       currenciesAccepted: "INR",
       hasMerchantReturnPolicy: standardReturnPolicyLd,
-      sameAs: [INSTAGRAM_URL, FACEBOOK_URL, ...(PINTEREST_URL ? [PINTEREST_URL] : [])],
+      sameAs: [INSTAGRAM_URL, ...(PINTEREST_URL ? [PINTEREST_URL] : [])],
     },
     {
       "@type": "WebSite",

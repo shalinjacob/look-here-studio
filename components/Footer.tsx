@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FACEBOOK_URL, INSTAGRAM_URL, PINTEREST_URL } from "@/lib/site";
+import { INSTAGRAM_URL, PINTEREST_URL } from "@/lib/site";
 
 export default function Footer() {
   return (
@@ -36,7 +36,6 @@ export default function Footer() {
             <div className="footer__col">
               <h4>ELSEWHERE</h4>
               <a href={INSTAGRAM_URL} target="_blank" rel="noreferrer">Instagram →</a>
-              <a href={FACEBOOK_URL} target="_blank" rel="noreferrer">Facebook →</a>
               {PINTEREST_URL && <a href={PINTEREST_URL} target="_blank" rel="noreferrer">Pinterest →</a>}
               <a href="mailto:hello@lookherestudio.in">Email →</a>
             </div>

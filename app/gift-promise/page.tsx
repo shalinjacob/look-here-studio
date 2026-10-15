@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     WISHLIST_MODE
       ? "Hand over a printable Gift Promise card on the day, and join the wishlist for the object. We'll message you as soon as it's ready to order."
-      : "Missed the Diwali cut-off? Order now and hand over a printable Gift Promise card on the day. The object follows, made to order and dispatched within 10 working days.",
+      : "Order now and hand over a printable Gift Promise card on the day. The object follows, made to order and dispatched within 10 working days.",
 };
 
 // OWNER: the "change your mind before we start making it" line is a promise to

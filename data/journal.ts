@@ -434,10 +434,10 @@ export const journal: JournalPost[] = [
     excerpt:
       "Diwali gifts for the home that people actually keep: clocks, lightboxes, word panels and a gold-and-marble-look game, sorted by who you're buying for.",
     description:
-      "Unique Diwali gifts for the home, sorted by who you're buying for: clocks, personalised lightboxes, word panels and a table game. Order by 14 Oct for Diwali 2026.",
+      "Unique Diwali gifts for the home, sorted by who you're buying for: clocks, personalised lightboxes, word panels and a table game. Every piece is made to order and dispatched within 10 working days. Join the wishlist on WhatsApp to get started.",
     readingTime: "",
     answer:
-      "The best Diwali gifts for the home are objects people will see every day but would never buy for themselves: a clock that's also a small painting, their own words lit up on the wall, a table game that starts arguments. Pick for the person, not the price, and for Diwali 2026 order by Wednesday 14 October so it arrives before the 8th.",
+      "The best Diwali gifts for the home are objects people will see every day but would never buy for themselves: a clock that's also a small painting, their own words lit up on the wall, a table game that starts arguments. Pick for the person, not the price. Every piece is made to order and dispatched within 10 working days. Join the wishlist on WhatsApp to get started.",
     body: [],
     sections: [
       {
@@ -475,14 +475,14 @@ export const journal: JournalPost[] = [
         ],
       },
       {
-        heading: "When should I order for Diwali 2026?",
+        heading: "How long does a Diwali order take?",
         paras: [
-          "Diwali is on Sunday 8 November 2026. Everything we make is made to order and dispatched within 10 working days of your order being confirmed, so order by Wednesday 14 October and it arrives before the 8th. Shipping is free anywhere in India.",
+          "Diwali is on Sunday 8 November 2026. Every piece is made to order and dispatched within 10 working days. Join the wishlist on WhatsApp to get started. Shipping is free anywhere in India.",
           "Tick “This is a gift” in your cart and add a short note, and we'll handwrite it on a card.",
         ],
       },
       {
-        heading: "Missed the cut-off?",
+        heading: "Want to give it on the day?",
         paras: [
           "Give a [Gift Promise](/gift-promise). Order the object, then print or forward a card on the day that says what's coming and when it leaves the studio. The real thing follows soon after.",
         ],
@@ -491,7 +491,7 @@ export const journal: JournalPost[] = [
     faq: [
       { q: "What is a good Diwali gift for the home?", a: "Something they'll see every day but wouldn't buy themselves: a statement clock, a lightbox with their own words, a word panel for a bare wall, or a table game for card night. See our [gift guide](/gift-guide) for more, sorted by budget." },
       { q: "Is there a Diwali gift under ₹5,000?", a: "Yes: [X + O](/objects/x-plus-o) ({price:x-plus-o}) or the [Patterned Coasters](/objects/patterned-coasters) ({price:patterned-coasters} for a set of four)." },
-      { q: "When do I need to order for delivery before Diwali 2026?", a: "By Wednesday 14 October 2026. Everything is made to order and dispatched within 10 working days, with free shipping across India." },
+      { q: "How long does a Diwali order take?", a: "Every piece is made to order and dispatched within 10 working days. Join the wishlist on WhatsApp to get started. Free shipping across India." },
       { q: "Can you add a gift note?", a: "Yes. Tick “This is a gift” in your cart and add a note; we handwrite it on a card." },
       { q: "Can I personalise a Diwali gift?", a: "Yes, with the [Custom Lightbox](/objects/custom-lightbox), [Four-Letter Words](/objects/four-letter-words) or the [Pickleball Shadow Box](/objects/pickleball-shadow-box). We confirm the details on WhatsApp before we make it." },
     ],

@@ -1,22 +1,15 @@
 import Script from "next/script";
+import WhatsAppTracker from "./WhatsAppTracker";
 
-// Loads GA4 and/or Meta Pixel only when their IDs are set in the environment.
-// No IDs → no scripts. OWNER: decide whether a consent notice is needed before
+// GA4 is loaded in <head> by app/layout.tsx. Meta Pixel loads only when its ID
+// is set in the environment. OWNER: decide whether a consent notice is needed before
 // enabling these.
-const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 const PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID;
 
 export default function Analytics() {
   return (
     <>
-      {GA_ID && (
-        <>
-          <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
-          <Script id="ga4" strategy="afterInteractive">
-            {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=gtag;gtag('js',new Date());gtag('config',${JSON.stringify(GA_ID)});`}
-          </Script>
-        </>
-      )}
+      <WhatsAppTracker />
       {PIXEL_ID && (
         <Script id="meta-pixel" strategy="afterInteractive">
           {`!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init',${JSON.stringify(PIXEL_ID)});fbq('track','PageView');`}

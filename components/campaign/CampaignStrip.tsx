@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useCampaignNow } from "./CampaignClock";
 import { BANNER_A, BANNER_B, campaignState, countdownParts } from "@/config/campaigns";
 
-// Top strip: Diwali countdown until the cut-off, then the Gift Promise, then nothing.
+// Top strip: Diwali countdown until the switch-over, then the Gift Promise, then nothing.
 export default function CampaignStrip() {
   const now = useCampaignNow();
   const state = campaignState(now);

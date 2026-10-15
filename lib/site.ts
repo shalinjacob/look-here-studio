@@ -6,7 +6,6 @@ export const SITE_NAME = "LOOK HERE STUDIO";
 export const BRAND_NAME = "Look Here Studio";
 export const WHATSAPP_NUMBER = "919380670901";
 export const EMAIL = "hello@lookherestudio.in";
-export const FACEBOOK_URL = "https://www.facebook.com/profile.php?id=61594915473017";
 export const INSTAGRAM_URL = "https://www.instagram.com/look.herestudio/";
 /** brand Pinterest profile — empty hides the link everywhere (OWNER to supply) */
 export const PINTEREST_URL = "";

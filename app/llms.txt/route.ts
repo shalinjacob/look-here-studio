@@ -2,7 +2,7 @@ import { products, isPurchasable, formatPrice, isTee } from "@/data/products";
 import { publishedPosts } from "@/data/journal";
 import { edits } from "@/data/edits";
 import { categories } from "@/data/categories";
-import { SITE_URL, BRAND_NAME, EMAIL, INSTAGRAM_URL, FACEBOOK_URL, WISHLIST_MODE } from "@/lib/site";
+import { SITE_URL, BRAND_NAME, EMAIL, INSTAGRAM_URL, WISHLIST_MODE } from "@/lib/site";
 import { plain } from "@/lib/richText";
 
 // /llms.txt — a plain-language summary of the studio for AI assistants and
@@ -37,7 +37,7 @@ export function GET() {
 - Ordering: add objects to the cart on ${SITE_URL} and tap "Send product request". That opens WhatsApp with the order filled in; the studio confirms the details and then sends payment details. No payment is taken on the website.
 - Returns: unused standard objects within 7 days of delivery, with free pickup. Personalised pieces are final sale unless damaged. Damage must be reported within 48 hours with an unboxing video and is replaced or refunded. Details: ${SITE_URL}/shipping-returns
 - Personalisation: custom words, text in any language, colours and sizes on many pieces. Corporate and wedding gifting in small runs.
-- Contact: WhatsApp +91 93806 70901, email ${EMAIL}. Instagram ${INSTAGRAM_URL}. Facebook ${FACEBOOK_URL}.
+- Contact: WhatsApp +91 93806 70901, email ${EMAIL}. Instagram ${INSTAGRAM_URL}.
 
 ## Categories
 

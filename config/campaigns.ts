@@ -3,20 +3,20 @@
 // Edit the dates/copy here; components read from this file only.
 // ---------------------------------------------------------------------------
 
-/** Order-by cut-off for pre-Diwali delivery (Banner A counts down to this). */
+/** Switch-over date between Banner A and Banner B (not a customer-facing order deadline). */
 export const DIWALI_CUTOFF = "2026-10-14T23:59:59+05:30";
-/** Gift Promise (Banner B) runs from the cut-off until the end of Diwali day. */
+/** Gift Promise (Banner B) runs from the switch-over until the end of Diwali day. */
 export const DIWALI_END = "2026-11-08T23:59:59+05:30";
 
 export const BANNER_A = {
   title: "Gifts you can give this Diwali.",
-  body: "Order by Wed 14 Oct and it arrives before the 8th.",
+  body: "Every piece is made to order and dispatched within 10 working days.",
   cta: "See gift ideas",
   href: "/gift-guide",
 };
 
 export const BANNER_B = {
-  title: "Missed the Diwali cut-off? Give a Gift Promise.",
+  title: "Give a Gift Promise this Diwali.",
   body: "Order now, hand over a card on the day, and the object follows (dispatched within 10 working days).",
   cta: "How it works",
   href: "/gift-promise",
@@ -38,7 +38,7 @@ export function campaignState(nowMs: number): CampaignState {
   return "none";
 }
 
-/** time left until the cut-off, floored to whole minutes */
+/** time left until the switch-over, floored to whole minutes */
 export function countdownParts(nowMs: number) {
   const mins = Math.max(0, Math.floor((CUTOFF_MS - nowMs) / 60000));
   return { d: Math.floor(mins / 1440), h: Math.floor((mins % 1440) / 60), m: mins % 60 };

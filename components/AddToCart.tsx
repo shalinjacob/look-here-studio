@@ -6,7 +6,6 @@ import { STATUS_CTA, WISHLIST_CTA, canOrderNow, formatPrice, hasPriceRange } fro
 import type { Product } from "@/lib/types";
 import { GALLERY_SHOW } from "./ProductGallery";
 import { SITE_URL, waLink } from "@/lib/site";
-import { track } from "@/lib/analytics";
 
 /** pre-filled WhatsApp message for the wishlist: names the object, asks for name + pincode */
 function wishlistMessage(p: Product) {
@@ -55,7 +54,6 @@ export default function AddToCart({ product }: { product: Product }) {
         target="_blank"
         rel="noreferrer"
         className="cta cta--stamp addcart__btn"
-        onClick={() => track("whatsapp_click", { location: "product" })}
       >
         <span className="cta__label">{WISHLIST_CTA}</span>
         <span className="cta__arrow">→</span>

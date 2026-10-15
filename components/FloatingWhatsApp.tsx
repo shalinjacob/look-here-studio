@@ -5,7 +5,7 @@ export default function FloatingWhatsApp({ name, url }: { name: string; url: str
   return (
     <WaLink
       text={`Hi Look Here Studio! I have a question about the ${name}: ${url}`}
-      location="floating"
+     
       className="wa-float"
       ariaLabel={`Ask on WhatsApp about the ${name}`}
     >

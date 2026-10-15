@@ -9,9 +9,8 @@ export default function NewsletterSection() {
         <div className="newsletter">
           <h2 className="newsletter__title">Join the Founding List.</h2>
           <p className="newsletter__intro">
-            The first 50 people get first dibs on every new object, a numbered founding card
-            in their first order, and free personalisation where the object allows. No
-            discounts, no spam, no obligation. Just first in line.
+            Get first dibs on every new object and free personalisation where the object
+            allows. No discounts, no spam, no obligation. Just first in line.
           </p>
           <Newsletter
             cta="SAVE MY SPOT"

@@ -78,6 +78,14 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${display.variable} ${mono.variable} ${hand.variable}`}>
+      <head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-7HJT24Y1QS" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-7HJT24Y1QS');",
+          }}
+        />
+      </head>
       <body>
         <a href="#main" className="skip-link">Skip to content</a>
         <CampaignClock initialNow={Date.now()}>

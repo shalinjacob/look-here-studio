@@ -261,7 +261,6 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
             </p>
             <WaLink
               text={`Hi! Here's my ${p.name} at home:`}
-              location="at_home"
               className="cta cta--link"
             >
               <span className="cta__label">Share your wall on WhatsApp</span>

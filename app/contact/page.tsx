@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
-import { FACEBOOK_URL, INSTAGRAM_URL, PINTEREST_URL } from "@/lib/site";
+import { INSTAGRAM_URL, PINTEREST_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/contact" },
@@ -37,8 +37,6 @@ export default function ContactPage() {
             <strong>Elsewhere</strong>
             <br />
             <a href={INSTAGRAM_URL} target="_blank" rel="noreferrer">Instagram</a>
-            {" · "}
-            <a href={FACEBOOK_URL} target="_blank" rel="noreferrer">Facebook</a>
             {PINTEREST_URL && (
               <>
                 {" · "}
