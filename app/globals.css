@@ -208,8 +208,11 @@ input { font: inherit; }
 /* ==========================================================================
    WHY LOOK HERE (02)
    ========================================================================== */
-.why__grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: clamp(28px, 6vw, 96px); margin-top: clamp(28px, 4vw, 56px); align-items: start; }
-.why__headwrap { position: relative; }
+/* headline spans the full width; mirror (left) and body text (right) sit side by side beneath it */
+.why__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: clamp(28px, 6vw, 96px); margin-top: clamp(28px, 4vw, 56px); align-items: end; }
+.why__headwrap { display: contents; }
+.why__head { grid-column: 1 / -1; }
+.why__body { max-width: 460px; }
 .why__head { font-family: var(--display); font-weight: 700; color: var(--ink); letter-spacing: -0.03em; line-height: 1.0; font-size: clamp(40px, 6.5vw, 88px); }
 .why__figure { position: relative; margin-top: clamp(24px, 4vw, 48px); max-width: 460px; }
 .why__figure img { width: 100%; height: auto; }
