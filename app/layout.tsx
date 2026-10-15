@@ -59,9 +59,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     siteName: "LOOK HERE STUDIO",
-    images: [ogImage("home")],
+    images: [ogImage("home-logo")],
   },
-  twitter: { card: "summary_large_image", title: "LOOK HERE STUDIO", description: "Objects for the home designed to be noticed.", images: ["/og/home.jpg"] },
+  twitter: { card: "summary_large_image", title: "LOOK HERE STUDIO", description: "Objects for the home designed to be noticed.", images: ["/og/home-logo.jpg"] },
   robots: { index: true, follow: true },
 };
 

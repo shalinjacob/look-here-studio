@@ -25,7 +25,7 @@ const orgLd = {
       alternateName: [SITE_NAME, "Look Here", "lookherestudio"],
       url: SITE_URL,
       logo: `${SITE_URL}/logo-stacked.png`,
-      image: `${SITE_URL}/og/home.jpg`,
+      image: `${SITE_URL}/og/home-logo.jpg`,
       description:
         "An independent design studio in Bengaluru making playful, graphic objects for the home — mirrors, clocks, lights, wall pieces and art prints — in small runs.",
       email: EMAIL,
