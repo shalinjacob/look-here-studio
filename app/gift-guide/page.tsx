@@ -181,37 +181,6 @@ export default function GiftGuidePage() {
         </div>
       </section>
 
-      {/* services */}
-      <section className="giftsec">
-        <div className="slabel"><span>05 / THE GIFTING BIT</span></div>
-        <div className="giftserv">
-          <div className="serv">
-            <h3 className="serv__title">Wrapped properly.</h3>
-            <p className="serv__copy">
-              We box everything in the good stuff — recycled, rigid, no bubble
-              wrap graveyard. Just tell us it&apos;s a gift.
-            </p>
-          </div>
-          <div className="serv">
-            <h3 className="serv__title">A note, not a novel.</h3>
-            <p className="serv__copy">
-              Send us a message and we&apos;ll write it on a card by hand.
-              Keep it short; the object is doing the talking.
-            </p>
-          </div>
-          <div className="serv">
-            <h3 className="serv__title">Buying in bulk?</h3>
-            <p className="serv__copy">
-              Corporate and wedding gifting, made to order in small runs.{" "}
-              <Link href="/contact" style={{ textDecoration: "underline", textUnderlineOffset: 3 }}>
-                Tell us what you need
-              </Link>{" "}
-              — we&apos;ll figure it out.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* final CTA */}
       <div className="objects__foot">
         <span className="index__foot-note" style={{ fontFamily: "var(--mono)", fontSize: 13, color: "var(--muted)" }}>
