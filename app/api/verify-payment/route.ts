@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import crypto from "crypto";
 import Razorpay from "razorpay";
+import { EMAIL } from "@/lib/site";
 
 export const runtime = "nodejs";
 
@@ -39,11 +40,11 @@ export async function POST(req: Request) {
 }
 
 // Reads the order back from Razorpay (so the details are the ones that were paid for)
-// and emails them to the studio via Resend. Needs RESEND_API_KEY + ORDER_NOTIFY_TO
-// (falls back to WAITLIST_NOTIFY_TO); without them the order is still in the Razorpay dashboard.
+// and emails them to the studio (hello@lookherestudio.in by default; ORDER_NOTIFY_TO overrides)
+// via Resend. Needs RESEND_API_KEY; without it the order is still in the Razorpay dashboard.
 async function notifyStudio(orderId: string, paymentId: string) {
-  const to = process.env.ORDER_NOTIFY_TO || process.env.WAITLIST_NOTIFY_TO;
-  if (!process.env.RESEND_API_KEY || !to) return;
+  const to = process.env.ORDER_NOTIFY_TO || EMAIL; // hello@lookherestudio.in unless overridden
+  if (!process.env.RESEND_API_KEY) return;
   const rzp = new Razorpay({ key_id: process.env.RAZORPAY_KEY_ID!, key_secret: process.env.RAZORPAY_KEY_SECRET! });
   const order = await rzp.orders.fetch(orderId);
   const n = (order.notes ?? {}) as Record<string, string>;
