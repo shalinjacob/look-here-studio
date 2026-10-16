@@ -476,6 +476,7 @@ const objects: Product[] = [
     ],
     imageFit: "cover",
     model3d: "/models/pickleball-shadow-box.glb",
+    model3dSrgb: true,
     leadTime: "Made to order · dispatched within 10 working days",
     care: "Dust the glass. Don't actually play with the framed one.",
     installation: "Two wall fixings; hangs like a picture.",
@@ -692,6 +693,7 @@ const objects: Product[] = [
     currency: "INR",
     status: "available",
     images: ["/objects/custom-lightbox-1.webp", "/objects/custom-lightbox-2.webp"],
+    model3d: "/models/custom-lightbox.glb",
     lifestyleImages: [],
     imageFit: "cover",
     personalise: [

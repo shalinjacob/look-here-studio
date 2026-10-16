@@ -152,7 +152,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
           />
           {p.model3d && (
             <div className="pdp__video">
-              <ModelViewer src={p.model3d} alt={`${p.name}, interactive 3D view`} />
+              <ModelViewer src={p.model3d} srgbFix={p.model3dSrgb} alt={`${p.name}, interactive 3D view`} />
             </div>
           )}
           {p.video && (

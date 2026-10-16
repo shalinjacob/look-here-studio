@@ -120,6 +120,8 @@ export interface Product {
   video?: string;
   /** optional interactive 3D model (.glb under /public/models) */
   model3d?: string;
+  /** the .glb has sRGB-authored colours that need converting (see ModelViewer) */
+  model3dSrgb?: boolean;
   collection?: string; // collection slug
   leadTime: string;
   care: string;

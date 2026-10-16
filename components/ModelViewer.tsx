@@ -10,11 +10,14 @@ export default function ModelViewer({
   alt,
   poster,
   label = "VIEW IN 3D",
+  srgbFix = false,
 }: {
   src: string;
   alt: string;
   poster?: string;
   label?: string;
+  /** model authored with sRGB colour factors (renders pale in glTF) */
+  srgbFix?: boolean;
 }) {
   const box = useRef<HTMLDivElement>(null);
   const [load, setLoad] = useState(false);
@@ -43,7 +46,7 @@ export default function ModelViewer({
   // This model's colours were authored as sRGB values, but glTF reads
   // baseColorFactor as linear, so everything renders pale. Convert on load.
   useEffect(() => {
-    if (!ready) return;
+    if (!ready || !srgbFix) return;
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const mv = box.current?.querySelector("model-viewer") as any;
     if (!mv) return;
@@ -60,7 +63,7 @@ export default function ModelViewer({
     };
     if (mv.loaded) fix();
     else mv.addEventListener("load", fix, { once: true });
-  }, [ready]);
+  }, [ready, srgbFix]);
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const MV = "model-viewer" as any;
