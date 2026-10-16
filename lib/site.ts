@@ -21,3 +21,8 @@ export const ogImage = (slug: string) => ({ url: `/og/${slug}.jpg`, width: 1200,
  *  (email/WhatsApp sign-up) instead of adding to the cart. Prices stay visible.
  *  Set to false to reopen ordering. */
 export const WISHLIST_MODE = true;
+
+/** Online payment (Razorpay) in the cart drawer, next to the WhatsApp request.
+ *  The button only renders when NEXT_PUBLIC_RAZORPAY_KEY_ID is set (see .env.example),
+ *  and the cart itself is hidden while WISHLIST_MODE is on. */
+export const ONLINE_PAYMENT = true;

@@ -6,6 +6,8 @@ import { useCart, lineId, GIFT_NOTE_MAX, type CartLine } from "./CartContext";
 import { formatPrice } from "@/data/products";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
 import { track } from "@/lib/analytics";
+import { ONLINE_PAYMENT } from "@/lib/site";
+import RazorpayButton from "./RazorpayButton";
 
 /** the WhatsApp order request (format agreed in the website brief) */
 function requestMessage(lines: CartLine[], subtotal: number, currency: string, gift: boolean, giftNote: string) {
@@ -169,6 +171,7 @@ export default function CartDrawer() {
               <p className="drawer__note">
                 We&apos;ll confirm price, details &amp; delivery on WhatsApp.
               </p>
+              {ONLINE_PAYMENT && <RazorpayButton />}
               <button
                 className="cta cta--stamp drawer__checkout"
                 onClick={() => {

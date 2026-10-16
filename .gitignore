@@ -11,3 +11,6 @@ next-env.d.ts
 data/waitlist.local.json
 .env.local
 data/contact.local.json
+
+# secrets
+.env
