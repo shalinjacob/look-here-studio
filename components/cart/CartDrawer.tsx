@@ -169,7 +169,7 @@ export default function CartDrawer() {
                 )}
               </div>
               <p className="drawer__note">
-                We&apos;ll confirm price, details &amp; delivery on WhatsApp.
+                Pay online, or send the request and we&apos;ll confirm price, details &amp; delivery on WhatsApp.
               </p>
               {ONLINE_PAYMENT && <RazorpayButton />}
               <button

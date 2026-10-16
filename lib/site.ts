@@ -20,7 +20,7 @@ export const ogImage = (slug: string) => ({ url: `/og/${slug}.jpg`, width: 1200,
 /** Wishlist mode (owner, Oct 2026): every product's action is JOIN THE WISHLIST
  *  (email/WhatsApp sign-up) instead of adding to the cart. Prices stay visible.
  *  Set to false to reopen ordering. */
-export const WISHLIST_MODE = true;
+export const WISHLIST_MODE = false;
 
 /** Online payment (Razorpay) in the cart drawer, next to the WhatsApp request.
  *  The button only renders when NEXT_PUBLIC_RAZORPAY_KEY_ID is set (see .env.example),

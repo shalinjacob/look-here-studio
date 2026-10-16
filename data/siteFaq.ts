@@ -7,8 +7,8 @@ export const siteFaq: { group: string; items: QA[] }[] = [
   {
     group: "Ordering & payment",
     items: [
-      { q: "How do I order from Look Here Studio?", a: WISHLIST_MODE ? "Right now we're taking wishlist sign-ups: tap “Join the wishlist” on any product: it opens WhatsApp with a message ready to send, so just add your name and pincode. We'll message you as soon as it's ready to order, confirm the details there, then send you payment details." : "Add objects to your cart and tap “Send product request”. That opens WhatsApp with your order filled in. We confirm the price, details and dispatch date with you there, then send you payment details." },
-      { q: "Can I pay on the website?", a: "No. Nothing is paid on the website. Payment is arranged on WhatsApp after we confirm your order. We'll never ask for your card details, an OTP or a PIN." },
+      { q: "How do I order from Look Here Studio?", a: WISHLIST_MODE ? "Right now we're taking wishlist sign-ups: tap “Join the wishlist” on any product: it opens WhatsApp with a message ready to send, so just add your name and pincode. We'll message you as soon as it's ready to order, confirm the details there, then send you payment details." : "Add objects to your cart, then either pay online or tap “Send product request”, which opens WhatsApp with your order filled in so we can confirm the details and send payment details." },
+      { q: "Can I pay on the website?", a: "Yes. Pay online at checkout through Razorpay (UPI, cards, netbanking), or send a product request on WhatsApp and pay after we confirm. We'll never ask for your card details, an OTP or a PIN in a chat." },
       { q: "When is my order confirmed?", a: "When we confirm the price, details and dispatch date with you on WhatsApp." },
       { q: "Can I ask a question before ordering?", a: "Of course. WhatsApp +91 93806 70901 or email hello@lookherestudio.in, or use the “Ask on WhatsApp” button on any product page." },
     ],

@@ -40,9 +40,10 @@ export default function PrivacyPage() {
 
           <h2>Payments</h2>
           <p>
-            We don&apos;t take payments on this website. Payment is arranged with you on WhatsApp after
-            we confirm your order, and we keep the payment reference for our records. We will never
-            ask for your card details, an OTP or a PIN.
+            Online payments are processed by Razorpay. Your card, UPI or bank details are entered
+            on Razorpay&apos;s secure payment window and never reach our servers; we keep only the order and
+            payment reference for our records. If you order through WhatsApp instead, payment is arranged
+            with you there. We will never ask for your card details, an OTP or a PIN in a chat.
           </p>
 
           <h2>Why we use it</h2>

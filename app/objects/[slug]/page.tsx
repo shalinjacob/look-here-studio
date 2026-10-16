@@ -191,8 +191,8 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
               <>
                 <p className="pdp__leadtime">{p.leadTime}</p>
                 <p className="pdp__ordernote">
-                  Nothing to pay here: your cart sends us a WhatsApp message, we confirm the
-                  details in minutes, then send you payment details.
+                  Pay online at checkout, or send us the cart on WhatsApp and we&apos;ll confirm the
+                  details and send you payment details.
                 </p>
               </>
             )}
