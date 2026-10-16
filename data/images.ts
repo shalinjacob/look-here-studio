@@ -14,6 +14,8 @@ export interface ImageMeta {
 }
 
 export const IMAGES: Record<string, ImageMeta> = {
+  "/objects/layer-clock-v2.webp": { alt: "Layer Clock: square wall clock of stacked wavy layers in a terracotta-to-orange gradient, with brass studs" },
+  "/lifestyle/layer-clock-1.webp": { alt: "Layer Clock on a sage green wall above a retro home bar with green velvet stools" },
   "/objects/layer-clock.webp": { alt: "Layer Clock: round wall clock made of stacked wavy layers in a terracotta-to-orange gradient" },
   "/objects/layered-wall-clock.webp": { alt: "Layered Wall Clock: Memphis-style clock of overlapping orange, blue, green and yellow acrylic shapes with a yellow dial" },
   "/lifestyle/athome-layered-clock.webp": { alt: "Layered Wall Clock hanging above a desk with books and plants" },
