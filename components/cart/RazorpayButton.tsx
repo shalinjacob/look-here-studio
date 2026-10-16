@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { cleanCustomer, EMPTY_CUSTOMER, type Customer } from "@/lib/orderDetails";
 import { useCart } from "./CartContext";
 import { track } from "@/lib/analytics";
 
@@ -25,21 +26,51 @@ function loadScript(): Promise<boolean> {
 
 // "PAY ONLINE": create order -> Razorpay modal -> verify signature on the server.
 export default function RazorpayButton() {
-  const { lines, subtotal, clear } = useCart();
+  const { lines, subtotal, clear, gift, giftNote } = useCart();
+  const [c, setC] = useState<Customer>(EMPTY_CUSTOMER);
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState<{ ok: boolean; text: string } | null>(null);
+
+  // remember the details for this visit so a failed payment doesn't mean retyping
+  useEffect(() => {
+    try {
+      const saved = sessionStorage.getItem("lhs.delivery");
+      if (saved) setC({ ...EMPTY_CUSTOMER, ...JSON.parse(saved) });
+    } catch {
+      /* private mode: fine */
+    }
+  }, []);
+  const set = (k: keyof Customer) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const next = { ...c, [k]: e.target.value };
+    setC(next);
+    try {
+      sessionStorage.setItem("lhs.delivery", JSON.stringify(next));
+    } catch {
+      /* ignore */
+    }
+  };
 
   if (!KEY_ID) return null;
 
   async function pay() {
     setMsg(null);
+    const who = cleanCustomer(c);
+    if (!who.ok) {
+      setMsg({ ok: false, text: who.error });
+      return;
+    }
     setBusy(true);
     try {
       if (!(await loadScript())) throw new Error("Could not load the payment window. Check your connection.");
       const res = await fetch("/api/create-order", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ lines: lines.map((l) => ({ slug: l.slug, price: l.price, qty: l.qty, variant: l.variant })) }),
+        body: JSON.stringify({
+          lines: lines.map((l) => ({ slug: l.slug, price: l.price, qty: l.qty, variant: l.variant })),
+          customer: who.value,
+          gift,
+          giftNote,
+        }),
       });
       const order = await res.json();
       if (!res.ok) throw new Error(order.error || "Could not start the payment.");
@@ -51,6 +82,7 @@ export default function RazorpayButton() {
         order_id: order.order_id,
         name: "Look Here Studio",
         description: `${lines.length} item${lines.length > 1 ? "s" : ""}`,
+        prefill: { name: who.value.name, email: who.value.email, contact: who.value.phone },
         theme: { color: "#111111" },
         modal: { ondismiss: () => { setBusy(false); setMsg({ ok: false, text: "Payment cancelled. Your cart is safe." }); } },
         handler: async (r: { razorpay_payment_id: string; razorpay_order_id: string; razorpay_signature: string }) => {
@@ -85,6 +117,17 @@ export default function RazorpayButton() {
 
   return (
     <>
+      <fieldset className="payform">
+        <legend>DELIVERY DETAILS</legend>
+        <input placeholder="Full name" autoComplete="name" value={c.name} onChange={set("name")} />
+        <input placeholder="Mobile number" inputMode="numeric" autoComplete="tel" value={c.phone} onChange={set("phone")} />
+        <input placeholder="Email (for your receipt)" type="email" autoComplete="email" value={c.email} onChange={set("email")} />
+        <textarea placeholder="Address (house, street, area)" rows={2} autoComplete="street-address" value={c.address} onChange={set("address")} />
+        <div className="payform__row">
+          <input placeholder="City" autoComplete="address-level2" value={c.city} onChange={set("city")} />
+          <input placeholder="Pincode" inputMode="numeric" maxLength={6} autoComplete="postal-code" value={c.pincode} onChange={set("pincode")} />
+        </div>
+      </fieldset>
       <button className="cta cta--stamp drawer__checkout" onClick={pay} disabled={busy}>
         <span className="cta__label">{busy ? "OPENING PAYMENT…" : "PAY ONLINE"}</span>
         <span className="cta__arrow">→</span>

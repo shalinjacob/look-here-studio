@@ -823,3 +823,8 @@ input { font: inherit; }
 .model3d__stage { position: relative; background: var(--paper-2); aspect-ratio: 4 / 5; overflow: hidden; }
 .model3d__loading { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--mono); font-size: 11px; letter-spacing: .1em; color: var(--ink); pointer-events: none; }
 .model3d__label { display: flex; justify-content: space-between; gap: 12px; margin-top: 8px; font-family: var(--mono); font-size: 11px; letter-spacing: .08em; color: var(--ink); }
+.payform { border: 0; padding: 0; margin: 14px 0 10px; display: grid; gap: 8px; }
+.payform legend { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; color: var(--ink); margin-bottom: 8px; padding: 0; }
+.payform input, .payform textarea { width: 100%; font: inherit; font-family: var(--mono); font-size: 13px; padding: 10px 12px; background: var(--paper); color: var(--ink); border: 1px solid var(--line); border-radius: 0; }
+.payform textarea { resize: vertical; }
+.payform__row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
