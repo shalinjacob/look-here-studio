@@ -40,6 +40,28 @@ export default function ModelViewer({
     if (load) import("@google/model-viewer").then(() => setReady(true));
   }, [load]);
 
+  // This model's colours were authored as sRGB values, but glTF reads
+  // baseColorFactor as linear, so everything renders pale. Convert on load.
+  useEffect(() => {
+    if (!ready) return;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const mv = box.current?.querySelector("model-viewer") as any;
+    if (!mv) return;
+    const fix = () => {
+      if (mv.dataset.fixed) return;
+      mv.dataset.fixed = "1";
+      const lin = (c: number) => (c <= 0.04045 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4));
+      for (const m of mv.model?.materials ?? []) {
+        const f = m.pbrMetallicRoughness.baseColorFactor;
+        // the front glass pane only adds haze: hide it
+        const a = m.name === "Glass front" ? 0 : f[3];
+        m.pbrMetallicRoughness.setBaseColorFactor([lin(f[0]), lin(f[1]), lin(f[2]), a]);
+      }
+    };
+    if (mv.loaded) fix();
+    else mv.addEventListener("load", fix, { once: true });
+  }, [ready]);
+
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const MV = "model-viewer" as any;
 
@@ -53,7 +75,7 @@ export default function ModelViewer({
             poster={poster}
             camera-controls=""
             auto-rotate=""
-            shadow-intensity="1"
+            shadow-intensity="0"
             interaction-prompt="auto"
             style={{ position: "absolute", inset: 0, width: "100%", height: "100%", background: "transparent" }}
           />
