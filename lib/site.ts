@@ -12,7 +12,7 @@ export const PINTEREST_URL = "";
 
 /** wa.me link to the studio with a prefilled message */
 export const waLink = (text: string) =>
-  `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+  `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text).replace(/'/g, "%27")}`;
 
 /** 1200x630 JPG share card generated into /public/og */
 export const ogImage = (slug: string) => ({ url: `/og/${slug}.jpg`, width: 1200, height: 630 });

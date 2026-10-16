@@ -2,11 +2,12 @@
 
 import { useEffect } from "react";
 import { track } from "@/lib/analytics";
+import { pageContext } from "@/lib/whatsapp";
 
 // One delegated listener reports whatsapp_click for every link to WhatsApp
 // (wa.me / api.whatsapp.com), wherever it sits. Links open normally.
 function linkLocation(a: Element, path: string): string {
-  if (a.closest(".wa-float")) return "product_page_floating";
+  if (a.closest(".wa-float")) return "floating";
   if (a.closest(".announce")) return "banner";
   if (a.closest("footer")) return "footer";
   if (a.closest("header, nav")) return "header";
@@ -22,10 +23,11 @@ export default function WhatsAppTracker() {
       const a = (e.target as Element | null)?.closest?.('a[href*="wa.me"], a[href*="api.whatsapp.com"]');
       if (!a) return;
       const path = window.location.pathname;
-      const isProduct = path.startsWith("/objects/");
+      const ctx = pageContext(path);
       track("whatsapp_click", {
         link_location: linkLocation(a, path),
-        product_name: isProduct ? document.querySelector("h1")?.textContent?.trim() ?? "" : "",
+        product_name: ctx.productName ?? "",
+        page_type: ctx.type,
         page_path: path,
       });
     };

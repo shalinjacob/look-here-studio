@@ -1,11 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useCart } from "./cart/CartContext";
 import { STATUS_CTA, WISHLIST_CTA, canOrderNow, formatPrice, hasPriceRange } from "@/data/products";
 import type { Product } from "@/lib/types";
 import { GALLERY_SHOW } from "./ProductGallery";
-import { SITE_URL, waLink } from "@/lib/site";
+import { SITE_URL } from "@/lib/site";
+import { buildWhatsAppLink, WA_SELECTION_EVENT } from "@/lib/whatsapp";
 
 /** pre-filled WhatsApp message for the wishlist: names the object, asks for name + pincode */
 function wishlistMessage(p: Product, selection?: string) {
@@ -43,6 +44,22 @@ export default function AddToCart({ product }: { product: Product }) {
   const optionPrice =
     (product.price ?? 0) +
     options.reduce((n, o) => n + (o.choices.find((c) => c.id === chosen[o.id])?.priceDelta ?? 0), 0);
+  // tell the site-wide WhatsApp button what's picked ("size: L, colour: Black")
+  const noun = (legend: string) => legend.replace(/^CHOOSE YOUR /, "").toLowerCase();
+  const pickText = [
+    ...options.map((o) => {
+      const c = o.choices.find((x) => x.id === chosen[o.id]);
+      return c ? `${noun(o.legend)}: ${c.label}` : "";
+    }),
+    v && variants.length > 1 ? `${noun(product.variantLegend ?? "CHOOSE YOUR OPTION")}: ${v.label}` : "",
+  ]
+    .filter(Boolean)
+    .join(", ");
+  useEffect(() => {
+    const detail = { slug: product.slug, text: pickText };
+    (window as unknown as { __waSelection?: typeof detail }).__waSelection = detail;
+    window.dispatchEvent(new CustomEvent(WA_SELECTION_EVENT, { detail }));
+  }, [product.slug, pickText]);
   const needsWord =
     (!!v?.custom && word.trim().length === 0) ||
     fields.some((f) => !(values[f.id] ?? "").trim()) ||
@@ -94,7 +111,7 @@ export default function AddToCart({ product }: { product: Product }) {
       <div className="addcart-wrap">
       {optionsUi}
       <a
-        href={waLink(wishlistMessage(product, selection ? `${selection} (${formatPrice(optionPrice, product.currency)})` : undefined))}
+        href={buildWhatsAppLink({ text: wishlistMessage(product, selection ? `${selection} (${formatPrice(optionPrice, product.currency)})` : undefined) })}
         target="_blank"
         rel="noreferrer"
         className="cta cta--stamp addcart__btn"

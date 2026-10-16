@@ -8,6 +8,7 @@ import CartDrawer from "@/components/cart/CartDrawer";
 import Analytics from "@/components/Analytics";
 import { CampaignClock } from "@/components/campaign/CampaignClock";
 import CampaignStrip from "@/components/campaign/CampaignStrip";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import "./globals.css";
 import { SITE_URL, ogImage } from "@/lib/site";
 
@@ -96,6 +97,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <main id="main">{children}</main>
           <Footer />
           <CartDrawer />
+          <FloatingWhatsApp />
         </CartProvider>
         </CampaignClock>
         <Analytics />

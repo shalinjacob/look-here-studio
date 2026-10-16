@@ -1,14 +1,11 @@
-import WaLink from "./WaLink";
+"use client";
 
-// Small fixed "Ask on WhatsApp" button, product pages only.
-export default function FloatingWhatsApp({ name, url }: { name: string; url: string }) {
+import PageWaLink from "./PageWaLink";
+
+// Small fixed "Ask on WhatsApp" button on every page; the message follows the page.
+export default function FloatingWhatsApp() {
   return (
-    <WaLink
-      text={`Hi Look Here Studio! I have a question about the ${name}: ${url}`}
-     
-      className="wa-float"
-      ariaLabel={`Ask on WhatsApp about the ${name}`}
-    >
+    <PageWaLink className="wa-float" ariaLabel="Ask on WhatsApp">
       <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
         <path
           fill="currentColor"
@@ -16,6 +13,6 @@ export default function FloatingWhatsApp({ name, url }: { name: string; url: str
         />
       </svg>
       <span className="wa-float__label">Ask on WhatsApp</span>
-    </WaLink>
+    </PageWaLink>
   );
 }

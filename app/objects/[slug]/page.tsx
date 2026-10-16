@@ -10,7 +10,6 @@ import ProductTile from "@/components/ProductTile";
 import Newsletter from "@/components/Newsletter";
 import JsonLd from "@/components/JsonLd";
 import TrackView from "@/components/TrackView";
-import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import WaLink from "@/components/WaLink";
 import CampaignCard from "@/components/campaign/CampaignCard";
 import Faq from "@/components/Faq";
@@ -360,7 +359,6 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
           </Link>
         ) : <span />}
       </nav>
-      <FloatingWhatsApp name={p.name} url={url} />
     </article>
   );
 }

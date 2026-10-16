@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import Link from "next/link";
 import { useCart, lineId, GIFT_NOTE_MAX, type CartLine } from "./CartContext";
 import { formatPrice } from "@/data/products";
-import { waLink } from "@/lib/site";
+import { buildWhatsAppLink } from "@/lib/whatsapp";
 import { track } from "@/lib/analytics";
 
 /** the WhatsApp order request (format agreed in the website brief) */
@@ -179,7 +179,7 @@ export default function CartDrawer() {
                     lead_source: "whatsapp_cart",
                     items: lines.map((l) => ({ item_id: l.slug, item_name: l.name, item_variant: l.variant, price: l.price, quantity: l.qty })),
                   });
-                  const url = waLink(requestMessage(lines, subtotal, currency, gift, giftNote));
+                  const url = buildWhatsAppLink({ text: requestMessage(lines, subtotal, currency, gift, giftNote) });
                   window.open(url, "_blank", "noopener,noreferrer");
                 }}
               >

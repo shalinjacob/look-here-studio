@@ -1,6 +1,6 @@
 "use client";
 
-import { waLink } from "@/lib/site";
+import { buildWhatsAppLink } from "@/lib/whatsapp";
 
 // A WhatsApp link to the studio (clicks are reported by WhatsAppTracker).
 export default function WaLink({
@@ -16,7 +16,7 @@ export default function WaLink({
 }) {
   return (
     <a
-      href={waLink(text)}
+      href={buildWhatsAppLink({ text })}
       target="_blank"
       rel="noreferrer"
       className={className}
