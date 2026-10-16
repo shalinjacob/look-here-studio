@@ -8,9 +8,10 @@ import { GALLERY_SHOW } from "./ProductGallery";
 import { SITE_URL, waLink } from "@/lib/site";
 
 /** pre-filled WhatsApp message for the wishlist: names the object, asks for name + pincode */
-function wishlistMessage(p: Product) {
+function wishlistMessage(p: Product, selection?: string) {
   return [
     `Hi Look Here Studio! I'd like to join the wishlist for the ${p.name} (${p.objectNumber}).`,
+    ...(selection ? [`Choice: ${selection}`] : []),
     `${SITE_URL}/objects/${p.slug}`,
     "",
     "My name: ",
@@ -47,10 +48,53 @@ export default function AddToCart({ product }: { product: Product }) {
     fields.some((f) => !(values[f.id] ?? "").trim()) ||
     missing.length > 0;
 
+  const optionsUi = (
+    <>
+      {options.map((o) => (
+        <fieldset className="variants" key={o.id}>
+          <legend className="variants__legend">{o.legend}</legend>
+          <div className="variants__list variants__list--compact">
+            {o.choices.map((c) => (
+              <button
+                key={c.id}
+                type="button"
+                className={`variants__opt${chosen[o.id] === c.id ? " is-active" : ""}`}
+                aria-pressed={chosen[o.id] === c.id}
+                onClick={() => choose(o.id, c.id)}
+              >
+                <span className="variants__label">{c.label}</span>
+                {(c.note || c.priceDelta !== undefined) && (
+                  <span className="variants__meta">
+                    {[c.note, c.priceDelta !== undefined && formatPrice((product.price ?? 0) + c.priceDelta, product.currency)]
+                      .filter(Boolean)
+                      .join(" · ")}
+                  </span>
+                )}
+              </button>
+            ))}
+          </div>
+        </fieldset>
+      ))}
+      {options.length > 0 && (
+        <p className="variants__total">
+          {missing.length > 0
+            ? `Pick your ${missing.map((o) => o.legend.replace(/^CHOOSE YOUR /, "").toLowerCase()).join(" and ")}`
+            : formatPrice(optionPrice, product.currency)}
+        </p>
+      )}
+    </>
+  );
+
   if (!canBuy) {
+    const selection = options
+      .map((o) => o.choices.find((c) => c.id === chosen[o.id])?.label)
+      .filter(Boolean)
+      .join(" · ");
     return (
+      <div className="addcart-wrap">
+      {optionsUi}
       <a
-        href={waLink(wishlistMessage(product))}
+        href={waLink(wishlistMessage(product, selection ? `${selection} (${formatPrice(optionPrice, product.currency)})` : undefined))}
         target="_blank"
         rel="noreferrer"
         className="cta cta--stamp addcart__btn"
@@ -58,6 +102,7 @@ export default function AddToCart({ product }: { product: Product }) {
         <span className="cta__label">{WISHLIST_CTA}</span>
         <span className="cta__arrow">→</span>
       </a>
+      </div>
     );
   }
 
@@ -112,38 +157,7 @@ export default function AddToCart({ product }: { product: Product }) {
 
   return (
     <div className="addcart-wrap">
-      {options.map((o) => (
-        <fieldset className="variants" key={o.id}>
-          <legend className="variants__legend">{o.legend}</legend>
-          <div className="variants__list variants__list--compact">
-            {o.choices.map((c) => (
-              <button
-                key={c.id}
-                type="button"
-                className={`variants__opt${chosen[o.id] === c.id ? " is-active" : ""}`}
-                aria-pressed={chosen[o.id] === c.id}
-                onClick={() => choose(o.id, c.id)}
-              >
-                <span className="variants__label">{c.label}</span>
-                {(c.note || c.priceDelta !== undefined) && (
-                  <span className="variants__meta">
-                    {[c.note, c.priceDelta !== undefined && formatPrice((product.price ?? 0) + c.priceDelta, product.currency)]
-                      .filter(Boolean)
-                      .join(" · ")}
-                  </span>
-                )}
-              </button>
-            ))}
-          </div>
-        </fieldset>
-      ))}
-      {options.length > 0 && (
-        <p className="variants__total">
-          {missing.length > 0
-            ? `Pick your ${missing.map((o) => o.legend.replace(/^CHOOSE YOUR /, "").toLowerCase()).join(" and ")}`
-            : formatPrice(optionPrice, product.currency)}
-        </p>
-      )}
+      {optionsUi}
       {variants.length > 0 && (
         <fieldset className="variants">
           <legend className="variants__legend">{product.variantLegend ?? "CHOOSE YOUR WORD"}</legend>

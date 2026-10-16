@@ -464,7 +464,7 @@ const objects: Product[] = [
     material: "Oak shadow box, acrylic mounts",
     finish: "Oiled oak / court felt",
     colour: "Green or clay court",
-    dimensions: "300 × 600 × 60 mm",
+    dimensions: "One paddle: 300 × 600 × 60 mm · Two paddles: 600 × 600 × 60 mm",
     price: 9500,
     currency: "INR",
     status: "available",
@@ -473,6 +473,24 @@ const objects: Product[] = [
       "/lifestyle/pickleball-1.webp",
       "/lifestyle/pickleball-2.webp",
       "/lifestyle/pickleball-3.webp",
+    ],
+    options: [
+      {
+        id: "paddles",
+        legend: "CHOOSE YOUR SET",
+        choices: [
+          { id: "one", label: "ONE PADDLE", note: "300 × 600 mm", priceDelta: 0 },
+          { id: "two", label: "TWO PADDLES", note: "600 × 600 mm", priceDelta: 1500 },
+        ],
+      },
+      {
+        id: "ball-holder",
+        legend: "BALL HOLDER",
+        choices: [
+          { id: "with", label: "WITH BALL HOLDER" },
+          { id: "without", label: "WITHOUT BALL HOLDER" },
+        ],
+      },
     ],
     imageFit: "cover",
     model3d: "/models/pickleball-shadow-box.glb",
