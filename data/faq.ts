@@ -28,20 +28,19 @@ const title = (label: string) => label.toLowerCase().replace(/(^|\s)\S/g, (c) =>
 const isLight = (p: Product) => p.tags.includes("light") || /LED|lightbox/i.test(p.material);
 
 function teeFaq(p: Product): QA[] {
-  const over = (p.price ?? 0) + (p.options?.find((o) => o.id === "fit")?.choices.find((c) => c.id === "oversized")?.priceDelta ?? 0);
   return [
     {
       q: `How much is the ${p.name}, and how long does it take?`,
-      a: `${formatPrice(p.price, p.currency)} for the regular fit, ${formatPrice(over, p.currency)} oversized. It's printed to order in Bengaluru and dispatched within 10 working days, with free shipping anywhere in India.`,
+      a: `${formatPrice(p.price, p.currency)}, in an oversized fit. It's printed to order in Bengaluru and dispatched within 10 working days, with free shipping anywhere in India.`,
     },
     { q: `What is the ${p.name} made of?`, a: `${p.material}. Colours: ${p.colour}.` },
     {
       q: `Which size should I pick?`,
-      a: `Sizes run XS to XXL. Check the [size chart](#size-chart): measure your chest and compare it with "to fit chest". Between sizes, go up for the regular fit and stay true to size for oversized.`,
+      a: `Sizes run XS to XXL. Check the [size chart](#size-chart): measure your chest and compare it with "to fit chest". The fit is oversized, so stay true to size.`,
     },
     {
-      q: `What's the difference between regular and oversized?`,
-      a: `Regular sits close without clinging. Oversized has dropped shoulders, a wider chest and falls loose, for that relaxed, boxy look.`,
+      q: `How does the fit run?`,
+      a: `Oversized: dropped shoulders, a wider chest, and it falls loose for a relaxed, boxy look.`,
     },
     { q: `Where is the art printed on the ${p.name}?`, a: p.installation },
     { q: `How do I wash it?`, a: p.care },
@@ -51,7 +50,7 @@ function teeFaq(p: Product): QA[] {
     },
     {
       q: `How do I order?`,
-      a: WISHLIST_MODE ? WISHLIST_HOW : `Pick your fit, size and colour, add it to your cart and tap "Send product request". That opens WhatsApp with your order filled in. We confirm the details, then send you payment details. Nothing is paid on the website.`,
+      a: WISHLIST_MODE ? WISHLIST_HOW : `Pick your size and colour, add it to your cart and tap "Send product request". That opens WhatsApp with your order filled in. We confirm the details, then send you payment details. Nothing is paid on the website.`,
     },
   ];
 }

@@ -4,13 +4,12 @@ import type { Product } from "@/lib/types";
 // OFF THE WALL: printed T-shirts. The studio's art, made to wear.
 // Generated from ~/Downloads/look-here-studio-tees (designs.py placement plan +
 // mock-ups); edit copy here freely. Every tee: 100% cotton, 190–240 GSM,
-// regular (₹1,499) or oversized (₹1,799), XS–XXL, printed on the front.
+// oversized fit only, ₹2,099, XS–XXL, printed on the front.
 // Photographed mock-ups (owner-supplied, *-photo/-detail) lead where they exist;
 // the rest are studio renders (*-front/-back) until photos replace them.
 // ---------------------------------------------------------------------------
 
-export const TEE_PRICE = 1499;
-export const OVERSIZED_EXTRA = 300;
+export const TEE_PRICE = 2099;
 export const TEE_SIZES = ["XS", "S", "M", "L", "XL", "XXL"];
 
 interface TeeSpec {
@@ -48,7 +47,7 @@ function tee(t: TeeSpec): Product {
     material: "100% cotton, 190–240 GSM",
     finish: `Printed: ${t.placement.toLowerCase()}`,
     colour: t.colours.map((c) => c.label).join(" or "),
-    dimensions: "XS–XXL · regular or oversized fit (see size chart)",
+    dimensions: "XS–XXL · oversized fit (see size chart)",
     price: TEE_PRICE,
     currency: "INR",
     status: "available",
@@ -57,14 +56,6 @@ function tee(t: TeeSpec): Product {
     imageFit: "cover",
     sizeChart: "tee",
     options: [
-      {
-        id: "fit",
-        legend: "CHOOSE YOUR FIT",
-        choices: [
-          { id: "regular", label: "Regular", priceDelta: 0 },
-          { id: "oversized", label: "Oversized", priceDelta: OVERSIZED_EXTRA },
-        ],
-      },
       {
         id: "size",
         legend: "CHOOSE YOUR SIZE",
@@ -80,8 +71,8 @@ function tee(t: TeeSpec): Product {
     installation: `${t.placement}. ${t.why}`,
     featured: false,
     process: TEE_PROCESS,
-    seoTitle: `${t.name} T-Shirt: Printed Art Tee, Regular or Oversized`,
-    seoDescription: `${t.copy.split(". ")[0]}. 100% cotton art tee, regular or oversized, XS–XXL. Made to order in Bengaluru, from {price}.`,
+    seoTitle: `${t.name} T-Shirt: Oversized Printed Art Tee`,
+    seoDescription: `${t.copy.split(". ")[0]}. 100% cotton oversized art tee, XS–XXL. Made to order in Bengaluru, {price}.`,
   };
 }
 

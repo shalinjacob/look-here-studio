@@ -12,7 +12,7 @@ export const dynamic = "force-static";
 
 export function GET() {
   const line = (p: (typeof products)[number]) =>
-    `- [${p.name}](${SITE_URL}/objects/${p.slug}): ${p.shortDescription} ${formatPrice(p.price, p.currency)}${p.options ? " (regular; oversized +₹300)" : ""}.`;
+    `- [${p.name}](${SITE_URL}/objects/${p.slug}): ${p.shortDescription} ${formatPrice(p.price, p.currency)}${p.options ? "" : ""}.`;
   const teeLines = products.filter((p) => isTee(p) && isPurchasable(p)).map(line).join("\n");
   const items = products
     .filter((p) => isPurchasable(p) && !isTee(p))
@@ -49,7 +49,7 @@ ${items}
 
 ## Off The Wall: art T-shirts
 
-The studio's artwork printed on 100% cotton (190–240 GSM) tees, regular or oversized fit, sizes XS–XXL, each with a big print on the front. Made to order, dispatched within 10 working days. Free size exchange within 7 days (unworn, unwashed, tags on). [All tees](${SITE_URL}/off-the-wall)
+The studio's artwork printed on 100% cotton (190–240 GSM) tees, oversized fit, sizes XS–XXL, each with a big print on the front. Made to order, dispatched within 10 working days. Free size exchange within 7 days (unworn, unwashed, tags on). [All tees](${SITE_URL}/off-the-wall)
 
 ${teeLines}
 
