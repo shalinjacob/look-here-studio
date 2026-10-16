@@ -118,6 +118,8 @@ export interface Product {
   personalise?: PersonaliseField[];
   /** optional product video (mp4 under /public/media) */
   video?: string;
+  /** optional interactive 3D model (.glb under /public/models) */
+  model3d?: string;
   collection?: string; // collection slug
   leadTime: string;
   care: string;

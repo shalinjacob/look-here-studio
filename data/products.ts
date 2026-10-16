@@ -475,6 +475,7 @@ const objects: Product[] = [
       "/lifestyle/pickleball-3.webp",
     ],
     imageFit: "cover",
+    model3d: "/models/pickleball-shadow-box.glb",
     leadTime: "Made to order · dispatched within 10 working days",
     care: "Dust the glass. Don't actually play with the framed one.",
     installation: "Two wall fixings; hangs like a picture.",

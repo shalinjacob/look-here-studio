@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import ProductGallery from "@/components/ProductGallery";
+import ModelViewer from "@/components/ModelViewer";
 import SpecTable from "@/components/SpecTable";
 import AddToCart from "@/components/AddToCart";
 import VideoPlayer from "@/components/VideoPlayer";
@@ -149,6 +150,11 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
             fit={p.imageFit ?? "contain"}
             fallbackNumber={p.objectNumber}
           />
+          {p.model3d && (
+            <div className="pdp__video">
+              <ModelViewer src={p.model3d} alt={`${p.name}, interactive 3D view`} />
+            </div>
+          )}
           {p.video && (
             <div className="pdp__video">
               <VideoPlayer src={p.video} poster={p.images[0]} label="IN MOTION" />
