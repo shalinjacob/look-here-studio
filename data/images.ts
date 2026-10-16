@@ -37,6 +37,8 @@ export const IMAGES: Record<string, ImageMeta> = {
   "/objects/well-look-at-you.webp": { alt: "Well, Look At You: oxblood wavy mirror with “well, look at you” lettered around the rim" },
   "/objects/love-more.webp": { alt: "Love More: chunky mirror-gold LOVE MORE letters on a living-room wall" },
   "/objects/love-more-2.webp": { alt: "Love More: mirror-gold LOVE MORE letters above a kitchen counter" },
+  "/objects/patterned-coasters-v2.webp": { alt: "Patterned Coasters: five wavy resin coasters in stripes, checks and ripples on a sunlit coffee table with drinks" },
+  "/lifestyle/patterned-coasters-1.webp": { alt: "Red and pink checked wavy coaster on a green marble bar table under a cocktail" },
   "/objects/patterned-coasters.webp": { alt: "Patterned Coasters: four wavy-edged patterned resin coasters with cork bases" },
   "/objects/x-plus-o.webp": { alt: "X + O: marble-look noughts-and-crosses board with gold Xs and Os, all made in acrylic" },
   "/lifestyle/cat-heart-1.webp": { alt: "Cat Got Your Heart: matte-black steel cat silhouette mid-stretch with a heart cut out, above a sideboard" },
