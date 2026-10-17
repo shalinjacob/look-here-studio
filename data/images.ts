@@ -53,6 +53,7 @@ export const IMAGES: Record<string, ImageMeta> = {
   "/lifestyle/pickleball-3.webp": { alt: "Pickleball Shadow Box on a sage-green court, hanging on a wall at home" },
   "/objects/old-habits.webp": { alt: "Old Habits: old-master portrait of a man in a hat and lace collar holding a red drinks can, in an LED slim frame (unlit)" },
   "/objects/old-habits-lit.webp": { alt: "Old Habits: old-master portrait print in an LED slim frame (lit)" },
+  "/lifestyle/smoke-and-feathers-1.webp": { alt: "Smoke & Feathers lit in a warm living room: a backlit portrait with a macaw and orchids glowing on the wall" },
   "/objects/smoke-and-feathers.webp": { alt: "Smoke & Feathers: Renaissance portrait collaged with a parrot and orchids in an LED slim frame (unlit)" },
   "/objects/smoke-and-feathers-lit.webp": { alt: "Smoke & Feathers: collage portrait with a parrot and orchids in an LED slim frame (lit)" },
   "/objects/pomegranate-study.webp": { alt: "Pomegranate Study: botanical pomegranate print in an LED slim frame (unlit)" },

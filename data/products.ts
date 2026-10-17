@@ -558,7 +558,7 @@ const objects: Product[] = [
     currency: "INR",
     status: "available",
     images: ["/objects/smoke-and-feathers.webp", "/objects/smoke-and-feathers-lit.webp"],
-    lifestyleImages: [],
+    lifestyleImages: ["/lifestyle/smoke-and-feathers-1.webp"],
     imageFit: "contain",
     collection: "editions",
     leadTime: "Made to order · dispatched within 10 working days",
