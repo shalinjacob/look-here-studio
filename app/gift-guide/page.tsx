@@ -7,7 +7,6 @@ import { altFor } from "@/data/images";
 import {
   homeObjects as products,
   getProduct,
-  isPurchasable,
   formatPrice,
   OCCASIONS,
 } from "@/data/products";
@@ -20,8 +19,9 @@ export const metadata: Metadata = {
     "Housewarming, wedding and Diwali gifts that aren't another scented candle. Sorted by budget, person and occasion. Gift-wrapped.",
 };
 
-// budget tiers, computed from the catalogue (buyable = available/preorder w/ price)
-const buyable = products.filter(isPurchasable).sort((a, b) => a.price! - b.price!);
+// budget tiers, computed from the catalogue: every priced object, including the ones
+// still on the wishlist (their page offers the wishlist / WhatsApp instead of the cart)
+const buyable = products.filter((p) => p.price != null).sort((a, b) => a.price! - b.price!);
 const tiers = [
   {
     label: "UNDER ₹5,000",

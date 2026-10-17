@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import CTA from "@/components/CTA";
-import { products, isPurchasable } from "@/data/products";
+import { products } from "@/data/products";
 import { BRAND_NAME, WISHLIST_MODE } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 // OWNER: the "change your mind before we start making it" line is a promise to
 // customers. Confirm it before this page goes live.
 export default function GiftPromisePage() {
-  const orderable = products.filter(isPurchasable);
+  const orderable = products.filter((p) => p.price != null);
   return (
     <div className="section wrap" style={{ paddingTop: "clamp(24px,4vw,56px)" }}>
       <div className="pagehead" style={{ padding: 0 }}>

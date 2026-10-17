@@ -44,7 +44,9 @@ export default function ProductTile({
             <span className="tile__price">
               {isPurchasable(p)
                 ? `${hasPriceRange(p) ? "FROM " : ""}${formatPrice(p.price, p.currency)}`
-                : badge(p)}
+                : p.price != null
+                  ? `${formatPrice(p.price, p.currency)} · WISHLIST`
+                  : badge(p)}
             </span>
           </div>
         </div>

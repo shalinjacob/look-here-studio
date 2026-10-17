@@ -13,12 +13,12 @@ export const dynamic = "force-static";
 export function GET() {
   const line = (p: (typeof products)[number]) =>
     `- [${p.name}](${SITE_URL}/objects/${p.slug}): ${p.shortDescription} ${formatPrice(p.price, p.currency)}${p.options ? "" : ""}.`;
-  const teeLines = products.filter((p) => isTee(p) && isPurchasable(p)).map(line).join("\n");
+  const teeLines = products.filter((p) => isTee(p) && p.price != null).map(line).join("\n");
   const items = products
-    .filter((p) => isPurchasable(p) && !isTee(p))
+    .filter((p) => p.price != null && !isTee(p))
     .map(
       (p) =>
-        `- [${p.name}](${SITE_URL}/objects/${p.slug}): ${p.shortDescription} ${formatPrice(p.price, p.currency)}${p.variants?.length ? ` (${p.variants[0].note?.toLowerCase()})` : ""}. ${p.material}; ${p.dimensions}.${p.custom || p.personalise?.length ? " Personalised." : ""}`
+        `- [${p.name}](${SITE_URL}/objects/${p.slug}): ${p.shortDescription} ${formatPrice(p.price, p.currency)}${p.variants?.length ? ` (${p.variants[0].note?.toLowerCase()})` : ""}. ${p.material}; ${p.dimensions}.${p.custom || p.personalise?.length ? " Personalised." : ""}${isPurchasable(p) ? "" : " Currently on the wishlist: join it on the product page."}`
     )
     .join("\n");
 

@@ -52,7 +52,7 @@ export default function NewObjects() {
                   <p className="feature__line">{p.shortDescription}</p>
                   <div className="feature__foot">
                     <span className="feature__price">
-                      {isPurchasable(p) ? formatPrice(p.price, p.currency) : badge(p)}
+                      {isPurchasable(p) ? formatPrice(p.price, p.currency) : p.price != null ? `${formatPrice(p.price, p.currency)} · WISHLIST` : badge(p)}
                     </span>
                     <span className="feature__status">{badge(p)}</span>
                   </div>
