@@ -369,7 +369,6 @@ export const journal: JournalPost[] = [
         heading: "Can you add a gift note?",
         paras: [
           "Yes. Tick “This is a gift” in your cart and add a short note, and we'll write it on a card by hand. Keep it short; the object is doing the talking.",
-          "Missed a date? Our [Gift Promise](/gift-promise) lets you hand over a printable card on the day, with the object following soon after.",
         ],
       },
     ],
@@ -479,12 +478,6 @@ export const journal: JournalPost[] = [
         paras: [
           "Diwali is on Sunday 8 November 2026. Every piece is made to order and dispatched within 10 working days. Join the wishlist on WhatsApp to get started. Shipping is charged by pincode.",
           "Tick “This is a gift” in your cart and add a short note, and we'll handwrite it on a card.",
-        ],
-      },
-      {
-        heading: "Want to give it on the day?",
-        paras: [
-          "Give a [Gift Promise](/gift-promise). Order the object, then print or forward a card on the day that says what's coming and when it leaves the studio. The real thing follows soon after.",
         ],
       },
     ],

@@ -6,12 +6,11 @@ import { edits } from "@/data/edits";
 import { categories } from "@/data/categories";
 import { SITE_URL as BASE } from "@/lib/site";
 
-// Indexable pages only. The feed, draft journal posts and the printable
-// gift-promise card are deliberately left out.
+// Indexable pages only. The feed and draft journal posts are deliberately left out.
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
   const staticRoutes = [
-    "", "/objects", "/gift-guide", "/gift-promise", "/why-look-here",
+    "", "/objects", "/gift-guide", "/why-look-here",
     "/journal", "/contact", "/faq", "/shipping-returns", "/privacy", "/terms",
   ];
   return [
