@@ -169,11 +169,6 @@ export default function CartDrawer() {
                 <span>SHIPPING{ship ? ` · ${ship.zone.toUpperCase()}` : ""}</span>
                 <span>{ship ? formatPrice(ship.fee, currency) : "Enter pincode"}</span>
               </div>
-              {ship && ship.extra > 0 && (
-                <p className="drawer__note">
-                  Includes {formatPrice(ship.extra, currency)} for large or heavy pieces in your cart.
-                </p>
-              )}
               {ship && (
                 <div className="drawer__subtotal drawer__total">
                   <span>TOTAL</span>

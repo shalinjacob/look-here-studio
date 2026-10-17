@@ -20,7 +20,7 @@ const AFTER_SHOP = [
 
 export default function Nav() {
   const pathname = usePathname();
-  const { count, openCart } = useCart();
+  const { count, ready, openCart } = useCart();
   const [menuOpen, setMenuOpen] = useState(false);
   const [shopOpen, setShopOpen] = useState(false);
 
@@ -76,8 +76,8 @@ export default function Nav() {
             </Link>
 
             <span className="nav__corner nav__corner--right">
-              <button className="nav__cartbtn" onClick={openCart} aria-label={`Open cart, ${count} items`}>
-                OBJECTS ({count}) <span className="nav__bag" aria-hidden>▢</span>
+              <button className="nav__cartbtn" onClick={openCart} aria-label={ready ? `Open cart, ${count} items` : "Open cart"}>
+                OBJECTS{ready ? ` (${count})` : ""} <span className="nav__bag" aria-hidden>▢</span>
               </button>
             </span>
           </div>
@@ -137,7 +137,7 @@ export default function Nav() {
             style={{ textAlign: "left" }}
             onClick={() => { setMenuOpen(false); openCart(); }}
           >
-            CART ({count})
+            CART{ready ? ` (${count})` : ""}
           </button>
         </div>
         <p className="mobilemenu__foot">Objects for the home designed to be noticed.</p>

@@ -4,6 +4,7 @@ import {
   createContext,
   useContext,
   useEffect,
+  useLayoutEffect,
   useMemo,
   useReducer,
   useState,
@@ -55,6 +56,9 @@ type Action =
 
 const KEY = "lookhere.cart.v1";
 
+// useLayoutEffect on the client (cart restored before the first paint), plain effect on the server
+const useIsoLayoutEffect = typeof window !== "undefined" ? useLayoutEffect : useEffect;
+
 function reducer(state: CartState, action: Action): CartState {
   switch (action.type) {
     case "HYDRATE":
@@ -93,6 +97,8 @@ function reducer(state: CartState, action: Action): CartState {
 interface CartContextValue {
   lines: CartLine[];
   count: number;
+  /** false until the saved cart has been read: don't show a count before then */
+  ready: boolean;
   subtotal: number;
   currency: string;
   isOpen: boolean;
@@ -122,8 +128,9 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
   const [ready, setReady] = useState(false);
 
-  // hydrate from localStorage once
-  useEffect(() => {
+  // restore the saved cart before the first paint, so the header never shows a
+  // wrong "0" and an Add click can't land on an empty cart
+  useIsoLayoutEffect(() => {
     try {
       const raw = localStorage.getItem(KEY);
       if (raw) dispatch({ type: "HYDRATE", state: JSON.parse(raw) });
@@ -131,6 +138,20 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       /* ignore */
     }
     setReady(true);
+  }, []);
+
+  // keep several open tabs in step
+  useEffect(() => {
+    const onStorage = (e: StorageEvent) => {
+      if (e.key !== KEY || !e.newValue) return;
+      try {
+        dispatch({ type: "HYDRATE", state: JSON.parse(e.newValue) });
+      } catch {
+        /* ignore */
+      }
+    };
+    window.addEventListener("storage", onStorage);
+    return () => window.removeEventListener("storage", onStorage);
   }, []);
 
   // persist
@@ -177,6 +198,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     return {
       lines: state.lines,
       count,
+      ready,
       subtotal,
       currency: state.lines[0]?.currency ?? "INR",
       isOpen,
@@ -190,7 +212,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       giftNote: state.giftNote ?? "",
       setGift: (gift, giftNote) => dispatch({ type: "SET_GIFT", gift, giftNote }),
     };
-  }, [state, isOpen, addItem]);
+  }, [state, isOpen, addItem, ready]);
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 }

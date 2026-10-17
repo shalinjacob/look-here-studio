@@ -835,3 +835,22 @@ input { font: inherit; }
 .drawer__checkout--off { width: 100%; margin-top: 10px; opacity: .45; cursor: not-allowed; background: transparent; border: 1px solid var(--line); color: var(--ink); }
 .drawer__soon { text-align: center; margin-top: 8px; }
 .pdp__customise { display: inline-flex; margin-top: 14px; }
+
+/* details pop-up before online payment */
+.paymodal { position: fixed; inset: 0; z-index: 400; display: grid; place-items: center; padding: 16px; }
+.paymodal__scrim { position: absolute; inset: 0; background: rgba(17,17,17,.55); }
+.paymodal__panel { position: relative; width: min(520px, 100%); max-height: calc(100dvh - 32px); overflow: auto; background: var(--paper); color: var(--ink); padding: clamp(20px, 4vw, 32px); display: grid; gap: 14px; box-shadow: 0 24px 80px rgba(0,0,0,.35); }
+.paymodal__head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
+.paymodal__head h2 { font-family: var(--display); font-weight: 700; letter-spacing: -0.02em; font-size: clamp(22px, 3.4vw, 28px); margin: 0; }
+.paymodal__close { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; }
+.paymodal__sub { font-family: var(--mono); font-size: 12px; color: var(--muted); margin: 0; }
+.paymodal label { display: grid; gap: 6px; }
+.paymodal label span { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; }
+.paymodal input, .paymodal textarea { width: 100%; font: inherit; font-family: var(--mono); font-size: 14px; padding: 12px; background: var(--paper); color: var(--ink); border: 1px solid var(--line); border-radius: 0; }
+.paymodal input:focus, .paymodal textarea:focus { outline: 2px solid var(--ink); outline-offset: -1px; }
+.paymodal__row { display: grid; grid-template-columns: 1.4fr 1fr; gap: 12px; }
+.paymodal__sum { display: grid; grid-template-columns: 1fr auto; gap: 6px 16px; font-family: var(--mono); font-size: 13px; border-top: 1px solid var(--line); padding-top: 12px; }
+.paymodal__sum span:nth-child(even), .paymodal__sum strong:nth-child(even) { text-align: right; }
+.paymodal__err { font-family: var(--mono); font-size: 12px; color: #b3261e; margin: 0; }
+.paymodal__pay { width: 100%; justify-content: center; }
+@media (max-width: 560px) { .paymodal { padding: 0; align-items: end; } .paymodal__panel { width: 100%; max-height: 94dvh; } }
