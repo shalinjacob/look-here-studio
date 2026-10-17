@@ -82,6 +82,12 @@ export function productFaq(p: Product): QA[] {
           ? `Yes. Choose "${p.variants.find((v) => v.custom)!.label}" and type your own words; we'll confirm the lettering with you on WhatsApp before we cut it.`
           : `Yes, that's the point of it. Tell us the details on WhatsApp after you send your request, and we'll confirm everything before we start making it.`,
     });
+  } else if (p.options?.some((o) => o.legend.includes("COLOUR") && o.choices.length > 1)) {
+    const colours = p.options.find((o) => o.legend.includes("COLOUR"))!.choices;
+    faq.push({
+      q: `What colours does ${nm(p)} come in?`,
+      a: `${colours.map((c) => c.label.charAt(0) + c.label.slice(1).toLowerCase()).join(", ")}, all at the same price. Pick yours on the product page. Want a different colour? Ask us on WhatsApp.`,
+    });
   } else if (p.variantLegend?.includes("COLOUR") && p.variants?.length) {
     faq.push({
       q: `What colours does ${nm(p)} come in?`,

@@ -191,10 +191,6 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
             {buyable && (
               <>
                 <p className="pdp__leadtime">{p.leadTime}</p>
-                <p className="pdp__ordernote">
-                  Send us the cart on WhatsApp and we&apos;ll confirm the details and send you
-                  payment details.
-                </p>
               </>
             )}
           </div>

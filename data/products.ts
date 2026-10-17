@@ -98,7 +98,7 @@ const objects: Product[] = [
     occasions: ["housewarming", "just-because"],
     shortDescription: "A shelf you can barely see, so your things get all the attention.",
     description:
-      "A slim acrylic picture ledge with a little lip at the front, so whatever you put on it looks like it's floating. Lean frames on it, line up spice jars, or face your favourite records outwards. Hang one on its own, or stack three for a proper gallery wall that you can rearrange whenever you like, no new nail holes needed. In crystal clear, or in a coloured acrylic (orange, red, cyan, blue, purple) if you'd like the shelf to be part of the show. Want another colour? Ask us. Priced per ledge.",
+      "A slim acrylic picture ledge with a little lip at the front, so whatever you put on it looks like it's floating. Lean frames on it, line up spice jars, or face your favourite records outwards. Hang one on its own, or stack three for a proper gallery wall that you can rearrange whenever you like, no new nail holes needed. In crystal clear, or in a coloured acrylic (orange, red, cyan, blue, purple) if you'd like the shelf to be part of the show. Want another colour? Ask us. Buy one ledge, or a set of three.",
     material: "Acrylic",
     finish: "Polished edges",
     colour: "Clear, orange, red, cyan, blue or purple",
@@ -109,14 +109,27 @@ const objects: Product[] = [
     images: ["/lifestyle/clear-ledge-frames.webp", "/lifestyle/clear-ledge-kitchen.webp", "/lifestyle/clear-ledge-vinyl.webp"],
     lifestyleImages: [],
     imageFit: "cover",
-    variantLegend: "CHOOSE YOUR COLOUR",
-    variants: [
-      { id: "clear", label: "CLEAR", note: "Per ledge", price: 990 },
-      { id: "orange", label: "ORANGE", note: "Per ledge", price: 990 },
-      { id: "red", label: "RED", note: "Per ledge", price: 990 },
-      { id: "cyan", label: "CYAN", note: "Per ledge", price: 990 },
-      { id: "blue", label: "BLUE", note: "Per ledge", price: 990 },
-      { id: "purple", label: "PURPLE", note: "Per ledge", price: 990 },
+    options: [
+      {
+        id: "set",
+        legend: "CHOOSE YOUR SET",
+        choices: [
+          { id: "one", label: "ONE LEDGE", priceDelta: 0 },
+          { id: "three", label: "SET OF THREE", note: "3 ledges", priceDelta: 1980 },
+        ],
+      },
+      {
+        id: "colour",
+        legend: "CHOOSE YOUR COLOUR",
+        choices: [
+          { id: "clear", label: "CLEAR" },
+          { id: "orange", label: "ORANGE" },
+          { id: "red", label: "RED" },
+          { id: "cyan", label: "CYAN" },
+          { id: "blue", label: "BLUE" },
+          { id: "purple", label: "PURPLE" },
+        ],
+      },
     ],
     leadTime: "Made to order · dispatched within 10 working days",
     care: "Dust with a soft, slightly damp cloth. Nothing abrasive.",
@@ -124,7 +137,7 @@ const objects: Product[] = [
     featured: false,
     process: STD_PROCESS,
     seoTitle: "Clear Ledge: Acrylic Floating Picture Shelf, 60 cm",
-    seoDescription: "An acrylic floating picture ledge, 60 × 10.5 cm, in clear or colours, for frames, records or spice jars. Holds 5 kg. Made to order in Bengaluru, {price} each.",
+    seoDescription: "An acrylic floating picture ledge, 60 × 10.5 cm, in clear or colours, for frames, records or spice jars. Holds 5 kg. Made to order in Bengaluru, {price} for one, or a set of three.",
   },
   {
     id: "p006",
