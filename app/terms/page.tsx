@@ -36,9 +36,8 @@ export default function TermsPage() {
 
           <h2>Prices and payment</h2>
           <p>
-            Prices are shown in Indian rupees (₹). You can pay online at checkout (UPI, cards,
-            netbanking via Razorpay), or send us a product request on WhatsApp and we&apos;ll confirm
-            the order and send you the payment details there.
+            Prices are shown in Indian rupees (₹). Send us your order on WhatsApp and we&apos;ll confirm
+            it and send you the payment details there. Online payment is coming soon.
           </p>
 
           <h2>Shipping</h2>

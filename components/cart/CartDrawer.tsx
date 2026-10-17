@@ -203,11 +203,12 @@ export default function CartDrawer() {
                 )}
               </div>
               <p className="drawer__note">
-                Pay online, or send the request and we&apos;ll confirm price, details &amp; delivery on WhatsApp.
+                {ONLINE_PAYMENT
+                  ? "Pay online, or send the request and we'll confirm price, details & delivery on WhatsApp."
+                  : "Send us your order on WhatsApp and we'll confirm price, details & delivery."}
               </p>
-              {ONLINE_PAYMENT && <RazorpayButton />}
               <button
-                className="cta cta--stamp drawer__checkout"
+                className="cta cta--stamp drawer__checkout drawer__checkout--primary"
                 onClick={() => {
                   // the main conversion: fired (as a beacon) before WhatsApp opens
                   track("generate_lead", {
@@ -220,9 +221,25 @@ export default function CartDrawer() {
                   window.open(url, "_blank", "noopener,noreferrer");
                 }}
               >
-                <span className="cta__label">SEND PRODUCT REQUEST</span>
+                <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                  <path
+                    fill="currentColor"
+                    d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2s.9 2.3 1 2.5c.1.2 1.7 2.6 4.2 3.7 1.6.7 2.2.7 3 .6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.5-.3z"
+                  />
+                </svg>
+                <span className="cta__label">SEND ORDER ON WHATSAPP</span>
                 <span className="cta__arrow">→</span>
               </button>
+              {ONLINE_PAYMENT ? (
+                <RazorpayButton />
+              ) : (
+                <>
+                  <button className="cta drawer__checkout drawer__checkout--off" disabled aria-disabled="true">
+                    <span className="cta__label">PAY ONLINE</span>
+                  </button>
+                  <p className="drawer__note drawer__soon">We&apos;re working on enabling online payment super soon.</p>
+                </>
+              )}
               <div className="drawer__fine">
                 <p>Made to order · dispatched within 10 working days · Shipping calculated by pincode</p>
                 <p>

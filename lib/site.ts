@@ -22,7 +22,8 @@ export const ogImage = (slug: string) => ({ url: `/og/${slug}.jpg`, width: 1200,
  *  Set to false to reopen ordering. */
 export const WISHLIST_MODE = false;
 
-/** Online payment (Razorpay) in the cart drawer, next to the WhatsApp request.
+/** Online payment (Razorpay) in the cart drawer. FALSE = the PAY ONLINE button shows greyed out
+ *  with a "coming soon" line and WhatsApp is the way to order. Flip to true to enable it.
  *  The button only renders when NEXT_PUBLIC_RAZORPAY_KEY_ID is set (see .env.example),
  *  and the cart itself is hidden while WISHLIST_MODE is on. */
-export const ONLINE_PAYMENT = true;
+export const ONLINE_PAYMENT = false;

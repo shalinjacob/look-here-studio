@@ -831,3 +831,6 @@ input { font: inherit; }
 .drawer__pin { display: grid; gap: 6px; margin: 10px 0; font-family: var(--mono); font-size: 11px; letter-spacing: .1em; color: var(--ink); }
 .drawer__pin input { width: 100%; font: inherit; font-family: var(--mono); font-size: 13px; letter-spacing: .05em; padding: 10px 12px; background: var(--paper); color: var(--ink); border: 1px solid var(--line); border-radius: 0; }
 .drawer__total { font-weight: 700; border-top: 1px solid var(--line); padding-top: 8px; margin-top: 4px; }
+.drawer__checkout--primary { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding-block: 18px; font-size: 1.05em; }
+.drawer__checkout--off { width: 100%; margin-top: 10px; opacity: .45; cursor: not-allowed; background: transparent; border: 1px solid var(--line); color: var(--ink); }
+.drawer__soon { text-align: center; margin-top: 8px; }

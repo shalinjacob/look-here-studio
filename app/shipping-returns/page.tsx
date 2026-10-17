@@ -50,9 +50,9 @@ export default function ShippingReturnsPage() {
 
           <h2>How orders work</h2>
           <p>
-            You can pay online at checkout, or send your cart to us as a product request on
-            WhatsApp. Either way we confirm availability, lead time and the total, shipping
-            included, with you.
+            Send your cart to us on WhatsApp. We confirm availability, lead time and the
+            total, shipping included, with you, and send payment details. Online payment is
+            coming soon.
           </p>
 
           <h2>Returns</h2>
