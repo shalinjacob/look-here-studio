@@ -103,7 +103,7 @@ const objects: Product[] = [
     finish: "Polished edges",
     colour: "Clear",
     dimensions: "60 cm long × 10.5 cm deep · holds up to 5 kg",
-    price: 990,
+    price: 1299,
     currency: "INR",
     status: "available",
     images: ["/lifestyle/clear-ledge-frames.webp", "/lifestyle/clear-ledge-kitchen.webp", "/lifestyle/clear-ledge-vinyl.webp"],
@@ -115,7 +115,7 @@ const objects: Product[] = [
         legend: "CHOOSE YOUR SET",
         choices: [
           { id: "one", label: "ONE LEDGE", priceDelta: 0 },
-          { id: "three", label: "SET OF THREE", note: "3 ledges", priceDelta: 1980 },
+          { id: "three", label: "SET OF THREE", note: "3 ledges", priceDelta: 2100 },
         ],
       },
     ],
