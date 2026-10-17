@@ -17,7 +17,7 @@ export const siteFaq: { group: string; items: QA[] }[] = [
     group: "Delivery",
     items: [
       { q: "How long does delivery take?", a: "Everything is made to order and dispatched within 10 working days of your order being confirmed. Weekends and studio holidays don't count as working days. We send you the courier tracking on WhatsApp or email once it ships." },
-      { q: "Is shipping free?", a: "Yes, free shipping anywhere in India, with no minimum order." },
+      { q: "How much is shipping?", a: "A flat fee per order, set by your delivery pincode. You'll see it in your cart before you pay. We ship within India." },
       { q: "Do you ship outside India?", a: "Not currently. If you're outside India, [write to us](/contact) and we'll see what we can do." },
       { q: "Can I get it in time for Diwali or a birthday?", a: "Tell us your date when you order and we'll be straight with you about whether it'll make it. Our [Gift Promise](/gift-promise) gives you a printable card to hand over on the day." },
     ],

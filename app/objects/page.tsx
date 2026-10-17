@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/objects" },
   title: { absolute: "Shop Home Decor Objects: Mirrors, Clocks, Wall Art | Look Here Studio" },
   description:
-    "Every Look Here object: wall clocks, wavy mirrors, LED wall art, frames and table pieces. Made to order in Bengaluru, free shipping across India.",
+    "Every Look Here object: wall clocks, wavy mirrors, LED wall art, frames and table pieces. Made to order in Bengaluru, shipping across India.",
 };
 
 export default function ObjectsPage() {

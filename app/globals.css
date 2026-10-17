@@ -828,3 +828,6 @@ input { font: inherit; }
 .payform input, .payform textarea { width: 100%; font: inherit; font-family: var(--mono); font-size: 13px; padding: 10px 12px; background: var(--paper); color: var(--ink); border: 1px solid var(--line); border-radius: 0; }
 .payform textarea { resize: vertical; }
 .payform__row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.drawer__pin { display: grid; gap: 6px; margin: 10px 0; font-family: var(--mono); font-size: 11px; letter-spacing: .1em; color: var(--ink); }
+.drawer__pin input { width: 100%; font: inherit; font-family: var(--mono); font-size: 13px; letter-spacing: .05em; padding: 10px 12px; background: var(--paper); color: var(--ink); border: 1px solid var(--line); border-radius: 0; }
+.drawer__total { font-weight: 700; border-top: 1px solid var(--line); padding-top: 8px; margin-top: 4px; }

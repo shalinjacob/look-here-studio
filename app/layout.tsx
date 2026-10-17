@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     template: "%s | Look Here Studio",
   },
   description:
-    "Mirrors, clocks, lamps, backlit wall art and wall pieces, made to order in Bengaluru and dispatched within 10 working days. Free shipping across India.",
+    "Mirrors, clocks, lamps, backlit wall art and wall pieces, made to order in Bengaluru and dispatched within 10 working days. Shipping across India, charged by pincode.",
   keywords: [
     "design studio",
     "home objects",

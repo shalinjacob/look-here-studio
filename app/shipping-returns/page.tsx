@@ -2,15 +2,17 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import CTA from "@/components/CTA";
 import { EMAIL, WHATSAPP_NUMBER } from "@/lib/site";
+import { SHIPPING_FEES_CONFIRMED, SHIPPING_ZONES, DEFAULT_ZONE } from "@/config/shipping";
+import { formatPrice } from "@/data/products";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
 
 // Keep in step with the return-policy structured data in lib/structuredData.ts.
 
 export const metadata: Metadata = {
   alternates: { canonical: "/shipping-returns" },
-  title: { absolute: "Shipping & Returns: Free India-Wide Shipping | Look Here Studio" },
+  title: { absolute: "Shipping & Returns: India-Wide Delivery | Look Here Studio" },
   description:
-    "Free shipping across India. Made to order and dispatched within 10 working days. 7-day returns on unused standard objects; damage replaced or refunded.",
+    "Shipping across India, charged by pincode. Made to order and dispatched within 10 working days. 7-day returns on unused standard objects; damage replaced or refunded.",
 };
 
 const WA = buildWhatsAppLink({ text: "Hi Look Here Studio! I need help with an order: " });
@@ -20,11 +22,11 @@ export default function ShippingReturnsPage() {
   return (
     <div className="section wrap" style={{ paddingTop: "clamp(24px,4vw,56px)" }}>
       <div className="pagehead" style={{ padding: 0 }}>
-        <div className="pagehead__row"><span>SHIPPING &amp; RETURNS</span><span>INDIA-WIDE / FREE</span></div>
+        <div className="pagehead__row"><span>SHIPPING &amp; RETURNS</span><span>INDIA-WIDE</span></div>
         <h1 className="pagehead__title">Getting it to you. And back, if it has to.</h1>
         <p className="pagehead__sub">
-          The short version: shipping is free, everything is dispatched within 10 working
-          days, unused standard objects can come back within 7 days, and anything that
+          The short version: shipping is a flat fee set by your pincode, everything is
+          dispatched within 10 working days, unused standard objects can come back within 7 days, and anything that
           arrives damaged gets replaced or refunded.
         </p>
       </div>
@@ -33,7 +35,12 @@ export default function ShippingReturnsPage() {
         <div className="article__body policy">
           <h2>Shipping</h2>
           <ul>
-            <li><strong>Free on every order</strong>, anywhere in India. No minimum, no surprise fee at the end.</li>
+            <li><strong>One flat shipping fee per order</strong>, set by your delivery pincode. Enter your pincode in the cart and you&apos;ll see the fee before you pay, so there&apos;s no surprise at the end.</li>
+            {SHIPPING_FEES_CONFIRMED && (
+              <li>
+                Current fees: {[...SHIPPING_ZONES, DEFAULT_ZONE].map((z) => `${z.name} ${formatPrice(z.fee, "INR")}`).join(" · ")}.
+              </li>
+            )}
             <li>Every object is <strong>made to order, and dispatched within 10 working days</strong> of your order being confirmed.</li>
             <li>Once your order ships, we send you the courier and tracking details on WhatsApp or email.</li>
             <li>Everything is packed corners-first, with acrylic and mirrors in protective film. Peel it off when it reaches you.</li>
@@ -42,9 +49,9 @@ export default function ShippingReturnsPage() {
 
           <h2>How orders work</h2>
           <p>
-            Your cart sends us a product request on WhatsApp. We confirm availability, lead
-            time and the total with you before you pay, so nothing is charged until you&apos;ve
-            said yes.
+            You can pay online at checkout, or send your cart to us as a product request on
+            WhatsApp. Either way we confirm availability, lead time and the total, shipping
+            included, with you.
           </p>
 
           <h2>Returns</h2>

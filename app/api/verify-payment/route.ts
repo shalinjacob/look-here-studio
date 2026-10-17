@@ -50,7 +50,7 @@ async function notifyStudio(orderId: string, paymentId: string) {
   const n = (order.notes ?? {}) as Record<string, string>;
   const items = [n.items_1, n.items_2, n.items_3, n.items_4].filter(Boolean).join("");
   const text = [
-    `PAID ONLINE: ₹${(Number(order.amount) / 100).toLocaleString("en-IN")}`,
+    `PAID ONLINE: ₹${(Number(order.amount) / 100).toLocaleString("en-IN")} (items ₹${n.items_total ?? "?"} + shipping ₹${n.shipping_fee ?? "?"}, ${n.shipping_zone ?? "?"})`,
     `Razorpay order ${orderId} · payment ${paymentId}`,
     "",
     `Items: ${items || "—"}`,

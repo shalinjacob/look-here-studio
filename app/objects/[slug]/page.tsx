@@ -284,7 +284,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         <div className="pdp__goodtoknow">
           <div><p className="gtk__label">Care</p><p className="gtk__value">{p.care}</p></div>
           <div><p className="gtk__label">{p.sizeChart ? "Print placement" : "Installation"}</p><p className="gtk__value">{p.installation}</p></div>
-          <div><p className="gtk__label">Shipping &amp; returns</p><p className="gtk__value">Free shipping across India. {p.leadTime}. {returnsLine} <Link href="/shipping-returns">Shipping &amp; returns →</Link></p></div>
+          <div><p className="gtk__label">Shipping &amp; returns</p><p className="gtk__value">Shipping across India, charged by pincode. {p.leadTime}. {returnsLine} <Link href="/shipping-returns">Shipping &amp; returns →</Link></p></div>
           <div><p className="gtk__label">Customisation</p><p className="gtk__value">{p.sizeChart ? "Need a bulk run for a team or event? Ask us on WhatsApp." : p.variantLegend && !p.variantLegend.includes("COLOUR") ? "Available in the designs shown above." : "Colour and size tweaks possible on made-to-order pieces — just ask."}</p></div>
         </div>
       </section>

@@ -8,9 +8,12 @@ import { buildWhatsAppLink } from "@/lib/whatsapp";
 import { track } from "@/lib/analytics";
 import { ONLINE_PAYMENT } from "@/lib/site";
 import RazorpayButton from "./RazorpayButton";
+import { setDelivery, useDelivery } from "@/lib/deliveryStore";
+import { shippingFor } from "@/config/shipping";
 
 /** the WhatsApp order request (format agreed in the website brief) */
-function requestMessage(lines: CartLine[], subtotal: number, currency: string, gift: boolean, giftNote: string) {
+function requestMessage(lines: CartLine[], subtotal: number, currency: string, gift: boolean, giftNote: string, pincode: string) {
+  const ship = shippingFor(pincode);
   const items = lines
     .map((l) => {
       const variant = l.variant && !l.personalised ? ` (${l.variant})` : "";
@@ -28,7 +31,10 @@ function requestMessage(lines: CartLine[], subtotal: number, currency: string, g
   return (
     `Hi Look Here Studio! I'd like to order:\n\n` +
     `${items}\n` +
-    `Subtotal: ${formatPrice(subtotal, currency)} (free shipping)\n\n` +
+    `Subtotal: ${formatPrice(subtotal, currency)}\n` +
+    (ship
+      ? `Shipping to ${pincode.trim()} (${ship.zone}): ${formatPrice(ship.fee, currency)}\nTotal: ${formatPrice(subtotal + ship.fee, currency)}\n\n`
+      : `Shipping: to be confirmed for my pincode\n\n`) +
     `Gift: ${gift ? "Yes" : "No"}\n` +
     `Gift note: ${gift && giftNote.trim() ? giftNote.trim() : "—"}\n` +
     personalisation +
@@ -39,6 +45,8 @@ function requestMessage(lines: CartLine[], subtotal: number, currency: string, g
 // Slide-over cart. Handles qty change, remove, subtotal, and a WhatsApp request.
 
 export default function CartDrawer() {
+  const delivery = useDelivery();
+  const ship = shippingFor(delivery.pincode);
   const { isOpen, closeCart, lines, count, subtotal, currency, setQty, removeItem, gift, giftNote, setGift } =
     useCart();
 
@@ -146,6 +154,27 @@ export default function CartDrawer() {
                 <span>SUBTOTAL</span>
                 <span>{formatPrice(subtotal, currency)}</span>
               </div>
+              <label className="drawer__pin">
+                <span>DELIVERY PINCODE</span>
+                <input
+                  inputMode="numeric"
+                  maxLength={6}
+                  autoComplete="postal-code"
+                  placeholder="6 digits"
+                  value={delivery.pincode}
+                  onChange={(e) => setDelivery({ pincode: e.target.value.replace(/\D/g, "").slice(0, 6) })}
+                />
+              </label>
+              <div className="drawer__subtotal">
+                <span>SHIPPING{ship ? ` · ${ship.zone.toUpperCase()}` : ""}</span>
+                <span>{ship ? formatPrice(ship.fee, currency) : "Enter pincode"}</span>
+              </div>
+              {ship && (
+                <div className="drawer__subtotal drawer__total">
+                  <span>TOTAL</span>
+                  <span>{formatPrice(subtotal + ship.fee, currency)}</span>
+                </div>
+              )}
               <div className="gift">
                 <label className="gift__check">
                   <input
@@ -182,7 +211,7 @@ export default function CartDrawer() {
                     lead_source: "whatsapp_cart",
                     items: lines.map((l) => ({ item_id: l.slug, item_name: l.name, item_variant: l.variant, price: l.price, quantity: l.qty })),
                   });
-                  const url = buildWhatsAppLink({ text: requestMessage(lines, subtotal, currency, gift, giftNote) });
+                  const url = buildWhatsAppLink({ text: requestMessage(lines, subtotal, currency, gift, giftNote, delivery.pincode) });
                   window.open(url, "_blank", "noopener,noreferrer");
                 }}
               >
@@ -190,7 +219,7 @@ export default function CartDrawer() {
                 <span className="cta__arrow">→</span>
               </button>
               <div className="drawer__fine">
-                <p>Made to order · dispatched within 10 working days · Free shipping across India</p>
+                <p>Made to order · dispatched within 10 working days · Shipping calculated by pincode</p>
                 <p>
                   7-day returns on unused standard objects; personalised pieces are final sale.{" "}
                   <Link href="/shipping-returns" onClick={closeCart}>Shipping &amp; returns</Link>

@@ -31,7 +31,7 @@ function teeFaq(p: Product): QA[] {
   return [
     {
       q: `How much is the ${p.name}, and how long does it take?`,
-      a: `${formatPrice(p.price, p.currency)}, in an oversized fit. It's printed to order in Bengaluru and dispatched within 10 working days, with free shipping anywhere in India.`,
+      a: `${formatPrice(p.price, p.currency)}, in an oversized fit. It's printed to order in Bengaluru and dispatched within 10 working days, with shipping across India charged by pincode.`,
     },
     { q: `What is the ${p.name} made of?`, a: `${p.material}. Colours: ${p.colour}.` },
     {
@@ -60,7 +60,7 @@ export function productFaq(p: Product): QA[] {
   const faq: QA[] = [
     {
       q: `How much ${is(p)} ${nm(p)}, and how long ${PLURAL.test(p.name) ? "do" : "does"} ${it(p)} take?`,
-      a: `${formatPrice(p.price, p.currency)}${sharedNote(p) ? " (" + sharedNote(p) + ")" : ""}. ${PLURAL.test(p.name) ? "They're" : "It's"} made to order in our Bengaluru studio and dispatched within 10 working days of your order being confirmed, with free shipping anywhere in India.`,
+      a: `${formatPrice(p.price, p.currency)}${sharedNote(p) ? " (" + sharedNote(p) + ")" : ""}. ${PLURAL.test(p.name) ? "They're" : "It's"} made to order in our Bengaluru studio and dispatched within 10 working days of your order being confirmed, with shipping across India charged by pincode.`,
     },
     {
       q: `What ${is(p)} ${nm(p)} made of, and how big ${is(p)} ${it(p)}?`,

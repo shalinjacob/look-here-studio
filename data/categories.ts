@@ -50,7 +50,7 @@ export const categories: Category[] = [
     name: "Wall clocks",
     metaTitle: "Designer Wall Clocks, Made in Bengaluru | Look Here Studio",
     metaDescription:
-      "Two silent designer wall clocks made to order in Bengaluru: the layered orange Layer Clock and the Memphis-style Layered Wall Clock. Free shipping across India.",
+      "Two silent designer wall clocks made to order in Bengaluru: the layered orange Layer Clock and the Memphis-style Layered Wall Clock. Shipping across India, charged by pincode.",
     answer:
       "Look Here Studio makes two designer wall clocks in its Bengaluru studio: the [Layer Clock](/objects/layer-clock) ({price:layer-clock}), 30 cm of stacked wavy layers in a terracotta-to-orange gradient, and the [Layered Wall Clock](/objects/layered-wall-clock) ({price:layered-wall-clock}), 34 cm of overlapping primary-colour acrylic shapes. Both have silent sweep movements, are made to order and ship free anywhere in India.",
     sections: [
@@ -65,7 +65,7 @@ export const categories: Category[] = [
     faq: [
       { q: "Are your wall clocks silent?", a: "Yes. Both use silent sweep movements, so there's no ticking." },
       { q: "How are they hung?", a: "Each hangs on a single wall screw. The Layer Clock runs on one AA battery." },
-      { q: "How long does a clock take to arrive?", a: "Each clock is made to order and dispatched within 10 working days of your order being confirmed, with free shipping anywhere in India." },
+      { q: "How long does a clock take to arrive?", a: "Each clock is made to order and dispatched within 10 working days of your order being confirmed, with shipping across India charged by pincode." },
     ],
     products: ["layer-clock", "layered-wall-clock"],
     posts: ["why-we-started-with-a-clock", "in-defence-of-the-slightly-wrong"],
@@ -75,7 +75,7 @@ export const categories: Category[] = [
     name: "Mirrors",
     metaTitle: "Wavy & Statement Mirrors, Made in Bengaluru | Look Here Studio",
     metaDescription:
-      "Wavy, full-length and lettered statement mirrors in pink, butter yellow and oxblood, made to order in Bengaluru. Free shipping across India.",
+      "Wavy, full-length and lettered statement mirrors in pink, butter yellow and oxblood, made to order in Bengaluru. Shipping across India, charged by pincode.",
     answer:
       "Look Here Studio makes three statement mirrors in Bengaluru: the [Pink Wavy Mirror](/objects/pink-wavy-mirror) ({price:pink-wavy-mirror}, 50 × 60 cm), the full-length [Ripple Mirror](/objects/ripple-mirror) in butter yellow ({price:ripple-mirror}, 80 × 160 cm) and [Well, Look At You](/objects/well-look-at-you), an oxblood wavy mirror with lettering around the rim ({price:well-look-at-you}, 60 × 60 cm). All are made to order and ship free across India.",
     sections: [
@@ -99,7 +99,7 @@ export const categories: Category[] = [
     name: "LED wall art",
     metaTitle: "LED Backlit Wall Art & Light Boxes in India | Look Here Studio",
     metaDescription:
-      "Backlit art prints, bold quote frames and custom light boxes in slim LED frames. Plug in and the wall glows. Made to order in Bengaluru, free shipping in India.",
+      "Backlit art prints, bold quote frames and custom light boxes in slim LED frames. Plug in and the wall glows. Made to order in Bengaluru, shipping across India.",
     answer:
       "Look Here Studio makes backlit wall art in slim LED frames: four art-print [Editions](/collections/editions) (A2, {price:blood-moon} each), the [Slim LED Quote Frame](/objects/slim-led-quote-frame) with five bold quotes (A1, {price:slim-led-quote-frame}) and the [Custom Lightbox](/objects/custom-lightbox), which lights up your own words in any language ({price:custom-lightbox}). Each plugs into a regular socket and is made to order in Bengaluru.",
     sections: [
@@ -129,9 +129,9 @@ export const categories: Category[] = [
     name: "Wall art",
     metaTitle: "Metal & Typographic Wall Art, Made in Bengaluru | Look Here Studio",
     metaDescription:
-      "Laser-cut steel wall art, mirror-gold lettering, cut-through word panels and backlit quote frames. Made to order in Bengaluru, free shipping across India.",
+      "Laser-cut steel wall art, mirror-gold lettering, cut-through word panels and backlit quote frames. Made to order in Bengaluru, shipping across India.",
     answer:
-      "Look Here Studio's wall art is laser-cut and lettered in its Bengaluru studio: steel silhouettes like [Cat Got Your Heart](/objects/cat-got-your-heart) ({price:cat-got-your-heart}) and [Small Planet](/objects/small-planet) ({price:small-planet}), mirror-gold [Love More](/objects/love-more) lettering ({price:love-more}), [Four-Letter Words](/objects/four-letter-words) panels ({price:four-letter-words} for two) and the backlit [Slim LED Quote Frame](/objects/slim-led-quote-frame). All made to order, shipped free across India.",
+      "Look Here Studio's wall art is laser-cut and lettered in its Bengaluru studio: steel silhouettes like [Cat Got Your Heart](/objects/cat-got-your-heart) ({price:cat-got-your-heart}) and [Small Planet](/objects/small-planet) ({price:small-planet}), mirror-gold [Love More](/objects/love-more) lettering ({price:love-more}), [Four-Letter Words](/objects/four-letter-words) panels ({price:four-letter-words} for two) and the backlit [Slim LED Quote Frame](/objects/slim-led-quote-frame). All made to order, shipped across India.",
     sections: [
       {
         heading: "Metal or words?",
@@ -153,7 +153,7 @@ export const categories: Category[] = [
     name: "Personalised gifts",
     metaTitle: "Personalised Home Gifts, Made in Bengaluru | Look Here Studio",
     metaDescription:
-      "Custom name and quote lightboxes, your-own-word wall panels and personalised pickleball paddle frames. Made to order in Bengaluru, free shipping across India.",
+      "Custom name and quote lightboxes, your-own-word wall panels and personalised pickleball paddle frames. Made to order in Bengaluru, shipping across India.",
     answer:
       "Look Here Studio makes three personalised objects for the home: the [Custom Lightbox](/objects/custom-lightbox) with your words in any language and any light colour ({price:custom-lightbox}), [Four-Letter Words](/objects/four-letter-words) panels cut with your own words ({price:four-letter-words} for two), and the [Pickleball Shadow Box](/objects/pickleball-shadow-box), which frames a paddle with names, a score or a club crest ({price:pickleball-shadow-box}). Each is made to order in Bengaluru.",
     sections: [
@@ -178,7 +178,7 @@ export const categories: Category[] = [
     name: "Frames & shelves",
     metaTitle: "Photo Frames & Picture Ledges, Made in Bengaluru | Look Here Studio",
     metaDescription:
-      "Oversized-mount photo frames, a photobooth strip frame, acrylic picture ledges and a pickleball shadow box. Made to order in Bengaluru, free shipping in India.",
+      "Oversized-mount photo frames, a photobooth strip frame, acrylic picture ledges and a pickleball shadow box. Made to order in Bengaluru, shipping across India.",
     answer:
       "Look Here Studio makes frames and shelves for showing off the things you love: the [Square Frame](/objects/square-frame) set of three ({price:square-frame}), the [Strip Frame](/objects/strip-frame) for photobooth strips ({price:strip-frame}), the [Clear Ledge](/objects/clear-ledge), a 60 cm acrylic picture ledge in clear or colours ({price:clear-ledge} each), and the [Pickleball Shadow Box](/objects/pickleball-shadow-box). All made to order in Bengaluru.",
     sections: [
@@ -202,7 +202,7 @@ export const categories: Category[] = [
     name: "Table decor",
     metaTitle: "Designer Table Decor: Lamp, Coasters & Table Game | Look Here Studio",
     metaDescription:
-      "A fluorescent acrylic table lamp, wavy patterned coasters and a gold-and-marble-look acrylic noughts and crosses set. Made to order in Bengaluru, free shipping.",
+      "A fluorescent acrylic table lamp, wavy patterned coasters and a gold-and-marble-look acrylic noughts and crosses set. Made to order in Bengaluru.",
     answer:
       "For tables and shelves, Look Here Studio makes the [Acrylic Lamp](/objects/acrylic-lamp), a glowing slab of fluorescent orange acrylic ({price:acrylic-lamp}), [Patterned Coasters](/objects/patterned-coasters), four wavy resin coasters with cork bases ({price:patterned-coasters}), and [X + O](/objects/x-plus-o), noughts and crosses in acrylic that looks like brass on marble ({price:x-plus-o}). All made to order in Bengaluru.",
     sections: [

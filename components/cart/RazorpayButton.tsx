@@ -1,7 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { cleanCustomer, EMPTY_CUSTOMER, type Customer } from "@/lib/orderDetails";
+import { useState } from "react";
+import { cleanCustomer, type Customer } from "@/lib/orderDetails";
+import { setDelivery, useDelivery } from "@/lib/deliveryStore";
+import { shippingFor } from "@/config/shipping";
+import { formatPrice } from "@/data/products";
 import { useCart } from "./CartContext";
 import { track } from "@/lib/analytics";
 
@@ -27,28 +30,13 @@ function loadScript(): Promise<boolean> {
 // "PAY ONLINE": create order -> Razorpay modal -> verify signature on the server.
 export default function RazorpayButton() {
   const { lines, subtotal, clear, gift, giftNote } = useCart();
-  const [c, setC] = useState<Customer>(EMPTY_CUSTOMER);
+  const c = useDelivery();
+  const ship = shippingFor(c.pincode);
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState<{ ok: boolean; text: string } | null>(null);
 
-  // remember the details for this visit so a failed payment doesn't mean retyping
-  useEffect(() => {
-    try {
-      const saved = sessionStorage.getItem("lhs.delivery");
-      if (saved) setC({ ...EMPTY_CUSTOMER, ...JSON.parse(saved) });
-    } catch {
-      /* private mode: fine */
-    }
-  }, []);
-  const set = (k: keyof Customer) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const next = { ...c, [k]: e.target.value };
-    setC(next);
-    try {
-      sessionStorage.setItem("lhs.delivery", JSON.stringify(next));
-    } catch {
-      /* ignore */
-    }
-  };
+  const set = (k: keyof Customer) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
+    setDelivery({ [k]: e.target.value });
 
   if (!KEY_ID) return null;
 
@@ -123,13 +111,10 @@ export default function RazorpayButton() {
         <input placeholder="Mobile number" inputMode="numeric" autoComplete="tel" value={c.phone} onChange={set("phone")} />
         <input placeholder="Email (for your receipt)" type="email" autoComplete="email" value={c.email} onChange={set("email")} />
         <textarea placeholder="Address (house, street, area)" rows={2} autoComplete="street-address" value={c.address} onChange={set("address")} />
-        <div className="payform__row">
-          <input placeholder="City" autoComplete="address-level2" value={c.city} onChange={set("city")} />
-          <input placeholder="Pincode" inputMode="numeric" maxLength={6} autoComplete="postal-code" value={c.pincode} onChange={set("pincode")} />
-        </div>
+        <input placeholder="City" autoComplete="address-level2" value={c.city} onChange={set("city")} />
       </fieldset>
       <button className="cta cta--stamp drawer__checkout" onClick={pay} disabled={busy}>
-        <span className="cta__label">{busy ? "OPENING PAYMENT…" : "PAY ONLINE"}</span>
+        <span className="cta__label">{busy ? "OPENING PAYMENT…" : ship ? `PAY ${formatPrice(subtotal + ship.fee)} ONLINE` : "PAY ONLINE"}</span>
         <span className="cta__arrow">→</span>
       </button>
       {msg && <p className="drawer__note" role="status" style={{ color: msg.ok ? undefined : "#b3261e" }}>{msg.text}</p>}

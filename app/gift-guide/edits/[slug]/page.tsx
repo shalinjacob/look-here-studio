@@ -18,7 +18,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   const names = editProducts(e).map((p) => p.name).join(", ");
   return {
     title: { absolute: `${e.title}: A Ready-Made Gift Edit | ${BRAND_NAME}` },
-    description: `${e.blurb} ${names}: ${formatPrice(editTotal(e))} together, free shipping across India.`,
+    description: `${e.blurb} ${names}: ${formatPrice(editTotal(e))} together, shipping across India.`,
     alternates: { canonical: `/gift-guide/edits/${e.slug}` },
   };
 }

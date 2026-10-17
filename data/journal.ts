@@ -55,7 +55,7 @@ export const journal: JournalPost[] = [
     faq: [
       { q: "Are Look Here Studio clocks silent?", a: "Yes. Both the Layer Clock and the Layered Wall Clock use silent sweep movements, so there's no ticking." },
       { q: "How do you hang the Layer Clock?", a: "On a single wall screw. It runs on one AA battery." },
-      { q: "How long does a clock take to arrive?", a: "Each clock is made to order and dispatched within 10 working days of your order being confirmed, with free shipping anywhere in India." },
+      { q: "How long does a clock take to arrive?", a: "Each clock is made to order and dispatched within 10 working days of your order being confirmed, with shipping across India charged by pincode." },
     ],
     products: ["layer-clock", "layered-wall-clock"],
   },
@@ -204,10 +204,10 @@ export const journal: JournalPost[] = [
     excerpt:
       "We make it after you order. The unglamorous economics, and the real point, of not filling a warehouse.",
     description:
-      "Made to order means your piece is made after you order. At Look Here Studio that's dispatch within 10 working days and free shipping across India. Here's why we work this way.",
+      "Made to order means your piece is made after you order. At Look Here Studio that's dispatch within 10 working days and shipping across India charged by pincode. Here's why we work this way.",
     readingTime: "",
     answer:
-      "Made to order means your piece is made after you order it, not pulled off a warehouse shelf. At Look Here Studio, everything is made to order in Bengaluru and dispatched within 10 working days of your order being confirmed, with free shipping anywhere in India.",
+      "Made to order means your piece is made after you order it, not pulled off a warehouse shelf. At Look Here Studio, everything is made to order in Bengaluru and dispatched within 10 working days of your order being confirmed, with shipping across India charged by pincode.",
     body: [],
     sections: [
       {
@@ -238,7 +238,7 @@ export const journal: JournalPost[] = [
     ],
     faq: [
       { q: "How long does Look Here Studio take to dispatch?", a: "Everything is made to order and dispatched within 10 working days of your order being confirmed." },
-      { q: "Is shipping free?", a: "Yes, free shipping anywhere in India, with no minimum order. We ship within India only." },
+      { q: "How much is shipping?", a: "A flat fee per order, set by your delivery pincode. You see it in your cart before you pay. We ship within India only." },
       { q: "Can I return a made-to-order piece?", a: "Unused standard objects can be returned within 7 days of delivery, with free pickup. Personalised pieces are final sale unless they arrive damaged. Full details on our [shipping and returns page](/shipping-returns)." },
     ],
     products: ["custom-lightbox", "four-letter-words"],
@@ -340,7 +340,7 @@ export const journal: JournalPost[] = [
     excerpt:
       "It isn't about price, and it definitely isn't a scented candle. A short theory, ahead of the season.",
     description:
-      "A good gift proves you were paying attention. Home decor gift ideas sorted by person and budget, from under ₹5,000 to statement pieces, with free shipping across India.",
+      "A good gift proves you were paying attention. Home decor gift ideas sorted by person and budget, from under ₹5,000 to statement pieces, with shipping across India charged by pincode.",
     readingTime: "",
     answer:
       "A good gift is proof you were paying attention. The price matters far less than how specific it is to the person. Start from who they are (the host, the one who has everything, the design obsessive), not from a budget.",
@@ -390,10 +390,10 @@ export const journal: JournalPost[] = [
     excerpt:
       "The studio grew out of a signage workshop. That's not a footnote; it's the whole accent.",
     description:
-      "Look Here Studio is a small design studio in Bengaluru making playful home objects in acrylic, mirror, metal and light. Made to order, shipped free across India.",
+      "Look Here Studio is a small design studio in Bengaluru making playful home objects in acrylic, mirror, metal and light. Made to order, shipped across India.",
     readingTime: "",
     answer:
-      "Look Here Studio is a small design studio in Bengaluru, Karnataka, that grew out of a signage workshop. We design and make playful objects for the home (mirrors, clocks, lights, wall pieces and backlit art) in our own studio, made to order and shipped free across India.",
+      "Look Here Studio is a small design studio in Bengaluru, Karnataka, that grew out of a signage workshop. We design and make playful objects for the home (mirrors, clocks, lights, wall pieces and backlit art) in our own studio, made to order and shipped across India.",
     body: [],
     sections: [
       {
@@ -412,13 +412,13 @@ export const journal: JournalPost[] = [
       {
         heading: "How do I order, and where do you ship?",
         paras: [
-          "Add objects to your cart and tap “Send product request”. That opens WhatsApp with your order filled in. We confirm the details, then send you payment details. Everything is dispatched within 10 working days of confirmation, with free shipping anywhere in India.",
+          "Add objects to your cart and tap “Send product request”. That opens WhatsApp with your order filled in. We confirm the details, then send you payment details. Everything is dispatched within 10 working days of confirmation, with shipping across India charged by pincode.",
         ],
       },
     ],
     faq: [
       { q: "Where is Look Here Studio based?", a: "In Bengaluru, Karnataka, India." },
-      { q: "Do you ship outside Bengaluru?", a: "Yes, free shipping anywhere in India. We don't currently ship outside India." },
+      { q: "Do you ship outside Bengaluru?", a: "Yes, anywhere in India; the shipping fee depends on your pincode. We don't currently ship outside India." },
       { q: "How do I contact Look Here Studio?", a: "WhatsApp +91 93806 70901 or email hello@lookherestudio.in." },
       { q: "Do you take custom or commission work?", a: "Yes: custom words, commissions, and corporate and wedding gifting. [Get in touch](/contact)." },
     ],
@@ -477,7 +477,7 @@ export const journal: JournalPost[] = [
       {
         heading: "How long does a Diwali order take?",
         paras: [
-          "Diwali is on Sunday 8 November 2026. Every piece is made to order and dispatched within 10 working days. Join the wishlist on WhatsApp to get started. Shipping is free anywhere in India.",
+          "Diwali is on Sunday 8 November 2026. Every piece is made to order and dispatched within 10 working days. Join the wishlist on WhatsApp to get started. Shipping is charged by pincode.",
           "Tick “This is a gift” in your cart and add a short note, and we'll handwrite it on a card.",
         ],
       },
@@ -491,7 +491,7 @@ export const journal: JournalPost[] = [
     faq: [
       { q: "What is a good Diwali gift for the home?", a: "Something they'll see every day but wouldn't buy themselves: a statement clock, a lightbox with their own words, a word panel for a bare wall, or a table game for card night. See our [gift guide](/gift-guide) for more, sorted by budget." },
       { q: "Is there a Diwali gift under ₹5,000?", a: "Yes: [X + O](/objects/x-plus-o) ({price:x-plus-o}) or the [Patterned Coasters](/objects/patterned-coasters) ({price:patterned-coasters} for a set of four)." },
-      { q: "How long does a Diwali order take?", a: "Every piece is made to order and dispatched within 10 working days. Join the wishlist on WhatsApp to get started. Free shipping across India." },
+      { q: "How long does a Diwali order take?", a: "Every piece is made to order and dispatched within 10 working days. Join the wishlist on WhatsApp to get started. Shipping across India, charged by pincode." },
       { q: "Can you add a gift note?", a: "Yes. Tick “This is a gift” in your cart and add a note; we handwrite it on a card." },
       { q: "Can I personalise a Diwali gift?", a: "Yes, with the [Custom Lightbox](/objects/custom-lightbox), [Four-Letter Words](/objects/four-letter-words) or the [Pickleball Shadow Box](/objects/pickleball-shadow-box). We confirm the details on WhatsApp before we make it." },
     ],

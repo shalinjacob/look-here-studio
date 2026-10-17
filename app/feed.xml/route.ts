@@ -1,4 +1,5 @@
 import { products } from "@/data/products";
+import { DEFAULT_ZONE } from "@/config/shipping";
 import { SITE_URL, BRAND_NAME } from "@/lib/site";
 
 // Google Merchant Center product feed (RSS 2.0 + g: namespace), built from the
@@ -37,8 +38,8 @@ export function GET() {
         ["g:material", p.material],
         ["g:color", p.colour],
       ];
-      // Free shipping anywhere in India (see /shipping-returns)
-      const shipping = `      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>`;
+      // Shipping is zone-based (config/shipping.ts); the feed lists the standard 'rest of India' fee
+      const shipping = `      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>${DEFAULT_ZONE.fee.toFixed(2)} INR</g:price></g:shipping>`;
       return `    <item>\n${fields.map(([k, v]) => `      <${k}>${esc(v)}</${k}>`).join("\n")}\n${shipping}\n    </item>`;
     });
 

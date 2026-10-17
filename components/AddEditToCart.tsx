@@ -44,7 +44,7 @@ export default function AddEditToCart({
         </label>
       )}
       <p className="editbuy__total">
-        Total <strong>{formatPrice(total)}</strong> · free shipping across India
+        Total <strong>{formatPrice(total)}</strong> · shipping calculated by pincode
       </p>
       <button
         className="cta cta--stamp"

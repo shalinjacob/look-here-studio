@@ -28,12 +28,12 @@ export function GET() {
 
   const txt = `# ${BRAND_NAME}
 
-> ${BRAND_NAME} is a small design studio in Bengaluru, Karnataka, India, that grew out of a signage workshop. It designs and makes playful objects for the home (mirrors, wall clocks, lamps, wall art, backlit LED art prints, frames and table pieces) in acrylic, mirror, metal, wood and light. Everything is made to order in its own studio and shipped free across India.
+> ${BRAND_NAME} is a small design studio in Bengaluru, Karnataka, India, that grew out of a signage workshop. It designs and makes playful objects for the home (mirrors, wall clocks, lamps, wall art, backlit LED art prints, frames and table pieces) in acrylic, mirror, metal, wood and light. Everything is made to order in its own studio and shipped across India.
 
 ## Key facts
 
 - Made to order in Bengaluru; dispatched within 10 working days of the order being confirmed.
-- Free shipping anywhere in India, no minimum. India only.
+- Shipping anywhere in India, charged as a flat fee per order by delivery pincode. India only. India only.
 - Ordering: add objects to the cart on ${SITE_URL}, then pay online (Razorpay: UPI, cards, netbanking) or tap "Send product request" to order through WhatsApp; the studio confirms the details either way.
 - Returns: unused standard objects within 7 days of delivery, with free pickup. Personalised pieces are final sale unless damaged. Damage must be reported within 48 hours with an unboxing video and is replaced or refunded. Details: ${SITE_URL}/shipping-returns
 - Personalisation: custom words, text in any language, colours and sizes on many pieces. Corporate and wedding gifting in small runs.
