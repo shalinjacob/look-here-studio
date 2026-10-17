@@ -527,7 +527,7 @@ const objects: Product[] = [
     currency: "INR",
     status: "available",
     images: ["/objects/old-habits.webp", "/objects/old-habits-lit.webp"],
-    lifestyleImages: [],
+    lifestyleImages: ["/lifestyle/old-habits-1.webp"],
     imageFit: "contain",
     collection: "editions",
     leadTime: "Made to order · dispatched within 10 working days",
