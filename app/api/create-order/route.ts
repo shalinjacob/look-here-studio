@@ -3,7 +3,7 @@ import Razorpay from "razorpay";
 import { priceCart } from "@/lib/razorpayPricing";
 import { cleanCustomer } from "@/lib/orderDetails";
 import { getProduct } from "@/data/products";
-import { shippingFor } from "@/config/shipping";
+import { shippingForCart } from "@/config/shipping";
 
 export const runtime = "nodejs";
 
@@ -32,7 +32,7 @@ export async function POST(req: Request) {
   const c = who.value;
 
   // shipping is set server-side from the pincode, never taken from the browser
-  const ship = shippingFor(c.pincode);
+  const ship = shippingForCart(c.pincode, body.lines as { slug: string; qty: number }[]);
   if (!ship) return NextResponse.json({ error: "Add a 6-digit pincode." }, { status: 400 });
 
   const amount = Math.round((priced.total + ship.fee) * 100); // paise
@@ -52,6 +52,7 @@ export async function POST(req: Request) {
         city: c.city,
         pincode: c.pincode,
         shipping_fee: String(ship.fee),
+        shipping_extra_large_items: String(ship.extra),
         shipping_zone: ship.zone,
         items_total: String(priced.total),
         gift: body.gift === true ? "yes" : "no",

@@ -9,11 +9,11 @@ import { track } from "@/lib/analytics";
 import { ONLINE_PAYMENT } from "@/lib/site";
 import RazorpayButton from "./RazorpayButton";
 import { setDelivery, useDelivery } from "@/lib/deliveryStore";
-import { shippingFor } from "@/config/shipping";
+import { shippingForCart } from "@/config/shipping";
 
 /** the WhatsApp order request (format agreed in the website brief) */
 function requestMessage(lines: CartLine[], subtotal: number, currency: string, gift: boolean, giftNote: string, pincode: string) {
-  const ship = shippingFor(pincode);
+  const ship = shippingForCart(pincode, lines);
   const items = lines
     .map((l) => {
       const variant = l.variant && !l.personalised ? ` (${l.variant})` : "";
@@ -46,9 +46,9 @@ function requestMessage(lines: CartLine[], subtotal: number, currency: string, g
 
 export default function CartDrawer() {
   const delivery = useDelivery();
-  const ship = shippingFor(delivery.pincode);
   const { isOpen, closeCart, lines, count, subtotal, currency, setQty, removeItem, gift, giftNote, setGift } =
     useCart();
+  const ship = shippingForCart(delivery.pincode, lines);
 
   // lock scroll + escape to close
   useEffect(() => {
@@ -169,6 +169,11 @@ export default function CartDrawer() {
                 <span>SHIPPING{ship ? ` · ${ship.zone.toUpperCase()}` : ""}</span>
                 <span>{ship ? formatPrice(ship.fee, currency) : "Enter pincode"}</span>
               </div>
+              {ship && ship.extra > 0 && (
+                <p className="drawer__note">
+                  Includes {formatPrice(ship.extra, currency)} for large or heavy pieces in your cart.
+                </p>
+              )}
               {ship && (
                 <div className="drawer__subtotal drawer__total">
                   <span>TOTAL</span>

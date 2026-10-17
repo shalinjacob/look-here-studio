@@ -41,6 +41,7 @@ export default function ShippingReturnsPage() {
                 Current fees: {[...SHIPPING_ZONES, DEFAULT_ZONE].map((z) => `${z.name} ${formatPrice(z.fee, "INR")}`).join(" · ")}.
               </li>
             )}
+            <li>Large or heavy pieces (mirrors, larger frames and wall art) carry an additional handling fee per piece, added automatically in your cart.</li>
             <li>Every object is <strong>made to order, and dispatched within 10 working days</strong> of your order being confirmed.</li>
             <li>Once your order ships, we send you the courier and tracking details on WhatsApp or email.</li>
             <li>Everything is packed corners-first, with acrylic and mirrors in protective film. Peel it off when it reaches you.</li>

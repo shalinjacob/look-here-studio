@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { cleanCustomer, type Customer } from "@/lib/orderDetails";
 import { setDelivery, useDelivery } from "@/lib/deliveryStore";
-import { shippingFor } from "@/config/shipping";
+import { shippingForCart } from "@/config/shipping";
 import { formatPrice } from "@/data/products";
 import { useCart } from "./CartContext";
 import { track } from "@/lib/analytics";
@@ -31,7 +31,7 @@ function loadScript(): Promise<boolean> {
 export default function RazorpayButton() {
   const { lines, subtotal, clear, gift, giftNote } = useCart();
   const c = useDelivery();
-  const ship = shippingFor(c.pincode);
+  const ship = shippingForCart(c.pincode, lines);
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState<{ ok: boolean; text: string } | null>(null);
 

@@ -34,10 +34,45 @@ export const SHIPPING_ZONES: ShippingZone[] = [
 
 export const DEFAULT_ZONE: Omit<ShippingZone, "prefixes"> = { id: "india", name: "Rest of India", fee: 350 };
 
+/**
+ * Extra shipping per unit for bulky/heavy pieces, added on top of the zone fee.
+ * ⚠ OWNER: placeholders derived from the cost teardown sheet (its pack+ship cost
+ * for the item, minus the ₹350 standard fee, rounded to ₹50). Replace with real
+ * courier quotes. Anything not listed ships at the zone fee alone.
+ */
+export const BULKY_EXTRA: Record<string, number> = {
+  "square-frame": 150,
+  "four-letter-words": 150,
+  "cat-got-your-heart": 150,
+  "pickleball-shadow-box": 150,
+  "custom-lightbox": 150,
+  "old-habits": 150,
+  "smoke-and-feathers": 150,
+  "pomegranate-study": 150,
+  "blood-moon": 150,
+  "pink-wavy-mirror": 350,
+  "well-look-at-you": 350,
+  "love-more": 350,
+  "slim-led-quote-frame": 350,
+  "small-planet": 600,
+  "ripple-mirror": 3150,
+};
+
 /** fee for a 6-digit pincode, or null while the pincode isn't valid yet */
 export function shippingFor(pincode: string): { fee: number; zone: string } | null {
   const pin = pincode.trim();
   if (!/^[1-9]\d{5}$/.test(pin)) return null;
   const z = SHIPPING_ZONES.find((zone) => zone.prefixes.some((p) => pin.startsWith(p)));
   return z ? { fee: z.fee, zone: z.name } : { fee: DEFAULT_ZONE.fee, zone: DEFAULT_ZONE.name };
+}
+
+/** whole-order shipping: the zone fee once, plus the large-item extra for every unit */
+export function shippingForCart(
+  pincode: string,
+  lines: { slug: string; qty: number }[]
+): { fee: number; zone: string; base: number; extra: number } | null {
+  const z = shippingFor(pincode);
+  if (!z) return null;
+  const extra = lines.reduce((n, l) => n + (BULKY_EXTRA[l.slug] ?? 0) * l.qty, 0);
+  return { fee: z.fee + extra, zone: z.zone, base: z.fee, extra };
 }
