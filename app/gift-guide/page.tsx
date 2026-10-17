@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/gift-guide" },
   title: { absolute: "Unique Home Decor Gift Ideas in India | Look Here Studio Gift Guide" },
   description:
-    "Housewarming, wedding and Diwali gifts that aren't another scented candle. Sorted by budget, person and occasion. Gift-wrapped.",
+    "Housewarming and wedding gifts that aren't another scented candle. Sorted by budget, person and occasion. Gift-wrapped.",
 };
 
 // budget tiers, computed from the catalogue: every priced object, including the ones

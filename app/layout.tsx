@@ -6,8 +6,6 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import CartDrawer from "@/components/cart/CartDrawer";
 import Analytics from "@/components/Analytics";
-import { CampaignClock } from "@/components/campaign/CampaignClock";
-import CampaignStrip from "@/components/campaign/CampaignStrip";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import "./globals.css";
 import { SITE_URL, ogImage } from "@/lib/site";
@@ -89,9 +87,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <a href="#main" className="skip-link">Skip to content</a>
-        <CampaignClock initialNow={Date.now()}>
         <CartProvider>
-          <CampaignStrip />
           <AnnounceBar />
           <Nav />
           <main id="main">{children}</main>
@@ -99,7 +95,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <CartDrawer />
           <FloatingWhatsApp />
         </CartProvider>
-        </CampaignClock>
         <Analytics />
       </body>
     </html>

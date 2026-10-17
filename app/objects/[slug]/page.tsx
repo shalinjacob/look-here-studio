@@ -12,7 +12,6 @@ import JsonLd from "@/components/JsonLd";
 import TrackView from "@/components/TrackView";
 import WaLink from "@/components/WaLink";
 import { customisationMessage } from "@/lib/whatsapp";
-import CampaignCard from "@/components/campaign/CampaignCard";
 import Faq from "@/components/Faq";
 import SizeChart from "@/components/SizeChart";
 import { productFaq, faqLd } from "@/data/faq";
@@ -202,7 +201,6 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
               </>
             )}
           </div>
-          {buyable && <CampaignCard />}
         </aside>
       </div>
 

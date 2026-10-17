@@ -136,7 +136,7 @@ export interface Collection {
   slug: string;
   index: string; // "01"
   name: string; // "FESTIVAL 01"
-  title: string; // "Made for Diwali. Made to stay."
+  title: string;
   tagline: string;
   intro: string[];
   drawnFrom: string[];

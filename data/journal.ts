@@ -424,32 +424,32 @@ export const journal: JournalPost[] = [
     products: ["custom-lightbox", "four-letter-words", "love-more"],
   },
   {
-    slug: "unique-diwali-gift-ideas-for-home",
+    slug: "unique-gift-ideas-for-home",
     index: "010",
-    title: "Unique Diwali gift ideas for the home (that aren't another scented candle)",
+    title: "Unique gift ideas for the home (that aren't another scented candle)",
     date: "2026-10-08",
     updated: "2026-10-08",
     category: "Gifting",
     excerpt:
-      "Diwali gifts for the home that people actually keep: clocks, lightboxes, word panels and a gold-and-marble-look game, sorted by who you're buying for.",
+      "Gifts for the home that people actually keep: clocks, lightboxes, word panels and a gold-and-marble-look game, sorted by who you're buying for.",
     description:
-      "Unique Diwali gifts for the home, sorted by who you're buying for: clocks, personalised lightboxes, word panels and a table game. Every piece is made to order and dispatched within 10 working days. Join the wishlist on WhatsApp to get started.",
+      "Unique gifts for the home, sorted by who you're buying for: clocks, personalised lightboxes, word panels and a table game. Every piece is made to order and dispatched within 10 working days.",
     readingTime: "",
     answer:
-      "The best Diwali gifts for the home are objects people will see every day but would never buy for themselves: a clock that's also a small painting, their own words lit up on the wall, a table game that starts arguments. Pick for the person, not the price. Every piece is made to order and dispatched within 10 working days. Join the wishlist on WhatsApp to get started.",
+      "The best gifts for the home are objects people will see every day but would never buy for themselves: a clock that's also a small painting, their own words lit up on the wall, a table game that starts arguments. Pick for the person, not the price. Every piece is made to order and dispatched within 10 working days.",
     body: [],
     sections: [
       {
-        heading: "Why give something for the home this Diwali?",
+        heading: "Why give something for the home?",
         paras: [
-          "Diwali already comes with sweets, dry fruits and a respectable mountain of candles. A home object lasts longer than all of them. It goes up on the wall or onto the coffee table and quietly reminds them of you every time they walk past, which is the whole point of a gift.",
-          "It also suits the festival. Diwali is about the home: cleaning it, lighting it, filling it with people. Something that makes the home a little more theirs fits right in.",
+          "Gifts already come with sweets, dry fruits and a respectable mountain of candles. A home object lasts longer than all of them. It goes up on the wall or onto the coffee table and quietly reminds them of you every time they walk past, which is the whole point of a gift.",
+          "It also suits the occasion. A home is where people gather, and something that makes it a little more theirs always fits right in.",
         ],
       },
       {
         heading: "What do you give the friend who has everything?",
         paras: [
-          "Something gloriously unnecessary. [X + O](/objects/x-plus-o) ({price:x-plus-o}) is noughts and crosses for the coffee table, made in acrylic with a marble-look board and brass-look pieces. It settles nothing and starts everything, which is exactly what you want at a Diwali card party.",
+          "Something gloriously unnecessary. [X + O](/objects/x-plus-o) ({price:x-plus-o}) is noughts and crosses for the coffee table, made in acrylic with a marble-look board and brass-look pieces. It settles nothing and starts everything, which is exactly what you want at a card party.",
           "Or the [Layered Wall Clock](/objects/layered-wall-clock) ({price:layered-wall-clock}): overlapping primary-colour shapes with a floating yellow dial. Part clock, part small Memphis painting, and very hard to already own.",
         ],
       },
@@ -463,30 +463,30 @@ export const journal: JournalPost[] = [
       {
         heading: "What about the person who loves design?",
         paras: [
-          "Give them art that does something. Our [Editions](/collections/editions) are prints set in slim LED frames, so the picture glows rather than just hanging there: an old-master portrait with an anachronistic twist, a botanical pomegranate study, a collage, a very moody moon. Each is A2 and {price:blood-moon}. Fitting, for the festival of lights.",
+          "Give them art that does something. Our [Editions](/collections/editions) are prints set in slim LED frames, so the picture glows rather than just hanging there: an old-master portrait with an anachronistic twist, a botanical pomegranate study, a collage, a very moody moon. Each is A2 and {price:blood-moon}.",
         ],
       },
       {
-        heading: "Is there a personalised Diwali gift?",
+        heading: "Is there a personalised gift?",
         paras: [
           "Yes, and it's the gift people remember. The [Custom Lightbox](/objects/custom-lightbox) ({price:custom-lightbox}) lights up any words you like, in any language and any light colour: a family saying, a line of poetry, their name. For the pickleball-obsessed, the [Pickleball Shadow Box](/objects/pickleball-shadow-box) ({price:pickleball-shadow-box}) frames their paddle with names, a score or a club crest. See all [personalised gifts](/personalised-gifts).",
           "Personalised pieces are made just for them, so they're final sale unless they arrive damaged. We confirm the wording with you on WhatsApp before we make anything.",
         ],
       },
       {
-        heading: "How long does a Diwali order take?",
+        heading: "How long does an order take?",
         paras: [
-          "Diwali is on Sunday 8 November 2026. Every piece is made to order and dispatched within 10 working days. Join the wishlist on WhatsApp to get started. Shipping is charged by pincode.",
+          "Every piece is made to order and dispatched within 10 working days of your order being confirmed. Shipping is charged by pincode, and you see it in your cart before you pay.",
           "Tick “This is a gift” in your cart and add a short note, and we'll handwrite it on a card.",
         ],
       },
     ],
     faq: [
-      { q: "What is a good Diwali gift for the home?", a: "Something they'll see every day but wouldn't buy themselves: a statement clock, a lightbox with their own words, a word panel for a bare wall, or a table game for card night. See our [gift guide](/gift-guide) for more, sorted by budget." },
-      { q: "Is there a Diwali gift under ₹5,000?", a: "Yes: [X + O](/objects/x-plus-o) ({price:x-plus-o}) or the [Patterned Coasters](/objects/patterned-coasters) ({price:patterned-coasters} for a set of four)." },
-      { q: "How long does a Diwali order take?", a: "Every piece is made to order and dispatched within 10 working days. Join the wishlist on WhatsApp to get started. Shipping across India, charged by pincode." },
+      { q: "What is a good gift for the home?", a: "Something they'll see every day but wouldn't buy themselves: a statement clock, a lightbox with their own words, a word panel for a bare wall, or a table game for card night. See our [gift guide](/gift-guide) for more, sorted by budget." },
+      { q: "Is there a gift under ₹5,000?", a: "Yes: [X + O](/objects/x-plus-o) ({price:x-plus-o}) or the [Patterned Coasters](/objects/patterned-coasters) ({price:patterned-coasters} for a set of four)." },
+      { q: "How long does an order take?", a: "Every piece is made to order and dispatched within 10 working days. Shipping across India, charged by pincode." },
       { q: "Can you add a gift note?", a: "Yes. Tick “This is a gift” in your cart and add a note; we handwrite it on a card." },
-      { q: "Can I personalise a Diwali gift?", a: "Yes, with the [Custom Lightbox](/objects/custom-lightbox), [Four-Letter Words](/objects/four-letter-words) or the [Pickleball Shadow Box](/objects/pickleball-shadow-box). We confirm the details on WhatsApp before we make it." },
+      { q: "Can I personalise a gift?", a: "Yes, with the [Custom Lightbox](/objects/custom-lightbox), [Four-Letter Words](/objects/four-letter-words) or the [Pickleball Shadow Box](/objects/pickleball-shadow-box). We confirm the details on WhatsApp before we make it." },
     ],
     products: ["x-plus-o", "layered-wall-clock", "four-letter-words", "custom-lightbox", "pickleball-shadow-box"],
   },
