@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useCart } from "./cart/CartContext";
-import { formatPrice } from "@/data/products";
+import { formatPrice, isPurchasable } from "@/data/products";
 import type { Product } from "@/lib/types";
 
 // Adds every product in a gift edit as its own normal cart line. If the edit
@@ -21,7 +21,10 @@ export default function AddEditToCart({
   const final = items.map((p) =>
     choose && p.slug === choose.defaultSlug ? choose.options.find((o) => o.slug === picked) ?? p : p
   );
-  const total = final.reduce((n, p) => n + (p.price ?? 0), 0);
+  // only pieces we can actually make right now go in the cart
+  const ready = final.filter(isPurchasable);
+  const waiting = final.length - ready.length;
+  const total = ready.reduce((n, p) => n + (p.price ?? 0), 0);
 
   return (
     <div className="editbuy">
@@ -43,6 +46,18 @@ export default function AddEditToCart({
           </select>
         </label>
       )}
+      {ready.length === 0 ? (
+        <p className="editbuy__total">
+          We&apos;re working on these ones. Open any piece above to join its wishlist and you&apos;ll hear first.
+        </p>
+      ) : (
+      <>
+      {waiting > 0 && (
+        <p className="editbuy__fine">
+          {waiting === 1 ? "One piece here is" : `${waiting} pieces here are`} still on the workbench, so this adds the rest.
+          Open {waiting === 1 ? "it" : "them"} above to join the wishlist.
+        </p>
+      )}
       <p className="editbuy__total">
         Total <strong>{formatPrice(total)}</strong> · shipping calculated by pincode
       </p>
@@ -50,13 +65,15 @@ export default function AddEditToCart({
         className="cta cta--stamp"
         disabled={added}
         onClick={() => {
-          final.forEach((p) => addItem(p, 1));
+          ready.forEach((p) => addItem(p, 1));
           setAdded(true);
         }}
       >
         <span className="cta__label">{added ? "ADDED ✓" : "ADD THE WHOLE EDIT TO CART"}</span>
         {!added && <span className="cta__arrow">→</span>}
       </button>
+      </>
+      )}
     </div>
   );
 }
