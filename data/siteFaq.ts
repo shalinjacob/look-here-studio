@@ -27,7 +27,7 @@ export const siteFaq: { group: string; items: QA[] }[] = [
     items: [
       { q: "What does made to order mean?", a: "Your piece is made after you order it, in our Bengaluru studio, not pulled from a warehouse. More in [What does 'made to order' mean?](/journal/why-we-make-things-in-small-runs)" },
       { q: "Which objects can be personalised?", a: "The [Custom Lightbox](/objects/custom-lightbox) (your words, any language, any light colour), [Four-Letter Words](/objects/four-letter-words) (your own words) and the [Pickleball Shadow Box](/objects/pickleball-shadow-box) (names, scores or a club crest). See all [personalised gifts](/personalised-gifts)." },
-      { q: "Can I change the colour or size?", a: "On many made-to-order pieces, yes. The [Clear Ledge](/objects/clear-ledge) comes in clear, orange, red, cyan, blue or purple. For anything else, ask us on WhatsApp before you order." },
+      { q: "Can I change the colour or size?", a: "On many made-to-order pieces, yes. The [Clear Ledge](/objects/clear-ledge) is crystal clear acrylic, in one ledge or a set of three. For anything else, ask us on WhatsApp before you order." },
       { q: "Do you take commissions or bulk orders?", a: "Yes: commissions, custom words, and corporate and wedding gifting, made to order in small runs. [Tell us what you need](/contact)." },
     ],
   },

@@ -180,7 +180,7 @@ export const categories: Category[] = [
     metaDescription:
       "Oversized-mount photo frames, a photobooth strip frame, acrylic picture ledges and a pickleball shadow box. Made to order in Bengaluru, shipping across India.",
     answer:
-      "Look Here Studio makes frames and shelves for showing off the things you love: the [Square Frame](/objects/square-frame) set of three ({price:square-frame}), the [Strip Frame](/objects/strip-frame) for photobooth strips ({price:strip-frame}), the [Clear Ledge](/objects/clear-ledge), a 60 cm acrylic picture ledge in clear or colours ({price:clear-ledge} each), and the [Pickleball Shadow Box](/objects/pickleball-shadow-box). All made to order in Bengaluru.",
+      "Look Here Studio makes frames and shelves for showing off the things you love: the [Square Frame](/objects/square-frame) set of three ({price:square-frame}), the [Strip Frame](/objects/strip-frame) for photobooth strips ({price:strip-frame}), the [Clear Ledge](/objects/clear-ledge), a 60 cm crystal-clear acrylic picture ledge ({price:clear-ledge} for one, or a set of three), and the [Pickleball Shadow Box](/objects/pickleball-shadow-box). All made to order in Bengaluru.",
     sections: [
       {
         heading: "Frame or ledge?",
@@ -191,7 +191,7 @@ export const categories: Category[] = [
     ],
     faq: [
       { q: "How much can the Clear Ledge hold?", a: "Up to 5 kg per ledge. It's 60 cm long and 10.5 cm deep." },
-      { q: "What colours does the Clear Ledge come in?", a: "Clear, orange, red, cyan, blue or purple, all at the same price. Ask on WhatsApp for other colours." },
+      { q: "What colour is the Clear Ledge?", a: "Crystal clear acrylic. You can buy one ledge or a set of three." },
       { q: "How are the frames hung?", a: "The Square Frames take one screw each (a template is included); the Strip Frame hangs on a single screw via a keyhole mount." },
     ],
     products: ["square-frame", "strip-frame", "clear-ledge", "pickleball-shadow-box"],
