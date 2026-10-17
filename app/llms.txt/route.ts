@@ -34,7 +34,7 @@ export function GET() {
 
 - Made to order in Bengaluru; dispatched within 10 working days of the order being confirmed.
 - Shipping anywhere in India, charged as a flat fee per order by delivery pincode. India only. India only.
-- Ordering: add objects to the cart on ${SITE_URL}, then tap "Send order on WhatsApp"; the studio confirms the details and sends payment details there. Online payment is coming soon.
+- Ordering: add objects to the cart on ${SITE_URL}, then pay online (Razorpay: UPI, cards, netbanking) or tap "Send order on WhatsApp"; the studio confirms the details either way.
 - Returns: unused standard objects within 7 days of delivery, with free pickup. Personalised pieces are final sale unless damaged. Damage must be reported within 48 hours with an unboxing video and is replaced or refunded. Details: ${SITE_URL}/shipping-returns
 - Personalisation: custom words, text in any language, colours and sizes on many pieces. Corporate and wedding gifting in small runs.
 - Contact: WhatsApp +91 93806 70901, email ${EMAIL}. Instagram ${INSTAGRAM_URL}.

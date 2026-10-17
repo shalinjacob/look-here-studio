@@ -834,3 +834,4 @@ input { font: inherit; }
 .drawer__checkout--primary { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding-block: 18px; font-size: 1.05em; }
 .drawer__checkout--off { width: 100%; margin-top: 10px; opacity: .45; cursor: not-allowed; background: transparent; border: 1px solid var(--line); color: var(--ink); }
 .drawer__soon { text-align: center; margin-top: 8px; }
+.pdp__customise { display: inline-flex; margin-top: 14px; }

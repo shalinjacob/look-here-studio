@@ -11,6 +11,7 @@ import Newsletter from "@/components/Newsletter";
 import JsonLd from "@/components/JsonLd";
 import TrackView from "@/components/TrackView";
 import WaLink from "@/components/WaLink";
+import { customisationMessage } from "@/lib/whatsapp";
 import CampaignCard from "@/components/campaign/CampaignCard";
 import Faq from "@/components/Faq";
 import SizeChart from "@/components/SizeChart";
@@ -188,6 +189,13 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
 
           <div className="pdp__actions">
             <AddToCart product={p} />
+            <WaLink
+              text={customisationMessage(p.name, p.objectNumber, url)}
+              className="cta cta--link pdp__customise"
+            >
+              <span className="cta__label">ASK FOR CUSTOMISATIONS ON WHATSAPP</span>
+              <span className="cta__arrow">→</span>
+            </WaLink>
             {buyable && (
               <>
                 <p className="pdp__leadtime">{p.leadTime}</p>

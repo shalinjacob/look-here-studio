@@ -50,7 +50,7 @@ function teeFaq(p: Product): QA[] {
     },
     {
       q: `How do I order?`,
-      a: WISHLIST_MODE ? WISHLIST_HOW : `Pick your size and colour, add it to your cart and tap "Send order on WhatsApp". We confirm the details and send you payment details there.`,
+      a: WISHLIST_MODE ? WISHLIST_HOW : `Pick your size and colour, add it to your cart, then pay online or tap "Send order on WhatsApp". We confirm the details either way.`,
     },
   ];
 }
@@ -116,7 +116,7 @@ export function productFaq(p: Product): QA[] {
     },
     {
       q: `How do I order ${nm(p)}?`,
-      a: WISHLIST_MODE ? WISHLIST_HOW : `Add it to your cart and tap "Send order on WhatsApp". We confirm the details and send you payment details there.`,
+      a: WISHLIST_MODE ? WISHLIST_HOW : `Add it to your cart, then pay online or tap "Send order on WhatsApp". We confirm the details either way.`,
     }
   );
   return faq;

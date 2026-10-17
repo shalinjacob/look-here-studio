@@ -44,6 +44,21 @@ export function buildWhatsAppLink(o: WaOptions = {}): string {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encode(whatsAppMessage(o))}`;
 }
 
+/** "ask for customisations": a message that already asks for the details we need before payment */
+export function customisationMessage(name: string, code: string, url: string): string {
+  return [
+    `${HELLO} I'd like to ask about customising the ${name} (${code}). ${url}`,
+    "",
+    "What I'd like changed:",
+    "",
+    "Full name:",
+    "Address:",
+    "Email:",
+    "Mobile number:",
+    "Pincode:",
+  ].join("\n");
+}
+
 const titleCase = (s: string) => s.replace(/-/g, " ").replace(/(^|\s)\S/g, (c) => c.toUpperCase());
 
 export interface PageContext {

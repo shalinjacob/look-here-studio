@@ -38,7 +38,7 @@ function requestMessage(lines: CartLine[], subtotal: number, currency: string, g
     `Gift: ${gift ? "Yes" : "No"}\n` +
     `Gift note: ${gift && giftNote.trim() ? giftNote.trim() : "—"}\n` +
     personalisation +
-    `\nName:\nDelivery city + pincode:`
+    `\nFull name:\nAddress:\nEmail:\nMobile number:\nPincode: ${pincode.trim()}`
   );
 }
 

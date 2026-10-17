@@ -106,12 +106,11 @@ export default function RazorpayButton() {
   return (
     <>
       <fieldset className="payform">
-        <legend>DELIVERY DETAILS</legend>
+        <legend>YOUR DETAILS (REQUIRED BEFORE PAYMENT)</legend>
         <input placeholder="Full name" autoComplete="name" value={c.name} onChange={set("name")} />
         <input placeholder="Mobile number" inputMode="numeric" autoComplete="tel" value={c.phone} onChange={set("phone")} />
         <input placeholder="Email (for your receipt)" type="email" autoComplete="email" value={c.email} onChange={set("email")} />
         <textarea placeholder="Address (house, street, area)" rows={2} autoComplete="street-address" value={c.address} onChange={set("address")} />
-        <input placeholder="City" autoComplete="address-level2" value={c.city} onChange={set("city")} />
       </fieldset>
       <button className="cta cta--stamp drawer__checkout" onClick={pay} disabled={busy}>
         <span className="cta__label">{busy ? "OPENING PAYMENT…" : ship ? `PAY ${formatPrice(subtotal + ship.fee)} ONLINE` : "PAY ONLINE"}</span>
