@@ -30,6 +30,7 @@ import {
   metaDescription,
   isFinalSale,
   UNAVAILABLE_LINE,
+  WORKING_ON_LINE,
   formatPrice,
   isPurchasable,
   canOrderNow,
@@ -297,7 +298,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
             <span className="pdp__section-rule" aria-hidden />
           </div>
           <p className="pdp__waitlist-line">
-            {p.price == null || !isPurchasable(p) ? (p.price == null ? "Not ready yet. Want to know the moment it is?" : UNAVAILABLE_LINE) : "Prefer email to WhatsApp? Leave it here and we\u2019ll write as soon as it\u2019s ready to order."}
+            {p.price == null || !isPurchasable(p) ? (p.price == null ? "Not ready yet. Want to know the moment it is?" : p.status === "coming-soon" ? WORKING_ON_LINE : UNAVAILABLE_LINE) : "Prefer email to WhatsApp? Leave it here and we\u2019ll write as soon as it\u2019s ready to order."}
           </p>
           <Newsletter id={`wl-${p.slug}`} compact cta="JOIN THE WISHLIST" productSlug={p.slug} source="product" />
         </section>

@@ -74,7 +74,7 @@ const objects: Product[] = [
     dimensions: "240 × 90 × 260 mm",
     price: 9200,
     currency: "INR",
-    status: "available",
+    status: "coming-soon",
     images: ["/objects/acrylic-lamp-1.webp", "/objects/acrylic-lamp-2.webp"],
     lifestyleImages: [],
     imageFit: "cover",
@@ -844,6 +844,7 @@ export const STATUS_LABEL: Record<ProductStatus, string> = {
 
 /** the badge shown next to the price */
 export function badge(p: Product): string {
+  if (p.status === "coming-soon" && p.price != null) return "We're working on this one";
   if (!isPurchasable(p)) return p.price == null ? STATUS_LABEL["coming-soon"] : STATUS_LABEL.waitlist;
   return p.custom ? "Made to order · personalised" : "Made to order";
 }
@@ -860,6 +861,10 @@ export function metaDescription(p: Product): string {
 
 export const UNAVAILABLE_LINE =
   "Taking a short break from the laser bed. Tell us you want one and you'll hear first.";
+
+/** a priced product we're still developing: shows the wishlist, not the cart */
+export const WORKING_ON_LINE =
+  "Still on the workbench, and we're fussing over every edge. Tell us you want one and you'll hear first.";
 
 /** button copy driven entirely by status (never hardcode per page) */
 export const STATUS_CTA: Record<ProductStatus, string> = {
