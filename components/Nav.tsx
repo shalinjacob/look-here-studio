@@ -77,7 +77,7 @@ export default function Nav() {
 
             <span className="nav__corner nav__corner--right">
               <button className="nav__cartbtn" onClick={openCart} aria-label={ready ? `Open cart, ${count} items` : "Open cart"}>
-                OBJECTS{ready ? ` (${count})` : ""} <span className="nav__bag" aria-hidden>▢</span>
+                <span className="nav__cartword">OBJECTS</span>{ready ? ` (${count})` : ""} <span className="nav__bag" aria-hidden>▢</span>
               </button>
             </span>
           </div>
