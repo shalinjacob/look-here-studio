@@ -50,7 +50,7 @@ export default function Footer() {
 
         <div className="footer__baseline">
           <span>© {new Date().getFullYear()} LOOK HERE STUDIO</span>
-          <span>FOR HOMES THAT NOTICE.</span>
+          <span>THINGS WORTH A SECOND LOOK.</span>
         </div>
       </div>
     </footer>

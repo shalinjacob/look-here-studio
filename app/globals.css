@@ -907,3 +907,16 @@ input { font: inherit; }
 }
 .mobilemenu__link { padding-inline: 0; text-align: left; }
 .mobilemenu__link--sub { padding-left: 16px; }
+
+/* phones: captions sit under their image instead of on top of the art; fewer stray notes */
+@media (max-width: 560px) {
+  .drop__strip figure { aspect-ratio: auto; overflow: visible; display: flex; flex-direction: column; }
+  .drop__strip figure img:not(.drop__litimg) { height: auto; aspect-ratio: 3 / 2; }
+  .drop__strip .drop__litimg { display: none; }
+  .drop__strip figcaption { position: static; padding: 10px var(--gutter) 22px; font-size: 11px; line-height: 1.5; color: var(--muted); }
+  .drop__hint { display: none; }
+
+  /* section labels keep their number + title; the small right-hand notes go */
+  .slabel__note, .why__note { display: none; }
+  .objects__foot-links { display: none; }
+}
