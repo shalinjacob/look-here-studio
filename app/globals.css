@@ -920,3 +920,6 @@ input { font: inherit; }
   .slabel__note, .why__note { display: none; }
   .objects__foot-links { display: none; }
 }
+
+/* the Editions line sits centred under the pair of prints, on every screen size */
+.drop__caption { text-align: center; font-family: var(--mono); font-size: 11px; letter-spacing: .14em; color: var(--muted); padding: 16px var(--gutter) 28px; margin: 0; }

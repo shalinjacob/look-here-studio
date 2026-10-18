@@ -31,16 +31,16 @@ export default function CurrentDrop() {
         </div>
       </div>
       <div className="drop__strip">
-        {c.gallery.map((src, i) => (
+        {c.gallery.map((src) => (
           <figure key={src} className="drop__lit">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={src} alt={altFor(src, `${c.name} detail`)} loading="lazy" decoding="async" />
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img className="drop__litimg" src={lit(src)} alt="" aria-hidden loading="lazy" decoding="async" />
-            {i === 1 && <figcaption>{c.note.toUpperCase()}</figcaption>}
           </figure>
         ))}
       </div>
+      <p className="drop__caption">{c.note.toUpperCase()}</p>
     </section>
   );
 }
