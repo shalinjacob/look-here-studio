@@ -983,3 +983,10 @@ input { font: inherit; }
 .sizecard__in { color: var(--muted); }
 .sizecard small { color: var(--muted); font-size: 11px; line-height: 1.4; }
 @media (max-width: 560px) { .sizecards { grid-template-columns: repeat(2, 1fr); gap: 10px; } .sizescene__w, .sizescene__h { font-size: 11px; } }
+
+/* "Looks simple, doesn't it?" note on Why Look Here */
+.whynote { margin-top: clamp(48px, 7vw, 96px); max-width: 640px; display: grid; gap: 16px; }
+.whynote .pagehead__row { margin-bottom: 4px; }
+.whynote__title { font-family: var(--display); font-weight: 700; letter-spacing: -0.03em; line-height: 1.02; font-size: clamp(30px, 4.6vw, 52px); color: var(--ink); margin: 0; }
+.whynote p { font-family: var(--mono); font-size: 14px; line-height: 1.8; color: var(--body); margin: 0; }
+.whynote__sign { margin-top: 8px !important; color: var(--ink) !important; }

@@ -88,6 +88,25 @@ export default function WhyPage() {
           ))}
         </div>
 
+        <div className="whynote">
+          <div className="pagehead__row"><span>WHAT GOES INTO IT</span><span>LITTLE THINGS</span></div>
+          <h3 className="whynote__title">Looks simple, doesn&apos;t it?</h3>
+          <p>A sheet of acrylic doesn&apos;t wake up one morning and decide to become a lamp.</p>
+          <p>
+            Someone has to dream it up, draw it and measure it twice, because 2 mm can ruin a whole
+            day. Then come the machines, the cutting and the bending, and the hands that smooth,
+            join, fix and sometimes start all over again.
+          </p>
+          <p>
+            We make things in small numbers, sometimes one at a time, because we thought,{" "}
+            <em>wouldn&apos;t it be nice if this existed?</em> We&apos;d rather you know what goes into
+            an object than wonder why it costs what it does.
+          </p>
+          <p className="whynote__sign">
+            <strong>Look Here.</strong> <em>Little things. Quite a lot of doing.</em>
+          </p>
+        </div>
+
         <div className="objects__foot">
           <CTA href="/objects" variant="stamp">SEE THE OBJECTS</CTA>
           <CTA href="/off-the-wall" variant="link">SEE THE TEES</CTA>
