@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
-import SizeGuide from "./SizeGuide";
+import { ProductSize } from "./SizeGuide";
 
 // "SIZE GUIDE" link on a product page: opens the guide in a pop-up with this product highlighted.
 export default function SizeGuideButton({ slug }: { slug: string }) {
@@ -14,12 +14,7 @@ export default function SizeGuideButton({ slug }: { slug: string }) {
     document.addEventListener("keydown", onKey);
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-    // bring this product's piece into view inside the pop-up
-    const t = setTimeout(() => {
-      document.querySelector(".sizemodal .sizewall__piece.is-hl")?.scrollIntoView({ block: "center" });
-    }, 60);
     return () => {
-      clearTimeout(t);
       document.removeEventListener("keydown", onKey);
       document.body.style.overflow = prev;
     };
@@ -41,7 +36,7 @@ export default function SizeGuideButton({ slug }: { slug: string }) {
                   CLOSE ✕
                 </button>
               </div>
-              <SizeGuide highlight={slug} />
+              <ProductSize slug={slug} />
             </div>
           </div>,
           document.body

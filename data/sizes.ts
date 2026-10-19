@@ -50,7 +50,9 @@ export function sizeCm(e: SizeEntry): string {
 }
 export function sizeIn(e: SizeEntry): string {
   if (e.tableSize) return "23.5 long × 4 deep";
-  return `${inches(e.w)} × ${inches(e.h)}${e.d ? ` × ${inches(e.d)}` : ""}`;
+  // very thin pieces (3 mm steel etc.): show tenths of an inch instead of rounding to 0
+  const depth = e.d ? (e.d < 1.27 ? (e.d / 2.54).toFixed(1) : inches(e.d)) : "";
+  return `${inches(e.w)} × ${inches(e.h)}${depth ? ` × ${depth}` : ""}`;
 }
 
 // ---- wall picture layout (all rows share one scale: ROW_W cm across) ----

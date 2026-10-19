@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import SizeGuide from "@/components/SizeGuide";
+import SizeCards from "@/components/SizeGuide";
 import { BRAND_NAME } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -14,11 +14,11 @@ export default function SizeGuidePage() {
     <div className="section wrap" style={{ paddingTop: "clamp(24px,4vw,56px)" }}>
       <div className="pagehead" style={{ padding: 0 }}>
         <div className="pagehead__row"><span>SIZE GUIDE</span><span>TO SCALE</span></div>
-        <h1 className="pagehead__title">Size, on the wall.</h1>
-        <p className="pagehead__sub">So you know exactly what you&apos;re getting before you order.</p>
+        <h1 className="pagehead__title">How big is it?</h1>
+        <p className="pagehead__sub">Every piece, with its real size, so you know exactly what you&apos;re getting before you order.</p>
       </div>
       <div style={{ marginTop: "clamp(28px,4vw,48px)", maxWidth: 900 }}>
-        <SizeGuide />
+        <SizeCards />
       </div>
     </div>
   );

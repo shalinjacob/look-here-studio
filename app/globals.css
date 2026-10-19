@@ -962,3 +962,24 @@ input { font: inherit; }
 .sizebtn { font-family: var(--mono); font-size: 12px; letter-spacing: .14em; border-bottom: 1px solid var(--ink); padding-bottom: 2px; color: var(--ink); }
 @media (max-width: 560px) { .sizemodal { padding: 0; align-items: end; } .sizemodal__panel { width: 100%; max-height: 94dvh; } }
 .pdp__sizelink { margin: 10px 0 4px; }
+
+/* size guide v2: one piece at a time, labelled on the picture */
+.sizescene { margin: 0; display: grid; gap: 12px; }
+.sizescene__stage { position: relative; width: 100%; background: var(--paper-2); overflow: hidden; }
+.sizescene__piece { position: absolute; background: color-mix(in srgb, var(--ink) 10%, var(--paper)); border: 2px solid var(--ink); box-shadow: 0 3px 10px rgba(0,0,0,.15); }
+.sizescene__w, .sizescene__h { position: absolute; font-family: var(--mono); font-weight: 600; font-size: 12px; line-height: 1; color: var(--ink); background: var(--paper-2); padding: 2px 4px; white-space: nowrap; }
+.sizescene__w { left: 50%; top: -26px; transform: translateX(-50%); }
+.sizescene__w::after { content: ""; position: absolute; left: 0; right: 0; top: calc(100% + 3px); height: 0; border-top: 1px solid var(--ink); }
+.sizescene__h { top: 50%; left: -10px; transform: translate(-100%, -50%); }
+.sizescene__cap { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 18px; font-family: var(--mono); font-size: 14px; color: var(--ink); }
+.sizescene__cap strong { font-family: var(--display); font-size: clamp(20px, 3vw, 26px); letter-spacing: -0.02em; width: 100%; }
+.sizescene__cap small { width: 100%; font-size: 12px; color: var(--muted); }
+.sizecards { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 14px; margin-top: 12px; }
+.sizecard { display: grid; gap: 4px; align-content: start; padding: 12px; background: var(--paper-2); font-family: var(--mono); font-size: 13px; }
+.sizecard__box { display: flex; align-items: flex-end; justify-content: center; border-bottom: 2px solid color-mix(in srgb, var(--ink) 20%, transparent); margin-bottom: 8px; }
+.sizecard__shape { display: block; background: var(--paper); border: 1px solid var(--ink); margin-bottom: -1px; }
+.sizecard strong { font-family: var(--display); font-size: 16px; letter-spacing: -0.01em; line-height: 1.2; }
+.sizecard__cm { color: var(--ink); font-weight: 600; }
+.sizecard__in { color: var(--muted); }
+.sizecard small { color: var(--muted); font-size: 11px; line-height: 1.4; }
+@media (max-width: 560px) { .sizecards { grid-template-columns: repeat(2, 1fr); gap: 10px; } .sizescene__w, .sizescene__h { font-size: 11px; } }
