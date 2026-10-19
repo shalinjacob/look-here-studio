@@ -41,12 +41,6 @@ export default function Footer() {
               <a href="mailto:hello@lookherestudio.in">Email →</a>
             </div>
           </div>
-
-          <div className="footer__end">
-            SAME SPACES.
-            <br />
-            A LITTLE MORE YOU.
-          </div>
         </div>
 
         <div className="footer__baseline">

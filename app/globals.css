@@ -368,7 +368,7 @@ input { font: inherit; }
    FOOTER
    ========================================================================== */
 .footer { padding-block: clamp(40px, 6vw, 80px) 36px; border-top: 1px solid var(--line); }
-.footer__grid { display: grid; grid-template-columns: 1.2fr 2fr 1fr; gap: 32px; }
+.footer__grid { display: grid; grid-template-columns: 1.2fr 2fr; gap: 32px; }
 .footer__logo { display: inline-block; }
 .footer__logo img { width: 150px; height: auto; }
 .footer__sub { font-family: var(--mono); font-size: 11px; letter-spacing: .16em; color: var(--muted); margin-top: 14px; line-height: 1.7; }
