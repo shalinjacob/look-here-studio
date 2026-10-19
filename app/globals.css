@@ -923,3 +923,42 @@ input { font: inherit; }
 
 /* the Editions line sits centred under the pair of prints, on every screen size */
 .drop__caption { text-align: center; font-family: var(--mono); font-size: 11px; letter-spacing: .14em; color: var(--muted); padding: 16px var(--gutter) 28px; margin: 0; }
+
+/* ==========================================================================
+   SIZE GUIDE
+   ========================================================================== */
+.sizeguide { display: grid; gap: 20px; }
+.sizeguide__lead, .sizeguide__note { font-family: var(--mono); font-size: 13px; line-height: 1.7; color: var(--muted); margin: 0; max-width: 62ch; }
+.sizeguide__h { font-family: var(--display); font-weight: 700; letter-spacing: -0.02em; font-size: 20px; margin: 10px 0 -6px; color: var(--ink); }
+.sizewall { position: relative; width: 100%; background: var(--paper-2); overflow: hidden; }
+.sizewall__floor { position: absolute; left: 0; right: 0; bottom: 0; background: color-mix(in srgb, var(--ink) 9%, var(--paper-2)); }
+.sizewall__piece { position: absolute; background: var(--paper); border: 1px solid var(--ink); box-shadow: 0 2px 6px rgba(0,0,0,.12); transition: opacity .2s var(--ease), background .2s var(--ease); }
+.sizewall__piece.is-dim { opacity: .35; }
+.sizewall__piece.is-hl { background: color-mix(in srgb, var(--ink) 16%, var(--paper)); outline: 2px solid var(--ink); outline-offset: 2px; z-index: 2; }
+.sizewall__n { position: absolute; left: 50%; bottom: calc(100% + 6px); transform: translateX(-50%); min-width: 18px; height: 18px; padding-inline: 4px; display: grid; place-items: center; font-family: var(--mono); font-size: 10px; line-height: 1; background: var(--ink); color: var(--paper); border-radius: 9px; }
+.sizewall__chair, .sizewall__console { position: absolute; }
+.sizewall__chair-back { position: absolute; left: 0; right: 0; top: 0; height: 48%; background: #b9b1a1; border-radius: 12px 12px 3px 3px; }
+.sizewall__chair-seat { position: absolute; left: 0; right: 0; bottom: 22%; height: 26%; background: #a39b8b; border-radius: 3px; }
+.sizewall__chair::before, .sizewall__chair::after { content: ""; position: absolute; bottom: 0; width: 4%; height: 24%; background: #8e8676; }
+.sizewall__chair::before { left: 8%; } .sizewall__chair::after { right: 8%; }
+.sizewall__console-top { position: absolute; left: 0; right: 0; top: 0; height: 6%; background: #8e8676; border-radius: 2px; }
+.sizewall__console-leg { position: absolute; top: 6%; bottom: 0; width: 3.5%; background: #8e8676; }
+.sizewall__console-leg--l { left: 6%; } .sizewall__console-leg--r { right: 6%; }
+.sizewall__ref { position: absolute; right: 2.5%; bottom: 0.6%; font-family: var(--mono); font-size: 9px; letter-spacing: .1em; color: var(--muted); line-height: 1.4; }
+.sizeguide__table { width: 100%; border-collapse: collapse; font-family: var(--mono); font-size: 13px; }
+.sizeguide__table th { text-align: left; font-weight: 600; font-size: 11px; letter-spacing: .1em; color: var(--muted); padding: 8px 10px; border-bottom: 1px solid var(--ink); }
+.sizeguide__table td { padding: 10px; border-bottom: 1px solid var(--line-soft); vertical-align: top; color: var(--ink); }
+.sizeguide__table td small { display: block; margin-top: 3px; font-size: 11px; color: var(--muted); }
+.sizeguide__table tr.is-hl td { background: color-mix(in srgb, var(--ink) 8%, transparent); font-weight: 600; }
+@media (max-width: 560px) { .sizeguide__table { font-size: 12px; } .sizeguide__table th, .sizeguide__table td { padding: 8px 6px; } .sizewall__ref { font-size: 7px; } }
+
+/* pop-up */
+.sizemodal { position: fixed; inset: 0; z-index: 400; display: grid; place-items: center; padding: 16px; }
+.sizemodal__scrim { position: absolute; inset: 0; background: rgba(17,17,17,.55); }
+.sizemodal__panel { position: relative; width: min(900px, 100%); max-height: calc(100dvh - 32px); overflow: auto; background: var(--paper); padding: clamp(20px, 4vw, 36px); box-shadow: 0 24px 80px rgba(0,0,0,.35); }
+.sizemodal__head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-bottom: 14px; }
+.sizemodal__head h2 { font-family: var(--display); font-weight: 700; letter-spacing: -0.02em; font-size: clamp(22px, 3.4vw, 30px); margin: 0; }
+.sizemodal__close { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; }
+.sizebtn { font-family: var(--mono); font-size: 12px; letter-spacing: .14em; border-bottom: 1px solid var(--ink); padding-bottom: 2px; color: var(--ink); }
+@media (max-width: 560px) { .sizemodal { padding: 0; align-items: end; } .sizemodal__panel { width: 100%; max-height: 94dvh; } }
+.pdp__sizelink { margin: 10px 0 4px; }

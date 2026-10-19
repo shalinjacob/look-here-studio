@@ -69,6 +69,7 @@ ${posts}
 - [Editions: backlit LED art prints](${SITE_URL}/collections/editions)
 - [How objects are made](${SITE_URL}/process)
 - [About the studio](${SITE_URL}/why-look-here)
+- [Size guide](${SITE_URL}/size-guide): every wall piece drawn to scale, with centimetre and inch sizes
 - [Shipping & returns](${SITE_URL}/shipping-returns)
 - [Contact](${SITE_URL}/contact)
 `;

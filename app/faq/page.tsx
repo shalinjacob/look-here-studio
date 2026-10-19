@@ -23,7 +23,7 @@ export default function FaqPage() {
         <h1 className="pagehead__title">Questions, answered.</h1>
         <p className="pagehead__sub">
           Everything is made to order in Bengaluru, dispatched within 10 working days and shipped
-          free across India. Ordering happens on WhatsApp. The details are below.
+          across India. You can pay online or order on WhatsApp. The details are below.
         </p>
       </div>
 

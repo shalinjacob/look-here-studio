@@ -29,6 +29,7 @@ export default function Footer() {
               <Link href="/journal">Journal</Link>
               <Link href="/contact">Contact</Link>
               <Link href="/faq">FAQ</Link>
+              <Link href="/size-guide">Size guide</Link>
               <Link href="/shipping-returns">Shipping &amp; returns</Link>
               <Link href="/privacy">Privacy</Link>
               <Link href="/terms">Terms</Link>

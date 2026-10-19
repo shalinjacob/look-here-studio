@@ -12,6 +12,7 @@ import JsonLd from "@/components/JsonLd";
 import TrackView from "@/components/TrackView";
 import WaLink from "@/components/WaLink";
 import { customisationMessage } from "@/lib/whatsapp";
+import SizeGuideButton from "@/components/SizeGuideButton";
 import Faq from "@/components/Faq";
 import SizeChart from "@/components/SizeChart";
 import { productFaq, faqLd } from "@/data/faq";
@@ -33,6 +34,7 @@ import {
   WORKING_ON_LINE,
   formatPrice,
   isPurchasable,
+  isTee,
   canOrderNow,
   hasPriceRange,
 } from "@/data/products";
@@ -185,6 +187,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
           </div>
 
           <p className="pdp__lead">{p.shortDescription}</p>
+          {!isTee(p) && <div className="pdp__sizelink"><SizeGuideButton slug={p.slug} /></div>}
 
           <div className="pdp__actions">
             <AddToCart product={p} />

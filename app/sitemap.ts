@@ -11,7 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
   const staticRoutes = [
     "", "/objects", "/gift-guide", "/why-look-here",
-    "/journal", "/contact", "/faq", "/shipping-returns", "/privacy", "/terms",
+    "/journal", "/contact", "/faq", "/size-guide", "/shipping-returns", "/privacy", "/terms",
   ];
   return [
     ...staticRoutes.map((r) => ({ url: `${BASE}${r}`, lastModified: now, priority: r === "" ? 1 : 0.8 })),
