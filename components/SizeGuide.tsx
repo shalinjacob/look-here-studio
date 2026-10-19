@@ -15,14 +15,13 @@ const CONSOLE_H = 78;
 const n1 = (n: number) => (Number.isInteger(n) ? String(n) : String(Math.round(n * 10) / 10));
 
 export function SizeScene({ entry }: { entry: SizeEntry }) {
-  const onTable = entry.kind === "table";
   const pieceX = 48; // room on the left for the height label
   const sceneW = Math.max(320, entry.w + 314);
   const consoleX = sceneW - 20 - CONSOLE_W;
   const chairX = consoleX - 18 - CHAIR_W;
   // piece position (cm from the picture's bottom-left)
-  const bottom = onTable ? FLOOR_H + CONSOLE_H : entry.onFloor ? FLOOR_H : FLOOR_H + EYE - entry.h / 2;
-  const left = onTable ? consoleX + (CONSOLE_W - entry.w) / 2 : pieceX;
+  const bottom = entry.onFloor ? FLOOR_H : FLOOR_H + EYE - entry.h / 2;
+  const left = pieceX;
   const sceneH = Math.max(FLOOR_H + 200, bottom + entry.h + 50);
   const X = (cm: number) => `${(cm / sceneW) * 100}%`;
   const Y = (cm: number) => `${(cm / sceneH) * 100}%`;
@@ -77,42 +76,29 @@ export function ProductSize({ slug }: { slug: string }) {
 
 /** /size-guide: one simple card per piece, all drawn at the same scale */
 export default function SizeCards() {
-  const groups: { title: string; items: SizeEntry[] }[] = [
-    { title: "For the wall", items: SIZES.filter((e) => e.kind === "wall") },
-    { title: "For a table", items: SIZES.filter((e) => e.kind === "table") },
-  ];
+  const wall = SIZES.filter((e) => e.kind === "wall");
   const BOX = 150; // px height of the drawing box
-  const biggest = Math.max(...SIZES.filter((e) => e.kind === "wall").map((e) => e.h));
-  const wallScale = BOX / biggest; // px per cm, same for every wall card
-  const tableScale = BOX / 30;
+  const scale = BOX / Math.max(...wall.map((e) => e.h)); // px per cm, same for every card
 
   return (
     <div className="sizeguide">
       <p className="sizeguide__lead">
         Every outline below is drawn to the same scale, so you can compare pieces by eye. The size is
-        written under each one in centimetres and inches. (Table pieces are drawn larger, on their own.)
+        written under each one in centimetres and inches.
       </p>
-      {groups.map((g) => (
-        <section key={g.title}>
-          <h3 className="sizeguide__h">{g.title}</h3>
-          <div className="sizecards">
-            {g.items.map((e) => {
-              const s = g.title === "For the wall" ? wallScale : tableScale;
-              return (
-                <div className="sizecard" key={e.id}>
-                  <div className="sizecard__box" style={{ height: BOX }}>
-                    <span className="sizecard__shape" style={{ width: Math.max(2, e.w * s), height: Math.max(2, e.h * s) }} />
-                  </div>
-                  <strong>{e.label}</strong>
-                  <span className="sizecard__cm">{sizeCm(e)} cm</span>
-                  <span className="sizecard__in">{sizeIn(e)} in</span>
-                  {e.note && <small>{e.note}</small>}
-                </div>
-              );
-            })}
+      <div className="sizecards">
+        {wall.map((e) => (
+          <div className="sizecard" key={e.id}>
+            <div className="sizecard__box" style={{ height: BOX }}>
+              <span className="sizecard__shape" style={{ width: Math.max(2, e.w * scale), height: Math.max(2, e.h * scale) }} />
+            </div>
+            <strong>{e.label}</strong>
+            <span className="sizecard__cm">{sizeCm(e)} cm</span>
+            <span className="sizecard__in">{sizeIn(e)} in</span>
+            {e.note && <small>{e.note}</small>}
           </div>
-        </section>
-      ))}
+        ))}
+      </div>
       <p className="sizeguide__note">
         Sizes are width × height × depth. Made-to-order pieces can vary by a few millimetres. Need a
         different size? Ask us on WhatsApp.

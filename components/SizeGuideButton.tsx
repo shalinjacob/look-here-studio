@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { ProductSize } from "./SizeGuide";
+import { SIZES } from "@/data/sizes";
 
 // "SIZE GUIDE" link on a product page: opens the guide in a pop-up with this product highlighted.
 export default function SizeGuideButton({ slug }: { slug: string }) {
@@ -19,6 +20,9 @@ export default function SizeGuideButton({ slug }: { slug: string }) {
       document.body.style.overflow = prev;
     };
   }, [open]);
+
+  // only wall objects have a size guide
+  if (!SIZES.some((e) => e.slugs.includes(slug))) return null;
 
   return (
     <>

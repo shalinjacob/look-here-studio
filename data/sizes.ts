@@ -9,7 +9,7 @@ export interface SizeEntry {
   w: number;
   h: number;
   d?: number;
-  kind: "wall" | "table";
+  kind: "wall";
   /** sits on / leans from the floor instead of hanging at eye level */
   onFloor?: boolean;
   note?: string;
@@ -36,9 +36,6 @@ export const SIZES: SizeEntry[] = [
   { id: "love", label: "Love More", slugs: ["love-more"], w: 90, h: 62, d: 4.5, kind: "wall" },
   { id: "box", label: "Custom Lightbox", slugs: ["custom-lightbox"], w: 90, h: 15, d: 6, kind: "wall" },
 
-  { id: "lamp", label: "Acrylic Lamp", slugs: ["acrylic-lamp"], w: 24, h: 26, d: 9, kind: "table" },
-  { id: "coasters", label: "Patterned Coasters", slugs: ["patterned-coasters"], w: 10, h: 10, d: 0.8, kind: "table", note: "Each coaster; a set of four" },
-  { id: "xo", label: "X + O", slugs: ["x-plus-o"], w: 22, h: 22, kind: "table", note: "Board" },
 ];
 
 export const inches = (cm: number) => (Math.round((cm / 2.54) * 2) / 2).toString().replace(/\.0$/, "");
