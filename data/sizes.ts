@@ -24,7 +24,7 @@ export const SIZES: SizeEntry[] = [
   { id: "pb1", label: "Pickleball Shadow Box (one paddle)", slugs: ["pickleball-shadow-box"], w: 30, h: 60, d: 6, kind: "wall" },
   { id: "wclock", label: "Layered Wall Clock", slugs: ["layered-wall-clock"], w: 34, h: 34, d: 3, kind: "wall" },
   { id: "words", label: "Four-Letter Words", slugs: ["four-letter-words"], w: 40, h: 50, d: 4, kind: "wall", note: "Each panel; sold as a set of two" },
-  { id: "a2", label: "Editions (A2 prints in LED frames)", slugs: ["old-habits", "smoke-and-feathers", "pomegranate-study", "blood-moon"], w: 42, h: 59.4, d: 4, kind: "wall", note: "Old Habits, Smoke & Feathers, Pomegranate Study, Blood Moon" },
+  { id: "a2", label: "Editions (A2 prints in LED frames)", slugs: ["old-habits", "smoke-and-feathers", "pomegranate-study", "blood-moon", "sunglasses-at-court", "still-water", "road-trip-in-bloom"], w: 42, h: 59.4, d: 4, kind: "wall", note: "All seven Editions" },
   { id: "cat", label: "Cat Got Your Heart", slugs: ["cat-got-your-heart"], w: 50, h: 46, d: 0.3, kind: "wall" },
   { id: "pink", label: "Pink Wavy Mirror", slugs: ["pink-wavy-mirror"], w: 50, h: 60, d: 2.5, kind: "wall" },
   { id: "wlay", label: "Well, Look At You", slugs: ["well-look-at-you"], w: 60, h: 60, d: 2.5, kind: "wall" },

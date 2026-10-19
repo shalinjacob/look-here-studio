@@ -23,6 +23,9 @@ export const collections: Collection[] = [
       "smoke-and-feathers",
       "pomegranate-study",
       "blood-moon",
+      "sunglasses-at-court",
+      "still-water",
+      "road-trip-in-bloom",
     ],
     seoTitle: "LED Backlit Wall Art Prints (A2) | Editions | Look Here Studio",
     // {price} is filled from the first product's price

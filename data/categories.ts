@@ -101,7 +101,7 @@ export const categories: Category[] = [
     metaDescription:
       "Backlit art prints, bold quote frames and custom light boxes in slim LED frames. Plug in and the wall glows. Made to order in Bengaluru, shipping across India.",
     answer:
-      "Look Here Studio makes backlit wall art in slim LED frames: four art-print [Editions](/collections/editions) (A2, {price:blood-moon} each), the [Slim LED Quote Frame](/objects/slim-led-quote-frame) with five bold quotes (A1, {price:slim-led-quote-frame}) and the [Custom Lightbox](/objects/custom-lightbox), which lights up your own words in any language ({price:custom-lightbox}). Each plugs into a regular socket and is made to order in Bengaluru.",
+      "Look Here Studio makes backlit wall art in slim LED frames: seven art-print [Editions](/collections/editions) (A2, {price:blood-moon} each), the [Slim LED Quote Frame](/objects/slim-led-quote-frame) with five bold quotes (A1, {price:slim-led-quote-frame}) and the [Custom Lightbox](/objects/custom-lightbox), which lights up your own words in any language ({price:custom-lightbox}). Each plugs into a regular socket and is made to order in Bengaluru.",
     sections: [
       {
         heading: "What is backlit wall art?",
@@ -121,7 +121,7 @@ export const categories: Category[] = [
       { q: "What sizes are available?", a: "Editions are A2 (420 × 594 mm). The Slim LED Quote Frame is A1 (650 × 900 mm overall). The Custom Lightbox is 900 × 150 mm." },
       { q: "Can I get my own words lit up?", a: "Yes, with the [Custom Lightbox](/objects/custom-lightbox): any text, any language, any light colour." },
     ],
-    products: ["old-habits", "smoke-and-feathers", "pomegranate-study", "blood-moon", "slim-led-quote-frame", "custom-lightbox"],
+    products: ["old-habits", "smoke-and-feathers", "pomegranate-study", "blood-moon", "sunglasses-at-court", "still-water", "road-trip-in-bloom", "slim-led-quote-frame", "custom-lightbox"],
     posts: [],
   },
   {
