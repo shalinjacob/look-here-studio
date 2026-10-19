@@ -990,3 +990,4 @@ input { font: inherit; }
 .whynote__title { font-family: var(--display); font-weight: 700; letter-spacing: -0.03em; line-height: 1.02; font-size: clamp(30px, 4.6vw, 52px); color: var(--ink); margin: 0; }
 .whynote p { font-family: var(--mono); font-size: 14px; line-height: 1.8; color: var(--body); margin: 0; }
 .whynote__sign { margin-top: 8px !important; color: var(--ink) !important; }
+.pdp__doing { margin: 14px 0 0; font-family: var(--mono); font-size: 11px; letter-spacing: .06em; color: var(--faint); }

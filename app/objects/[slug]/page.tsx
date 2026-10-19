@@ -204,6 +204,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
               </>
             )}
           </div>
+          <p className="pdp__doing">Made in small runs. Quite a lot of doing.</p>
         </aside>
       </div>
 
