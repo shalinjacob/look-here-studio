@@ -215,6 +215,17 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
           <span className="pdp__section-rule" aria-hidden />
         </div>
         <p className="pdp__prose">{p.description}</p>
+        {p.story && (
+          <div className="pdp__story">
+            <h3 className="pdp__story-title">{p.story.heading}</h3>
+            {p.story.paras.map((para, i) => (
+              <p className="pdp__prose" key={i}>{para}</p>
+            ))}
+            {p.story.postSlug && (
+              <Link href={`/journal/${p.story.postSlug}`} className="pdp__story-link">READ IT IN THE JOURNAL →</Link>
+            )}
+          </div>
+        )}
       </section>
 
       {/* SPECIFICATIONS */}

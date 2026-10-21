@@ -116,6 +116,8 @@ export interface Product {
   occasions?: Occasion[];
   /** free-text fields to fill in before adding to cart (custom text, colour…) */
   personalise?: PersonaliseField[];
+  /** the story behind the piece: shown under the description, with a link to its journal post */
+  story?: { heading: string; paras: string[]; postSlug?: string };
   /** optional product video (mp4 under /public/media) */
   video?: string;
   /** optional interactive 3D model (.glb under /public/models) */

@@ -436,6 +436,21 @@ const objects: Product[] = [
     price: 8500,
     currency: "INR",
     status: "available",
+    story: {
+      heading: "Some stories stay with you. This one became an object.",
+      postSlug: "some-stories-stay-with-you",
+      paras: [
+        "Our founder has a little tradition. Every time she has to buy a present for a child, she reaches for the same book: The Little Prince.",
+        "It's her favourite. Always has been.",
+        "She's gifted it countless times, read it countless more, and somehow, her love for the story still needed somewhere else to go.",
+        "So, we made this.",
+        "A little piece of a world she's carried with her for years. Something to look at on an ordinary Tuesday and be reminded of all the things that made her fall in love with the story in the first place.",
+        "Because some stories aren't meant to stay tucked away on a bookshelf.",
+        "They deserve to be told again. Loved again. Looked at again.",
+        "And sometimes, they deserve a little space on your wall.",
+        "A very personal piece of Look Here.",
+      ],
+    },
     images: [
       "/objects/small-planet-1.webp",
       "/objects/small-planet-2.webp",

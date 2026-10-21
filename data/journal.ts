@@ -491,6 +491,32 @@ export const journal: JournalPost[] = [
     products: ["x-plus-o", "layered-wall-clock", "four-letter-words", "custom-lightbox", "pickleball-shadow-box"],
   },
   {
+    slug: "some-stories-stay-with-you",
+    index: "015",
+    title: "Some stories stay with you. This one became an object.",
+    date: "2026-10-21",
+    updated: "2026-10-21",
+    category: "Studio",
+    excerpt: "Our founder gives the same book to every child she buys a present for. Her love for it needed somewhere else to go, so we made this.",
+    description: "The story behind Small Planet, a laser-cut steel wall piece made out of our founder's lifelong love for The Little Prince, the book she gifts to every child.",
+    readingTime: "",
+    answer:
+      "Small Planet is a laser-cut steel wall piece our founder made out of her love for The Little Prince, the book she gives to every child she buys a present for. This is the story behind it.",
+    body: [
+      "Our founder has a little tradition. Every time she has to buy a present for a child, she reaches for the same book: The Little Prince.",
+      "It's her favourite. Always has been.",
+      "She's gifted it countless times, read it countless more, and somehow, her love for the story still needed somewhere else to go.",
+      "So, we made this.",
+      "A little piece of a world she's carried with her for years. Something to look at on an ordinary Tuesday and be reminded of all the things that made her fall in love with the story in the first place.",
+      "Because some stories aren't meant to stay tucked away on a bookshelf.",
+      "They deserve to be told again. Loved again. Looked at again.",
+      "And sometimes, they deserve a little space on your wall.",
+      "Meet [Small Planet](/objects/small-planet), a very personal piece of Look Here.",
+    ],
+    sections: [],
+    products: ["small-planet"],
+  },
+  {
     // DRAFT stub: not routed, listed or in the sitemap until written.
     // Link to: /objects/old-habits, /objects/smoke-and-feathers, /objects/pomegranate-study, /objects/blood-moon
     slug: "led-wall-art-india",
