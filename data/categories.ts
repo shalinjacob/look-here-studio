@@ -129,14 +129,14 @@ export const categories: Category[] = [
     name: "Wall art",
     metaTitle: "Metal & Typographic Wall Art, Made in Bengaluru | Look Here Studio",
     metaDescription:
-      "Laser-cut steel wall art, mirror-gold lettering, cut-through word panels and backlit quote frames. Made to order in Bengaluru, shipping across India.",
+      "Laser-cut metal wall art, mirror-gold lettering, cut-through word panels and backlit quote frames. Made to order in Bengaluru, shipping across India.",
     answer:
-      "Look Here Studio's wall art is laser-cut and lettered in its Bengaluru studio: steel silhouettes like [Cat Got Your Heart](/objects/cat-got-your-heart) ({price:cat-got-your-heart}) and [Small Planet](/objects/small-planet) ({price:small-planet}), mirror-gold [Love More](/objects/love-more) lettering ({price:love-more}), [Four-Letter Words](/objects/four-letter-words) panels ({price:four-letter-words} for two) and the backlit [Slim LED Quote Frame](/objects/slim-led-quote-frame). All made to order, shipped across India.",
+      "Look Here Studio's wall art is laser-cut and lettered in its Bengaluru studio: metal silhouettes like [Cat Got Your Heart](/objects/cat-got-your-heart) ({price:cat-got-your-heart}) and [Small Planet](/objects/small-planet) ({price:small-planet}), mirror-gold [Love More](/objects/love-more) lettering ({price:love-more}), [Four-Letter Words](/objects/four-letter-words) panels ({price:four-letter-words} for two) and the backlit [Slim LED Quote Frame](/objects/slim-led-quote-frame). All made to order, shipped across India.",
     sections: [
       {
         heading: "Metal or words?",
         paras: [
-          "The steel pieces are cut from a single sheet, so the wall behind becomes part of the design: the heart in Cat Got Your Heart, the sky in Small Planet. The word pieces say something: LOVE MORE in chunky mirror-gold, or a four-letter word routed straight through a glossy panel. You can see how they're made in [Notes from the laser bed](/journal/notes-from-the-laser-bed).",
+          "The metal pieces are cut from a single sheet, so the wall behind becomes part of the design: the heart in Cat Got Your Heart, the sky in Small Planet. The word pieces say something: LOVE MORE in chunky mirror-gold, or a four-letter word routed straight through a glossy panel. You can see how they're made in [Notes from the laser bed](/journal/notes-from-the-laser-bed).",
         ],
       },
     ],

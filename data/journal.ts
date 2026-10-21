@@ -170,7 +170,7 @@ export const journal: JournalPost[] = [
       {
         heading: "What actually happens on the laser bed?",
         paras: [
-          "The design goes in as a drawing; the laser follows it through the sheet. For acrylic, the beam melts a clean path, and if it lingers half a second too long the edge bubbles. For steel pieces like [Cat Got Your Heart](/objects/cat-got-your-heart) and [Small Planet](/objects/small-planet), the whole silhouette comes out of a single sheet, and the gaps are as much the design as the metal.",
+          "The design goes in as a drawing; the laser follows it through the sheet. For acrylic, the beam melts a clean path, and if it lingers half a second too long the edge bubbles. For metal pieces like [Cat Got Your Heart](/objects/cat-got-your-heart) and [Small Planet](/objects/small-planet), the whole silhouette comes out of a single sheet, and the gaps are as much the design as the metal.",
         ],
       },
       {
@@ -497,11 +497,11 @@ export const journal: JournalPost[] = [
     date: "2026-10-21",
     updated: "2026-10-21",
     category: "Studio",
-    excerpt: "Our founder gives the same book to every child she buys a present for. Her love for it needed somewhere else to go, so we made this: the story behind Small Planet, and how a book became a piece of steel for the wall.",
-    description: "The story behind Small Planet, a laser-cut steel wall piece made out of our founder's lifelong love for The Little Prince, the book she gifts to every child.",
+    excerpt: "Our founder gives the same book to every child she buys a present for. Her love for it needed somewhere else to go, so we made this: the story behind Small Planet, and how a book became a piece of aluminium for the wall.",
+    description: "The story behind Small Planet, a laser-cut aluminium wall piece made out of our founder's lifelong love for The Little Prince, the book she gifts to every child.",
     readingTime: "",
     answer:
-      "Small Planet is a laser-cut steel wall piece our founder made out of her love for The Little Prince, the book she gives to every child she buys a present for. This is the story behind it.",
+      "Small Planet is a laser-cut aluminium wall piece our founder made out of her love for The Little Prince, the book she gives to every child she buys a present for. This is the story behind it.",
     body: [
       "Our founder has a little tradition. Every time she has to buy a present for a child, she reaches for the same book: The Little Prince.",
       "It's her favourite. Always has been.",
@@ -523,14 +523,14 @@ export const journal: JournalPost[] = [
       {
         heading: "What did we make?",
         paras: [
-          "[Small Planet](/objects/small-planet) is cut from a single sheet of steel: a tiny planet with two friends sitting on top, a scarf caught in the wind, and a sky of stars rising on long stems above them. A boy, a fox and not much else, which is exactly why it works.",
+          "[Small Planet](/objects/small-planet) is cut from a single sheet of aluminium, painted white: a tiny planet with two friends sitting on top, a scarf caught in the wind, and a sky of stars rising on long stems above them. A boy, a fox and not much else, which is exactly why it works.",
           "It's finished in a soft matte white, so the wall does the colour and the shadows do the drawing. It sits a few millimetres off the wall, and the shadow behind it moves as the light moves through the day. At roughly 60 × 85 cm it's big enough to be a feature and small enough for a reading corner.",
         ],
       },
       {
-        heading: "Why a cut-out in white steel?",
+        heading: "Why a cut-out in white aluminium?",
         paras: [
-          "Because a cut-out behaves differently from a print. Every line in the piece is a gap in the metal, cut by a laser in one clean pass and then eased by hand, so the edges are kind to fingers. The powder-coat is tough, which suits a nursery wall.",
+          "Because a cut-out behaves differently from a print. Every line in the piece is a gap in the metal, cut by a laser in one clean pass and then eased by hand, so the edges are kind to fingers. Aluminium is light, which also makes it easy to hang.",
           "It's also a very Look Here way to tell a story: take a flat sheet, remove everything that isn't the idea, and let the light fill in the rest. Each piece is made to order in our Bengaluru studio, in small runs, one at a time.",
         ],
       },
@@ -555,9 +555,9 @@ export const journal: JournalPost[] = [
       },
     ],
     faq: [
-      { q: "What is Small Planet?", a: "A laser-cut steel wall piece in matte white: two friends on a tiny planet under a sky of stars, made in Bengaluru. It was inspired by our founder's lifelong love for The Little Prince." },
+      { q: "What is Small Planet?", a: "A laser-cut aluminium wall piece, painted white: two friends on a tiny planet under a sky of stars, made in Bengaluru. It was inspired by our founder's lifelong love for The Little Prince." },
       { q: "How big is Small Planet?", a: "Approximately 600 × 850 × 3 mm (about 23.5 × 33.5 inches). See the [size guide](/size-guide) for it drawn to scale." },
-      { q: "What is Small Planet made of?", a: "Laser-cut steel with a matte white powder-coat. It hangs on keyhole fixings, a few millimetres off the wall." },
+      { q: "What is Small Planet made of?", a: "Laser-cut aluminium, painted white. It hangs on keyhole fixings, a few millimetres off the wall." },
       { q: "Can I give Small Planet as a gift?", a: "Yes. Tick “This is a gift” in your cart and add a note; we handwrite it on a card. It's made to order and dispatched within 10 working days." },
     ],
     products: ["small-planet", "cat-got-your-heart"],
