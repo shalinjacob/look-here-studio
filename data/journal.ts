@@ -497,7 +497,7 @@ export const journal: JournalPost[] = [
     date: "2026-10-21",
     updated: "2026-10-21",
     category: "Studio",
-    excerpt: "Our founder gives the same book to every child she buys a present for. Her love for it needed somewhere else to go, so we made this.",
+    excerpt: "Our founder gives the same book to every child she buys a present for. Her love for it needed somewhere else to go, so we made this: the story behind Small Planet, and how a book became a piece of steel for the wall.",
     description: "The story behind Small Planet, a laser-cut steel wall piece made out of our founder's lifelong love for The Little Prince, the book she gifts to every child.",
     readingTime: "",
     answer:
@@ -511,10 +511,56 @@ export const journal: JournalPost[] = [
       "Because some stories aren't meant to stay tucked away on a bookshelf.",
       "They deserve to be told again. Loved again. Looked at again.",
       "And sometimes, they deserve a little space on your wall.",
-      "Meet [Small Planet](/objects/small-planet), a very personal piece of Look Here.",
     ],
-    sections: [],
-    products: ["small-planet"],
+    sections: [
+      {
+        heading: "Why turn a book into something for the wall?",
+        paras: [
+          "Books go back on shelves. That's what they're for, and it's lovely, but it also means the stories we love most spend most of their lives with only their spines showing.",
+          "A wall is different. You pass it every day, usually on the way to somewhere else, and it gets to say something quietly each time. That's what we wanted from this piece: not a poster, not a souvenir, just a small reminder of a world worth visiting, hung where you'll catch it out of the corner of your eye.",
+        ],
+      },
+      {
+        heading: "What did we make?",
+        paras: [
+          "[Small Planet](/objects/small-planet) is cut from a single sheet of steel: a tiny planet with two friends sitting on top, a scarf caught in the wind, and a sky of stars rising on long stems above them. A boy, a fox and not much else, which is exactly why it works.",
+          "It's finished in a soft matte white, so the wall does the colour and the shadows do the drawing. It sits a few millimetres off the wall, and the shadow behind it moves as the light moves through the day. At roughly 60 × 85 cm it's big enough to be a feature and small enough for a reading corner.",
+        ],
+      },
+      {
+        heading: "Why a cut-out in white steel?",
+        paras: [
+          "Because a cut-out behaves differently from a print. Every line in the piece is a gap in the metal, cut by a laser in one clean pass and then eased by hand, so the edges are kind to fingers. The powder-coat is tough, which suits a nursery wall.",
+          "It's also a very Look Here way to tell a story: take a flat sheet, remove everything that isn't the idea, and let the light fill in the rest. Each piece is made to order in our Bengaluru studio, in small runs, one at a time.",
+        ],
+      },
+      {
+        heading: "Where does it live?",
+        paras: [
+          "Above a bookshelf, naturally. Also in nurseries, kids' rooms, reading corners, a hallway you walk through every morning, or beside the desk of an adult who has never quite stopped looking up. It hangs on keyhole fixings, so it's up in a minute. Our [size guide](/size-guide) shows exactly how big it is, drawn to scale.",
+        ],
+      },
+      {
+        heading: "Is it a good gift?",
+        paras: [
+          "It began as one, so yes. For a child's room, for new parents, for a friend who also owns three copies of the same book. Tick “This is a gift” in your cart and add a note, and we'll handwrite it on a card.",
+          "Every piece is made to order and dispatched within 10 working days of your order being confirmed. Shipping across India is charged by pincode, and you see it in your cart before you pay.",
+        ],
+      },
+      {
+        heading: "Meet Small Planet",
+        paras: [
+          "[Small Planet](/objects/small-planet) is {price:small-planet}: a very personal piece of Look Here.",
+        ],
+      },
+    ],
+    faq: [
+      { q: "What is Small Planet?", a: "A laser-cut steel wall piece in matte white: two friends on a tiny planet under a sky of stars, made in Bengaluru. It was inspired by our founder's lifelong love for The Little Prince." },
+      { q: "How big is Small Planet?", a: "Approximately 600 × 850 × 3 mm (about 23.5 × 33.5 inches). See the [size guide](/size-guide) for it drawn to scale." },
+      { q: "What is Small Planet made of?", a: "Laser-cut steel with a matte white powder-coat. It hangs on keyhole fixings, a few millimetres off the wall." },
+      { q: "Can I give Small Planet as a gift?", a: "Yes. Tick “This is a gift” in your cart and add a note; we handwrite it on a card. It's made to order and dispatched within 10 working days." },
+    ],
+    products: ["small-planet", "cat-got-your-heart"],
   },
   {
     // DRAFT stub: not routed, listed or in the sitemap until written.
