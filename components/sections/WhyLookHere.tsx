@@ -18,12 +18,12 @@ export default function WhyLookHere() {
             </Reveal>
             <div className="why__figure">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/objects/wavy-mirror.webp" width={564} height={703} alt="Pink wavy mirror leaning against a wall" loading="lazy" decoding="async" />
-              <span className="why__note">Same spaces.<br />A little<br />more you.</span>
+              <img src="/lifestyle/hearts-and-crosses-2.webp" width={1086} height={1448} alt="Hearts & Crosses on a white wall beside a wooden door, above a bench with a basket" loading="lazy" decoding="async" />
             </div>
           </div>
 
           <Reveal className="why__body">
+            <span className="why__note">Same spaces.<br />A little<br />more you.</span>
             <p>
               Look Here Studio creates playful objects for the home — mirrors,
               lights, clocks, wall pieces and small things that bring more
