@@ -740,6 +740,43 @@ const objects: Product[] = [
   },
 
   {
+    id: "p040",
+    objectNumber: "040",
+    slug: "hearts-and-crosses",
+    name: "Hearts & Crosses",
+    shortName: "Hearts & Crosses",
+    category: "Wall Object",
+    subcategory: "Game",
+    tags: ["wall"],
+    occasions: ["wedding", "just-because"],
+    shortDescription: "Noughts and crosses for your wall, with hearts instead of noughts.",
+    description:
+      "A black acrylic hash, nine grey squares and ten magnetic pieces: five red hearts and five black crosses. Put it on the wall and it is a quiet graphic composition. Pick up the pieces and it is a game that stays up between rounds. The hearts and crosses simply stick to the squares, so a game can be left half played for days, or someone can win and nobody has to clear anything away. In the box: the hash in one solid piece, nine squares on a peel-and-place sheet, five hearts and five crosses with magnetic strips on the back, 3M mounting tape, a 1:1 paper template and a level sticker.",
+    material: "Acrylic, magnetic strips",
+    finish: "Matte black grid, red hearts, black crosses, grey squares",
+    colour: "Black / red / grey",
+    dimensions: "Wall grid, 9 squares, 10 magnetic pieces",
+    price: 9100,
+    currency: "INR",
+    status: "available",
+    images: ["/objects/hearts-and-crosses.webp"],
+    lifestyleImages: [
+      "/lifestyle/hearts-and-crosses-1.webp",
+      "/lifestyle/hearts-and-crosses-2.webp",
+      "/lifestyle/hearts-and-crosses-3.webp",
+    ],
+    imageFit: "cover",
+    leadTime: "Made to order · dispatched within 10 working days",
+    care: "Wipe the acrylic with a soft, slightly damp cloth. Keep the magnetic pieces away from cards and phones.",
+    installation:
+      "Tape the template to the wall and level it. Press the hash onto its 3M strips. Lay the peel-and-place sheet over the cells and peel it away, leaving all nine squares in place. Stick the hearts and crosses on. Textured wall? Message us and we will sort it.",
+    featured: false,
+    process: STD_PROCESS,
+    seoTitle: "Hearts & Crosses: Magnetic Acrylic Wall Game",
+    seoDescription: "A wall-mounted noughts and crosses with red hearts and black crosses that stick to magnetic squares. Acrylic, with a peel-and-place install sheet. Made to order, {price}.",
+  },
+
+  {
     id: "p031",
     objectNumber: "031",
     slug: "well-look-at-you",

@@ -145,7 +145,7 @@ export const categories: Category[] = [
       { q: "How is the metal wall art hung?", a: "Cat Got Your Heart has two keyholes and sits flush; Small Planet uses keyhole fixings and sits a few millimetres off the wall for a soft shadow." },
       { q: "Is there wall art for kids' rooms?", a: "[Small Planet](/objects/small-planet), two friends on a tiny planet under the stars, is made for nurseries, reading corners and kids' rooms." },
     ],
-    products: ["cat-got-your-heart", "small-planet", "love-more", "four-letter-words", "slim-led-quote-frame"],
+    products: ["cat-got-your-heart", "small-planet", "love-more", "four-letter-words", "hearts-and-crosses", "slim-led-quote-frame"],
     posts: ["notes-from-the-laser-bed", "in-defence-of-the-slightly-wrong"],
   },
   {

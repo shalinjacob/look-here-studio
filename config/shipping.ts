@@ -53,6 +53,7 @@ export const BULKY_EXTRA: Record<string, number> = {
   "sunglasses-at-court": 150,
   "still-water": 150,
   "road-trip-in-bloom": 150,
+  "hearts-and-crosses": 150,
   "pink-wavy-mirror": 350,
   "well-look-at-you": 350,
   "love-more": 350,
