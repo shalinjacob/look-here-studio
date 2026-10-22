@@ -19,12 +19,12 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   const post = getPost(params.slug);
   if (!post) return { title: "Note not found" };
   return {
-    title: post.title,
+    title: post.metaTitle ?? post.title,
     description: post.description ?? post.excerpt,
     alternates: { canonical: `/journal/${post.slug}` },
     openGraph: {
       type: "article",
-      title: post.title,
+      title: post.metaTitle ?? post.title,
       description: post.description ?? post.excerpt,
       url: `/journal/${post.slug}`,
       publishedTime: post.date,

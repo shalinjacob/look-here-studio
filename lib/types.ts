@@ -171,6 +171,8 @@ export interface JournalPost {
   faq?: QA[];
   /** products the post mentions (shown as tiles + internal links) */
   products?: string[];
+  /** shorter title for search results / browser tab (falls back to `title`); keep under ~55 chars */
+  metaTitle?: string;
   /** meta description (falls back to excerpt) */
   description?: string;
   /** draft outline: planned H2s */
