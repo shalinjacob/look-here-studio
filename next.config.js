@@ -36,6 +36,8 @@ const nextConfig = {
       { source: "/objects/column-light", destination: "/objects", permanent: true },
       { source: "/objects/wave-shelf", destination: "/objects/clear-ledge", permanent: true },
       { source: "/objects/sculptural-lamp", destination: "/objects/acrylic-lamp", permanent: true },
+      // /collections has no index page of its own (Google probes it from /collections/editions)
+      { source: "/collections", destination: "/collections/editions", permanent: true },
       // journal post renamed (Diwali wording dropped)
       { source: "/journal/unique-diwali-gift-ideas-for-home", destination: "/journal/unique-gift-ideas-for-home", permanent: true },
       // Gift Promise removed (Oct 2026)
