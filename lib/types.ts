@@ -109,6 +109,8 @@ export interface Product {
   options?: ProductOption[];
   /** show a size chart on the product page */
   sizeChart?: "tee";
+  /** only delivered within Bengaluru for now: checkout blocks other pincodes */
+  localOnly?: boolean;
   /** false = genuinely can't be ordered right now (shows the waitlist). Default true. */
   orderable?: boolean;
   /** made with the customer's own text/object: final sale (see /shipping-returns) */

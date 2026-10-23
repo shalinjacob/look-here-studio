@@ -18,7 +18,7 @@ export function GET() {
     .filter((p) => p.price != null && !isTee(p))
     .map(
       (p) =>
-        `- [${p.name}](${SITE_URL}/objects/${p.slug}): ${p.shortDescription} ${formatPrice(p.price, p.currency)}${p.variants?.length ? ` (${p.variants[0].note?.toLowerCase()})` : ""}. ${p.material}; ${p.dimensions}.${p.custom || p.personalise?.length ? " Personalised." : ""}${isPurchasable(p) ? "" : " Currently on the wishlist: join it on the product page."}`
+        `- [${p.name}](${SITE_URL}/objects/${p.slug}): ${p.shortDescription} ${formatPrice(p.price, p.currency)}${p.variants?.length ? ` (${p.variants[0].note?.toLowerCase()})` : ""}. ${p.material}; ${p.dimensions}.${p.custom || p.personalise?.length ? " Personalised." : ""}${p.localOnly ? " Delivered in Bengaluru only for now." : ""}${isPurchasable(p) ? "" : " Currently on the wishlist: join it on the product page."}`
     )
     .join("\n");
 

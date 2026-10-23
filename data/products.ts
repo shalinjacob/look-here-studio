@@ -772,8 +772,9 @@ const objects: Product[] = [
       "Tape the template to the wall and level it. Press the hash onto its 3M strips. Lay the peel-and-place sheet over the cells and peel it away, leaving all nine squares in place. Stick the hearts and crosses on. Textured wall? Message us and we will sort it.",
     featured: false,
     process: STD_PROCESS,
+    localOnly: true,
     seoTitle: "Hearts & Crosses: Magnetic Acrylic Wall Game",
-    seoDescription: "A wall-mounted noughts and crosses with red hearts and black crosses that stick to magnetic squares. Acrylic, with a peel-and-place install sheet. Made to order, {price}.",
+    seoDescription: "A wall-mounted noughts and crosses with red hearts and black crosses that stick to magnetic squares. Acrylic, with a peel-and-place install sheet. Delivered in Bengaluru for now. Made to order, {price}.",
   },
 
   {

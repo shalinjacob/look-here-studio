@@ -3,7 +3,7 @@ import Razorpay from "razorpay";
 import { priceCart } from "@/lib/razorpayPricing";
 import { cleanCustomer } from "@/lib/orderDetails";
 import { getProduct } from "@/data/products";
-import { shippingForCart } from "@/config/shipping";
+import { shippingForCart, localOnlyBlocked } from "@/config/shipping";
 
 export const runtime = "nodejs";
 
@@ -34,6 +34,11 @@ export async function POST(req: Request) {
   // shipping is set server-side from the pincode, never taken from the browser
   const ship = shippingForCart(c.pincode, body.lines as { slug: string; qty: number }[]);
   if (!ship) return NextResponse.json({ error: "Add a 6-digit pincode." }, { status: 400 });
+
+  const blocked = localOnlyBlocked(c.pincode, body.lines as { slug: string }[]);
+  if (blocked.length) {
+    return NextResponse.json({ error: `${blocked.join(", ")} is only delivered within Bengaluru for now.` }, { status: 400 });
+  }
 
   const amount = Math.round((priced.total + ship.fee) * 100); // paise
   if (amount < 100) return NextResponse.json({ error: "Minimum amount is ₹1" }, { status: 400 });

@@ -187,6 +187,16 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
           </div>
 
           <p className="pdp__lead">{p.shortDescription}</p>
+          {p.localOnly && (
+            <p className="pdp__local">
+              <strong>Delivering in Bengaluru only, for now.</strong>{" "}
+              Outside Bengaluru?{" "}
+              <WaLink text={`Hi Look Here Studio! I'm outside Bengaluru and would like the ${p.name} (${p.objectNumber}). Please let me know when it ships to my city. ${url}`} className="pdp__locallink">
+                Tell us where
+              </WaLink>{" "}
+              and we&apos;ll let you know when it travels.
+            </p>
+          )}
           {!isTee(p) && <div className="pdp__sizelink"><SizeGuideButton slug={p.slug} /></div>}
 
           <div className="pdp__actions">

@@ -9,7 +9,7 @@ import { track } from "@/lib/analytics";
 import { ONLINE_PAYMENT } from "@/lib/site";
 import RazorpayButton from "./RazorpayButton";
 import { setDelivery, useDelivery } from "@/lib/deliveryStore";
-import { shippingForCart } from "@/config/shipping";
+import { shippingForCart, localOnlyBlocked } from "@/config/shipping";
 
 /** the WhatsApp order request (format agreed in the website brief) */
 function requestMessage(lines: CartLine[], subtotal: number, currency: string, gift: boolean, giftNote: string, pincode: string) {
@@ -49,6 +49,7 @@ export default function CartDrawer() {
   const { isOpen, closeCart, lines, count, subtotal, currency, setQty, removeItem, gift, giftNote, setGift } =
     useCart();
   const ship = shippingForCart(delivery.pincode, lines);
+  const localOnly = localOnlyBlocked(delivery.pincode, lines);
 
   // lock scroll + escape to close
   useEffect(() => {
@@ -165,6 +166,11 @@ export default function CartDrawer() {
                   onChange={(e) => setDelivery({ pincode: e.target.value.replace(/\D/g, "").slice(0, 6) })}
                 />
               </label>
+              {localOnly.length > 0 && (
+                <p className="drawer__local" role="alert">
+                  {localOnly.join(", ")} is only delivered within Bengaluru for now. Remove it to order to this pincode, or message us and we&apos;ll tell you when it travels.
+                </p>
+              )}
               <div className="drawer__subtotal">
                 <span>SHIPPING{ship ? ` · ${ship.zone.toUpperCase()}` : ""}</span>
                 <span>{ship ? formatPrice(ship.fee, currency) : "Enter pincode"}</span>
@@ -204,6 +210,7 @@ export default function CartDrawer() {
               </p>
               <button
                 className="cta cta--stamp drawer__checkout drawer__checkout--primary"
+                disabled={localOnly.length > 0}
                 onClick={() => {
                   // the main conversion: fired (as a beacon) before WhatsApp opens
                   track("generate_lead", {
@@ -226,7 +233,7 @@ export default function CartDrawer() {
                 <span className="cta__arrow">→</span>
               </button>
               {ONLINE_PAYMENT ? (
-                <RazorpayButton />
+                <RazorpayButton blocked={localOnly.length > 0} />
               ) : (
                 <>
                   <button className="cta drawer__checkout drawer__checkout--off" disabled aria-disabled="true">

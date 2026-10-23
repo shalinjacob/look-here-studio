@@ -29,7 +29,7 @@ function loadScript(): Promise<boolean> {
 }
 
 // "PAY ONLINE": create order -> Razorpay modal -> verify signature on the server.
-export default function RazorpayButton() {
+export default function RazorpayButton({ blocked = false }: { blocked?: boolean }) {
   const { lines, subtotal, clear, gift, giftNote } = useCart();
   const c = useDelivery();
   const ship = shippingForCart(c.pincode, lines);
@@ -127,6 +127,7 @@ export default function RazorpayButton() {
     <>
       <button
         className="cta cta--stamp drawer__checkout"
+        disabled={blocked}
         onClick={() => {
           setMsg(null);
           setOpen(true);

@@ -1,3 +1,5 @@
+import { getProduct } from "@/data/products";
+
 // Shipping fee by delivery pincode. One flat fee per ORDER, set by zone.
 // Zones come from the first digits of the pincode (India Post regions).
 // ⚠ OWNER: the fees below are PLACEHOLDERS: replace with your real courier costs,
@@ -61,6 +63,20 @@ export const BULKY_EXTRA: Record<string, number> = {
   "small-planet": 600,
   "ripple-mirror": 3150,
 };
+
+/** Bengaluru pincodes (the "bengaluru" zone above) */
+export function isBengaluruPin(pincode: string): boolean {
+  const pin = pincode.trim();
+  const z = SHIPPING_ZONES.find((zone) => zone.id === "bengaluru");
+  return /^[1-9]\d{5}$/.test(pin) && !!z && z.prefixes.some((p) => pin.startsWith(p));
+}
+
+/** names of cart items that only ship within Bengaluru, when the pincode is a valid one outside it */
+export function localOnlyBlocked(pincode: string, lines: { slug: string }[]): string[] {
+  const pin = pincode.trim();
+  if (!/^[1-9]\d{5}$/.test(pin) || isBengaluruPin(pin)) return [];
+  return lines.map((l) => getProduct(l.slug)).filter((p) => p?.localOnly).map((p) => p!.name);
+}
 
 /** fee for a 6-digit pincode, or null while the pincode isn't valid yet */
 export function shippingFor(pincode: string): { fee: number; zone: string } | null {
