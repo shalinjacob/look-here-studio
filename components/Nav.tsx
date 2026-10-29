@@ -9,6 +9,8 @@ import AnimatedLogo from "./AnimatedLogo";
 const SHOP = [
   { href: "/objects", label: "OBJECTS" },
   { href: "/off-the-wall", label: "OFF THE WALL" },
+  { href: "/small-runs", label: "SMALL RUNS" },
+  { href: "/custom", label: "CUSTOM" },
   { href: "/gift-guide", label: "GIFTS" },
 ];
 

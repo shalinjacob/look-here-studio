@@ -20,6 +20,8 @@ export default function Footer() {
               <Link href="/objects">Objects</Link>
               <Link href="/collections/editions">Editions</Link>
               <Link href="/off-the-wall">Off The Wall tees</Link>
+              <Link href="/small-runs">Small runs</Link>
+              <Link href="/custom">Custom orders</Link>
               <Link href="/gift-guide">Gift guide</Link>
               <Link href="/why-look-here#process">Process</Link>
             </div>
