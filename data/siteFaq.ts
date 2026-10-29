@@ -32,9 +32,9 @@ export const siteFaq: { group: string; items: QA[] }[] = [
     ],
   },
   {
-    group: "Off The Wall tees",
+    group: "Tees",
     items: [
-      { q: "What are Off The Wall tees?", a: "Our art, made to wear: 100% cotton tees (190–240 GSM), oversized fit, XS–XXL, each with a big print on the front. [See all tees](/off-the-wall)." },
+      { q: "What are the tees?", a: "Oversized cotton tees with a heat-pressed vinyl print on the front, XS–XXL, made in small runs. [See the small runs](/small-runs)." },
       { q: "Can I exchange a tee for another size?", a: "Yes, free within 7 days of delivery if it's unworn, unwashed and the tags are on. Tees aren't refundable unless damaged or wrong." },
     ],
   },

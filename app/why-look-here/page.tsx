@@ -109,7 +109,7 @@ export default function WhyPage() {
 
         <div className="objects__foot">
           <CTA href="/objects" variant="stamp">SEE THE OBJECTS</CTA>
-          <CTA href="/off-the-wall" variant="link">SEE THE TEES</CTA>
+          <CTA href="/small-runs" variant="link">SEE THE SMALL RUNS</CTA>
           <CTA href="/contact" variant="link">WORK WITH US</CTA>
         </div>
       </section>

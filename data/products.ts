@@ -1,6 +1,5 @@
 import { WISHLIST_MODE } from "@/lib/site";
 import type { Product, ProductStatus, FilterTag, Occasion } from "@/lib/types";
-import { tees } from "./tees";
 import { smallRuns } from "./smallRuns";
 
 // ---------------------------------------------------------------------------
@@ -923,15 +922,14 @@ const objects: Product[] = [
   },
 ];
 
-/** everything we sell: home objects + Off The Wall tees + small runs */
-export const products: Product[] = [...objects, ...tees, ...smallRuns];
+/** everything we sell: home objects + small runs */
+export const products: Product[] = [...objects, ...smallRuns];
 export { smallRuns };
 /** the range a product lives in, for prev/next + related */
 const rangeOf = (slug: string): Product[] =>
-  [tees, smallRuns].find((r) => r.some((x) => x.slug === slug)) ?? objects;
+  [smallRuns].find((r) => r.some((x) => x.slug === slug)) ?? objects;
 /** home objects only (the /objects catalogue, gift guide, home page) */
 export const homeObjects: Product[] = objects;
-export const isTee = (p: Product) => p.category === "Off The Wall";
 
 // --- helpers ---------------------------------------------------------------
 

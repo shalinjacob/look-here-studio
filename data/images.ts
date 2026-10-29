@@ -1,5 +1,3 @@
-import { tees } from "./tees";
-
 // ---------------------------------------------------------------------------
 // Per-image metadata, keyed by public path: descriptive alt text, and
 // `isRender` for renders/visualisations (shown with a "Visualisation" label and
@@ -98,37 +96,12 @@ export const IMAGES: Record<string, ImageMeta> = {
   "/small-runs/custom-garment-print.webp": { alt: "A gold heat-pressed vinyl motif on a customer's own polo shirt" },
 };
 
-// Off The Wall tee images are generated from their filenames:
-//   /wearables/tee-<design>-<colour>-<front|back>.webp  → mock-up (a visualisation)
-//   /wearables/tee-<design>-art.webp                     → the flat artwork
-//   /wearables/tee-<design>-<photo|detail>.webp          → photographed mock-up / print close-up
-const TEE_COLOUR: Record<string, string> = { black: "black", white: "white", cream: "off-white", green: "dark green" };
-function teeMeta(src: string): ImageMeta | undefined {
-  const ph = src.match(/^\/wearables\/tee-(.+?)-(photo|detail)\.webp$/);
-  if (ph) {
-    const t = tees.find((x) => x.slug === `tee-${ph[1]}`);
-    const name = t?.name ?? "Off The Wall tee";
-    return ph[2] === "photo"
-      ? { alt: `${name}: ${t?.colour.toLowerCase() ?? ""} oversized T-shirt, front and back (print on the front)` }
-      : { alt: `${name}: close-up of the print on the front of the T-shirt` };
-  }
-  const m = src.match(/^\/wearables\/tee-(.+?)-(?:(black|white|cream|green)-(front|back)|art)\.webp$/);
-  if (!m) return undefined;
-  const p = tees.find((t) => t.slug === `tee-${m[1]}`);
-  const name = p?.name ?? "Off The Wall tee";
-  if (!m[2]) return { alt: `${name}: the artwork` };
-  return {
-    alt: `${name}: ${TEE_COLOUR[m[2]]} T-shirt, ${m[3]} view (${p?.finish.replace(/^Printed: /, "printed on the ") ?? ""})`,
-    isRender: true,
-  };
-}
-
 export function altFor(src: string | undefined, fallback: string): string {
-  const m = src ? IMAGES[src] ?? teeMeta(src) : undefined;
+  const m = src ? IMAGES[src] : undefined;
   // renders are tracked (isRender) but not labelled on site (owner's decision)
   return m?.alt ?? fallback;
 }
 
 export function isRender(src: string | undefined): boolean {
-  return !!(src && (IMAGES[src] ?? teeMeta(src))?.isRender);
+  return !!(src && (IMAGES[src])?.isRender);
 }

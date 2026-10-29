@@ -53,7 +53,7 @@ export default function TermsPage() {
 
           <h2>T-shirts</h2>
           <p>
-            Off The Wall tees are printed to order. Sizes can be exchanged free within 7 days as set out
+            Tees are made to order. Sizes can be exchanged free within 7 days as set out
             in our <Link href="/shipping-returns">Shipping &amp; Returns policy</Link>. Print colours can
             vary slightly from screen to fabric.
           </p>

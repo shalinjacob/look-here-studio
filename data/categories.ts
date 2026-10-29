@@ -21,31 +21,6 @@ export interface Category {
 
 export const categories: Category[] = [
   {
-    slug: "off-the-wall",
-    name: "Off The Wall",
-    metaTitle: "Off The Wall: Oversized Art T-Shirts | Look Here Studio",
-    metaDescription:
-      "The studio's art, made to wear: 100% cotton printed tees, oversized fit, XS–XXL, with a big print on the front. Made to order in Bengaluru.",
-    answer:
-      "Off The Wall is Look Here Studio's art, made to wear: printed 100% cotton tees (190–240 GSM) in an oversized fit ({price:tee-crane}), sizes XS to XXL. Every design is printed big on the front. Made to order in Bengaluru and dispatched within 10 working days.",
-    sections: [
-      {
-        heading: "How does the oversized fit run?",
-        paras: [
-          "Every tee is oversized: dropped shoulders and a wider chest, falling loose and boxy. Each tee page has the full size chart in inches and cm.",
-        ],
-      },
-    ],
-    faq: [
-      { q: "What sizes do the tees come in?", a: "XS, S, M, L, XL and XXL, in an oversized fit. Every tee page has a size chart." },
-      { q: "Can I exchange a tee for a different size?", a: "Yes, free within 7 days of delivery, as long as it's unworn, unwashed and the tags are on. See [shipping and returns](/shipping-returns)." },
-      { q: "What are the tees made of?", a: "100% cotton, 190–240 GSM." },
-      { q: "Can I order tees in bulk for a team or event?", a: "Yes. [Tell us what you need](/contact) or ask on WhatsApp." },
-    ],
-    products: ["tee-stay-weird", "tee-crane", "tee-horse", "tee-woman-cheetah", "tee-skull-roses", "tee-reaper-stay-positive", "tee-nuns-umbrella", "tee-dancing-skeletons", "tee-renaissance-cat", "tee-good-boys"],
-    posts: [],
-  },
-  {
     slug: "small-runs",
     name: "Small runs",
     metaTitle: "Small-Run Vinyl Art: Mirror Discs, Framed Fabric, Tees & Mugs | Look Here Studio",

@@ -22,7 +22,7 @@ export interface WaOptions {
   productCode?: string;
   /** "size: L, colour: Black" */
   option?: string;
-  /** listing/collection page name, e.g. "Off The Wall" */
+  /** listing/collection page name, e.g. "Small runs" */
   pageName?: string;
   url?: string;
 }
@@ -81,7 +81,6 @@ export function pageContext(pathname: string): PageContext {
     if (p) return { type: "product", productSlug: p.slug, productName: p.name, productCode: p.objectNumber, url };
   }
   if (path === "/objects") return { type: "listing", pageName: "our objects", url };
-  if (path === "/off-the-wall") return { type: "listing", pageName: "Off The Wall", url };
   if (path === "/custom") return { type: "listing", pageName: "custom orders", url };
   if (path === "/gift-guide") return { type: "listing", pageName: "the gift guide", url };
   if (parts[0] === "collections" && parts[1]) {

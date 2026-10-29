@@ -34,7 +34,6 @@ import {
   WORKING_ON_LINE,
   formatPrice,
   isPurchasable,
-  isTee,
   canOrderNow,
   hasPriceRange,
 } from "@/data/products";
@@ -197,7 +196,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
               and we&apos;ll let you know when it travels.
             </p>
           )}
-          {!isTee(p) && <div className="pdp__sizelink"><SizeGuideButton slug={p.slug} /></div>}
+          <div className="pdp__sizelink"><SizeGuideButton slug={p.slug} /></div>
 
           <div className="pdp__actions">
             <AddToCart product={p} />

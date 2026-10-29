@@ -1,4 +1,4 @@
-import { products, smallRuns, isPurchasable, formatPrice, isTee } from "@/data/products";
+import { products, smallRuns, isPurchasable, formatPrice } from "@/data/products";
 import { publishedPosts } from "@/data/journal";
 import { edits } from "@/data/edits";
 import { categories } from "@/data/categories";
@@ -13,10 +13,9 @@ export const dynamic = "force-static";
 export function GET() {
   const line = (p: (typeof products)[number]) =>
     `- [${p.name}](${SITE_URL}/objects/${p.slug}): ${p.shortDescription} ${formatPrice(p.price, p.currency)}${p.options ? "" : ""}.`;
-  const teeLines = products.filter((p) => isTee(p) && p.price != null).map(line).join("\n");
   const smallRunLines = smallRuns.filter((p) => p.price != null).map(line).join("\n");
   const items = products
-    .filter((p) => p.price != null && !isTee(p) && p.category !== "Small Run")
+    .filter((p) => p.price != null && p.category !== "Small Run")
     .map(
       (p) =>
         `- [${p.name}](${SITE_URL}/objects/${p.slug}): ${p.shortDescription} ${formatPrice(p.price, p.currency)}${p.variants?.length ? ` (${p.variants[0].note?.toLowerCase()})` : ""}. ${p.material}; ${p.dimensions}.${p.custom || p.personalise?.length ? " Personalised." : ""}${p.localOnly ? " Delivered in Bengaluru only for now." : ""}${isPurchasable(p) ? "" : " Currently on the wishlist: join it on the product page."}`
@@ -47,12 +46,6 @@ ${categories.map((c) => `- [${c.name}](${SITE_URL}/${c.slug}): ${plain(c.answer)
 ## Objects
 
 ${items}
-
-## Off The Wall: art T-shirts
-
-The studio's artwork printed on 100% cotton (190–240 GSM) tees, oversized fit, sizes XS–XXL, each with a big print on the front. Made to order, dispatched within 10 working days. Free size exchange within 7 days (unworn, unwashed, tags on). [All tees](${SITE_URL}/off-the-wall)
-
-${teeLines}
 
 ## Small runs and custom orders
 
