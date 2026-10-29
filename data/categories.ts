@@ -46,6 +46,37 @@ export const categories: Category[] = [
     posts: [],
   },
   {
+    slug: "small-runs",
+    name: "Small runs",
+    metaTitle: "Small-Run Vinyl Art: Mirror Discs, Framed Fabric, Tees & Mugs | Look Here Studio",
+    metaDescription:
+      "Short-batch pieces cut and pressed by hand in Bengaluru: light-casting mirror discs, framed and frameless fabric art, gold elephant decals, vinyl tees and a mug. Custom versions from one piece.",
+    answer:
+      "Small Runs are Look Here Studio's short-batch pieces, cut and pressed by hand in Bengaluru: 4-inch [mirror discs](/objects/mirror-discs) that throw their design across a wall ({price:mirror-discs}), vinyl-on-fabric art in a frame or without ({price:trying-to-get-my-shit-together} and {price:spotted-cat-fabric-panel}), gold [elephant wall decals](/objects/gold-elephant-decals) ({price:gold-elephant-decals}), vinyl tees and a mug. Designs run for a short while, and any of them can be made as a [custom order](/custom), from a single piece up.",
+    sections: [
+      {
+        heading: "What is a small run?",
+        paras: [
+          "A small run is a short batch of one design, made by hand: drawn, cut from vinyl on our cutting machine, weeded by hand and pressed or stuck onto mirror, fabric, ceramic or cotton. When a design has had its run, it can retire, so what you see here changes. Everything is made to order and dispatched within 10 working days.",
+        ],
+      },
+      {
+        heading: "Can I get my own design or a smaller quantity?",
+        paras: [
+          "Yes. There's no minimum: one piece is fine, and from 5 pieces there's a quantity discount. See [custom orders](/custom) for the quantity tiers and an instant price check, or ask on WhatsApp from any product page.",
+        ],
+      },
+    ],
+    faq: [
+      { q: "What's the difference between a small run and the main objects?", a: "The main [objects](/objects) are laser-cut and finished in acrylic, metal, wood and light. Small runs are hand-finished vinyl on mirror, fabric, ceramic and cotton, made in shorter batches, so designs come and go." },
+      { q: "How do I care for vinyl pieces?", a: "Wipe with a soft dry cloth and don't scrub the vinyl. Mugs are hand-wash only. Tees go in cold, inside out; don't iron directly on the print." },
+      { q: "Can I get a design in another colour or size?", a: "Usually, yes. [Tell us what you want](/custom) and we'll confirm the price before you pay." },
+      { q: "Will a design come back once it retires?", a: "Sometimes, in a new run, but we can't promise it. If you want something that has retired, ask and we'll tell you." },
+    ],
+    products: ["mirror-discs", "trying-to-get-my-shit-together", "spotted-cat-fabric-panel", "gold-elephant-decals", "tee-space-cat", "tee-uninstall-astrology", "i-saw-that-mug", "tee-only-fans"],
+    posts: ["why-we-make-things-in-small-runs"],
+  },
+  {
     slug: "wall-clocks",
     name: "Wall clocks",
     metaTitle: "Designer Wall Clocks, Made in Bengaluru | Look Here Studio",

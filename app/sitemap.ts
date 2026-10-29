@@ -10,7 +10,7 @@ import { SITE_URL as BASE } from "@/lib/site";
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
   const staticRoutes = [
-    "", "/objects", "/gift-guide", "/why-look-here",
+    "", "/objects", "/custom", "/gift-guide", "/why-look-here",
     "/journal", "/contact", "/faq", "/size-guide", "/shipping-returns", "/privacy", "/terms",
   ];
   return [

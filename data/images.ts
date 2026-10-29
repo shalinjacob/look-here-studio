@@ -78,6 +78,24 @@ export const IMAGES: Record<string, ImageMeta> = {
   "/objects/quote-frame-more-room.webp": { alt: "Slim LED Quote Frame: \u201cThere\u2019s always MORE ROOM for one more bad idea\u201d in red on cream, backlit in an office meeting room" },
   "/objects/custom-lightbox-1.webp": { alt: "Custom Lightbox: slim black LED light box glowing red with custom Hindi words" },
   "/objects/custom-lightbox-2.webp": { alt: "Custom Lightbox: slim black LED light box glowing amber with custom English words" },
+  // Small runs (cleaned-up studio photos)
+  "/small-runs/mirror-bitches.webp": { alt: "Light-Cast Mirror Disc: 4-inch round mirror with a red vinyl heart and the words Bitches Are People Too" },
+  "/small-runs/mirror-fruit-blossom.webp": { alt: "Light-Cast Mirror Disc: round mirror with a red vinyl cherry, plum blossom and moon ring" },
+  "/small-runs/mirror-red-bloom.webp": { alt: "Light-Cast Mirror Disc: round mirror with a red vinyl flower inside a ring" },
+  "/small-runs/mirror-set.webp": { alt: "Set of three Light-Cast Mirror Discs with red vinyl designs: lettering heart, cherry blossom and a single flower" },
+  "/small-runs/mirror-light-cast.webp": { alt: "The Bitches Are People Too mirror disc casting its heart-shaped design as a patch of light on a wall" },
+  "/small-runs/fabric-frame-a4.webp": { alt: "Trying To Get My Shit Together: white vinyl cat on a litter tray over block-printed fabric, in a white frame on a pink wall" },
+  "/small-runs/fabric-frame-a4-detail.webp": { alt: "Close-up of the white vinyl cat and lettering over rust and ochre block-printed fabric" },
+  "/small-runs/fabric-panel-leopard.webp": { alt: "Spotted Cat Fabric Panel: cream vinyl cat with cut-out spots over a teal, orange and pink floral print, leaning on a stone counter" },
+  "/small-runs/fabric-panel-leopard-detail.webp": { alt: "Close-up of the cream cat with spots cut out over the floral fabric" },
+  "/small-runs/decal-elephants.webp": { alt: "Small gold elephant decals scattered across a pale wall above a bathroom mirror" },
+  "/small-runs/decal-elephants-detail.webp": { alt: "Close-up of gold vinyl elephant decals on a wall" },
+  "/small-runs/mug-i-saw-that.webp": { alt: "I Saw That Mug: glossy black mug with a masked figure peeking round the side and I SAW THAT in red vinyl" },
+  "/small-runs/tee-space-cat.webp": { alt: "Space Cat Tee: white vinyl print of a cat in an astronaut suit beside Japanese lettering on a navy tee" },
+  "/small-runs/tee-uninstall-astrology.webp": { alt: "Uninstall Astrology Tee: round white lettering block on a sand-coloured oversized tee, worn" },
+  "/small-runs/tee-uninstall-astrology-detail.webp": { alt: "Close-up of the Uninstall Astrology, Install Critical Thinking print in white vinyl on a sand tee" },
+  "/small-runs/tee-only-fans.webp": { alt: "Only Fans Tee: cream vinyl print of ceiling, table and pedestal fans and an air conditioner under a big ONLY FANS headline, on navy" },
+  "/small-runs/custom-garment-print.webp": { alt: "A gold heat-pressed vinyl motif on a customer's own polo shirt" },
 };
 
 // Off The Wall tee images are generated from their filenames:

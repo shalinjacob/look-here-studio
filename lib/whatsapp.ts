@@ -82,6 +82,7 @@ export function pageContext(pathname: string): PageContext {
   }
   if (path === "/objects") return { type: "listing", pageName: "our objects", url };
   if (path === "/off-the-wall") return { type: "listing", pageName: "Off The Wall", url };
+  if (path === "/custom") return { type: "listing", pageName: "custom orders", url };
   if (path === "/gift-guide") return { type: "listing", pageName: "the gift guide", url };
   if (parts[0] === "collections" && parts[1]) {
     const c = getCollection(parts[1]);
