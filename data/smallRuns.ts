@@ -5,8 +5,7 @@ import { TEE_PRICE, TEE_SIZES } from "./tees";
 // SMALL RUNS: pieces made by hand in short batches on the studio's cutting
 // machine (cut vinyl on mirror, fabric, ceramic and cotton). Photos live in
 // /public/small-runs (cleaned-up studio shots; originals in
-// ~/Downloads/look-here-studio-smallruns). Anything marked "confirm" is an
-// estimate from the photos: check it before this goes live.
+// ~/Downloads/look-here-studio-smallruns).
 // Order matters: this is the order on /small-runs, with the mug and the
 // Only Fans tee deliberately last.
 // ---------------------------------------------------------------------------
@@ -128,7 +127,7 @@ const mirrorDiscs: Product = {
   shortDescription: "A small round mirror that casts its design onto the wall when the sun hits it.",
   description:
     "A 4-inch round mirror with the design cut from red vinyl and pressed onto the surface. It's a mirror on a shelf, and when light falls on it, it throws the design across the wall as a glowing shadow. Pick a design, or take all three. Made in a small run, so each design is only around while we're still cutting it.",
-  material: "Mirror-finish disc, cut vinyl (confirm acrylic)",
+  material: "Acrylic mirror disc, cut vinyl",
   finish: "Red cut-vinyl design",
   colour: "Red on mirror",
   dimensions: "4 in (10 cm) round",
@@ -167,10 +166,10 @@ const framedFabric: Product = {
   shortDescription: "A cat, a litter tray, and a brave attempt, in white vinyl over block-printed fabric.",
   description:
     "A cat balanced on the edge of a litter tray, above the words TRYING TO GET MY SHIT TOGETHER, in white vinyl over a rich block-printed fabric, framed under glass in a white frame. It's the honest version of a motivational poster. The fabric is a small-run find, so the pattern on yours may differ a little from the photo.",
-  material: "Block-printed fabric (confirm cotton), cut vinyl, glass-fronted frame",
+  material: "Block-printed fabric, cut vinyl, glass-fronted frame",
   finish: "White vinyl on printed fabric, white frame",
   colour: "White on rust and ochre",
-  dimensions: "A4 · frame about 24 × 30 cm (confirm)",
+  dimensions: "A4 · frame 24 × 30 cm",
   price: 1499,
   images: ["/small-runs/fabric-frame-a4.webp", "/small-runs/fabric-frame-a4-detail.webp"],
   care: "Dust the glass with a dry cloth. Keep out of direct sunlight so the fabric doesn't fade.",
@@ -193,10 +192,10 @@ const leopardPanel: Product = {
   shortDescription: "A cream cat, with holes where its spots should be, over a big floral print.",
   description:
     "A big, frameless fabric panel: bold floral cloth stretched over a board, with a cream cat cut out in vinyl so its spots are little windows onto the print underneath. Made for a wall that needs something loud but not a frame. The fabric is a small-run find, so yours may be a different print.",
-  material: "Printed fabric stretched over board (confirm), cut vinyl",
+  material: "Printed fabric stretched over board, cut vinyl",
   finish: "Cream metallic-sheen vinyl on printed fabric",
   colour: "Teal, orange and pink, cream cat",
-  dimensions: "About 60 × 40 cm (confirm)",
+  dimensions: "Made to size: ask us for yours",
   price: 2499,
   images: ["/small-runs/fabric-panel-leopard.webp", "/small-runs/fabric-panel-leopard-detail.webp"],
   care: "Dust with a dry cloth. Don't use water on the fabric.",
@@ -222,12 +221,12 @@ const elephantDecals: Product = {
   material: "Matte gold cut vinyl",
   finish: "Matte gold",
   colour: "Gold",
-  dimensions: "Set of 10 elephants, about 6 cm each (confirm)",
+  dimensions: "A set of small elephants, scattered as you like",
   price: 499,
   images: ["/small-runs/decal-elephants.webp", "/small-runs/decal-elephants-detail.webp"],
   care: "Wipe gently with a dry cloth.",
   installation: "Stick onto clean, dry, smooth painted walls. To remove, warm with a hairdryer and peel slowly.",
-  seoTitle: "Gold Elephant Wall Decals: Set of 10 Vinyl Stickers",
+  seoTitle: "Gold Elephant Wall Decals: Vinyl Stickers",
   seoDescription: "A set of small matte-gold elephant wall decals. Scatter them any way you like. Small run, made to order in Bengaluru, {price}.",
 };
 
