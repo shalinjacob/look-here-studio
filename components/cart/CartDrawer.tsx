@@ -4,43 +4,11 @@ import { useEffect } from "react";
 import Link from "next/link";
 import { useCart, lineId, GIFT_NOTE_MAX, type CartLine } from "./CartContext";
 import { formatPrice } from "@/data/products";
-import { buildWhatsAppLink } from "@/lib/whatsapp";
-import { track } from "@/lib/analytics";
+import WaLink from "@/components/WaLink";
 import { ONLINE_PAYMENT } from "@/lib/site";
 import RazorpayButton from "./RazorpayButton";
 import { setDelivery, useDelivery } from "@/lib/deliveryStore";
 import { shippingForCart, localOnlyBlocked } from "@/config/shipping";
-
-/** the WhatsApp order request (format agreed in the website brief) */
-function requestMessage(lines: CartLine[], subtotal: number, currency: string, gift: boolean, giftNote: string, pincode: string) {
-  const ship = shippingForCart(pincode, lines);
-  const items = lines
-    .map((l) => {
-      const variant = l.variant && !l.personalised ? ` (${l.variant})` : "";
-      return `• ${l.name}${variant} ×${l.qty} — ${formatPrice(l.price * l.qty, l.currency)}`;
-    })
-    .join("\n");
-  // Only when the cart holds a personalisable product. Text the product page
-  // collected goes in; otherwise it's left blank for the customer to type.
-  const personalisation = lines.some((l) => l.personalisable)
-    ? `Personalisation: ${lines
-        .filter((l) => l.personalised && l.variant)
-        .map((l) => `${l.name}: ${l.variant}`)
-        .join("; ")}\n`
-    : "";
-  return (
-    `Hi Look Here Studio! I'd like to order:\n\n` +
-    `${items}\n` +
-    `Subtotal: ${formatPrice(subtotal, currency)}\n` +
-    (ship
-      ? `Shipping to ${pincode.trim()} (${ship.zone}): ${formatPrice(ship.fee, currency)}\nTotal: ${formatPrice(subtotal + ship.fee, currency)}\n\n`
-      : `Shipping: to be confirmed for my pincode\n\n`) +
-    `Gift: ${gift ? "Yes" : "No"}\n` +
-    `Gift note: ${gift && giftNote.trim() ? giftNote.trim() : "—"}\n` +
-    personalisation +
-    `\nFull name:\nAddress:\nEmail:\nMobile number:\nPincode: ${pincode.trim()}`
-  );
-}
 
 // Slide-over cart. Handles qty change, remove, subtotal, and a WhatsApp request.
 
@@ -203,35 +171,8 @@ export default function CartDrawer() {
                   </label>
                 )}
               </div>
-              <p className="drawer__note">
-                {ONLINE_PAYMENT
-                  ? "Pay online, or send the request and we'll confirm price, details & delivery on WhatsApp."
-                  : "Send us your order on WhatsApp and we'll confirm price, details & delivery."}
-              </p>
-              <button
-                className="cta cta--stamp drawer__checkout drawer__checkout--primary"
-                disabled={localOnly.length > 0}
-                onClick={() => {
-                  // the main conversion: fired (as a beacon) before WhatsApp opens
-                  track("generate_lead", {
-                    value: subtotal,
-                    currency,
-                    lead_source: "whatsapp_cart",
-                    items: lines.map((l) => ({ item_id: l.slug, item_name: l.name, item_variant: l.variant, price: l.price, quantity: l.qty })),
-                  });
-                  const url = buildWhatsAppLink({ text: requestMessage(lines, subtotal, currency, gift, giftNote, delivery.pincode) });
-                  window.open(url, "_blank", "noopener,noreferrer");
-                }}
-              >
-                <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
-                  <path
-                    fill="currentColor"
-                    d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2s.9 2.3 1 2.5c.1.2 1.7 2.6 4.2 3.7 1.6.7 2.2.7 3 .6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.5-.3z"
-                  />
-                </svg>
-                <span className="cta__label">SEND ORDER ON WHATSAPP</span>
-                <span className="cta__arrow">→</span>
-              </button>
+              <p className="drawer__note">Pay securely online (UPI, cards, netbanking). We confirm your delivery details after payment.</p>
+
               {ONLINE_PAYMENT ? (
                 <RazorpayButton blocked={localOnly.length > 0} />
               ) : (
@@ -242,6 +183,12 @@ export default function CartDrawer() {
                   <p className="drawer__note drawer__soon">We&apos;re working on enabling online payment super soon.</p>
                 </>
               )}
+              <p className="drawer__note">
+                Want something custom or personalised?{" "}
+                <WaLink text="Hi Look Here Studio! I'd like to ask about a custom order." className="cta cta--link">
+                  Ask on WhatsApp
+                </WaLink>
+              </p>
               <div className="drawer__fine">
                 <p>Made to order · dispatched within 10 working days · Shipping calculated by pincode</p>
                 <p>
