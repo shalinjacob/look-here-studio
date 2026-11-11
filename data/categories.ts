@@ -48,7 +48,7 @@ export const categories: Category[] = [
       { q: "Can I get a design in another colour or size?", a: "Usually, yes. [Tell us what you want](/custom) and we'll confirm the price before you pay." },
       { q: "Will a design come back once it retires?", a: "Sometimes, in a new run, but we can't promise it. If you want something that has retired, ask and we'll tell you." },
     ],
-    products: ["mirror-discs", "trying-to-get-my-shit-together", "spotted-cat-fabric-panel", "gold-elephant-decals", "tee-space-cat", "tee-uninstall-astrology", "i-saw-that-mug", "tee-only-fans"],
+    products: ["mirror-discs", "trying-to-get-my-shit-together", "spotted-cat-fabric-panel", "gold-elephant-decals", "carnation-wall-stickers", "photo-frame-magnet", "swan-revolt-magnet", "no-insurance-magnet", "starry-road-trip-magnet", "kids-name-board", "tee-space-cat", "tee-uninstall-astrology", "i-saw-that-mug", "tee-only-fans"],
     posts: ["why-we-make-things-in-small-runs"],
   },
   {
