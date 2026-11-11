@@ -417,7 +417,7 @@ const nameBoard: Product = {
   shortDescription: "A name board for a child's room: their name, and a world drawn around it.",
   description:
     "A cut-out name board for a child's room, with their name in bold lettering and a hand-drawn scene around it. Pick the Mermaid, a round board with a mermaid, seahorse, turtle, jellyfish and fish under the sea, or the Drum Kit, a cloud-shaped board with a drum kit and shooting stars. Tell us the name and we redraw the lettering by hand for your child, so every board is made to order. The art is shown coloured in here, with the example names Shradha and Audree.",
-  material: "Cut board (confirm material)",
+  material: "Cut board",
   finish: "Hand-finished",
   colour: "Shown in full colour",
   dimensions: "Mermaid: 19 cm round · Drum Kit: 30 × 15.4 cm",
