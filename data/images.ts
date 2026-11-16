@@ -88,7 +88,6 @@ export const IMAGES: Record<string, ImageMeta> = {
   "/small-runs/fabric-panel-leopard-detail.webp": { alt: "Close-up of the cream cat with spots cut out over the floral fabric" },
   "/small-runs/decal-elephants.webp": { alt: "Small gold elephant decals scattered across a pale wall above a bathroom mirror" },
   "/small-runs/decal-elephants-detail.webp": { alt: "Close-up of gold vinyl elephant decals on a wall" },
-  "/small-runs/mug-i-saw-that.webp": { alt: "I Saw That Mug: glossy black mug with a masked figure peeking round the side and I SAW THAT in red vinyl" },
   "/small-runs/tee-space-cat-hanging.webp": { alt: "Space Cat Tee: white print of a cat in an astronaut suit beside Japanese lettering on a black oversized tee hanging on a wooden wardrobe" },
   "/small-runs/tee-space-cat-worn.webp": { alt: "Smiling man wearing the black oversized Space Cat Tee with a white astronaut cat and Japanese lettering" },
   "/small-runs/tee-uninstall-astrology.webp": { alt: "Uninstall Astrology Tee: round white lettering block on a sand-coloured oversized tee, worn" },

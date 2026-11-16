@@ -24,13 +24,15 @@ export const metadata: Metadata = {
 // the studio's proposed starting price for one motif (owner to confirm).
 const price = (slug: string) => getProduct(slug)?.price ?? 0;
 const GARMENT_FROM = 599;
+// The I Saw That mug product was withdrawn; custom mugs are still offered at its old price.
+const MUG_FROM = 549;
 
 const ITEMS: CustomItem[] = [
   { id: "disc", label: "Mirror disc (4 in)", from: price("mirror-discs"), note: "Any design in vinyl, on a 4-inch round mirror" },
   { id: "tee", label: "Oversized tee", from: price("tee-space-cat"), note: "Your art heat-pressed on an oversized cotton tee" },
   { id: "garment", label: "Print on your own garment", from: GARMENT_FROM, note: "A motif on a tee, polo, tote or hoodie you send us" },
   { id: "frame", label: "Framed fabric art (A4)", from: price("trying-to-get-my-shit-together"), note: "Your words or art over printed fabric, framed" },
-  { id: "mug", label: "Mug", from: price("i-saw-that-mug"), note: "Vinyl on a ceramic mug: names, jokes, logos" },
+  { id: "mug", label: "Mug", from: MUG_FROM, note: "Vinyl on a ceramic mug: names, jokes, logos" },
   { id: "decal", label: "Wall decals", from: price("gold-elephant-decals"), note: "Any shape cut from vinyl, in a set" },
 ].filter((i) => i.from > 0);
 

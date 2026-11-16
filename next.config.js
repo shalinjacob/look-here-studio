@@ -3,6 +3,10 @@ const nextConfig = {
   reactStrictMode: true,
   async redirects() {
     return [
+      // I Saw That Mug withdrawn (Nov 2026)
+      { source: "/objects/i-saw-that-mug", destination: "/small-runs", permanent: true },
+      // Kid's Name Board withdrawn (Nov 2026)
+      { source: "/objects/kids-name-board", destination: "/small-runs", permanent: true },
       // KISS Wall Piece became one option of Four-Letter Words (Oct 2026)
       { source: "/objects/kiss-wall-piece", destination: "/objects/four-letter-words", permanent: true },
       // Corner Frame withdrawn from the catalogue (Oct 2026)

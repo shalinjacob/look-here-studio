@@ -6,7 +6,7 @@ import { TEE_PRICE, TEE_SIZES } from "./tees";
 // machine (cut vinyl on mirror, fabric, ceramic and cotton). Photos live in
 // /public/small-runs (cleaned-up studio shots; originals in
 // ~/Downloads/look-here-studio-smallruns).
-// Order matters: this is the order on /small-runs, with the mug and the
+// Order matters: this is the order on /small-runs, with the
 // Only Fans tee deliberately last.
 // ---------------------------------------------------------------------------
 
@@ -230,33 +230,6 @@ const elephantDecals: Product = {
   seoDescription: "A sheet of 25 gold elephant wall decals, each 4.35 × 2.94 cm. Scatter them any way you like. Small run, made to order in Bengaluru, {price}.",
 };
 
-const mug: Product = {
-  ...base,
-  id: "s07",
-  objectNumber: "S07",
-  slug: "i-saw-that-mug",
-  name: "I Saw That Mug",
-  shortName: "I Saw That",
-  category: "Small Run",
-  subcategory: "Mug",
-  tags: ["table"],
-  occasions: ["just-because"],
-  shortDescription: "A glossy black mug with a masked figure peeking round the edge. I SAW THAT.",
-  description:
-    "A glossy black ceramic mug with a masked figure peeking around the side and the words I SAW THAT in red vinyl. For desks where someone is definitely watching. Made in a small run, one design at a time.",
-  material: "Ceramic mug, cut vinyl",
-  finish: "Gloss black, red vinyl",
-  colour: "Black with red",
-  dimensions: "Standard ceramic mug",
-  price: 549,
-  images: ["/small-runs/mug-i-saw-that.webp"],
-  care: "Hand wash gently only. Not for the dishwasher or microwave. Don't scrub the vinyl.",
-  installation: "Fill it with something hot and look innocent.",
-  seoTitle: "I Saw That Mug: Black Mug With Red Vinyl Design",
-  seoDescription: "A glossy black ceramic mug with a peeking figure and I SAW THAT in red vinyl. Hand wash. Small run, made to order in Bengaluru, {price}.",
-};
-
-
 // ---- magnets (printed, then cut, on rigid magnet sheet) ---------------------
 
 const MAGNET_PROCESS: ProcessStep[] = [
@@ -403,45 +376,6 @@ const roadTripMagnet: Product = {
   seoDescription: "A slim rigid fridge magnet: three travellers in a red convertible under a swirling starry sky. Small run, made to order in Bengaluru, {price}.",
 };
 
-const nameBoard: Product = {
-  ...base,
-  id: "s13",
-  objectNumber: "S13",
-  slug: "kids-name-board",
-  name: "Kid's Name Board",
-  shortName: "Name Board",
-  category: "Small Run",
-  subcategory: "Name board",
-  tags: ["wall", "art"],
-  occasions: ["housewarming", "just-because"],
-  shortDescription: "A name board for a child's room: their name, and a world drawn around it.",
-  description:
-    "A cut-out name board for a child's room, with their name in bold lettering and a hand-drawn scene around it. Pick the Mermaid, a round board with a mermaid, seahorse, turtle, jellyfish and fish under the sea, or the Drum Kit, a cloud-shaped board with a drum kit and shooting stars. Tell us the name and we redraw the lettering by hand for your child, so every board is made to order. The art is shown coloured in here, with the example names Shradha and Audree.",
-  material: "Cut board",
-  finish: "Hand-finished",
-  colour: "Shown in full colour",
-  dimensions: "Mermaid: 19 cm round · Drum Kit: 30 × 15.4 cm",
-  price: 999,
-  images: [
-    "/small-runs/nameboard-shradha-wall.webp",
-    "/small-runs/nameboard-audree-wall.webp",
-    "/small-runs/nameboard-shradha.webp",
-    "/small-runs/nameboard-audree.webp",
-  ],
-  variantLegend: "CHOOSE YOUR DESIGN",
-  variants: [
-    { id: "mermaid", label: "MERMAID", note: "19 cm round, under the sea", price: 999, image: "/small-runs/nameboard-shradha-wall.webp" },
-    { id: "drum-kit", label: "DRUM KIT", note: "30 × 15.4 cm cloud, stars", price: 999, image: "/small-runs/nameboard-audree-wall.webp" },
-  ],
-  personalise: [
-    { id: "name", label: "YOUR CHILD'S NAME", cartLabel: "Name", placeholder: "e.g. Shradha", maxLength: 16 },
-  ],
-  care: "Dust with a dry cloth. Keep away from water and direct sunlight.",
-  installation: "Hang it on the door or wall of your child's room.",
-  seoTitle: "Kid's Name Board: Personalised Name Sign for a Child's Room",
-  seoDescription: "A personalised name board for a child's room: a round mermaid design or a cloud-shaped drum kit, with your child's name. Small run, made to order in Bengaluru, {price}.",
-};
-
 const carnationDecals: Product = {
   ...base,
   id: "s14",
@@ -472,7 +406,7 @@ const carnationDecals: Product = {
   seoDescription: "A set of six 8 cm red carnation wall stickers on printed sticker vinyl. Scatter them any way you like. Small run, made to order in Bengaluru, {price}.",
 };
 
-/** order = order on /small-runs; the mug and Only Fans tee go last on purpose */
+/** order = order on /small-runs; the Only Fans tee goes last on purpose */
 export const smallRuns: Product[] = [
   mirrorDiscs,
   framedFabric,
@@ -483,9 +417,7 @@ export const smallRuns: Product[] = [
   swanMagnet,
   insuranceMagnet,
   roadTripMagnet,
-  nameBoard,
   spaceCat,
   uninstallAstrology,
-  mug,
   onlyFans,
 ];
