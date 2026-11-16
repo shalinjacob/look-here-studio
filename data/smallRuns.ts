@@ -377,8 +377,8 @@ const roadTripMagnet: Product = {
   id: "s12",
   objectNumber: "S12",
   slug: "starry-road-trip-magnet",
-  name: "Starry Road Trip Magnet",
-  shortName: "Starry Road Trip",
+  name: "Starry Road to Manichithrathzhu Magnet",
+  shortName: "Starry Road to Manichithrathzhu",
   category: "Small Run",
   subcategory: "Magnet",
   tags: ["art"],
@@ -392,14 +392,14 @@ const roadTripMagnet: Product = {
   dimensions: "15 × 5 cm",
   price: 349,
   images: [
-    "/small-runs/magnet-roadtrip-lifestyle-close.webp",
-    "/small-runs/magnet-roadtrip-lifestyle-pair.webp",
+    "/small-runs/magnet-roadtrip-fridge-polaroid.webp",
+    "/small-runs/magnet-roadtrip-fridge-plant.webp",
     "/small-runs/magnet-roadtrip.webp",
   ],
   process: MAGNET_PROCESS,
   care: "Wipe with a dry cloth. Keep away from water.",
   installation: "Sticks to any steel or iron surface, like a fridge door.",
-  seoTitle: "Starry Road Trip: Painterly Fridge Magnet",
+  seoTitle: "Starry Road to Manichithrathzhu: Painterly Fridge Magnet",
   seoDescription: "A slim rigid fridge magnet: three travellers in a red convertible under a swirling starry sky. Small run, made to order in Bengaluru, {price}.",
 };
 
