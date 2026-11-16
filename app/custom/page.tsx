@@ -48,7 +48,7 @@ const FAQ: QA[] = [
   { q: "Can I send my own garment?", a: "Yes. A plain tee, polo, tote or hoodie works best. Message us before sending anything and we'll tell you whether the fabric takes a heat-pressed print and where to send it." },
   { q: "What files do you need?", a: "Anything is a start: a clean logo, a sketch, a photo of what you have in mind. We redraw it for cutting. Simple, bold shapes cut best; very fine detail may need simplifying, and we'll tell you at the proof." },
   { q: "Can you use a cartoon character, a brand logo or a team crest?", a: "Only if you own the rights or have permission to use it. We don't cut licensed characters or other people's brand logos without that." },
-  { q: "How big can a piece be?", a: "Tell us the size you need and we'll say if it works. Mirror discs are 4 inches; tees, fabric panels and decals can go larger." },
+  { q: "How big can a piece be?", a: "Tell us the size you need and we'll say if it works. Mirror discs are 4 inches; tees, fabric art and decals can go larger." },
   { q: "Can custom orders be returned?", a: "Custom and personalised pieces are final sale, unless they arrive damaged or aren't what we agreed at the proof. Details on [shipping and returns](/shipping-returns)." },
   { q: "How do I pay?", a: "After you approve the proof. We'll share the payment link or details on WhatsApp." },
   { q: "Do you make something for a team, a wedding or an event?", a: "Yes, that's what the 10 and 25-piece tiers are for: team tees, wedding mirror favours, café mugs. Tell us the date and we'll plan backwards from it." },

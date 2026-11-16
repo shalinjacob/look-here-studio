@@ -3,6 +3,8 @@ const nextConfig = {
   reactStrictMode: true,
   async redirects() {
     return [
+      // Spotted Cat Fabric Panel withdrawn (Nov 2026)
+      { source: "/objects/spotted-cat-fabric-panel", destination: "/small-runs", permanent: true },
       // I Saw That Mug withdrawn (Nov 2026)
       { source: "/objects/i-saw-that-mug", destination: "/small-runs", permanent: true },
       // Kid's Name Board withdrawn (Nov 2026)

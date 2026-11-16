@@ -25,9 +25,9 @@ export const categories: Category[] = [
     name: "Small runs",
     metaTitle: "Small-Run Vinyl Art: Mirror Discs, Framed Fabric, Magnets & Tees | Look Here Studio",
     metaDescription:
-      "Short-batch pieces cut and pressed by hand in Bengaluru: light-casting mirror discs, framed and frameless fabric art, gold elephant decals, vinyl tees and printed fridge magnets. Custom versions from one piece.",
+      "Short-batch pieces cut and pressed by hand in Bengaluru: light-casting mirror discs, framed fabric art, gold elephant decals, vinyl tees and printed fridge magnets. Custom versions from one piece.",
     answer:
-      "Small Runs are Look Here Studio's short-batch pieces, cut and pressed by hand in Bengaluru: 4-inch [mirror discs](/objects/mirror-discs) that throw their design across a wall ({price:mirror-discs}), vinyl-on-fabric art in a frame or without ({price:trying-to-get-my-shit-together} and {price:spotted-cat-fabric-panel}), gold [elephant wall decals](/objects/gold-elephant-decals) ({price:gold-elephant-decals}), vinyl tees and printed fridge magnets. Designs run for a short while, and any of them can be made as a [custom order](/custom), from a single piece up.",
+      "Small Runs are Look Here Studio's short-batch pieces, cut and pressed by hand in Bengaluru: 4-inch [mirror discs](/objects/mirror-discs) that throw their design across a wall ({price:mirror-discs}), framed vinyl-on-fabric art ({price:trying-to-get-my-shit-together}), gold [elephant wall decals](/objects/gold-elephant-decals) ({price:gold-elephant-decals}), vinyl tees and printed fridge magnets. Designs run for a short while, and any of them can be made as a [custom order](/custom), from a single piece up.",
     sections: [
       {
         heading: "What is a small run?",
@@ -48,7 +48,7 @@ export const categories: Category[] = [
       { q: "Can I get a design in another colour or size?", a: "Usually, yes. [Tell us what you want](/custom) and we'll confirm the price before you pay." },
       { q: "Will a design come back once it retires?", a: "Sometimes, in a new run, but we can't promise it. If you want something that has retired, ask and we'll tell you." },
     ],
-    products: ["mirror-discs", "trying-to-get-my-shit-together", "spotted-cat-fabric-panel", "gold-elephant-decals", "carnation-wall-stickers", "photo-frame-magnet", "swan-revolt-magnet", "no-insurance-magnet", "starry-road-trip-magnet", "tee-space-cat", "tee-uninstall-astrology", "tee-only-fans"],
+    products: ["mirror-discs", "trying-to-get-my-shit-together", "gold-elephant-decals", "carnation-wall-stickers", "photo-frame-magnet", "swan-revolt-magnet", "no-insurance-magnet", "starry-road-trip-magnet", "tee-space-cat", "tee-uninstall-astrology", "tee-only-fans"],
     posts: ["why-we-make-things-in-small-runs"],
   },
   {

@@ -84,8 +84,6 @@ export const IMAGES: Record<string, ImageMeta> = {
   "/small-runs/mirror-light-cast.webp": { alt: "The Bitches Are People Too mirror disc casting its heart-shaped design as a patch of light on a wall" },
   "/small-runs/fabric-frame-a4.webp": { alt: "Trying To Get My Shit Together: white vinyl cat on a litter tray over block-printed fabric, in a white frame on a pink wall" },
   "/small-runs/fabric-frame-a4-detail.webp": { alt: "Close-up of the white vinyl cat and lettering over rust and ochre block-printed fabric" },
-  "/small-runs/fabric-panel-leopard.webp": { alt: "Spotted Cat Fabric Panel: cream vinyl cat with cut-out spots over a teal, orange and pink floral print, leaning on a stone counter" },
-  "/small-runs/fabric-panel-leopard-detail.webp": { alt: "Close-up of the cream cat with spots cut out over the floral fabric" },
   "/small-runs/decal-elephants.webp": { alt: "Small gold elephant decals scattered across a pale wall above a bathroom mirror" },
   "/small-runs/decal-elephants-detail.webp": { alt: "Close-up of gold vinyl elephant decals on a wall" },
   "/small-runs/tee-space-cat-hanging.webp": { alt: "Space Cat Tee: white print of a cat in an astronaut suit beside Japanese lettering on a black oversized tee hanging on a wooden wardrobe" },

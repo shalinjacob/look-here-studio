@@ -183,32 +183,6 @@ const framedFabric: Product = {
   seoDescription: "A white vinyl cat-and-litter-tray design over block-printed fabric, framed under glass (A4). Small run, made to order in Bengaluru, {price}.",
 };
 
-const leopardPanel: Product = {
-  ...base,
-  id: "s03",
-  objectNumber: "S03",
-  slug: "spotted-cat-fabric-panel",
-  name: "Spotted Cat Fabric Panel",
-  shortName: "Spotted Cat",
-  category: "Small Run",
-  subcategory: "Fabric panel",
-  tags: ["wall", "art"],
-  occasions: ["housewarming", "just-because"],
-  shortDescription: "A cream cat, with holes where its spots should be, over a big floral print.",
-  description:
-    "A big, frameless fabric panel: bold floral cloth stretched over a board, with a cream cat cut out in vinyl so its spots are little windows onto the print underneath. Made for a wall that needs something loud but not a frame. The fabric is a small-run find, so yours may be a different print.",
-  material: "Printed fabric stretched over board, cut vinyl",
-  finish: "Cream metallic-sheen vinyl on printed fabric",
-  colour: "Teal, orange and pink, cream cat",
-  dimensions: "Made to size: ask us for yours",
-  price: 2499,
-  images: ["/small-runs/fabric-panel-leopard.webp", "/small-runs/fabric-panel-leopard-detail.webp"],
-  care: "Dust with a dry cloth. Don't use water on the fabric.",
-  installation: "Hangs from a single screw or leans on a shelf or console.",
-  seoTitle: "Spotted Cat Fabric Panel: Frameless Printed Fabric Wall Art",
-  seoDescription: "A cream vinyl cat over bold floral printed fabric, stretched on a board, no frame. Small run, made to order in Bengaluru, {price}.",
-};
-
 const elephantDecals: Product = {
   ...base,
   id: "s04",
@@ -415,7 +389,6 @@ const carnationDecals: Product = {
 export const smallRuns: Product[] = [
   mirrorDiscs,
   framedFabric,
-  leopardPanel,
   elephantDecals,
   carnationDecals,
   photoFrameMagnet,
