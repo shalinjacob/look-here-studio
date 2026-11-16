@@ -398,12 +398,43 @@ const carnationDecals: Product = {
   seoDescription: "A set of six 8 cm red carnation wall stickers on printed sticker vinyl. Scatter them any way you like. Small run, made to order in Bengaluru, {price}.",
 };
 
+const lotusDecals: Product = {
+  ...base,
+  id: "s16",
+  objectNumber: "S16",
+  slug: "lotus-wall-stickers",
+  name: "Lotus & Bud Wall Stickers",
+  shortName: "Lotus Stickers",
+  category: "Small Run",
+  subcategory: "Wall decal",
+  tags: ["wall"],
+  occasions: ["housewarming", "just-because"],
+  shortDescription: "Twelve blooming lotuses and twelve buds, as stickers that scatter into a block-print wall.",
+  description:
+    "A set of 24 stickers: 12 open lotus flowers and 12 closed buds, in dusty rose, coral and olive green. Stick them in a staggered grid, flower, bud, flower, and a bare wall turns into a block-print wallpaper without any paste or commitment. One set covers about 8 × 8 ft of wall at the spacing shown, or space them wider for a bigger wall.",
+  material: "Printed sticker vinyl, cut to shape",
+  finish: "Matte printed, cut to the outline",
+  colour: "Dusty rose and coral flowers, olive leaves",
+  dimensions: "Set of 24 (12 flowers + 12 buds) · covers about 8 × 8 ft",
+  price: 1999,
+  images: [
+    "/small-runs/decal-lotus-wall.webp",
+    "/small-runs/decal-lotus-pieces.webp",
+    "/small-runs/decal-lotus-layout.webp",
+  ],
+  care: "Wipe gently with a dry cloth. Test on a discreet spot first: vinyl can lift paint when removed.",
+  installation: "Stick onto clean, dry, smooth painted walls. To remove, warm with a hairdryer and peel slowly.",
+  seoTitle: "Lotus & Bud Wall Stickers: Block-Print Style Decals",
+  seoDescription: "A set of 24 lotus and bud wall stickers that cover about 8 × 8 ft in a block-print pattern. Small run, made to order in Bengaluru, {price}.",
+};
+
 /** order = order on /small-runs; the Only Fans tee goes last on purpose */
 export const smallRuns: Product[] = [
   mirrorDiscs,
   framedFabric,
   elephantDecals,
   carnationDecals,
+  lotusDecals,
   photoFrameMagnet,
   swanMagnet,
   insuranceMagnet,
