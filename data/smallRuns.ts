@@ -99,7 +99,12 @@ const uninstallAstrology = smallTee({
   name: "Uninstall Astrology",
   copy: "A round, swirly 70s lettering block that says UNINSTALL ASTROLOGY, INSTALL CRITICAL THINKING. For anyone who has ever been told Mercury is why they're like this.",
   colour: { id: "sand", label: "Sand, white print" },
-  images: ["/small-runs/tee-uninstall-astrology-detail.webp", "/small-runs/tee-uninstall-astrology.webp"],
+  images: [
+    "/small-runs/tee-uninstall-astrology-worn-bed.webp",
+    "/small-runs/tee-uninstall-astrology-hanging.webp",
+    "/small-runs/tee-uninstall-astrology-detail.webp",
+    "/small-runs/tee-uninstall-astrology.webp",
+  ],
 });
 
 const onlyFans = smallTee({
