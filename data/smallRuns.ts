@@ -458,6 +458,32 @@ const poppyDecals: Product = {
   seoDescription: "Red poppy wall stickers in three shapes that cover about 8 × 8 ft of wall in a loose meadow scatter. Small run, made to order in Bengaluru, {price}.",
 };
 
+const bowDecals: Product = {
+  ...base,
+  id: "s18",
+  objectNumber: "S18",
+  slug: "bow-wall-stickers",
+  name: "Ribbon Bow Wall Stickers",
+  shortName: "Bow Stickers",
+  category: "Small Run",
+  subcategory: "Wall decal",
+  tags: ["wall"],
+  occasions: ["housewarming", "just-because"],
+  shortDescription: "Painted ribbon bows in polka dot, gingham, stripes, florals and plain colour, as stickers you scatter on a wall.",
+  description:
+    "A set of 20 painted-look ribbon bows in five styles: blue polka dot, pink gingham, peach stripe, green with daisies, red satin and a loose orange ribbon outline. Scatter them at different heights and angles for a playful, coquette-style wall in a nursery, a girl's room, a dressing corner or above a desk. No paste, no frame, no commitment.",
+  material: "Printed sticker vinyl, cut to shape",
+  finish: "Matte printed, cut to the outline",
+  colour: "Blue, pink, peach, green, red and orange",
+  dimensions: "Set of 20 bows in assorted styles",
+  price: 1499,
+  images: ["/small-runs/decal-bows-wall.webp"],
+  care: "Wipe gently with a dry cloth. Test on a discreet spot first: vinyl can lift paint when removed.",
+  installation: "Stick onto clean, dry, smooth painted walls. To remove, warm with a hairdryer and peel slowly.",
+  seoTitle: "Ribbon Bow Wall Stickers: Coquette Bow Decals",
+  seoDescription: "A set of painted-look ribbon bow wall stickers in polka dot, gingham, stripe and floral styles. Scatter them on any wall. Small run, made to order in Bengaluru, {price}.",
+};
+
 /** order = order on /small-runs; the Only Fans tee goes last on purpose */
 export const smallRuns: Product[] = [
   mirrorDiscs,
@@ -466,6 +492,7 @@ export const smallRuns: Product[] = [
   carnationDecals,
   lotusDecals,
   poppyDecals,
+  bowDecals,
   photoFrameMagnet,
   swanMagnet,
   insuranceMagnet,
