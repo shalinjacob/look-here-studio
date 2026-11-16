@@ -89,8 +89,8 @@ const spaceCat = smallTee({
   slug: "space-cat",
   name: "Space Cat",
   copy: "A cat in a full astronaut suit floats upright, fists up, next to a column of Japanese lettering. Calm, a bit smug and entirely out of this world.",
-  colour: { id: "navy", label: "Navy, white print" },
-  images: ["/small-runs/tee-space-cat.webp"],
+  colour: { id: "black", label: "Black, white print" },
+  images: ["/small-runs/tee-space-cat-hanging.webp", "/small-runs/tee-space-cat-worn.webp"],
 });
 
 const uninstallAstrology = smallTee({
