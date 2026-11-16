@@ -330,8 +330,8 @@ const swanMagnet: Product = {
   dimensions: "15 × 10 cm",
   price: 449,
   images: [
-    "/small-runs/magnet-swan-lifestyle-note.webp",
-    "/small-runs/magnet-swan-lifestyle-close.webp",
+    "/small-runs/magnet-swan-fridge-steel.webp",
+    "/small-runs/magnet-swan-fridge-cream.webp",
     "/small-runs/magnet-swan.webp",
   ],
   process: MAGNET_PROCESS,
