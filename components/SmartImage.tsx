@@ -26,13 +26,27 @@ export default function SmartImage({
   priority = false,
 }: Props) {
   const [failed, setFailed] = useState(false);
+  // "cover" crops to fill the frame, which wrecks photos whose shape is far
+  // from the frame's (e.g. a landscape shot in a 4:5 gallery). Until we know the
+  // image's shape we show it uncropped, and only use cover when it roughly matches.
+  const [coverOk, setCoverOk] = useState(false);
   const ref = useRef<HTMLImageElement>(null);
+
+  const measure = () => {
+    const img = ref.current;
+    if (!img || !img.naturalWidth || !img.clientWidth || !img.clientHeight) return;
+    const imgRatio = img.naturalWidth / img.naturalHeight;
+    const frameRatio = img.clientWidth / img.clientHeight;
+    setCoverOk(Math.abs(imgRatio / frameRatio - 1) <= 0.2);
+  };
 
   // an error that fired before hydration has no listener yet, so check once
   useEffect(() => {
     setFailed(false);
+    setCoverOk(false);
     const img = ref.current;
     if (img && img.complete && img.naturalWidth === 0) setFailed(true);
+    else measure();
   }, [src]);
 
   if (!src || failed) return <>{fallback}</>;
@@ -43,10 +57,11 @@ export default function SmartImage({
       src={src}
       alt={alt}
       className={className}
-      style={{ width: "100%", height: "100%", objectFit: fit }}
+      style={{ width: "100%", height: "100%", objectFit: fit === "cover" && coverOk ? "cover" : "contain" }}
       loading={priority ? "eager" : "lazy"}
       fetchPriority={priority ? "high" : undefined}
       decoding="async"
+      onLoad={measure}
       onError={() => setFailed(true)}
     />
   );

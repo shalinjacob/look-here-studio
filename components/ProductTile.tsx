@@ -29,8 +29,13 @@ export default function ProductTile({
             fallback={<div className="tile__ph">{p.objectNumber}</div>}
           />
           {hoverSrc && (
-            /* eslint-disable-next-line @next/next/no-img-element */
-            <img className="tile__img tile__img--hover" src={hoverSrc} alt={altFor(hoverSrc, p.name)} loading="lazy" />
+            <SmartImage
+              src={hoverSrc}
+              alt={altFor(hoverSrc, p.name)}
+              fit="cover"
+              className="tile__img tile__img--hover"
+              fallback={null}
+            />
           )}
           <span className="tile__open" aria-hidden>
             OPEN →
