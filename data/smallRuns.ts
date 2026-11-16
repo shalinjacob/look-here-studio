@@ -471,7 +471,7 @@ const bowDecals: Product = {
   occasions: ["housewarming", "just-because"],
   shortDescription: "Painted ribbon bows in polka dot, gingham, stripes, florals and plain colour, as stickers you scatter on a wall.",
   description:
-    "A set of 24 painted-look ribbon bows in five styles: blue polka dot, pink gingham, peach stripe, green with daisies, red satin and a loose orange ribbon outline. Scatter them at different heights and angles for a playful, coquette-style wall in a nursery, a girl's room, a dressing corner or above a desk. No paste, no frame, no commitment.",
+    "A set of 24 painted-look ribbon bows in six styles: blue polka dot, pink gingham, peach stripe, green with daisies, red satin and a loose orange ribbon outline. Scatter them at different heights and angles for a playful, coquette-style wall in a nursery, a girl's room, a dressing corner or above a desk. No paste, no frame, no commitment.",
   material: "Printed sticker vinyl, cut to shape",
   finish: "Matte printed, cut to the outline",
   colour: "Blue, pink, peach, green, red and orange",
@@ -484,6 +484,32 @@ const bowDecals: Product = {
   seoDescription: "A set of painted-look ribbon bow wall stickers in polka dot, gingham, stripe and floral styles. Scatter them on any wall. Small run, made to order in Bengaluru, {price}.",
 };
 
+const cloudDecals: Product = {
+  ...base,
+  id: "s19",
+  objectNumber: "S19",
+  slug: "cloud-wall-stickers",
+  name: "Watercolour Cloud Wall Stickers",
+  shortName: "Cloud Stickers",
+  category: "Small Run",
+  subcategory: "Wall decal",
+  tags: ["wall"],
+  occasions: ["housewarming", "just-because"],
+  shortDescription: "Soft watercolour clouds in three shapes, as stickers you scatter across a wall.",
+  description:
+    "A set of 24 painted-look clouds in soft blue and cream: 8 puffy clouds (10–12 cm wide), 8 drifting clouds with long trailing tails (12–14 cm wide) and 8 curled clouds (10–12 cm wide). Scatter them at different heights and a plain wall turns into a quiet sky, in a nursery, a bedroom or above a reading corner. No paste, no frame, no commitment.",
+  material: "Printed sticker vinyl, cut to shape",
+  finish: "Matte printed watercolour, cut to the outline",
+  colour: "Soft blue and cream",
+  dimensions: "Set of 24 (8 puffy + 8 drifting + 8 curled) · each 10–14 cm wide",
+  price: 1999,
+  images: ["/small-runs/decal-clouds-wall.webp", "/small-runs/decal-clouds-pieces.webp"],
+  care: "Wipe gently with a dry cloth. Test on a discreet spot first: vinyl can lift paint when removed.",
+  installation: "Stick onto clean, dry, smooth painted walls. To remove, warm with a hairdryer and peel slowly.",
+  seoTitle: "Watercolour Cloud Wall Stickers: Soft Blue Sky Decals",
+  seoDescription: "A set of 24 watercolour cloud wall stickers in three shapes, 10–14 cm wide. Scatter them on any wall. Small run, made to order in Bengaluru, {price}.",
+};
+
 /** order = order on /small-runs; the Only Fans tee goes last on purpose */
 export const smallRuns: Product[] = [
   mirrorDiscs,
@@ -493,6 +519,7 @@ export const smallRuns: Product[] = [
   lotusDecals,
   poppyDecals,
   bowDecals,
+  cloudDecals,
   photoFrameMagnet,
   swanMagnet,
   insuranceMagnet,

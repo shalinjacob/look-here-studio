@@ -86,6 +86,8 @@ export const IMAGES: Record<string, ImageMeta> = {
   "/small-runs/fabric-frame-a4-detail.webp": { alt: "Close-up of the white vinyl cat and lettering over rust and ochre block-printed fabric" },
   "/small-runs/decal-elephants.webp": { alt: "Small gold elephant decals scattered across a pale wall above a bathroom mirror" },
   "/small-runs/decal-elephants-detail.webp": { alt: "Close-up of gold vinyl elephant decals on a wall" },
+  "/small-runs/decal-clouds-wall.webp": { alt: "Soft blue watercolour cloud wall stickers scattered across a cream wall beside a window, a wooden bench and a trailing money plant" },
+  "/small-runs/decal-clouds-pieces.webp": { alt: "The cloud sticker shapes: puffy cloud, drifting cloud and curled cloud, 8 of each, with their widths" },
   "/small-runs/decal-bows-wall.webp": { alt: "Painted ribbon bow wall stickers in blue polka dot, pink gingham, peach stripe, green floral, red and orange, scattered across a cream wall above a cane bench" },
   "/small-runs/decal-poppy-wall.webp": { alt: "Red poppy wall stickers scattered across a cream wall above a cane bench with cushions and a vase of white flowers" },
   "/small-runs/decal-poppy-pieces.webp": { alt: "The poppy sticker shapes: front-facing flower, side flower and bud, with their heights" },
