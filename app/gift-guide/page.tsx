@@ -10,7 +10,7 @@ import {
   formatPrice,
   OCCASIONS,
 } from "@/data/products";
-import { edits, editTotal } from "@/data/edits";
+import { edits, editTotal, editComingSoon } from "@/data/edits";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/gift-guide" },
@@ -172,7 +172,7 @@ export default function GiftGuidePage() {
                 <h3 className="edit__title">{e.title}</h3>
                 <p className="edit__blurb">{e.blurb}</p>
                 <div className="edit__foot">
-                  <span className="edit__total">{formatPrice(editTotal(e))}</span>
+                  <span className="edit__total">{editComingSoon(e) ? "COMING SOON" : formatPrice(editTotal(e))}</span>
                   <CTA href={`/gift-guide/edits/${e.slug}`} variant="link">SHOP THE EDIT</CTA>
                 </div>
               </div>

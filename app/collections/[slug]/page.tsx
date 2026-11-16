@@ -4,7 +4,7 @@ import ProductTile from "@/components/ProductTile";
 import CTA from "@/components/CTA";
 import Reveal from "@/components/Reveal";
 import { collections, getCollection } from "@/data/collections";
-import { getProduct, formatPrice } from "@/data/products";
+import { getProduct, formatPrice, isComingSoon } from "@/data/products";
 import { ogImage } from "@/lib/site";
 import { altFor } from "@/data/images";
 
@@ -16,7 +16,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   const c = getCollection(params.slug);
   if (!c) return { title: "Collection not found" };
   const first = getProduct(c.productSlugs[0]);
-  const description = c.seoDescription.replace("{price}", formatPrice(first?.price ?? null));
+  const description = c.seoDescription.replace("{price}", first && isComingSoon(first) ? "Coming soon" : formatPrice(first?.price ?? null));
   return {
     title: { absolute: c.seoTitle },
     description,

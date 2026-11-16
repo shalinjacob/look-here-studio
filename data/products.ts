@@ -23,7 +23,7 @@ const STD_PROCESS = [
   { step: "05", label: "PACK", note: "corners first, always" },
 ];
 
-const objects: Product[] = [
+const objectsRaw: Product[] = [
   {
     id: "p001",
     objectNumber: "001",
@@ -922,6 +922,10 @@ const objects: Product[] = [
   },
 ];
 
+/** Nov 2026: only Small Runs are on sale. Every home object is "Coming soon":
+ *  no cart, no WhatsApp ask, no price shown. To open one up, remove it from this map. */
+const objects: Product[] = objectsRaw.map((o) => ({ ...o, status: "coming-soon" as const }));
+
 /** everything we sell: home objects + small runs */
 export const products: Product[] = [...objects, ...smallRuns];
 export { smallRuns };
@@ -993,7 +997,7 @@ export const STATUS_LABEL: Record<ProductStatus, string> = {
 
 /** the badge shown next to the price */
 export function badge(p: Product): string {
-  if (p.status === "coming-soon" && p.price != null) return "We're working on this one";
+  if (p.status === "coming-soon") return "Coming soon";
   if (!isPurchasable(p)) return p.price == null ? STATUS_LABEL["coming-soon"] : STATUS_LABEL.waitlist;
   return p.custom ? "Made to order · personalised" : "Made to order";
 }
@@ -1005,7 +1009,7 @@ export function isFinalSale(p: Product): boolean {
 
 /** meta description with live values filled in from product data */
 export function metaDescription(p: Product): string {
-  return p.seoDescription.replace("{price}", formatPrice(p.price, p.currency));
+  return p.seoDescription.replace("{price}", isComingSoon(p) ? "Coming soon" : formatPrice(p.price, p.currency));
 }
 
 export const UNAVAILABLE_LINE =
@@ -1013,7 +1017,7 @@ export const UNAVAILABLE_LINE =
 
 /** a priced product we're still developing: shows the wishlist, not the cart */
 export const WORKING_ON_LINE =
-  "Still on the workbench, and we're fussing over every edge. Tell us you want one and you'll hear first.";
+  "Still in production, and we're fussing over every edge. Leave your email and you'll hear the moment it opens.";
 
 /** button copy driven entirely by status (never hardcode per page) */
 export const STATUS_CTA: Record<ProductStatus, string> = {
@@ -1032,6 +1036,16 @@ export function hasPriceRange(p: Product): boolean {
 }
 
 export const WISHLIST_CTA = "JOIN THE WISHLIST";
+
+/** not on sale yet: no cart, no WhatsApp ask, no price */
+export function isComingSoon(p: Product): boolean {
+  return p.status === "coming-soon";
+}
+
+/** what to show where a price normally goes */
+export function priceLabel(p: Product): string {
+  return isComingSoon(p) ? "COMING SOON" : formatPrice(p.price, p.currency);
+}
 
 /** can this be ordered right now? false for everything while WISHLIST_MODE is on */
 export function canOrderNow(p: Product): boolean {

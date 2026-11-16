@@ -1,9 +1,13 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import PageWaLink from "./PageWaLink";
+import { waHidden } from "@/lib/whatsapp";
 
 // Small fixed "Ask on WhatsApp" button on every page; the message follows the page.
 export default function FloatingWhatsApp() {
+  const pathname = usePathname() ?? "/";
+  if (waHidden(pathname)) return null;
   return (
     <PageWaLink className="wa-float" ariaLabel="Ask on WhatsApp">
       <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">

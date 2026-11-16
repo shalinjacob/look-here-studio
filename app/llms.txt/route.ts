@@ -1,4 +1,4 @@
-import { products, smallRuns, isPurchasable, formatPrice } from "@/data/products";
+import { products, smallRuns, isPurchasable, formatPrice, priceLabel } from "@/data/products";
 import { publishedPosts } from "@/data/journal";
 import { edits } from "@/data/edits";
 import { categories } from "@/data/categories";
@@ -18,7 +18,7 @@ export function GET() {
     .filter((p) => p.price != null && p.category !== "Small Run")
     .map(
       (p) =>
-        `- [${p.name}](${SITE_URL}/objects/${p.slug}): ${p.shortDescription} ${formatPrice(p.price, p.currency)}${p.variants?.length ? ` (${p.variants[0].note?.toLowerCase()})` : ""}. ${p.material}; ${p.dimensions}.${p.custom || p.personalise?.length ? " Personalised." : ""}${p.localOnly ? " Delivered in Bengaluru only for now." : ""}${isPurchasable(p) ? "" : " Currently on the wishlist: join it on the product page."}`
+        `- [${p.name}](${SITE_URL}/objects/${p.slug}): ${p.shortDescription} ${priceLabel(p) === "COMING SOON" ? "Coming soon, not yet available to order" : formatPrice(p.price, p.currency)}${p.variants?.length ? ` (${p.variants[0].note?.toLowerCase()})` : ""}. ${p.material}; ${p.dimensions}.${p.custom || p.personalise?.length ? " Personalised." : ""}${p.localOnly ? " Delivered in Bengaluru only for now." : ""}${isPurchasable(p) ? "" : " Currently on the wishlist: join it on the product page."}`
     )
     .join("\n");
 

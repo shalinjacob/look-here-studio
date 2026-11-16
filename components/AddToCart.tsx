@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useCart } from "./cart/CartContext";
-import { STATUS_CTA, WISHLIST_CTA, canOrderNow, formatPrice, hasPriceRange } from "@/data/products";
+import { STATUS_CTA, WISHLIST_CTA, canOrderNow, formatPrice, hasPriceRange, isComingSoon } from "@/data/products";
 import type { Product } from "@/lib/types";
 import { GALLERY_SHOW } from "./ProductGallery";
 import { SITE_URL } from "@/lib/site";
@@ -101,6 +101,16 @@ export default function AddToCart({ product }: { product: Product }) {
       )}
     </>
   );
+
+  if (isComingSoon(product)) {
+    return (
+      <div className="addcart-wrap">
+        <button className="cta cta--stamp addcart__btn" disabled aria-disabled="true">
+          <span className="cta__label">COMING SOON</span>
+        </button>
+      </div>
+    );
+  }
 
   if (!canBuy) {
     const selection = options

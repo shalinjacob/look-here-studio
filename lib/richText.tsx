@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getProduct, formatPrice } from "@/data/products";
+import { getProduct, formatPrice, isComingSoon } from "@/data/products";
 
 // Tiny inline formatter for editorial copy: [label](/path) links and
 // {price:slug} tokens (filled from product data so prices never drift).
@@ -7,7 +7,7 @@ import { getProduct, formatPrice } from "@/data/products";
 export function fillTokens(text: string): string {
   return text.replace(/\{price:([a-z0-9-]+)\}/g, (_, slug: string) => {
     const p = getProduct(slug);
-    return p ? formatPrice(p.price, p.currency) : "";
+    return p ? (isComingSoon(p) ? "coming soon" : formatPrice(p.price, p.currency)) : "";
   });
 }
 

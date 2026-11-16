@@ -1,5 +1,5 @@
 import { SITE_URL, WHATSAPP_NUMBER } from "@/lib/site";
-import { getProduct } from "@/data/products";
+import { getProduct, isComingSoon } from "@/data/products";
 import { getCategory } from "@/data/categories";
 import { getCollection } from "@/data/collections";
 
@@ -91,4 +91,26 @@ export function pageContext(pathname: string): PageContext {
     return { type: "listing", pageName: getCategory(parts[0])!.name, url };
   }
   return { type: "other", url };
+}
+
+/** Nov 2026: nothing but Small Runs can be asked about on WhatsApp. True on coming-soon
+ *  product pages and on listings made up only of coming-soon products. */
+export function waHidden(pathname: string): boolean {
+  const path = pathname.replace(/\/+$/, "") || "/";
+  const parts = path.split("/").filter(Boolean);
+  if (parts[0] === "objects" && parts[1]) {
+    const p = getProduct(parts[1]);
+    return !!p && isComingSoon(p);
+  }
+  if (path === "/objects") return true;
+  if (parts[0] === "collections") return true;
+  if (parts[0] === "gift-guide") return true;
+  if (parts.length === 1) {
+    const c = getCategory(parts[0]);
+    if (c) {
+      const ps = c.products.map(getProduct).filter(Boolean);
+      return ps.length > 0 && ps.every((x) => isComingSoon(x!));
+    }
+  }
+  return false;
 }

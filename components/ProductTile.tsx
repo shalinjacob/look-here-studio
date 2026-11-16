@@ -1,7 +1,7 @@
 import Link from "next/link";
 import SmartImage from "./SmartImage";
 import Reveal from "./Reveal";
-import { badge, formatPrice, isPurchasable, hasPriceRange } from "@/data/products";
+import { badge, formatPrice, isPurchasable, hasPriceRange, isComingSoon } from "@/data/products";
 import { altFor } from "@/data/images";
 import type { Product } from "@/lib/types";
 
@@ -47,7 +47,9 @@ export default function ProductTile({
           <span className="tile__cat">{p.category}</span>
           <div className="tile__foot">
             <span className="tile__price">
-              {isPurchasable(p)
+              {isComingSoon(p)
+                ? "COMING SOON"
+                : isPurchasable(p)
                 ? `${hasPriceRange(p) ? "FROM " : ""}${formatPrice(p.price, p.currency)}`
                 : p.price != null
                   ? `${formatPrice(p.price, p.currency)} · WISHLIST`

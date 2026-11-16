@@ -12,6 +12,7 @@ import {
 } from "react";
 import type { Product } from "@/lib/types";
 import { track, gaItem } from "@/lib/analytics";
+import { getProduct, isComingSoon } from "@/data/products";
 
 // ---------------------------------------------------------------------------
 // Central cart state, localStorage-backed (items + gift option). Ordering is
@@ -62,7 +63,14 @@ const useIsoLayoutEffect = typeof window !== "undefined" ? useLayoutEffect : use
 function reducer(state: CartState, action: Action): CartState {
   switch (action.type) {
     case "HYDRATE":
-      return action.state;
+      // a saved cart may hold pieces that have since gone "coming soon": drop them
+      return {
+        ...action.state,
+        lines: (action.state.lines ?? []).filter((l) => {
+          const p = getProduct(l.slug);
+          return !p || !isComingSoon(p);
+        }),
+      };
     case "ADD": {
       const id = lineId(action.line);
       const existing = state.lines.find((l) => lineId(l) === id);

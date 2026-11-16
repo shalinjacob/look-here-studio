@@ -35,6 +35,7 @@ import {
   formatPrice,
   isPurchasable,
   canOrderNow,
+  isComingSoon,
   hasPriceRange,
 } from "@/data/products";
 
@@ -66,6 +67,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
   const { prev, next } = getAdjacent(p.slug);
   const related = getRelated(p.slug, 3);
   const buyable = canOrderNow(p);
+  const soon = isComingSoon(p);
   const gallery = [...p.images, ...p.lifestyleImages];
   const faq = productFaq(p);
   const cats = categoriesFor(p.slug);
@@ -94,7 +96,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
     color: p.colour,
     brand: { "@type": "Brand", name: BRAND_NAME },
     url,
-    ...(p.price != null
+    ...(p.price != null && !soon
       ? {
           offers: {
             "@type": "Offer",
@@ -178,15 +180,14 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
           </p>
 
           <div className="pdp__statusrow">
-            <span className={`pdp__price${p.price == null ? " pdp__price--soon" : ""}`}>
-              {hasPriceRange(p) ? "FROM " : ""}
-              {formatPrice(p.price, p.currency)}
+            <span className={`pdp__price${p.price == null || soon ? " pdp__price--soon" : ""}`}>
+              {soon ? "COMING SOON" : <>{hasPriceRange(p) ? "FROM " : ""}{formatPrice(p.price, p.currency)}</>}
             </span>
-            <span className="pdp__status">{badge(p)}</span>
+            {!soon && <span className="pdp__status">{badge(p)}</span>}
           </div>
 
           <p className="pdp__lead">{p.shortDescription}</p>
-          {p.localOnly && (
+          {p.localOnly && !soon && (
             <p className="pdp__local">
               <strong>Delivering in Bengaluru only, for now.</strong>{" "}
               Outside Bengaluru?{" "}
@@ -200,13 +201,15 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
 
           <div className="pdp__actions">
             <AddToCart product={p} />
-            <WaLink
-              text={customisationMessage(p.name, p.objectNumber, url)}
-              className="cta cta--link pdp__customise"
-            >
-              <span className="cta__label">ASK FOR CUSTOMISATIONS ON WHATSAPP</span>
-              <span className="cta__arrow">→</span>
-            </WaLink>
+            {!soon && (
+              <WaLink
+                text={customisationMessage(p.name, p.objectNumber, url)}
+                className="cta cta--link pdp__customise"
+              >
+                <span className="cta__label">ASK FOR CUSTOMISATIONS ON WHATSAPP</span>
+                <span className="cta__arrow">→</span>
+              </WaLink>
+            )}
             {buyable && (
               <>
                 <p className="pdp__leadtime">{p.leadTime}</p>
@@ -288,16 +291,19 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         ) : (
           <div className="athome-empty">
             <p className="athome-empty__body">
-              Coming soon: real walls, real rooms. Got one on yours? Send us a photo and we
-              might feature it (with your permission).
+              {soon
+                ? "Coming soon: real walls, real rooms."
+                : "Coming soon: real walls, real rooms. Got one on yours? Send us a photo and we might feature it (with your permission)."}
             </p>
-            <WaLink
-              text={`Hi! Here's my ${p.name} at home:`}
-              className="cta cta--link"
-            >
-              <span className="cta__label">Share your wall on WhatsApp</span>
-              <span className="cta__arrow">→</span>
-            </WaLink>
+            {!soon && (
+              <WaLink
+                text={`Hi! Here's my ${p.name} at home:`}
+                className="cta cta--link"
+              >
+                <span className="cta__label">Share your wall on WhatsApp</span>
+                <span className="cta__arrow">→</span>
+              </WaLink>
+            )}
           </div>
         )}
       </section>
@@ -311,8 +317,14 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         <div className="pdp__goodtoknow">
           <div><p className="gtk__label">Care</p><p className="gtk__value">{p.care}</p></div>
           <div><p className="gtk__label">{p.sizeChart ? "Print placement" : "Installation"}</p><p className="gtk__value">{p.installation}</p></div>
+          {soon ? (
+            <div><p className="gtk__label">Availability</p><p className="gtk__value">Coming soon. It can&apos;t be ordered or requested on WhatsApp yet. Leave your email below and we&apos;ll tell you when it opens.</p></div>
+          ) : (
+            <>
           <div><p className="gtk__label">Shipping &amp; returns</p><p className="gtk__value">Shipping across India, charged by pincode. {p.leadTime}. {returnsLine} <Link href="/shipping-returns">Shipping &amp; returns →</Link></p></div>
           <div><p className="gtk__label">Customisation</p><p className="gtk__value">{p.sizeChart ? "Need a bulk run for a team or event? Ask us on WhatsApp." : p.variantLegend && !p.variantLegend.includes("COLOUR") ? "Available in the designs shown above." : "Colour and size tweaks possible on made-to-order pieces — just ask."}</p></div>
+            </>
+          )}
         </div>
       </section>
 

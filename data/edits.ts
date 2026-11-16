@@ -1,4 +1,4 @@
-import { getProduct, products } from "./products";
+import { getProduct, products, isComingSoon } from "./products";
 import type { Product } from "@/lib/types";
 
 // ---------------------------------------------------------------------------
@@ -46,3 +46,6 @@ export const editProducts = (e: GiftEdit): Product[] =>
   e.slugs.map((s) => getProduct(s)).filter((p): p is Product => !!p);
 
 export const editTotal = (e: GiftEdit) => editProducts(e).reduce((n, p) => n + (p.price ?? 0), 0);
+
+/** every piece in the edit is still coming soon */
+export const editComingSoon = (e: GiftEdit) => editProducts(e).every(isComingSoon);

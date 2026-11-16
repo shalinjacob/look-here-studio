@@ -1,5 +1,5 @@
 import type { Product, QA } from "@/lib/types";
-import { formatPrice, isFinalSale } from "./products";
+import { formatPrice, isFinalSale, isComingSoon } from "./products";
 import { plain } from "@/lib/richText";
 import { WISHLIST_MODE } from "@/lib/site";
 
@@ -56,6 +56,18 @@ function teeFaq(p: Product): QA[] {
 }
 
 export function productFaq(p: Product): QA[] {
+  if (isComingSoon(p)) {
+    return [
+      {
+        q: `Can I order ${nm(p)} yet?`,
+        a: `Not yet. ${p.name} is coming soon and can't be ordered or requested on WhatsApp for now. Leave your email on this page and we'll tell you when it opens. Our Small Runs, like fridge magnets, tees and mirror discs, are available to order now.`,
+      },
+      {
+        q: `What ${is(p)} ${nm(p)} made of, and how big ${is(p)} ${it(p)}?`,
+        a: `${p.material}. ${p.dimensions}. ${p.description.split(". ")[0]}.`,
+      },
+    ];
+  }
   if (p.sizeChart === "tee") return teeFaq(p);
   const faq: QA[] = [
     {

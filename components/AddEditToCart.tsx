@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useCart } from "./cart/CartContext";
-import { formatPrice, isPurchasable } from "@/data/products";
+import { formatPrice, isPurchasable, isComingSoon } from "@/data/products";
 import type { Product } from "@/lib/types";
 
 // Adds every product in a gift edit as its own normal cart line. If the edit
@@ -40,7 +40,7 @@ export default function AddEditToCart({
           >
             {choose.options.map((o) => (
               <option key={o.slug} value={o.slug}>
-                {o.name} · {formatPrice(o.price)}
+                {o.name}{isComingSoon(o) ? " · coming soon" : ` · ${formatPrice(o.price)}`}
               </option>
             ))}
           </select>
@@ -48,7 +48,7 @@ export default function AddEditToCart({
       )}
       {ready.length === 0 ? (
         <p className="editbuy__total">
-          We&apos;re working on these ones. Open any piece above to join its wishlist and you&apos;ll hear first.
+          These pieces are coming soon. They can&apos;t be ordered yet.
         </p>
       ) : (
       <>
