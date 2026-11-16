@@ -116,6 +116,19 @@ const onlyFans = smallTee({
   images: ["/small-runs/tee-only-fans.webp"],
 });
 
+const achaariGend = smallTee({
+  n: 15,
+  slug: "achaari-gend",
+  name: "Achaari Gend",
+  copy: "A clay jar of tangy mango pickle with a neon pickleball resting against it. The tee for people who play hard and still smuggle achaar into the bag.",
+  colour: { id: "black", label: "Black, full-colour print" },
+  images: [
+    "/small-runs/tee-achaari-gend-worn.webp",
+    "/small-runs/tee-achaari-gend-bench.webp",
+    "/small-runs/tee-achaari-gend-hanging.webp",
+  ],
+});
+
 // ---- objects --------------------------------------------------------------
 
 const mirrorDiscs: Product = {
@@ -398,4 +411,5 @@ export const smallRuns: Product[] = [
   spaceCat,
   uninstallAstrology,
   onlyFans,
+  achaariGend,
 ];
