@@ -428,6 +428,36 @@ const lotusDecals: Product = {
   seoDescription: "A set of 24 lotus and bud wall stickers that cover about 8 × 8 ft in a block-print pattern. Small run, made to order in Bengaluru, {price}.",
 };
 
+const poppyDecals: Product = {
+  ...base,
+  id: "s17",
+  objectNumber: "S17",
+  slug: "poppy-wall-stickers",
+  name: "Poppy Wall Stickers",
+  shortName: "Poppy Stickers",
+  category: "Small Run",
+  subcategory: "Wall decal",
+  tags: ["wall"],
+  occasions: ["housewarming", "just-because"],
+  shortDescription: "Red poppies on slim green stems, in three shapes, as stickers you scatter across a wall.",
+  description:
+    "A set of red poppy stickers in three shapes: 8 front-facing flowers, 6 side-on flowers and a handful of buds, each on its own slim green stem. Scatter them loosely, at different heights, and a plain wall turns into a wild meadow without paste or commitment. One set covers about 8 × 8 ft of wall at the spacing shown, or space them wider for a bigger wall.",
+  material: "Printed sticker vinyl, cut to shape",
+  finish: "Matte printed, cut to the outline",
+  colour: "Red poppies, olive green stems",
+  dimensions: "Flowers 12–14 cm, side flowers 10–12 cm, buds 8–10 cm tall · covers about 8 × 8 ft",
+  price: 1999,
+  images: [
+    "/small-runs/decal-poppy-wall.webp",
+    "/small-runs/decal-poppy-pieces.webp",
+    "/small-runs/decal-poppy-layout.webp",
+  ],
+  care: "Wipe gently with a dry cloth. Test on a discreet spot first: vinyl can lift paint when removed.",
+  installation: "Stick onto clean, dry, smooth painted walls. To remove, warm with a hairdryer and peel slowly.",
+  seoTitle: "Poppy Wall Stickers: Red Floral Meadow Decals",
+  seoDescription: "Red poppy wall stickers in three shapes that cover about 8 × 8 ft of wall in a loose meadow scatter. Small run, made to order in Bengaluru, {price}.",
+};
+
 /** order = order on /small-runs; the Only Fans tee goes last on purpose */
 export const smallRuns: Product[] = [
   mirrorDiscs,
@@ -435,6 +465,7 @@ export const smallRuns: Product[] = [
   elephantDecals,
   carnationDecals,
   lotusDecals,
+  poppyDecals,
   photoFrameMagnet,
   swanMagnet,
   insuranceMagnet,
