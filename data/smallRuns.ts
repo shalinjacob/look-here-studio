@@ -361,8 +361,8 @@ const insuranceMagnet: Product = {
   dimensions: "15 × 10 cm",
   price: 449,
   images: [
-    "/small-runs/magnet-insurance-lifestyle-note.webp",
-    "/small-runs/magnet-insurance-lifestyle-close.webp",
+    "/small-runs/magnet-insurance-fridge-list.webp",
+    "/small-runs/magnet-insurance-fridge-steel.webp",
     "/small-runs/magnet-insurance.webp",
   ],
   process: MAGNET_PROCESS,
