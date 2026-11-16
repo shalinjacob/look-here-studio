@@ -8,7 +8,7 @@ export default function MadeHere() {
     <section className="section" id="made-here" aria-label="Made here">
       <div className="wrap">
         <div className="slabel">
-          <span>06 / MADE HERE</span>
+          <span>07 / MADE HERE</span>
           <span className="slabel__note">REAL PEOPLE.<br />ACTUAL HANDS.<br />BRIGHTER SPACES.</span>
         </div>
 

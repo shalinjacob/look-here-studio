@@ -1,6 +1,7 @@
 import CTA from "../CTA";
 
 // 01 / HERO — big editorial statement with product images embedded in the type.
+// Leads with Small Runs (the range that is available now).
 // The single logo lives in the nav (animated, top-centre); the hero leads with
 // the headline, as in the reference.
 
@@ -9,22 +10,22 @@ export default function Hero() {
     <section className="hero" aria-label="Look Here Studio">
       <div className="wrap">
         <h1 className="hero__head">
-          OBJECTS FOR{" "}
+          SMALL RUNS FOR{" "}
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img className="hero__inline hero__inline--tall" src="/objects/hero-mirror.webp" width={251} height={360} fetchPriority="high" alt="Pink Wavy Mirror: organic wavy-edged mirror in a hot-pink frame" />{" "}
-          WALLS, TABLES,{" "}
+          <img className="hero__inline hero__inline--magnet" src="/small-runs/hero-magnet-insurance.webp" width={700} height={469} fetchPriority="high" alt="You Have A Life, But No Insurance fridge magnet: a pop-art salesman pointing at you" />{" "}
+          FRIDGES, WALLS,{" "}
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img className="hero__inline hero__inline--wide" src="/objects/hero-coasters.webp" width={360} height={338} fetchPriority="high" alt="Patterned Coasters: wavy-edged resin coasters in bright patterns" />{" "}
-          SHELVES AND EVERYWHERE{" "}
+          <img className="hero__inline hero__inline--magnet" src="/small-runs/hero-magnet-swan.webp" width={700} height={473} fetchPriority="high" alt="Long Live The Swan Revolt fridge magnet: an outraged swan with its wings spread" />{" "}
+          TEES AND DESKS{" "}
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img className="hero__inline" src="/objects/hero-lamp.webp" width={247} height={298} fetchPriority="high" alt="Sculptural pink acrylic lamp with glowing gourd-shaped cut-outs" />{" "}
+          <img className="hero__inline hero__inline--strip" src="/small-runs/hero-magnet-roadtrip.webp" width={700} height={241} fetchPriority="high" alt="Starry Road to Manichithrathzhu fridge magnet: three travellers in a red convertible under a swirling starry sky" />{" "}
           THAT COULD USE A LITTLE MORE YOU.
         </h1>
 
         <div className="hero__foot">
           <div className="hero__ctas">
-            <CTA href="/objects" variant="stamp">SHOP OBJECTS</CTA>
-            <CTA href="/collections/editions" variant="link">SEE THE EDITIONS</CTA>
+            <CTA href="/small-runs" variant="stamp">SHOP SMALL RUNS</CTA>
+            <CTA href="/custom" variant="link">ORDER A CUSTOM ONE</CTA>
           </div>
           <div className="hero__aside">
             COLOUR

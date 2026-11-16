@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Hero from "@/components/sections/Hero";
+import SmallRunsFeature from "@/components/sections/SmallRunsFeature";
 import WhyLookHere from "@/components/sections/WhyLookHere";
 import ObjectsPreview from "@/components/sections/ObjectsPreview";
 import MadeHere from "@/components/sections/MadeHere";
@@ -58,6 +59,7 @@ export default function HomePage() {
     <>
       <JsonLd data={orgLd} />
       <Hero />
+      <SmallRunsFeature />
       <WhyLookHere />
       <CurrentDrop />
       <NewObjects />

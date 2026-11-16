@@ -1,13 +1,13 @@
 import CTA from "../CTA";
 import Reveal from "../Reveal";
 
-// 02 / WHY LOOK HERE
+// 03 / WHY LOOK HERE
 export default function WhyLookHere() {
   return (
     <section className="section" id="why" aria-label="Why Look Here">
       <div className="wrap">
         <div className="slabel">
-          <span>02 / WHY LOOK HERE</span>
+          <span>03 / WHY LOOK HERE</span>
           <span className="slabel__note">A SMALL STUDIO<br />FOR A BRIGHTER HOME.</span>
         </div>
 

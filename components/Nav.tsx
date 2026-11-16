@@ -7,8 +7,8 @@ import { useCart } from "./cart/CartContext";
 import AnimatedLogo from "./AnimatedLogo";
 
 const SHOP = [
-  { href: "/objects", label: "OBJECTS" },
   { href: "/small-runs", label: "SMALL RUNS" },
+  { href: "/objects", label: "OBJECTS" },
   { href: "/custom", label: "CUSTOM" },
   { href: "/gift-guide", label: "GIFTS" },
 ];
