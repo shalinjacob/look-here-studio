@@ -192,7 +192,7 @@ input { font: inherit; }
 .hero__inline { display: inline-block; vertical-align: middle; height: 0.92em; width: auto; margin: 0 0.1em; transform: translateY(-0.06em); filter: drop-shadow(0 10px 16px rgba(0,0,0,.16)); }
 .hero__inline--tall { height: 1.15em; transform: translateY(-0.02em); }
 .hero__inline--wide { height: 0.8em; }
-.hero__inline--print { height: 1.05em; transform: translateY(-0.04em) rotate(-5deg); box-shadow: 0 10px 16px rgba(0,0,0,.18); filter: none; }
+.hero__inline--poppy { height: 1.1em; transform: translateY(-0.04em) rotate(8deg); }
 .hero__inline--magnet { height: 0.72em; transform: translateY(-0.1em) rotate(3deg); box-shadow: 0 10px 16px rgba(0,0,0,.18); filter: none; }
 .hero__inline--frame { height: 1.2em; transform: translateY(-0.02em) rotate(-3deg); box-shadow: 0 10px 18px rgba(0,0,0,.2); filter: none; }
 .hero__inline--tee { height: 0.95em; transform: translateY(0.02em) rotate(4deg); box-shadow: 0 10px 16px rgba(0,0,0,.18); filter: none; }
