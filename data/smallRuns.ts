@@ -510,6 +510,50 @@ const cloudDecals: Product = {
   seoDescription: "A set of 24 watercolour cloud wall stickers in three shapes, 10–14 cm wide. Scatter them on any wall. Small run, made to order in Bengaluru, {price}.",
 };
 
+const POSTER_PROCESS: ProcessStep[] = [
+  { step: "01", label: "DESIGN", note: "block-print florals and the quote, laid out" },
+  { step: "02", label: "PRINT", note: "colour-printed on A4 paper" },
+  { step: "03", label: "TRIM", note: "cut clean to size" },
+  { step: "04", label: "FRAME", note: "fitted in a thin wood frame, if you choose one" },
+  { step: "05", label: "PACK", note: "flat and protected" },
+];
+
+const outrageousPoster: Product = {
+  ...base,
+  id: "s20",
+  objectNumber: "S20",
+  slug: "outrageous-quote-poster",
+  name: "Darling, You Can Be Outrageous Quote Print",
+  shortName: "Outrageous Print",
+  category: "Small Run",
+  subcategory: "Quote print",
+  tags: ["wall", "frame", "art"],
+  occasions: ["just-because", "housewarming"],
+  shortDescription: "A pink block-print floral A4 poster that says: you can be whatever you want, as long as you're outrageous.",
+  description:
+    "A pink Indian block-print floral pattern around a cream label that reads: DARLING, YOU CAN BE WHATEVER YOU WANT TO BE AS LONG AS YOU'RE OUTRAGEOUS. Choose the print on its own to frame or stick up yourself, or have it fitted in a thin wood frame, ready to hang. A4 size, for a bedroom, a kid's room, a dressing corner or above a desk.",
+  material: "Colour print on A4 paper, optional thin wood frame",
+  finish: "Printed, with a thin natural-wood frame if chosen",
+  colour: "Pink, cream and deep green",
+  dimensions: "A4 (21 × 29.7 cm)",
+  price: 599,
+  images: [
+    "/small-runs/poster-outrageous-bedroom.webp",
+    "/small-runs/poster-outrageous-living.webp",
+    "/small-runs/poster-outrageous-art.webp",
+  ],
+  variantLegend: "CHOOSE YOUR VERSION",
+  variants: [
+    { id: "print", label: "PRINT ONLY", note: "A4 print, unframed", price: 599, image: "/small-runs/poster-outrageous-art.webp" },
+    { id: "framed", label: "PRINT + THIN FRAME", note: "A4 print in a thin wood frame", price: 899, image: "/small-runs/poster-outrageous-living.webp" },
+  ],
+  process: POSTER_PROCESS,
+  care: "Keep out of direct sunlight and away from damp so the colours don't fade. Dust the frame with a dry cloth.",
+  installation: "Frame it, tape it or pin it up. A framed one hangs from a single nail or screw, or leans on a shelf.",
+  seoTitle: "Darling, You Can Be Outrageous: Pink Floral Quote Print",
+  seoDescription: "A pink block-print floral A4 quote print: you can be whatever you want, as long as you're outrageous. Print only or with a thin frame. Small run, made to order in Bengaluru, {price}.",
+};
+
 /** order = order on /small-runs; the Only Fans tee goes last on purpose */
 export const smallRuns: Product[] = [
   mirrorDiscs,
@@ -520,6 +564,7 @@ export const smallRuns: Product[] = [
   poppyDecals,
   bowDecals,
   cloudDecals,
+  outrageousPoster,
   photoFrameMagnet,
   swanMagnet,
   insuranceMagnet,
