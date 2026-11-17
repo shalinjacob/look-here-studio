@@ -12,7 +12,7 @@ export default function Hero() {
         <h1 className="hero__head">
           SMALL RUNS{" "}
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img className="hero__inline hero__inline--disc" src="/small-runs/hero-mirror-disc.webp" width={600} height={600} fetchPriority="high" alt="Light-cast mirror disc with a red vinyl flower design" />{" "}
+          <img className="hero__inline hero__inline--print" src="/small-runs/hero-quote-print.webp" width={699} height={990} fetchPriority="high" alt="Pink floral quote print reading Darling, you can be outrageous" />{" "}
           FOR FRIDGES,{" "}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img className="hero__inline hero__inline--magnet" src="/small-runs/hero-magnet-insurance.webp" width={700} height={469} fetchPriority="high" alt="You Have A Life, But No Insurance fridge magnet: a pop-art salesman pointing at you" />{" "}
