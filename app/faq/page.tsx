@@ -37,7 +37,7 @@ export default function FaqPage() {
 
         <p className="catlinks" style={{ marginTop: "clamp(40px,6vw,64px)" }}>
           Shop by category:{" "}
-          {categories.map((c, i) => (
+          {categories.filter((c) => !c.parent).map((c, i) => (
             <span key={c.slug}>
               {i > 0 && " · "}
               <Link href={`/${c.slug}`}>{c.name}</Link>

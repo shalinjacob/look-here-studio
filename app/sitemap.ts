@@ -3,7 +3,7 @@ import { products } from "@/data/products";
 import { collections } from "@/data/collections";
 import { publishedPosts } from "@/data/journal";
 import { edits } from "@/data/edits";
-import { categories } from "@/data/categories";
+import { categories, categoryPath } from "@/data/categories";
 import { SITE_URL as BASE } from "@/lib/site";
 
 // Indexable pages only. The feed and draft journal posts are deliberately left out.
@@ -15,7 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
   return [
     ...staticRoutes.map((r) => ({ url: `${BASE}${r}`, lastModified: now, priority: r === "" ? 1 : 0.8 })),
-    ...categories.map((c) => ({ url: `${BASE}/${c.slug}`, lastModified: now, priority: 0.8 })),
+    ...categories.map((c) => ({ url: `${BASE}${categoryPath(c)}`, lastModified: now, priority: 0.8 })),
     ...collections.map((c) => ({ url: `${BASE}/collections/${c.slug}`, lastModified: now, priority: 0.7 })),
     ...edits.map((e) => ({ url: `${BASE}/gift-guide/edits/${e.slug}`, lastModified: now, priority: 0.6 })),
     ...products.map((p) => ({ url: `${BASE}/objects/${p.slug}`, lastModified: now, priority: 0.6 })),

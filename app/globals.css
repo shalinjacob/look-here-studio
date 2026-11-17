@@ -122,6 +122,9 @@ input { font: inherit; }
 .nav__shopmenu::before { content: ""; position: absolute; left: 0; right: 0; top: -12px; height: 12px; }
 .nav__shop.is-open .nav__shopmenu { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
 .nav__shopmenu .nav__link { white-space: nowrap; justify-self: start; }
+.nav__shopitem { display: grid; gap: 10px; }
+.nav__shopmenu .nav__link--sub { padding-left: 14px; font-size: .92em; opacity: .75; }
+.nav__shopmenu .nav__link--sub:hover, .nav__shopmenu .nav__link--sub[aria-current="page"] { opacity: 1; }
 .nav__mobile-cta { display: none; }
 
 /* mobile menu */
@@ -912,6 +915,7 @@ input { font: inherit; }
 }
 .mobilemenu__link { padding-inline: 0; text-align: left; }
 .mobilemenu__link--sub { padding-left: 16px; }
+.mobilemenu__link--sub2 { padding-left: 36px; font-size: clamp(16px, 4.6vw, 20px); color: var(--muted); }
 
 /* phones: captions sit under their image instead of on top of the art; fewer stray notes */
 @media (max-width: 560px) {

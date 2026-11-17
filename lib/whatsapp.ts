@@ -1,6 +1,6 @@
 import { SITE_URL, WHATSAPP_NUMBER } from "@/lib/site";
 import { getProduct, isComingSoon } from "@/data/products";
-import { getCategory } from "@/data/categories";
+import { getCategory, getSubCategory } from "@/data/categories";
 import { getCollection } from "@/data/collections";
 
 // ONE place that builds every wa.me link on the site.
@@ -87,6 +87,10 @@ export function pageContext(pathname: string): PageContext {
     const c = getCollection(parts[1]);
     return { type: "listing", pageName: `the ${c ? titleCase(c.name.toLowerCase()) : titleCase(parts[1])} collection`, url };
   }
+  if (parts[0] === "small-runs" && parts.length === 2) {
+    const sc = getSubCategory(parts[0], parts[1]);
+    if (sc) return { type: "listing", pageName: sc.name, url };
+  }
   if (parts.length === 1 && getCategory(parts[0])) {
     return { type: "listing", pageName: getCategory(parts[0])!.name, url };
   }
@@ -105,8 +109,8 @@ export function waHidden(pathname: string): boolean {
   if (path === "/objects") return true;
   if (parts[0] === "collections") return true;
   if (parts[0] === "gift-guide") return true;
-  if (parts.length === 1) {
-    const c = getCategory(parts[0]);
+  if (parts.length === 1 || parts.length === 2) {
+    const c = parts.length === 2 ? getSubCategory(parts[0], parts[1]) : getCategory(parts[0]);
     if (c) {
       const ps = c.products.map(getProduct).filter(Boolean);
       return ps.length > 0 && ps.every((x) => isComingSoon(x!));

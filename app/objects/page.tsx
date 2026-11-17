@@ -25,7 +25,7 @@ export default function ObjectsPage() {
 
       <nav className="catnav" aria-label="Shop by category">
         <span className="catnav__label">SHOP BY CATEGORY</span>
-        {categories.map((c) => (
+        {categories.filter((c) => !c.parent).map((c) => (
           <Link key={c.slug} href={`/${c.slug}`} className="catnav__link">{c.name}</Link>
         ))}
       </nav>

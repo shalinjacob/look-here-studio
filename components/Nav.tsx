@@ -13,6 +13,14 @@ const SHOP = [
   { href: "/gift-guide", label: "GIFTS" },
 ];
 
+// Shown under SMALL RUNS in the SHOP menu (desktop dropdown + mobile menu).
+const SMALL_RUNS_SUB = [
+  { href: "/small-runs/wall-decals", label: "WALL DECALS" },
+  { href: "/small-runs/art", label: "ART" },
+  { href: "/small-runs/fridge-magnets", label: "FRIDGE MAGNETS" },
+  { href: "/small-runs/tees", label: "TEES" },
+];
+
 const AFTER_SHOP = [
   { href: "/why-look-here", label: "WHY LOOK HERE" },
   { href: "/journal", label: "JOURNAL" },
@@ -45,6 +53,12 @@ export default function Nav() {
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
   const inShop = SHOP.some((l) => isActive(l.href)) || pathname.startsWith("/collections");
+
+  const subLink = (l: { href: string; label: string }) => (
+    <Link key={l.href} href={l.href} className="nav__link nav__link--sub" aria-current={pathname === l.href ? "page" : undefined}>
+      {l.label}
+    </Link>
+  );
 
   const link = (l: { href: string; label: string }) => (
     <Link key={l.href} href={l.href} className="nav__link" aria-current={isActive(l.href) ? "page" : undefined}>
@@ -102,7 +116,12 @@ export default function Nav() {
                 SHOP <span className="nav__caret" aria-hidden>▾</span>
               </button>
               <div className="nav__shopmenu" id="nav-shop-menu">
-                {SHOP.map(link)}
+                {SHOP.map((l) => (
+                  <span key={l.href} className="nav__shopitem">
+                    {link(l)}
+                    {l.href === "/small-runs" && SMALL_RUNS_SUB.map(subLink)}
+                  </span>
+                ))}
               </div>
             </div>
             {AFTER_SHOP.map(link)}
@@ -124,9 +143,17 @@ export default function Nav() {
           <Link href="/" className="mobilemenu__link">HOME</Link>
           <span className="mobilemenu__group">SHOP</span>
           {SHOP.map((l) => (
-            <Link key={l.href} href={l.href} className="mobilemenu__link mobilemenu__link--sub">
-              {l.label}
-            </Link>
+            <span key={l.href} style={{ display: "contents" }}>
+              <Link href={l.href} className="mobilemenu__link mobilemenu__link--sub">
+                {l.label}
+              </Link>
+              {l.href === "/small-runs" &&
+                SMALL_RUNS_SUB.map((s) => (
+                  <Link key={s.href} href={s.href} className="mobilemenu__link mobilemenu__link--sub2">
+                    {s.label}
+                  </Link>
+                ))}
+            </span>
           ))}
           {AFTER_SHOP.map((l) => (
             <Link key={l.href} href={l.href} className="mobilemenu__link">

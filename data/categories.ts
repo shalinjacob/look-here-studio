@@ -9,6 +9,7 @@ import type { QA } from "@/lib/types";
 
 export interface Category {
   slug: string;
+  parent?: string; // slug of a top-level category; page lives at /<parent>/<slug>
   name: string; // H1 + nav label
   metaTitle: string;
   metaDescription: string;
@@ -227,7 +228,80 @@ export const categories: Category[] = [
     products: ["acrylic-lamp", "patterned-coasters", "x-plus-o"],
     posts: ["coasters-deserve-better", "brass-gets-better-when-you-ignore-it", "acrylic-is-not-plastic"],
   },
+  {
+    slug: "wall-decals",
+    parent: "small-runs",
+    name: "Wall decals",
+    metaTitle: "Vinyl Wall Decals & Wall Stickers, Made in Bengaluru | Look Here Studio",
+    metaDescription:
+      "Hand-cut vinyl wall decals: gold elephants and flower wall stickers (carnation, lotus, poppy, bow, cloud). Made to order in Bengaluru, shipping across India.",
+    answer:
+      "Look Here Studio's wall decals are cut from vinyl on our cutting machine, weeded by hand and packed ready to stick: [gold elephants](/objects/gold-elephant-decals) ({price:gold-elephant-decals}) and a set of flower and shape wall stickers. Made to order in Bengaluru, and any design can be made as a [custom order](/custom).",
+    sections: [
+      {
+        heading: "Can I get a decal in another colour or size?",
+        paras: ["Usually, yes. [Tell us what you want](/custom) and we'll confirm the price before you pay."],
+      },
+    ],
+    faq: [
+      { q: "Will decals damage my wall paint?", a: "Vinyl decals are made to be removed, but results depend on the paint and how long they've been up. Stick them on a clean, dry, smooth wall." },
+      { q: "Are wall decals made to order?", a: "Yes, dispatched within 10 working days. See [shipping and returns](/shipping-returns)." },
+    ],
+    products: ["gold-elephant-decals", "carnation-wall-stickers", "lotus-wall-stickers", "poppy-wall-stickers", "bow-wall-stickers", "cloud-wall-stickers"],
+    posts: ["why-we-make-things-in-small-runs"],
+  },
+  {
+    slug: "art",
+    parent: "small-runs",
+    name: "Art",
+    metaTitle: "Small-Run Art: Mirror Discs, Framed Fabric & Quote Prints | Look Here Studio",
+    metaDescription:
+      "Short-batch art made by hand in Bengaluru: light-casting mirror discs, framed vinyl-on-fabric art and an outrageous quote poster. Custom versions from one piece.",
+    answer:
+      "Small-run art from Look Here Studio: 4-inch [mirror discs](/objects/mirror-discs) that throw their design across a wall ({price:mirror-discs}), framed vinyl-on-fabric art ({price:trying-to-get-my-shit-together}) and a quote poster. Made by hand in short batches in Bengaluru; ask for a [custom version](/custom) from a single piece.",
+    sections: [],
+    faq: [
+      { q: "Can I get my own artwork made?", a: "Yes. [Send us your design](/custom) and we'll confirm the price before you pay." },
+    ],
+    products: ["mirror-discs", "trying-to-get-my-shit-together", "outrageous-quote-poster"],
+    posts: ["why-we-make-things-in-small-runs"],
+  },
+  {
+    slug: "fridge-magnets",
+    parent: "small-runs",
+    name: "Fridge magnets",
+    metaTitle: "Printed Fridge Magnets & Photo Frame Magnets | Look Here Studio",
+    metaDescription:
+      "Printed fridge magnets from Look Here Studio: a photo-strip frame magnet in Indian textile borders, plus Swan Revolt, No Insurance and Starry Road Trip. Made in Bengaluru.",
+    answer:
+      "Look Here Studio's fridge magnets are printed on rigid magnet sheet: the [Photo Strip Frame Magnet](/objects/photo-frame-magnet) in Indian textile borders ({price:photo-frame-magnet}), plus [Swan Revolt](/objects/swan-revolt-magnet), [No Insurance](/objects/no-insurance-magnet) and [Starry Road Trip](/objects/starry-road-trip-magnet). Made in short batches in Bengaluru.",
+    sections: [],
+    faq: [
+      { q: "Does the photo frame magnet come with a photo?", a: "No, the frame is sold empty. Slide in your own photo-booth style strip." },
+    ],
+    products: ["photo-frame-magnet", "swan-revolt-magnet", "no-insurance-magnet", "starry-road-trip-magnet"],
+    posts: ["why-we-make-things-in-small-runs"],
+  },
+  {
+    slug: "tees",
+    parent: "small-runs",
+    name: "Tees",
+    metaTitle: "Oversized Vinyl Tees, Small Runs | Look Here Studio",
+    metaDescription:
+      "Heat-pressed vinyl print tees on oversized cotton, made in small runs in Bengaluru: Space Cat, Uninstall Astrology, Only Fans and Achaari Gend. Sizes XS to XXL.",
+    answer:
+      "Look Here Studio's small-run tees are heat-pressed vinyl prints on oversized cotton, XS to XXL: [Space Cat](/objects/tee-space-cat), [Uninstall Astrology](/objects/tee-uninstall-astrology), [Only Fans](/objects/tee-only-fans) and [Achaari Gend](/objects/tee-achaari-gend). Made in short batches, so a design can retire. Want your own print? [Ask for a custom tee](/custom).",
+    sections: [],
+    faq: [
+      { q: "How do I wash a vinyl tee?", a: "Inside out in cold water on a gentle cycle. Don't bleach or tumble dry, and don't iron directly on the print." },
+      { q: "What sizes do the tees come in?", a: "XS to XXL, in an oversized fit. See the [size guide](/size-guide)." },
+    ],
+    products: ["tee-space-cat", "tee-uninstall-astrology", "tee-only-fans", "tee-achaari-gend"],
+    posts: ["why-we-make-things-in-small-runs"],
+  },
 ];
 
-export const getCategory = (slug: string) => categories.find((c) => c.slug === slug);
-export const categoriesFor = (productSlug: string) => categories.filter((c) => c.products.includes(productSlug));
+export const categoryPath = (c: Category) => (c.parent ? `/${c.parent}/${c.slug}` : `/${c.slug}`);
+export const getCategory = (slug: string) => categories.find((c) => c.slug === slug && !c.parent);
+export const getSubCategory = (parent: string, slug: string) => categories.find((c) => c.parent === parent && c.slug === slug);
+export const categoriesFor = (productSlug: string) => categories.filter((c) => !c.parent && c.products.includes(productSlug));

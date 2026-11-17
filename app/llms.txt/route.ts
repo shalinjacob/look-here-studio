@@ -1,7 +1,7 @@
 import { products, smallRuns, isPurchasable, formatPrice, priceLabel } from "@/data/products";
 import { publishedPosts } from "@/data/journal";
 import { edits } from "@/data/edits";
-import { categories } from "@/data/categories";
+import { categories, categoryPath } from "@/data/categories";
 import { SITE_URL, BRAND_NAME, EMAIL, INSTAGRAM_URL, WISHLIST_MODE } from "@/lib/site";
 import { plain } from "@/lib/richText";
 
@@ -41,7 +41,7 @@ export function GET() {
 
 ## Categories
 
-${categories.map((c) => `- [${c.name}](${SITE_URL}/${c.slug}): ${plain(c.answer)}`).join("\n")}
+${categories.map((c) => `- [${c.name}](${SITE_URL}${categoryPath(c)}): ${plain(c.answer)}`).join("\n")}
 
 ## Objects
 
