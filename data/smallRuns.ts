@@ -368,6 +368,36 @@ const roadTripMagnet: Product = {
   seoDescription: "A slim rigid fridge magnet: three travellers in a red convertible under a swirling starry sky. Small run, made to order in Bengaluru, {price}.",
 };
 
+const cherryMagnet: Product = {
+  ...base,
+  id: "s21",
+  objectNumber: "S21",
+  slug: "cherry-bomb-magnet",
+  name: "Cherry Bomb Magnet",
+  shortName: "Cherry Bomb",
+  category: "Small Run",
+  subcategory: "Magnet",
+  tags: ["art"],
+  occasions: ["just-because"],
+  shortDescription: "Two glossy cherries and a CHERRY BOMB banner, in the style of a vintage fruit-crate label.",
+  description:
+    "Two plump red cherries bursting out of a yellow starburst, with CHERRY BOMB lettered across a cream banner and a little firecracker spark beside it. Bold reds, turquoise and yellow, in the style of an old fruit-crate label. A long, slim 15 × 5 cm fridge magnet printed on a rigid magnet sheet. Small run, so it may retire when the batch is done.",
+  material: "Printed on a rigid magnet sheet",
+  finish: "Colour print, square-cut",
+  colour: "Red, turquoise and yellow",
+  dimensions: "15 × 5 cm",
+  price: 349,
+  images: [
+    "/small-runs/magnet-cherry-fridge-white.webp",
+    "/small-runs/magnet-cherry-fridge-steel.webp",
+  ],
+  process: MAGNET_PROCESS,
+  care: "Wipe with a dry cloth. Keep away from water.",
+  installation: "Sticks to any steel or iron surface, like a fridge door.",
+  seoTitle: "Cherry Bomb: Vintage-Label Fridge Magnet",
+  seoDescription: "A slim 15 × 5 cm rigid fridge magnet: two cherries and a CHERRY BOMB banner in vintage fruit-label style. Small run, made to order in Bengaluru, {price}.",
+};
+
 const carnationDecals: Product = {
   ...base,
   id: "s14",
@@ -569,6 +599,7 @@ export const smallRuns: Product[] = [
   swanMagnet,
   insuranceMagnet,
   roadTripMagnet,
+  cherryMagnet,
   spaceCat,
   uninstallAstrology,
   onlyFans,
