@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { cutOutPet } from "@/lib/petCutout";
 
 // Live "how it will look" preview for the custom pet-parent tee. The text is
 // real SVG, so it updates as the customer types. The sample dog is shown until
@@ -29,6 +30,11 @@ const DOG = { x: 277, y: 140, w: 610, h: 1000 };
 export default function PetTeePreview({ name, who }: { name: string; who: string }) {
   const [photo, setPhoto] = useState<string | null>(null);
   const urlRef = useRef<string | null>(null);
+  const cutRef = useRef<string | null>(null);
+  // the pet cut out of the photo (null = not found / still working)
+  const [cut, setCut] = useState<string | null>(null);
+  const [busy, setBusy] = useState(false);
+  const [missed, setMissed] = useState(false);
   // framing controls for the customer's photo (zoom 1-4x, pan in % of the frame)
   const [zoom, setZoom] = useState(1.6);
   const [panX, setPanX] = useState(0);
@@ -36,22 +42,58 @@ export default function PetTeePreview({ name, who }: { name: string; who: string
 
   useEffect(() => () => {
     if (urlRef.current) URL.revokeObjectURL(urlRef.current);
+    if (cutRef.current) URL.revokeObjectURL(cutRef.current);
   }, []);
+
+  function dropCut() {
+    if (cutRef.current) URL.revokeObjectURL(cutRef.current);
+    cutRef.current = null;
+    setCut(null);
+    setMissed(false);
+  }
 
   function onFile(e: React.ChangeEvent<HTMLInputElement>) {
     const f = e.target.files?.[0];
     if (!f || !f.type.startsWith("image/")) return;
     if (urlRef.current) URL.revokeObjectURL(urlRef.current);
     urlRef.current = URL.createObjectURL(f);
-    setPhoto(urlRef.current);
-    setZoom(1.6);
+    const mine = urlRef.current;
+    dropCut();
+    setPhoto(mine);
+    setZoom(1);
     setPanX(0);
     setPanY(0);
+    setBusy(true);
+    cutOutPet(mine)
+      .then((u) => {
+        if (urlRef.current !== mine) {
+          if (u) URL.revokeObjectURL(u);
+          return;
+        }
+        if (u) {
+          cutRef.current = u;
+          setCut(u);
+        } else {
+          setMissed(true);
+          setZoom(1.6);
+        }
+      })
+      .catch(() => {
+        if (urlRef.current === mine) {
+          setMissed(true);
+          setZoom(1.6);
+        }
+      })
+      .finally(() => {
+        if (urlRef.current === mine) setBusy(false);
+      });
   }
 
   function clearPhoto() {
     if (urlRef.current) URL.revokeObjectURL(urlRef.current);
     urlRef.current = null;
+    dropCut();
+    setBusy(false);
     setPhoto(null);
   }
 
@@ -70,7 +112,7 @@ export default function PetTeePreview({ name, who }: { name: string; who: string
     <div className="petprev">
       <div className="petprev__head">
         <span>LIVE PREVIEW</span>
-        <span>{typed ? "YOURS" : "SAMPLE"}</span>
+        <span>{busy ? "FINDING YOUR PET…" : typed ? "YOURS" : "SAMPLE"}</span>
       </div>
       <div className="petprev__stage">
         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -97,7 +139,18 @@ export default function PetTeePreview({ name, who }: { name: string; who: string
               {line}
             </text>
           ))}
-          {photo ? (
+          {photo && cut ? (
+            <image
+              href={cut}
+              x={DOG.x}
+              y={DOG.y}
+              width={DOG.w}
+              height={DOG.h}
+              preserveAspectRatio="xMidYMid meet"
+              transform={`translate(${DOG.x + DOG.w / 2 + (panX / 100) * DOG.w} ${DOG.y + DOG.h / 2 + (panY / 100) * DOG.h}) scale(${zoom}) translate(${-(DOG.x + DOG.w / 2)} ${-(DOG.y + DOG.h / 2)})`}
+              style={{ filter: "grayscale(1) contrast(1.15) brightness(1.05)" }}
+            />
+          ) : photo && !busy ? (
             <>
               <defs>
                 <radialGradient id="petfade" cx="50%" cy="50%" r="50%">
@@ -121,7 +174,7 @@ export default function PetTeePreview({ name, who }: { name: string; who: string
                 />
               </g>
             </>
-          ) : (
+          ) : photo ? null : (
             <image href={SAMPLE_DOG} x={DOG.x} y={DOG.y} width={DOG.w} height={DOG.h} />
           )}
         </svg>
@@ -154,9 +207,13 @@ export default function PetTeePreview({ name, who }: { name: string; who: string
           </label>
         </div>
       )}
+      {missed && (
+        <small className="petprev__note">We couldn&apos;t spot your pet automatically, so the whole photo is shown. We&apos;ll cut your pet out properly before printing.</small>
+      )}
       <small className="petprev__note">
-        A rough preview. We cut your pet out and finish it in black and white, and send you a proof on
-        WhatsApp before anything is printed. Your photo stays on your device until you send it to us.
+        A rough preview: we pick out your pet's face and chest automatically, in black and white. We finish the
+        cut-out by hand and send you a proof on WhatsApp before anything is printed. Your photo stays on your
+        device until you send it to us.
       </small>
     </div>
   );
