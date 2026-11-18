@@ -131,45 +131,6 @@ const achaariGend = smallTee({
 
 // ---- objects --------------------------------------------------------------
 
-const mirrorDiscs: Product = {
-  ...base,
-  id: "s01",
-  objectNumber: "S01",
-  slug: "mirror-discs",
-  name: "Light-Cast Mirror Disc",
-  shortName: "Mirror Disc",
-  category: "Small Run",
-  subcategory: "Mirror",
-  tags: ["mirror", "art"],
-  occasions: ["just-because"],
-  shortDescription: "A small round mirror that casts its design onto the wall when the sun hits it.",
-  description:
-    "A 4-inch round mirror with the design cut from red vinyl and pressed onto the surface. It's a mirror on a shelf, and when light falls on it, it throws the design across the wall as a glowing shadow. Pick a design, or take all three. Made in a small run, so each design is only around while we're still cutting it.",
-  material: "Acrylic mirror disc, cut vinyl",
-  finish: "Red cut-vinyl design",
-  colour: "Red on mirror",
-  dimensions: "4 in (10 cm) round",
-  price: 549,
-  images: [
-    "/small-runs/mirror-bitches.webp",
-    "/small-runs/mirror-fruit-blossom.webp",
-    "/small-runs/mirror-red-bloom.webp",
-    "/small-runs/mirror-set.webp",
-    "/small-runs/mirror-light-cast.webp",
-  ],
-  variantLegend: "CHOOSE YOUR DESIGN",
-  variants: [
-    { id: "bitches", label: "BITCHES ARE PEOPLE TOO", note: "Heart + lettering", price: 549, image: "/small-runs/mirror-bitches.webp" },
-    { id: "fruit-blossom", label: "FRUIT + BLOSSOM", note: "Cherry, plum blossom, moon ring", price: 549, image: "/small-runs/mirror-fruit-blossom.webp" },
-    { id: "red-bloom", label: "RED BLOOM", note: "Single flower in a ring", price: 549, image: "/small-runs/mirror-red-bloom.webp" },
-    { id: "set-of-3", label: "SET OF 3", note: "All three designs", price: 1499, image: "/small-runs/mirror-set.webp" },
-  ],
-  care: "Wipe with a soft dry cloth. Don't scrub or soak: the vinyl is stuck on, not printed.",
-  installation: "Lean it on a shelf, desk or window ledge where sunlight reaches it, and the design lands on the wall opposite.",
-  seoTitle: "Light-Cast Mirror Disc: 4-Inch Vinyl Mirror That Throws Its Design on the Wall",
-  seoDescription: "A 4-inch round mirror with a red vinyl design that casts onto your wall in sunlight. Three designs or a set of three. Small run, made to order in Bengaluru, {price}.",
-};
-
 const framedFabric: Product = {
   ...base,
   id: "s02",
@@ -741,7 +702,6 @@ const catNapPrint: Product = {
 };
 
 export const smallRuns: Product[] = [
-  mirrorDiscs,
   framedFabric,
   elephantDecals,
   carnationDecals,

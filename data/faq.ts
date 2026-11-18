@@ -60,7 +60,7 @@ export function productFaq(p: Product): QA[] {
     return [
       {
         q: `Can I order ${nm(p)} yet?`,
-        a: `Not yet. ${p.name} is coming soon and can't be ordered or requested on WhatsApp for now. Leave your email on this page and we'll tell you when it opens. Our Small Runs, like fridge magnets, tees and mirror discs, are available to order now.`,
+        a: `Not yet. ${p.name} is coming soon and can't be ordered or requested on WhatsApp for now. Leave your email on this page and we'll tell you when it opens. Our Small Runs, like fridge magnets, tees and wall decals, are available to order now.`,
       },
       {
         q: `What ${is(p)} ${nm(p)} made of, and how big ${is(p)} ${it(p)}?`,

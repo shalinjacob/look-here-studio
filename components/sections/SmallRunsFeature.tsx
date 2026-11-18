@@ -8,7 +8,6 @@ const SLUGS = [
   "tee-space-cat",
   "swan-revolt-magnet",
   "starry-road-trip-magnet",
-  "mirror-discs",
   "photo-frame-magnet",
   "trying-to-get-my-shit-together",
   "gold-elephant-decals",
@@ -28,7 +27,7 @@ export default function SmallRunsFeature() {
         <div className="objects__head">
           <h2 className="objects__title">Small runs, ready to order.</h2>
           <p className="objects__intro">
-            Fridge magnets, vinyl tees, mirror discs, fabric art and wall decals, cut and
+            Fridge magnets, vinyl tees, fabric art and wall decals, cut and
             pressed by hand in short batches. A design can retire when its batch is done,
             and any of them can be made as a custom piece.
           </p>

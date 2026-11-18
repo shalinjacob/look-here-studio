@@ -49,7 +49,7 @@ ${items}
 
 ## Small runs and custom orders
 
-Pieces made by hand in short batches on the studio's cutting machine: red vinyl on 4-inch mirror discs, vinyl on block-printed fabric (framed), gold elephant wall decals, printed fridge magnets and heat-pressed vinyl tees. Designs can retire without warning. [All small runs](${SITE_URL}/small-runs). The studio also takes custom orders from a single piece up, with a quantity discount from 5 pieces: [Custom orders](${SITE_URL}/custom).
+Pieces made by hand in short batches on the studio's cutting machine: vinyl on block-printed fabric (framed), gold elephant wall decals, printed fridge magnets and heat-pressed vinyl tees. Designs can retire without warning. [All small runs](${SITE_URL}/small-runs). The studio also takes custom orders from a single piece up, with a quantity discount from 5 pieces: [Custom orders](${SITE_URL}/custom).
 
 ${smallRunLines}
 
