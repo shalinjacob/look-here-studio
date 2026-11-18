@@ -7,6 +7,7 @@ import type { Product } from "@/lib/types";
 import { GALLERY_SHOW } from "./ProductGallery";
 import { SITE_URL } from "@/lib/site";
 import { buildWhatsAppLink, WA_SELECTION_EVENT } from "@/lib/whatsapp";
+import PetTeePreview from "./PetTeePreview";
 
 /** pre-filled WhatsApp message for the wishlist: names the object, asks for name + pincode */
 function wishlistMessage(p: Product, selection?: string) {
@@ -33,7 +34,9 @@ export default function AddToCart({ product }: { product: Product }) {
   const [vid, setVid] = useState(variants[0]?.id);
   const [word, setWord] = useState("");
   const fields = product.personalise ?? [];
-  const [values, setValues] = useState<Record<string, string>>({});
+  const [values, setValues] = useState<Record<string, string>>(() =>
+    Object.fromEntries((product.personalise ?? []).map((f) => [f.id, f.defaultValue ?? ""]))
+  );
   const options = product.options ?? [];
   const [chosen, setChosen] = useState<Record<string, string>>(() =>
     Object.fromEntries(options.filter((o) => !o.required).map((o) => [o.id, o.choices[0].id]))
@@ -153,9 +156,13 @@ export default function AddToCart({ product }: { product: Product }) {
       const picked = options.map((o) => o.choices.find((c) => c.id === chosen[o.id])!);
       const colour = picked.find((c) => c.image);
       addItem(product, 1, {
-        label: picked.map((c) => c.label).join(" · "),
+        label: [
+          ...picked.map((c) => c.label),
+          ...fields.map((f) => `${f.cartLabel}: ${values[f.id].trim()}`),
+        ].join(" · "),
         price: optionPrice,
         image: colour?.image,
+        ...(fields.length > 0 ? { personalised: true } : {}),
       });
       setAdded(true);
       return;
@@ -227,6 +234,9 @@ export default function AddToCart({ product }: { product: Product }) {
       {fields.length > 0 && (
         <fieldset className="variants">
           <legend className="variants__legend">MAKE IT YOURS</legend>
+          {product.livePreview === "pet-stack" && (
+            <PetTeePreview name={values.name ?? ""} who={values.who ?? ""} />
+          )}
           {fields.map((f) => (
             <label key={f.id} className="variants__custom variants__custom--free">
               <span>{f.label}</span>
@@ -241,7 +251,7 @@ export default function AddToCart({ product }: { product: Product }) {
               />
             </label>
           ))}
-          <small className="variants__note">We&apos;ll confirm the lettering and colour with you on WhatsApp.</small>
+          <small className="variants__note">{product.livePreview ? "After you order, we'll ask you on WhatsApp for your pet's photo and send a proof before we print." : "We'll confirm the lettering and colour with you on WhatsApp."}</small>
         </fieldset>
       )}
 

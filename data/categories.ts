@@ -49,7 +49,7 @@ export const categories: Category[] = [
       { q: "Can I get a design in another colour or size?", a: "Usually, yes. [Tell us what you want](/custom) and we'll confirm the price before you pay." },
       { q: "Will a design come back once it retires?", a: "Sometimes, in a new run, but we can't promise it. If you want something that has retired, ask and we'll tell you." },
     ],
-    products: ["trying-to-get-my-shit-together", "gold-elephant-decals", "carnation-wall-stickers", "lotus-wall-stickers", "poppy-wall-stickers", "bow-wall-stickers", "cloud-wall-stickers", "rainbow-wall-stickers", "scalloped-flower-wall-stickers", "outrageous-quote-poster", "chilli-jar-print", "cat-nap-print", "two-chillies-print", "spilled-peppercorns-print", "photo-frame-magnet", "swan-revolt-magnet", "no-insurance-magnet", "starry-road-trip-magnet", "cherry-bomb-magnet", "oval-photo-frame-magnet", "tee-space-cat", "tee-uninstall-astrology", "tee-only-fans", "tee-achaari-gend"],
+    products: ["trying-to-get-my-shit-together", "gold-elephant-decals", "carnation-wall-stickers", "lotus-wall-stickers", "poppy-wall-stickers", "bow-wall-stickers", "cloud-wall-stickers", "rainbow-wall-stickers", "scalloped-flower-wall-stickers", "outrageous-quote-poster", "chilli-jar-print", "cat-nap-print", "two-chillies-print", "spilled-peppercorns-print", "photo-frame-magnet", "swan-revolt-magnet", "no-insurance-magnet", "starry-road-trip-magnet", "cherry-bomb-magnet", "oval-photo-frame-magnet", "tee-space-cat", "tee-uninstall-astrology", "tee-only-fans", "tee-achaari-gend", "tee-custom-pet-parent"],
     posts: ["why-we-make-things-in-small-runs"],
   },
   {
@@ -288,7 +288,7 @@ export const categories: Category[] = [
     name: "Tees",
     metaTitle: "Oversized Vinyl Tees, Small Runs | Look Here Studio",
     metaDescription:
-      "Heat-pressed vinyl print tees on oversized cotton, made in small runs in Bengaluru: Space Cat, Uninstall Astrology, Only Fans and Achaari Gend. Sizes XS to XXL.",
+      "Heat-pressed vinyl print tees on oversized cotton, made in small runs in Bengaluru: Space Cat, Uninstall Astrology, Only Fans, Achaari Gend and a custom Pet Parent tee with your pet's name and face. Sizes XS to XXL.",
     answer:
       "Look Here Studio's small-run tees are heat-pressed vinyl prints on oversized cotton, XS to XXL: [Space Cat](/objects/tee-space-cat), [Uninstall Astrology](/objects/tee-uninstall-astrology), [Only Fans](/objects/tee-only-fans) and [Achaari Gend](/objects/tee-achaari-gend). Made in short batches, so a design can retire. Want your own print? [Ask for a custom tee](/custom).",
     sections: [],
@@ -296,7 +296,7 @@ export const categories: Category[] = [
       { q: "How do I wash a vinyl tee?", a: "Inside out in cold water on a gentle cycle. Don't bleach or tumble dry, and don't iron directly on the print." },
       { q: "What sizes do the tees come in?", a: "XS to XXL, in an oversized fit. See the [size guide](/size-guide)." },
     ],
-    products: ["tee-space-cat", "tee-uninstall-astrology", "tee-only-fans", "tee-achaari-gend"],
+    products: ["tee-space-cat", "tee-uninstall-astrology", "tee-only-fans", "tee-achaari-gend", "tee-custom-pet-parent"],
     posts: ["why-we-make-things-in-small-runs"],
   },
 ];

@@ -129,6 +129,38 @@ const achaariGend = smallTee({
   ],
 });
 
+// Custom pet-parent tee: the customer's pet name + title (MOM, DAD…) is stacked four times
+// in gold with their pet on top. Live preview on the product page (PetTeePreview).
+const petParent: Product = {
+  ...smallTee({
+    n: 29,
+    slug: "custom-pet-parent",
+    name: "Custom Pet Parent",
+    copy: "Your pet's name stacked four times in gold, with your pet's face popping out over the middle. Say LUCA'S MOM, BRUNO'S DAD, or whatever you answer to at home.",
+    colour: { id: "black", label: "Black, gold print" },
+    images: [
+      "/small-runs/tee-pet-parent-worn.webp",
+      "/small-runs/tee-pet-parent-flat.webp",
+      "/small-runs/tee-pet-parent-art.webp",
+    ],
+  }),
+  name: "Custom Pet Parent Tee",
+  shortName: "Pet Parent Tee",
+  occasions: ["just-because"],
+  shortDescription: "An oversized black tee with your pet's name stacked in gold and your pet's face over the middle.",
+  description:
+    "Your pet's name stacked four times in gold capitals, with your pet's face popping out over the middle in black and white. Type the name and a title (MOM, DAD, whatever you answer to) and the preview on this page shows how the lettering will look. After you order, send us your pet's photo on WhatsApp: we cut your pet out, finish it in black and white and send you a proof to approve before we print. Heat-pressed vinyl on an oversized black cotton tee, made to order. Personalised, so it can't be returned.",
+  custom: true,
+  livePreview: "pet-stack",
+  personalise: [
+    { id: "name", label: "YOUR PET'S NAME", cartLabel: "Pet name", placeholder: "e.g. Luca", maxLength: 12 },
+    { id: "who", label: "WHO ARE YOU? (MOM, DAD, NANI…)", cartLabel: "Title", placeholder: "MOM", maxLength: 10, defaultValue: "MOM" },
+  ],
+  seoTitle: "Custom Pet Parent Tee: Your Pet's Name and Face on a Black Tee",
+  seoDescription:
+    "A custom oversized black tee with your pet's name stacked in gold and your pet's face over the middle. See a live preview, then send us the photo. Made to order in Bengaluru, {price}.",
+};
+
 // ---- objects --------------------------------------------------------------
 
 const framedFabric: Product = {
@@ -798,4 +830,5 @@ export const smallRuns: Product[] = [
   uninstallAstrology,
   onlyFans,
   achaariGend,
+  petParent,
 ];

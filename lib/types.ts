@@ -56,6 +56,8 @@ export interface PersonaliseField {
   cartLabel: string; // "Text"
   placeholder: string;
   maxLength: number;
+  /** pre-filled value (the customer can change it) */
+  defaultValue?: string;
 }
 
 /** one choice inside a product option (e.g. "Oversized", "L", "Black") */
@@ -118,6 +120,8 @@ export interface Product {
   occasions?: Occasion[];
   /** free-text fields to fill in before adding to cart (custom text, colour…) */
   personalise?: PersonaliseField[];
+  /** show a live "how it will look" preview next to the personalise fields */
+  livePreview?: "pet-stack";
   /** the story behind the piece: shown under the description, with a link to its journal post */
   story?: { heading: string; paras: string[]; postSlug?: string };
   /** optional product video (mp4 under /public/media) */

@@ -35,6 +35,14 @@ const hand = localFont({
   preload: false,
 });
 
+// Condensed didone used only by the live pet-tee preview (OFL, Abril Fatface, latin subset).
+const stack = localFont({
+  src: [{ path: "./fonts/AbrilFatface-latin.woff", weight: "400", style: "normal" }],
+  variable: "--stack",
+  display: "swap",
+  preload: false,
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
@@ -76,7 +84,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${display.variable} ${mono.variable} ${hand.variable}`}>
+    <html lang="en" className={`${display.variable} ${mono.variable} ${hand.variable} ${stack.variable}`}>
       <head>
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-7HJT24Y1QS" />
         <script

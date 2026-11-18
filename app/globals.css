@@ -1038,3 +1038,16 @@ input { font: inherit; }
 .customsteps strong { font-family: var(--display); font-weight: 700; font-size: 18px; color: var(--ink); }
 .customsteps p { margin: 4px 0 0; }
 @media (max-width: 560px) { .customsample { grid-template-columns: 1fr; } .customsample img { max-width: 260px; } }
+
+/* live pet-tee preview (PetTeePreview) */
+.petprev { margin: 4px 0 14px; max-width: 460px; display: flex; flex-direction: column; gap: 8px; }
+.petprev__head { display: flex; justify-content: space-between; font-family: var(--mono); font-size: 11px; letter-spacing: .12em; color: var(--muted); }
+.petprev__stage { position: relative; width: 100%; aspect-ratio: 1 / 1; overflow: hidden; background: #cfc5b6; }
+.petprev__tee { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.petprev__print { position: absolute; display: block; overflow: visible; }
+.petprev__photo { display: flex; gap: 10px; align-items: center; }
+.petprev__pick { font-family: var(--mono); font-size: 11px; letter-spacing: .12em; padding: 9px 12px; border: 1px solid var(--ink); cursor: pointer; color: var(--ink); }
+.petprev__pick input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.petprev__pick:focus-within { outline: 2px solid var(--ink); outline-offset: 2px; }
+.petprev__clear { font-family: var(--mono); font-size: 11px; letter-spacing: .12em; background: none; border: 0; color: var(--muted); text-decoration: underline; cursor: pointer; }
+.petprev__note { font-size: 11px; letter-spacing: .02em; color: var(--muted); line-height: 1.5; }
