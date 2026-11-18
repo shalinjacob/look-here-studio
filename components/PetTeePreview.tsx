@@ -29,6 +29,10 @@ const DOG = { x: 268, y: 135, w: 630, h: 1013 };
 export default function PetTeePreview({ name, who }: { name: string; who: string }) {
   const [photo, setPhoto] = useState<string | null>(null);
   const urlRef = useRef<string | null>(null);
+  // framing controls for the customer's photo (zoom 1-4x, pan in % of the frame)
+  const [zoom, setZoom] = useState(1.6);
+  const [panX, setPanX] = useState(0);
+  const [panY, setPanY] = useState(0);
 
   useEffect(() => () => {
     if (urlRef.current) URL.revokeObjectURL(urlRef.current);
@@ -40,6 +44,9 @@ export default function PetTeePreview({ name, who }: { name: string; who: string
     if (urlRef.current) URL.revokeObjectURL(urlRef.current);
     urlRef.current = URL.createObjectURL(f);
     setPhoto(urlRef.current);
+    setZoom(1.6);
+    setPanX(0);
+    setPanY(0);
   }
 
   function clearPhoto() {
@@ -94,23 +101,25 @@ export default function PetTeePreview({ name, who }: { name: string; who: string
             <>
               <defs>
                 <radialGradient id="petfade" cx="50%" cy="50%" r="50%">
-                  <stop offset="70%" stopColor="#fff" />
+                  <stop offset="86%" stopColor="#fff" />
                   <stop offset="100%" stopColor="#000" />
                 </radialGradient>
                 <mask id="petmask" maskUnits="userSpaceOnUse" x={DOG.x} y={DOG.y} width={DOG.w} height={DOG.h}>
                   <ellipse cx={DOG.x + DOG.w / 2} cy={DOG.y + DOG.h / 2} rx={DOG.w / 2} ry={DOG.h / 2} fill="url(#petfade)" />
                 </mask>
               </defs>
-              <image
-                href={photo}
-                x={DOG.x}
-                y={DOG.y}
-                width={DOG.w}
-                height={DOG.h}
-                preserveAspectRatio="xMidYMid slice"
-                mask="url(#petmask)"
-                style={{ filter: "grayscale(1) contrast(1.15)" }}
-              />
+              <g mask="url(#petmask)">
+                <image
+                  href={photo}
+                  x={DOG.x}
+                  y={DOG.y}
+                  width={DOG.w}
+                  height={DOG.h}
+                  preserveAspectRatio="xMidYMid slice"
+                  transform={`translate(${DOG.x + DOG.w / 2 + (panX / 100) * DOG.w} ${DOG.y + DOG.h / 2 + (panY / 100) * DOG.h}) scale(${zoom}) translate(${-(DOG.x + DOG.w / 2)} ${-(DOG.y + DOG.h / 2)})`}
+                  style={{ filter: "grayscale(1) contrast(1.15) brightness(1.05)" }}
+                />
+              </g>
             </>
           ) : (
             <image href={SAMPLE_DOG} x={DOG.x} y={DOG.y} width={DOG.w} height={DOG.h} />
@@ -129,6 +138,22 @@ export default function PetTeePreview({ name, who }: { name: string; who: string
           </button>
         )}
       </div>
+      {photo && (
+        <div className="petprev__frame">
+          <label>
+            <span>ZOOM</span>
+            <input type="range" min={1} max={4} step={0.05} value={zoom} onChange={(e) => setZoom(+e.target.value)} />
+          </label>
+          <label>
+            <span>LEFT / RIGHT</span>
+            <input type="range" min={-60} max={60} step={1} value={panX} onChange={(e) => setPanX(+e.target.value)} />
+          </label>
+          <label>
+            <span>UP / DOWN</span>
+            <input type="range" min={-60} max={60} step={1} value={panY} onChange={(e) => setPanY(+e.target.value)} />
+          </label>
+        </div>
+      )}
       <small className="petprev__note">
         A rough preview. We cut your pet out and finish it in black and white, and send you a proof on
         WhatsApp before anything is printed. Your photo stays on your device until you send it to us.

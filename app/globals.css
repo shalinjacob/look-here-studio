@@ -1051,3 +1051,6 @@ input { font: inherit; }
 .petprev__pick:focus-within { outline: 2px solid var(--ink); outline-offset: 2px; }
 .petprev__clear { font-family: var(--mono); font-size: 11px; letter-spacing: .12em; background: none; border: 0; color: var(--muted); text-decoration: underline; cursor: pointer; }
 .petprev__note { font-size: 11px; letter-spacing: .02em; color: var(--muted); line-height: 1.5; }
+.petprev__frame { display: grid; gap: 8px; }
+.petprev__frame label { display: grid; grid-template-columns: 96px 1fr; align-items: center; gap: 10px; font-family: var(--mono); font-size: 11px; letter-spacing: .12em; color: var(--muted); }
+.petprev__frame input[type="range"] { width: 100%; accent-color: var(--ink); }
