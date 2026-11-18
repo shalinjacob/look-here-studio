@@ -545,6 +545,32 @@ const bowDecals: Product = {
   seoDescription: "A set of painted-look ribbon bow wall stickers in polka dot, gingham, stripe and floral styles. Scatter them on any wall. Small run, made to order in Bengaluru, {price}.",
 };
 
+const rainbowDecals: Product = {
+  ...base,
+  id: "s23",
+  objectNumber: "S23",
+  slug: "rainbow-wall-stickers",
+  name: "Watercolour Rainbow Wall Stickers",
+  shortName: "Rainbow Stickers",
+  category: "Small Run",
+  subcategory: "Wall decal",
+  tags: ["wall"],
+  occasions: ["housewarming", "just-because"],
+  shortDescription: "Eleven soft watercolour rainbows, each different, as stickers you scatter across a wall.",
+  description:
+    "A set of 11 painted-look rainbows in soft pinks, mustard, sage, dusty blue and lilac. No two are alike: one has daisies, one has leafy sprigs, one has hearts, one has gingham, two sit on little clouds, one has a scalloped edge and one has stars. Scatter them at different heights and a plain wall turns into a gentle, happy corner for a nursery, a kid's room or above a reading nook. No paste, no frame, no commitment.",
+  material: "Printed sticker vinyl, cut to shape",
+  finish: "Matte printed watercolour, cut to the outline",
+  colour: "Soft pinks, mustard, sage, dusty blue and lilac",
+  dimensions: "Set of 11 rainbows, each a different design",
+  price: 399,
+  images: ["/small-runs/decal-rainbows-wall.webp", "/small-runs/decal-rainbows-pieces.webp"],
+  care: "Wipe gently with a dry cloth. Test on a discreet spot first: vinyl can lift paint when removed.",
+  installation: "Stick onto clean, dry, smooth painted walls. To remove, warm with a hairdryer and peel slowly.",
+  seoTitle: "Watercolour Rainbow Wall Stickers: Set of 11 Decals",
+  seoDescription: "A set of 11 different watercolour rainbow wall stickers for a nursery or kid's room. Scatter them on any wall. Small run, made to order in Bengaluru, {price}.",
+};
+
 const cloudDecals: Product = {
   ...base,
   id: "s19",
@@ -625,6 +651,7 @@ export const smallRuns: Product[] = [
   poppyDecals,
   bowDecals,
   cloudDecals,
+  rainbowDecals,
   outrageousPoster,
   photoFrameMagnet,
   swanMagnet,

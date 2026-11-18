@@ -49,7 +49,7 @@ export const categories: Category[] = [
       { q: "Can I get a design in another colour or size?", a: "Usually, yes. [Tell us what you want](/custom) and we'll confirm the price before you pay." },
       { q: "Will a design come back once it retires?", a: "Sometimes, in a new run, but we can't promise it. If you want something that has retired, ask and we'll tell you." },
     ],
-    products: ["mirror-discs", "trying-to-get-my-shit-together", "gold-elephant-decals", "carnation-wall-stickers", "lotus-wall-stickers", "poppy-wall-stickers", "bow-wall-stickers", "cloud-wall-stickers", "outrageous-quote-poster", "photo-frame-magnet", "swan-revolt-magnet", "no-insurance-magnet", "starry-road-trip-magnet", "cherry-bomb-magnet", "oval-photo-frame-magnet", "tee-space-cat", "tee-uninstall-astrology", "tee-only-fans", "tee-achaari-gend"],
+    products: ["mirror-discs", "trying-to-get-my-shit-together", "gold-elephant-decals", "carnation-wall-stickers", "lotus-wall-stickers", "poppy-wall-stickers", "bow-wall-stickers", "cloud-wall-stickers", "rainbow-wall-stickers", "outrageous-quote-poster", "photo-frame-magnet", "swan-revolt-magnet", "no-insurance-magnet", "starry-road-trip-magnet", "cherry-bomb-magnet", "oval-photo-frame-magnet", "tee-space-cat", "tee-uninstall-astrology", "tee-only-fans", "tee-achaari-gend"],
     posts: ["why-we-make-things-in-small-runs"],
   },
   {
@@ -234,7 +234,7 @@ export const categories: Category[] = [
     name: "Wall decals",
     metaTitle: "Vinyl Wall Decals & Wall Stickers, Made in Bengaluru | Look Here Studio",
     metaDescription:
-      "Hand-cut vinyl wall decals: gold elephants and flower wall stickers (carnation, lotus, poppy, bow, cloud). Made to order in Bengaluru, shipping across India.",
+      "Hand-cut vinyl wall decals: gold elephants and flower wall stickers (carnation, lotus, poppy, bow, cloud, rainbow). Made to order in Bengaluru, shipping across India.",
     answer:
       "Look Here Studio's wall decals are cut from vinyl on our cutting machine, weeded by hand and packed ready to stick: [gold elephants](/objects/gold-elephant-decals) ({price:gold-elephant-decals}) and a set of flower and shape wall stickers. Made to order in Bengaluru, and any design can be made as a [custom order](/custom).",
     sections: [
@@ -247,7 +247,7 @@ export const categories: Category[] = [
       { q: "Will decals damage my wall paint?", a: "Vinyl decals are made to be removed, but results depend on the paint and how long they've been up. Stick them on a clean, dry, smooth wall." },
       { q: "Are wall decals made to order?", a: "Yes, dispatched within 10 working days. See [shipping and returns](/shipping-returns)." },
     ],
-    products: ["gold-elephant-decals", "carnation-wall-stickers", "lotus-wall-stickers", "poppy-wall-stickers", "bow-wall-stickers", "cloud-wall-stickers"],
+    products: ["gold-elephant-decals", "carnation-wall-stickers", "lotus-wall-stickers", "poppy-wall-stickers", "bow-wall-stickers", "cloud-wall-stickers", "rainbow-wall-stickers"],
     posts: ["why-we-make-things-in-small-runs"],
   },
   {
