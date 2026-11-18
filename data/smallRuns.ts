@@ -668,6 +668,42 @@ const outrageousPoster: Product = {
 };
 
 /** order = order on /small-runs; the Only Fans tee goes last on purpose */
+const chilliJarPrint: Product = {
+  ...base,
+  id: "s25",
+  objectNumber: "S25",
+  slug: "chilli-jar-print",
+  name: "Chilli Jar Print",
+  shortName: "Chilli Jar",
+  category: "Small Run",
+  subcategory: "Art print",
+  tags: ["wall", "frame", "art"],
+  occasions: ["just-because", "housewarming"],
+  shortDescription: "A jar of dried red chillies, printed in two colours, red and blue, on cream paper.",
+  description:
+    "A glass jar packed with dried red chillies, their stalks curling out of the top, with a blank paper label stuck across the front. Printed in two colours, hot red and cobalt blue, on warm cream paper, with a grainy, layered look like an old two-colour print. Choose the print on its own to frame yourself, or have it fitted in a thin white frame, ready to hang. For a kitchen, a dining nook or any wall that could use some heat.",
+  material: "Two-colour print on A4 paper, optional thin white frame",
+  finish: "Printed on cream paper, with a thin white frame if chosen",
+  colour: "Red, cobalt blue and cream",
+  dimensions: "A4 (21 × 29.7 cm)",
+  price: 599,
+  images: [
+    "/small-runs/poster-chilli-kitchen.webp",
+    "/small-runs/poster-chilli-dining.webp",
+    "/small-runs/poster-chilli-art.webp",
+  ],
+  variantLegend: "CHOOSE YOUR VERSION",
+  variants: [
+    { id: "print", label: "PRINT ONLY", note: "A4 print, unframed", price: 599, image: "/small-runs/poster-chilli-art.webp" },
+    { id: "framed", label: "PRINT + THIN FRAME", note: "A4 print in a thin white frame", price: 899, image: "/small-runs/poster-chilli-dining.webp" },
+  ],
+  process: POSTER_PROCESS,
+  care: "Keep out of direct sunlight and away from damp so the colours don't fade. Dust the frame with a dry cloth.",
+  installation: "Frame it, tape it or pin it up. A framed one hangs from a single nail or screw, or leans on a shelf.",
+  seoTitle: "Chilli Jar Print: Red and Blue Kitchen Art Print",
+  seoDescription: "A two-colour A4 print of a jar of dried red chillies, in red and cobalt blue on cream. Print only or with a thin frame. Small run, made to order in Bengaluru, {price}.",
+};
+
 export const smallRuns: Product[] = [
   mirrorDiscs,
   framedFabric,
@@ -680,6 +716,7 @@ export const smallRuns: Product[] = [
   rainbowDecals,
   scallopFlowerDecals,
   outrageousPoster,
+  chilliJarPrint,
   photoFrameMagnet,
   swanMagnet,
   insuranceMagnet,

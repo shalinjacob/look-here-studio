@@ -49,7 +49,7 @@ export const categories: Category[] = [
       { q: "Can I get a design in another colour or size?", a: "Usually, yes. [Tell us what you want](/custom) and we'll confirm the price before you pay." },
       { q: "Will a design come back once it retires?", a: "Sometimes, in a new run, but we can't promise it. If you want something that has retired, ask and we'll tell you." },
     ],
-    products: ["mirror-discs", "trying-to-get-my-shit-together", "gold-elephant-decals", "carnation-wall-stickers", "lotus-wall-stickers", "poppy-wall-stickers", "bow-wall-stickers", "cloud-wall-stickers", "rainbow-wall-stickers", "scalloped-flower-wall-stickers", "outrageous-quote-poster", "photo-frame-magnet", "swan-revolt-magnet", "no-insurance-magnet", "starry-road-trip-magnet", "cherry-bomb-magnet", "oval-photo-frame-magnet", "tee-space-cat", "tee-uninstall-astrology", "tee-only-fans", "tee-achaari-gend"],
+    products: ["mirror-discs", "trying-to-get-my-shit-together", "gold-elephant-decals", "carnation-wall-stickers", "lotus-wall-stickers", "poppy-wall-stickers", "bow-wall-stickers", "cloud-wall-stickers", "rainbow-wall-stickers", "scalloped-flower-wall-stickers", "outrageous-quote-poster", "chilli-jar-print", "photo-frame-magnet", "swan-revolt-magnet", "no-insurance-magnet", "starry-road-trip-magnet", "cherry-bomb-magnet", "oval-photo-frame-magnet", "tee-space-cat", "tee-uninstall-astrology", "tee-only-fans", "tee-achaari-gend"],
     posts: ["why-we-make-things-in-small-runs"],
   },
   {
@@ -258,12 +258,12 @@ export const categories: Category[] = [
     metaDescription:
       "Short-batch art made by hand in Bengaluru: light-casting mirror discs, framed vinyl-on-fabric art and an outrageous quote poster. Custom versions from one piece.",
     answer:
-      "Small-run art from Look Here Studio: 4-inch [mirror discs](/objects/mirror-discs) that throw their design across a wall ({price:mirror-discs}), framed vinyl-on-fabric art ({price:trying-to-get-my-shit-together}) and a quote poster. Made by hand in short batches in Bengaluru; ask for a [custom version](/custom) from a single piece.",
+      "Small-run art from Look Here Studio: 4-inch [mirror discs](/objects/mirror-discs) that throw their design across a wall ({price:mirror-discs}), framed vinyl-on-fabric art ({price:trying-to-get-my-shit-together}) a quote poster and a [chilli jar print](/objects/chilli-jar-print) ({price:chilli-jar-print}). Made by hand in short batches in Bengaluru; ask for a [custom version](/custom) from a single piece.",
     sections: [],
     faq: [
       { q: "Can I get my own artwork made?", a: "Yes. [Send us your design](/custom) and we'll confirm the price before you pay." },
     ],
-    products: ["mirror-discs", "trying-to-get-my-shit-together", "outrageous-quote-poster"],
+    products: ["mirror-discs", "trying-to-get-my-shit-together", "outrageous-quote-poster", "chilli-jar-print"],
     posts: ["why-we-make-things-in-small-runs"],
   },
   {
