@@ -599,6 +599,36 @@ const scallopFlowerDecals: Product = {
   seoDescription: "A set of 20 scalloped flower wall stickers in four designs: cosmos, daisy, tulip and black-eyed Susan. Made to order in Bengaluru, {price}.",
 };
 
+const daisyDecals: Product = {
+  ...base,
+  id: "s30",
+  objectNumber: "S30",
+  slug: "apricot-daisy-wall-stickers",
+  name: "Apricot Daisy Wall Stickers",
+  shortName: "Apricot Daisies",
+  category: "Small Run",
+  subcategory: "Wall decal",
+  tags: ["wall"],
+  occasions: ["housewarming", "just-because"],
+  shortDescription: "Twelve chunky cream daisies with apricot centres, as stickers you scatter or line up on a wall.",
+  description:
+    "A sheet of 12 flat, chunky daisies with cream petals and apricot-orange centres, each about 5 cm across and each drawn a little differently, like they were cut out by hand. Line them up in a neat grid for a wallpaper look, or scatter them for a meadow. They look best on a coloured wall: sage green, as in the photos, or blue, pink or deep brown. No paste, no frame, no commitment.",
+  material: "Printed sticker vinyl, cut to shape",
+  finish: "Matte printed colour, cut to the outline",
+  colour: "Cream petals, apricot-orange centres",
+  dimensions: "One sheet of 12 daisies (17.4 × 23.3 cm), each about 5 cm across",
+  price: 399,
+  images: [
+    "/small-runs/decal-daisies-bedroom.webp",
+    "/small-runs/decal-daisies-hallway.webp",
+    "/small-runs/decal-daisies-sheet.png",
+  ],
+  care: "Wipe gently with a dry cloth. Test on a discreet spot first: vinyl can lift paint when removed.",
+  installation: "Stick onto clean, dry, smooth painted walls. To remove, warm with a hairdryer and peel slowly.",
+  seoTitle: "Apricot Daisy Wall Stickers: Set of 12 Daisy Decals",
+  seoDescription: "A sheet of 12 cream-and-apricot daisy wall stickers, about 5 cm each. Grid them or scatter them. Made to order in Bengaluru, {price}.",
+};
+
 const cloudDecals: Product = {
   ...base,
   id: "s19",
@@ -824,6 +854,7 @@ export const smallRuns: Product[] = [
   cloudDecals,
   rainbowDecals,
   scallopFlowerDecals,
+  daisyDecals,
   outrageousPoster,
   chilliJarPrint,
   catNapPrint,
