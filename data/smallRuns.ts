@@ -213,7 +213,12 @@ const elephantDecals: Product = {
   colour: "Gold",
   dimensions: "Sheet of 25 elephants · each 4.35 × 2.94 cm",
   price: 499,
-  images: ["/small-runs/decal-elephants.webp", "/small-runs/decal-elephants-detail.webp"],
+  images: [
+    "/small-runs/decal-elephants.webp",
+    "/small-runs/decal-elephants-detail.webp",
+    "/small-runs/decal-elephants-bedroom.webp",
+    "/small-runs/decal-elephants-bedroom-2.webp",
+  ],
   care: "Wipe gently with a dry cloth.",
   installation: "Stick onto clean, dry, smooth painted walls. To remove, warm with a hairdryer and peel slowly.",
   seoTitle: "Gold Elephant Wall Decals: Vinyl Stickers",
