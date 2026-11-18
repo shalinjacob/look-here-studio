@@ -156,9 +156,8 @@ const petParent: Product = {
     { id: "name", label: "YOUR PET'S NAME", cartLabel: "Pet name", placeholder: "e.g. Luca", maxLength: 12 },
     { id: "who", label: "WHO ARE YOU? (MOM, DAD, NANI…)", cartLabel: "Title", placeholder: "MOM", maxLength: 10, defaultValue: "MOM" },
   ],
-  seoTitle: "Custom Pet Parent Tee: Your Pet's Name and Face on a Black Tee",
-  seoDescription:
-    "A custom oversized black tee with your pet's name stacked in gold and your pet's face over the middle. See a live preview, then send us the photo. Made to order in Bengaluru, {price}.",
+  seoTitle: "Custom Pet Parent Tee: Your Pet's Name and Face",
+  seoDescription: "A custom oversized black tee with your pet's name stacked in gold and your pet's face over the middle. Made to order in Bengaluru, {price}.",
 };
 
 // ---- objects --------------------------------------------------------------
@@ -429,7 +428,7 @@ const ovalFrameMagnet: Product = {
   care: "Wipe with a dry cloth. Keep away from water and from cards with magnetic strips.",
   installation: "Slide your photo in behind the oval window, then stick the magnet on any steel or iron surface, like a fridge door.",
   seoTitle: "Oval Check Photo Frame Magnet: Fridge Magnet Frame",
-  seoDescription: "An 8.8 × 12.6 cm rigid fridge magnet frame with a red, yellow and navy check border and an oval window for your photo. Small run, made to order in Bengaluru, {price}.",
+  seoDescription: "An 8.8 × 12.6 cm fridge magnet frame with a red, yellow and navy check border and an oval photo window. Made to order in Bengaluru, {price}.",
 };
 
 const carnationDecals: Product = {
@@ -597,7 +596,7 @@ const scallopFlowerDecals: Product = {
   care: "Wipe gently with a dry cloth. Test on a discreet spot first: vinyl can lift paint when removed.",
   installation: "Stick onto clean, dry, smooth painted walls. To remove, warm with a hairdryer and peel slowly.",
   seoTitle: "Scalloped Flower Wall Stickers: Miniature-Style Decals",
-  seoDescription: "A set of 20 scalloped flower wall stickers in four designs: cosmos, daisy, tulip and black-eyed Susan. Scatter them on any wall. Small run, made to order in Bengaluru, {price}.",
+  seoDescription: "A set of 20 scalloped flower wall stickers in four designs: cosmos, daisy, tulip and black-eyed Susan. Made to order in Bengaluru, {price}.",
 };
 
 const cloudDecals: Product = {
@@ -704,7 +703,7 @@ const chilliJarPrint: Product = {
   care: "Keep out of direct sunlight and away from damp so the colours don't fade. Dust the frame with a dry cloth.",
   installation: "Frame it, tape it or pin it up. A framed one hangs from a single nail or screw, or leans on a shelf.",
   seoTitle: "Chilli Jar Print: Red and Blue Kitchen Art Print",
-  seoDescription: "A two-colour A4 print of a jar of dried red chillies, in red and cobalt blue on cream. Print only or with a thin frame. Small run, made to order in Bengaluru, {price}.",
+  seoDescription: "A two-colour A4 print of a jar of dried red chillies, red and blue on cream. Print only or framed. Made to order in Bengaluru, {price}.",
 };
 
 const catNapPrint: Product = {
@@ -740,7 +739,7 @@ const catNapPrint: Product = {
   care: "Keep out of direct sunlight and away from damp so the colours don't fade. Dust the frame with a dry cloth.",
   installation: "Frame it, tape it or pin it up. A framed one hangs from a single nail or screw, or leans on a shelf.",
   seoTitle: "Cat Nap Print: Sleeping Cat Art Print in Orange and Blue",
-  seoDescription: "A two-colour A4 print of a cat asleep on a cane chair, in burnt orange and blue on cream. Print only or with a thin frame. Small run, made to order in Bengaluru, {price}.",
+  seoDescription: "A two-colour A4 print of a cat asleep on a cane chair, orange and blue on cream. Print only or framed. Made to order in Bengaluru, {price}.",
 };
 
 const twoChilliesPrint: Product = {
@@ -776,7 +775,7 @@ const twoChilliesPrint: Product = {
   care: "Keep out of direct sunlight and away from damp so the colours don't fade. Dust the frame with a dry cloth.",
   installation: "Frame it, tape it or pin it up. A framed one hangs from a single nail or screw, or leans on a shelf.",
   seoTitle: "Two Chillies Print: Red Dried Chilli Kitchen Art Print",
-  seoDescription: "A two-colour A4 print of two dried red chillies and scattered seeds, in red and plum on cream. Print only or with a thin frame. Small run, made to order in Bengaluru, {price}.",
+  seoDescription: "A two-colour A4 print of two dried red chillies and scattered seeds, red and plum on cream. Print only or framed. Made in Bengaluru, {price}.",
 };
 
 const peppercornsPrint: Product = {
@@ -812,7 +811,7 @@ const peppercornsPrint: Product = {
   care: "Keep out of direct sunlight and away from damp so the colours don't fade. Dust the frame with a dry cloth.",
   installation: "Frame it, tape it or pin it up. A framed one hangs from a single nail or screw, or leans on a shelf.",
   seoTitle: "Spilled Peppercorns Print: Red and Plum Kitchen Art Print",
-  seoDescription: "A two-colour A4 print of peppercorns spilling and bouncing across the page, in red and plum on cream. Print only or with a thin frame. Small run, made to order in Bengaluru, {price}.",
+  seoDescription: "A two-colour A4 print of peppercorns spilling across the page, red and plum on cream. Print only or framed. Made in Bengaluru, {price}.",
 };
 
 export const smallRuns: Product[] = [
