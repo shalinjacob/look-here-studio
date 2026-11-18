@@ -571,6 +571,32 @@ const rainbowDecals: Product = {
   seoDescription: "A set of 11 different watercolour rainbow wall stickers for a nursery or kid's room. Scatter them on any wall. Small run, made to order in Bengaluru, {price}.",
 };
 
+const scallopFlowerDecals: Product = {
+  ...base,
+  id: "s24",
+  objectNumber: "S24",
+  slug: "scalloped-flower-wall-stickers",
+  name: "Scalloped Flower Wall Stickers",
+  shortName: "Scalloped Flowers",
+  category: "Small Run",
+  subcategory: "Wall decal",
+  tags: ["wall"],
+  occasions: ["housewarming", "just-because"],
+  shortDescription: "Little painted flower panels with scalloped edges, as stickers you scatter across a wall.",
+  description:
+    "Small cream panels with a wavy, scalloped outline, each holding a hand-painted-look flower bunch in the style of an Indian miniature: pink cosmos, daisies, tulips and black-eyed Susans, edged in lilac, yellow or pink. Scatter them in loose rows or at random and a plain wall gets a quiet, wallpaper-like pattern, in a bedroom, behind a bed or up a hallway. No paste, no frame, no commitment.",
+  material: "Printed sticker vinyl, cut to shape",
+  finish: "Matte printed colour, cut to the scalloped outline",
+  colour: "Cream, with pink, yellow, orange and lilac flowers",
+  dimensions: "Four flower designs, each a scalloped panel",
+  price: 399,
+  images: ["/small-runs/decal-scallop-flowers-wall.webp", "/small-runs/decal-scallop-flowers-close.webp"],
+  care: "Wipe gently with a dry cloth. Test on a discreet spot first: vinyl can lift paint when removed.",
+  installation: "Stick onto clean, dry, smooth painted walls. To remove, warm with a hairdryer and peel slowly.",
+  seoTitle: "Scalloped Flower Wall Stickers: Miniature-Style Decals",
+  seoDescription: "Scalloped flower wall stickers in four designs: cosmos, daisy, tulip and black-eyed Susan. Scatter them on any wall. Small run, made to order in Bengaluru, {price}.",
+};
+
 const cloudDecals: Product = {
   ...base,
   id: "s19",
@@ -652,6 +678,7 @@ export const smallRuns: Product[] = [
   bowDecals,
   cloudDecals,
   rainbowDecals,
+  scallopFlowerDecals,
   outrageousPoster,
   photoFrameMagnet,
   swanMagnet,
