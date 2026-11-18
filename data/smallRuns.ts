@@ -701,6 +701,42 @@ const catNapPrint: Product = {
   seoDescription: "A two-colour A4 print of a cat asleep on a cane chair, in burnt orange and blue on cream. Print only or with a thin frame. Small run, made to order in Bengaluru, {price}.",
 };
 
+const twoChilliesPrint: Product = {
+  ...base,
+  id: "s27",
+  objectNumber: "S27",
+  slug: "two-chillies-print",
+  name: "Two Chillies Print",
+  shortName: "Two Chillies",
+  category: "Small Run",
+  subcategory: "Art print",
+  tags: ["wall", "frame", "art"],
+  occasions: ["just-because", "housewarming"],
+  shortDescription: "Two wrinkled dried red chillies and a scatter of seeds, printed in red and plum on cream paper.",
+  description:
+    "Two dried red chillies curling around each other, their skins creased and glossy, with a few seeds spilling between them. Printed in hot red and deep plum on warm cream paper, with a grainy, layered look like an old two-colour print. Choose the print on its own to frame yourself, or have it fitted in a thin white frame, ready to hang or lean on a shelf. For a kitchen, a dining nook or anyone who likes it hot.",
+  material: "Two-colour print on A4 paper, optional thin white frame",
+  finish: "Printed on cream paper, with a thin white frame if chosen",
+  colour: "Red, plum and cream",
+  dimensions: "A4 (21 × 29.7 cm)",
+  price: 599,
+  images: [
+    "/small-runs/poster-twochillies-kitchen.webp",
+    "/small-runs/poster-twochillies-dresser.webp",
+    "/small-runs/poster-twochillies-art.webp",
+  ],
+  variantLegend: "CHOOSE YOUR VERSION",
+  variants: [
+    { id: "print", label: "PRINT ONLY", note: "A4 print, unframed", price: 599, image: "/small-runs/poster-twochillies-art.webp" },
+    { id: "framed", label: "PRINT + THIN FRAME", note: "A4 print in a thin white frame", price: 899, image: "/small-runs/poster-twochillies-dresser.webp" },
+  ],
+  process: POSTER_PROCESS,
+  care: "Keep out of direct sunlight and away from damp so the colours don't fade. Dust the frame with a dry cloth.",
+  installation: "Frame it, tape it or pin it up. A framed one hangs from a single nail or screw, or leans on a shelf.",
+  seoTitle: "Two Chillies Print: Red Dried Chilli Kitchen Art Print",
+  seoDescription: "A two-colour A4 print of two dried red chillies and scattered seeds, in red and plum on cream. Print only or with a thin frame. Small run, made to order in Bengaluru, {price}.",
+};
+
 export const smallRuns: Product[] = [
   framedFabric,
   elephantDecals,
@@ -714,6 +750,7 @@ export const smallRuns: Product[] = [
   outrageousPoster,
   chilliJarPrint,
   catNapPrint,
+  twoChilliesPrint,
   photoFrameMagnet,
   swanMagnet,
   insuranceMagnet,
