@@ -182,7 +182,12 @@ const framedFabric: Product = {
   colour: "White on rust and ochre",
   dimensions: "A4 · frame 24 × 30 cm",
   price: 1499,
-  images: ["/small-runs/fabric-frame-a4.webp", "/small-runs/fabric-frame-a4-detail.webp"],
+  images: [
+    "/small-runs/fabric-frame-a4.webp",
+    "/small-runs/fabric-frame-a4-detail.webp",
+    "/small-runs/fabric-frame-a4-console.webp",
+    "/small-runs/fabric-frame-a4-hallway.webp",
+  ],
   care: "Dust the glass with a dry cloth. Keep out of direct sunlight so the fabric doesn't fade.",
   installation: "Hangs from a single nail or screw, or stands on a shelf.",
   seoTitle: "Trying To Get My Shit Together: Framed Fabric Wall Art",

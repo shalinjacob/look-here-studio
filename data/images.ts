@@ -79,6 +79,8 @@ export const IMAGES: Record<string, ImageMeta> = {
   // Small runs (cleaned-up studio photos)
   "/small-runs/fabric-frame-a4.webp": { alt: "Trying To Get My Shit Together: white vinyl cat on a litter tray over block-printed fabric, in a white frame on a pink wall" },
   "/small-runs/fabric-frame-a4-detail.webp": { alt: "Close-up of the white vinyl cat and lettering over rust and ochre block-printed fabric" },
+  "/small-runs/fabric-frame-a4-console.webp": { alt: "Trying To Get My Shit Together framed fabric art in a white frame, leaning on a wooden console table beside a plant and a tray of keys" },
+  "/small-runs/fabric-frame-a4-hallway.webp": { alt: "Trying To Get My Shit Together framed fabric art hanging on a cream wall above a wooden peg rail and a towel" },
   "/small-runs/decal-elephants.webp": { alt: "Small gold elephant decals scattered across a pale wall above a bathroom mirror" },
   "/small-runs/decal-elephants-detail.webp": { alt: "Close-up of gold vinyl elephant decals on a wall" },
   "/small-runs/poster-outrageous-bedroom.webp": { alt: "Pink floral quote print in a thin wood frame above a child's bed with a soft bunny, reading Darling, you can be whatever you want to be as long as you're outrageous" },
