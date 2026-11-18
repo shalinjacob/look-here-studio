@@ -398,6 +398,37 @@ const cherryMagnet: Product = {
   seoDescription: "A slim 15 × 5 cm rigid fridge magnet: two cherries and a CHERRY BOMB banner in vintage fruit-label style. Small run, made to order in Bengaluru, {price}.",
 };
 
+const ovalFrameMagnet: Product = {
+  ...base,
+  id: "s22",
+  objectNumber: "S22",
+  slug: "oval-photo-frame-magnet",
+  name: "Oval Check Photo Frame Magnet",
+  shortName: "Oval Check Frame",
+  category: "Small Run",
+  subcategory: "Magnet",
+  tags: ["frame", "table"],
+  occasions: ["just-because"],
+  shortDescription: "A rigid fridge magnet frame with a red, yellow and navy check border and an oval window for your photo.",
+  description:
+    "A fridge magnet frame in a bold red, yellow and navy check, with a navy-edged oval window in the middle. Slide a photo in behind the window and it sits there like a tiny portrait on your fridge. The magnet is a rigid sheet with rounded corners, so it stays flat on the door. The frame is sold empty: your photo isn't included.",
+  material: "Printed frame on a rigid magnet sheet",
+  finish: "Colour print, rounded corners",
+  colour: "Red, yellow and navy check",
+  dimensions: "8.8 × 12.6 cm",
+  price: 349,
+  images: [
+    "/small-runs/magnet-oval-frame-fridge-blue.webp",
+    "/small-runs/magnet-oval-frame-fridge-cream.webp",
+    "/small-runs/magnet-oval-frame-flat.webp",
+  ],
+  process: MAGNET_PROCESS,
+  care: "Wipe with a dry cloth. Keep away from water and from cards with magnetic strips.",
+  installation: "Slide your photo in behind the oval window, then stick the magnet on any steel or iron surface, like a fridge door.",
+  seoTitle: "Oval Check Photo Frame Magnet: Fridge Magnet Frame",
+  seoDescription: "An 8.8 × 12.6 cm rigid fridge magnet frame with a red, yellow and navy check border and an oval window for your photo. Small run, made to order in Bengaluru, {price}.",
+};
+
 const carnationDecals: Product = {
   ...base,
   id: "s14",
@@ -600,6 +631,7 @@ export const smallRuns: Product[] = [
   insuranceMagnet,
   roadTripMagnet,
   cherryMagnet,
+  ovalFrameMagnet,
   spaceCat,
   uninstallAstrology,
   onlyFans,

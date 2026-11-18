@@ -49,7 +49,7 @@ export const categories: Category[] = [
       { q: "Can I get a design in another colour or size?", a: "Usually, yes. [Tell us what you want](/custom) and we'll confirm the price before you pay." },
       { q: "Will a design come back once it retires?", a: "Sometimes, in a new run, but we can't promise it. If you want something that has retired, ask and we'll tell you." },
     ],
-    products: ["mirror-discs", "trying-to-get-my-shit-together", "gold-elephant-decals", "carnation-wall-stickers", "lotus-wall-stickers", "poppy-wall-stickers", "bow-wall-stickers", "cloud-wall-stickers", "outrageous-quote-poster", "photo-frame-magnet", "swan-revolt-magnet", "no-insurance-magnet", "starry-road-trip-magnet", "cherry-bomb-magnet", "tee-space-cat", "tee-uninstall-astrology", "tee-only-fans", "tee-achaari-gend"],
+    products: ["mirror-discs", "trying-to-get-my-shit-together", "gold-elephant-decals", "carnation-wall-stickers", "lotus-wall-stickers", "poppy-wall-stickers", "bow-wall-stickers", "cloud-wall-stickers", "outrageous-quote-poster", "photo-frame-magnet", "swan-revolt-magnet", "no-insurance-magnet", "starry-road-trip-magnet", "cherry-bomb-magnet", "oval-photo-frame-magnet", "tee-space-cat", "tee-uninstall-astrology", "tee-only-fans", "tee-achaari-gend"],
     posts: ["why-we-make-things-in-small-runs"],
   },
   {
@@ -272,14 +272,14 @@ export const categories: Category[] = [
     name: "Fridge magnets",
     metaTitle: "Printed Fridge Magnets & Photo Frame Magnets | Look Here Studio",
     metaDescription:
-      "Printed fridge magnets from Look Here Studio: a photo-strip frame magnet in Indian textile borders, plus Swan Revolt, No Insurance, Starry Road Trip and Cherry Bomb. Made in Bengaluru.",
+      "Printed fridge magnets from Look Here Studio: a photo-strip frame magnet in Indian textile borders, an oval check photo frame, plus Swan Revolt, No Insurance, Starry Road Trip and Cherry Bomb. Made in Bengaluru.",
     answer:
-      "Look Here Studio's fridge magnets are printed on rigid magnet sheet: the [Photo Strip Frame Magnet](/objects/photo-frame-magnet) in Indian textile borders ({price:photo-frame-magnet}), plus [Swan Revolt](/objects/swan-revolt-magnet), [No Insurance](/objects/no-insurance-magnet) and [Starry Road Trip](/objects/starry-road-trip-magnet) and [Cherry Bomb](/objects/cherry-bomb-magnet). Made in short batches in Bengaluru.",
+      "Look Here Studio's fridge magnets are printed on rigid magnet sheet: the [Photo Strip Frame Magnet](/objects/photo-frame-magnet) in Indian textile borders ({price:photo-frame-magnet}), the [Oval Check Photo Frame Magnet](/objects/oval-photo-frame-magnet) ({price:oval-photo-frame-magnet}), plus [Swan Revolt](/objects/swan-revolt-magnet), [No Insurance](/objects/no-insurance-magnet) and [Starry Road Trip](/objects/starry-road-trip-magnet) and [Cherry Bomb](/objects/cherry-bomb-magnet). Made in short batches in Bengaluru.",
     sections: [],
     faq: [
       { q: "Does the photo frame magnet come with a photo?", a: "No, the frame is sold empty. Slide in your own photo-booth style strip." },
     ],
-    products: ["photo-frame-magnet", "swan-revolt-magnet", "no-insurance-magnet", "starry-road-trip-magnet", "cherry-bomb-magnet"],
+    products: ["photo-frame-magnet", "swan-revolt-magnet", "no-insurance-magnet", "starry-road-trip-magnet", "cherry-bomb-magnet", "oval-photo-frame-magnet"],
     posts: ["why-we-make-things-in-small-runs"],
   },
   {
