@@ -24,7 +24,7 @@ const FONT_SIZE = CAP / 0.7; // Abril Fatface cap height = 0.7em
 const CHAR_W = 113; // width of one letter when the line fills the box
 
 // the sample dog, in the print's own coordinates
-const DOG = { x: 268, y: 135, w: 630, h: 1013 };
+const DOG = { x: 277, y: 140, w: 610, h: 1000 };
 
 export default function PetTeePreview({ name, who }: { name: string; who: string }) {
   const [photo, setPhoto] = useState<string | null>(null);
