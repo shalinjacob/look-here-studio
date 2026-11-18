@@ -582,19 +582,19 @@ const scallopFlowerDecals: Product = {
   subcategory: "Wall decal",
   tags: ["wall"],
   occasions: ["housewarming", "just-because"],
-  shortDescription: "Little painted flower panels with scalloped edges, as stickers you scatter across a wall.",
+  shortDescription: "A set of 20 little painted flower panels with scalloped edges, as stickers you scatter across a wall.",
   description:
-    "Small cream panels with a wavy, scalloped outline, each holding a hand-painted-look flower bunch in the style of an Indian miniature: pink cosmos, daisies, tulips and black-eyed Susans, edged in lilac, yellow or pink. Scatter them in loose rows or at random and a plain wall gets a quiet, wallpaper-like pattern, in a bedroom, behind a bed or up a hallway. No paste, no frame, no commitment.",
+    "A set of 20 small cream panels with a wavy, scalloped outline, each holding a hand-painted-look flower bunch in the style of an Indian miniature: pink cosmos, daisies, tulips and black-eyed Susans, edged in lilac, yellow or pink. Scatter them in loose rows or at random and a plain wall gets a quiet, wallpaper-like pattern, in a bedroom, behind a bed or up a hallway. No paste, no frame, no commitment.",
   material: "Printed sticker vinyl, cut to shape",
   finish: "Matte printed colour, cut to the scalloped outline",
   colour: "Cream, with pink, yellow, orange and lilac flowers",
-  dimensions: "Four flower designs, each a scalloped panel",
-  price: 399,
+  dimensions: "Set of 20 scalloped flower panels, in four designs",
+  price: 1999,
   images: ["/small-runs/decal-scallop-flowers-wall.webp", "/small-runs/decal-scallop-flowers-close.webp"],
   care: "Wipe gently with a dry cloth. Test on a discreet spot first: vinyl can lift paint when removed.",
   installation: "Stick onto clean, dry, smooth painted walls. To remove, warm with a hairdryer and peel slowly.",
   seoTitle: "Scalloped Flower Wall Stickers: Miniature-Style Decals",
-  seoDescription: "Scalloped flower wall stickers in four designs: cosmos, daisy, tulip and black-eyed Susan. Scatter them on any wall. Small run, made to order in Bengaluru, {price}.",
+  seoDescription: "A set of 20 scalloped flower wall stickers in four designs: cosmos, daisy, tulip and black-eyed Susan. Scatter them on any wall. Small run, made to order in Bengaluru, {price}.",
 };
 
 const cloudDecals: Product = {
