@@ -704,6 +704,42 @@ const chilliJarPrint: Product = {
   seoDescription: "A two-colour A4 print of a jar of dried red chillies, in red and cobalt blue on cream. Print only or with a thin frame. Small run, made to order in Bengaluru, {price}.",
 };
 
+const catNapPrint: Product = {
+  ...base,
+  id: "s26",
+  objectNumber: "S26",
+  slug: "cat-nap-print",
+  name: "Cat Nap Print",
+  shortName: "Cat Nap",
+  category: "Small Run",
+  subcategory: "Art print",
+  tags: ["wall", "frame", "art"],
+  occasions: ["just-because", "housewarming"],
+  shortDescription: "A blue and white cat fast asleep on a cane chair, printed in two colours, orange and blue.",
+  description:
+    "A blue and white cat sprawled across a cane-backed chair, chin on the armrest, one paw dangling, completely asleep. Printed in two colours, burnt orange and deep blue, on warm cream paper, with a grainy, layered look like an old two-colour print. Choose the print on its own to frame yourself, or have it fitted in a thin white frame, ready to hang. For a bedroom, a living room, a reading corner or anyone who loves a cat.",
+  material: "Two-colour print on A4 paper, optional thin white frame",
+  finish: "Printed on cream paper, with a thin white frame if chosen",
+  colour: "Burnt orange, deep blue and cream",
+  dimensions: "A4 (21 × 29.7 cm)",
+  price: 599,
+  images: [
+    "/small-runs/poster-catnap-window.webp",
+    "/small-runs/poster-catnap-dresser.webp",
+    "/small-runs/poster-catnap-art.webp",
+  ],
+  variantLegend: "CHOOSE YOUR VERSION",
+  variants: [
+    { id: "print", label: "PRINT ONLY", note: "A4 print, unframed", price: 599, image: "/small-runs/poster-catnap-art.webp" },
+    { id: "framed", label: "PRINT + THIN FRAME", note: "A4 print in a thin white frame", price: 899, image: "/small-runs/poster-catnap-dresser.webp" },
+  ],
+  process: POSTER_PROCESS,
+  care: "Keep out of direct sunlight and away from damp so the colours don't fade. Dust the frame with a dry cloth.",
+  installation: "Frame it, tape it or pin it up. A framed one hangs from a single nail or screw, or leans on a shelf.",
+  seoTitle: "Cat Nap Print: Sleeping Cat Art Print in Orange and Blue",
+  seoDescription: "A two-colour A4 print of a cat asleep on a cane chair, in burnt orange and blue on cream. Print only or with a thin frame. Small run, made to order in Bengaluru, {price}.",
+};
+
 export const smallRuns: Product[] = [
   mirrorDiscs,
   framedFabric,
@@ -717,6 +753,7 @@ export const smallRuns: Product[] = [
   scallopFlowerDecals,
   outrageousPoster,
   chilliJarPrint,
+  catNapPrint,
   photoFrameMagnet,
   swanMagnet,
   insuranceMagnet,
