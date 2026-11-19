@@ -28,7 +28,7 @@ const GARMENT_FROM = 599;
 const MUG_FROM = 549;
 
 const ITEMS: CustomItem[] = [
-  { id: "tee", label: "Oversized tee", from: price("tee-space-cat"), note: "Your art heat-pressed on an oversized cotton tee" },
+  { id: "tee", label: "Oversized tee", from: price("tee-uninstall-astrology"), note: "Your art heat-pressed on an oversized cotton tee" },
   { id: "garment", label: "Print on your own garment", from: GARMENT_FROM, note: "A motif on a tee, polo, tote or hoodie you send us" },
   { id: "frame", label: "Framed fabric art (A4)", from: price("trying-to-get-my-shit-together"), note: "Your words or art over printed fabric, framed" },
   { id: "mug", label: "Mug", from: MUG_FROM, note: "Vinyl on a ceramic mug: names, jokes, logos" },

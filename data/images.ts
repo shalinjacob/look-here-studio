@@ -103,8 +103,6 @@ export const IMAGES: Record<string, ImageMeta> = {
   "/small-runs/tee-achaari-gend-worn.webp": { alt: "Woman in sunglasses wearing the black oversized Achaari Gend Tee with a small print of a pickle jar and a pickleball" },
   "/small-runs/tee-achaari-gend-bench.webp": { alt: "Black Achaari Gend Tee on a pickleball court bench beside a paddle, ball, towel and bottle" },
   "/small-runs/tee-achaari-gend-hanging.webp": { alt: "Black oversized Achaari Gend Tee on a hanger with a pickle jar and neon pickleball print on the chest" },
-  "/small-runs/tee-space-cat-hanging.webp": { alt: "Space Cat Tee: white print of a cat in an astronaut suit beside Japanese lettering on a black oversized tee hanging on a wooden wardrobe" },
-  "/small-runs/tee-space-cat-worn.webp": { alt: "Smiling man wearing the black oversized Space Cat Tee with a white astronaut cat and Japanese lettering" },
   "/small-runs/tee-uninstall-astrology-worn-bed.webp": { alt: "Smiling woman sitting on a bed wearing the sand oversized Uninstall Astrology Tee with a round white lettering print" },
   "/small-runs/tee-uninstall-astrology-hanging.webp": { alt: "Uninstall Astrology Tee: sand oversized tee with a round white lettering block hanging on a wooden wardrobe" },
   "/small-runs/tee-uninstall-astrology.webp": { alt: "Uninstall Astrology Tee: round white lettering block on a sand-coloured oversized tee, worn" },

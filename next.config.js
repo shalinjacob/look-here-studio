@@ -3,7 +3,8 @@ const nextConfig = {
   reactStrictMode: true,
   async redirects() {
     return [
-      // Light-Cast Mirror Disc withdrawn (Nov 2026)
+      // Light-Cast Mirror Disc and Space Cat Tee withdrawn (Nov 2026)
+      { source: "/objects/tee-space-cat", destination: "/small-runs", permanent: true },
       { source: "/objects/mirror-discs", destination: "/small-runs", permanent: true },
       // Spotted Cat Fabric Panel withdrawn (Nov 2026)
       { source: "/objects/spotted-cat-fabric-panel", destination: "/small-runs", permanent: true },

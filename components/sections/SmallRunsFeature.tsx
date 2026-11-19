@@ -5,7 +5,6 @@ import { getProduct } from "@/data/products";
 // 02 / SMALL RUNS — the range that is available now, front and centre on the home page.
 const SLUGS = [
   "no-insurance-magnet",
-  "tee-space-cat",
   "swan-revolt-magnet",
   "starry-road-trip-magnet",
   "photo-frame-magnet",
