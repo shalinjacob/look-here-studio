@@ -33,6 +33,8 @@ export interface CartLine {
   personalised?: boolean;
   /** the product can be personalised (adds a Personalisation line to the request) */
   personalisable?: boolean;
+  /** picture of the customer's design (a JPEG data URL), emailed to the studio with the order */
+  preview?: string;
 }
 
 export const GIFT_NOTE_MAX = 150;
@@ -127,6 +129,7 @@ export interface ChosenVariant {
   personalised?: boolean;
   price: number;
   image?: string;
+  preview?: string;
 }
 
 const CartContext = createContext<CartContextValue | null>(null);
@@ -186,6 +189,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
         status: product.status,
         variant: variant?.label,
         ...(variant?.personalised ? { personalised: true } : {}),
+        ...(variant?.preview ? { preview: variant.preview } : {}),
         ...(product.custom || product.personalise?.length || product.variants?.some((v) => v.custom)
           ? { personalisable: true }
           : {}),

@@ -1,12 +1,14 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type MutableRefObject } from "react";
 import { cutOutPet } from "@/lib/petCutout";
+import { petLine } from "@/lib/petTee";
 
 // Live "how it will look" preview for the custom pet-parent tee. The text is
 // real SVG, so it updates as the customer types. The sample dog is shown until
-// they pick a photo of their own; the photo never leaves their device (we ask
-// for it on WhatsApp after they order, and send a proof before printing).
+// they pick a photo of their own. The photo stays on their device; only the
+// finished preview picture is emailed to the studio with the order (we ask for
+// the original on WhatsApp and send a proof before printing).
 //
 // Geometry: the print is drawn in a 1128 x 1163 box that sits exactly where the
 // print is on the blank-tee photo (see PRINT below, in % of that photo).
@@ -27,7 +29,29 @@ const CHAR_W = 113; // width of one letter when the line fills the box
 // the sample dog, in the print's own coordinates
 const DOG = { x: 277, y: 140, w: 610, h: 1000 };
 
-export default function PetTeePreview({ name, who }: { name: string; who: string }) {
+function loadImg(src: string): Promise<HTMLImageElement> {
+  return new Promise((resolve, reject) => {
+    const im = new Image();
+    im.onload = () => resolve(im);
+    im.onerror = () => reject(new Error("image failed"));
+    im.src = src;
+  });
+}
+
+export default function PetTeePreview({
+  name,
+  who,
+  captureRef,
+  onReady,
+}: {
+  name: string;
+  who: string;
+  /** filled with a function that renders the preview to a JPEG data URL (for the cart and the studio email) */
+  captureRef?: MutableRefObject<(() => Promise<string | null>) | null>;
+  /** true once the customer's own photo is in and the pet has been found */
+  onReady?: (ready: boolean) => void;
+}) {
+  const stageRef = useRef<HTMLDivElement>(null);
   const [photo, setPhoto] = useState<string | null>(null);
   const urlRef = useRef<string | null>(null);
   const cutRef = useRef<string | null>(null);
@@ -97,16 +121,112 @@ export default function PetTeePreview({ name, who }: { name: string; who: string
     setPhoto(null);
   }
 
-  const n = (name.trim() || "LUCA").toUpperCase();
-  const w = (who.trim() || "MOM").toUpperCase();
-  const line = `${n}’S ${w}`;
+  const { line, typed } = petLine(name, who);
   // short lines stay the same letter size (and centred); long ones shrink to fit
   const natural = line.length * CHAR_W;
   const shrink = natural > W ? Math.max(W / natural, 0.55) : 1;
   const textLength = Math.min(W, natural * shrink);
   const fontSize = FONT_SIZE * shrink;
   const shift = shrink < 1 ? (CAP - CAP * shrink) / 2 : 0;
-  const typed = name.trim().length > 0;
+
+  useEffect(() => {
+    onReady?.(!!photo && !busy);
+  }, [photo, busy, onReady]);
+
+  // Draws the same picture as the SVG above onto a canvas, cropped to the print,
+  // so the studio sees exactly what the customer saw.
+  useEffect(() => {
+    if (!captureRef) return;
+    captureRef.current = async () => {
+      if (!photo) return null;
+      try {
+        const S = 2400;
+        const canvas = document.createElement("canvas");
+        const tee = await loadImg(BLANK_TEE);
+        canvas.width = S;
+        canvas.height = S;
+        const ctx = canvas.getContext("2d");
+        if (!ctx) return null;
+        ctx.drawImage(tee, 0, 0, S, S);
+        const bx = (PRINT.left / 100) * S, by = (PRINT.top / 100) * S;
+        const bw = (PRINT.width / 100) * S, bh = (PRINT.height / 100) * S;
+        const k = Math.min(bw / W, bh / 1163);
+        ctx.save();
+        ctx.translate(bx + (bw - W * k) / 2, by + (bh - 1163 * k) / 2);
+        ctx.scale(k, k);
+
+        // the four lines of text, in the page's own display font
+        await document.fonts.ready;
+        const textEl = stageRef.current?.querySelector("text");
+        const family = textEl ? getComputedStyle(textEl).fontFamily : "Georgia, serif";
+        ctx.font = `${fontSize}px ${family}`;
+        ctx.fillStyle = GOLD;
+        ctx.textAlign = "center";
+        ctx.textBaseline = "alphabetic";
+        const measured = ctx.measureText(line).width || 1;
+        for (const y of BASELINES) {
+          ctx.save();
+          ctx.translate(W / 2, y - shift);
+          ctx.scale(textLength / measured, 1);
+          ctx.fillText(line, 0, 0);
+          ctx.restore();
+        }
+
+        // the pet: cut-out (or the whole photo in a soft oval), black and white
+        const layer = document.createElement("canvas");
+        layer.width = DOG.w;
+        layer.height = DOG.h;
+        const lc = layer.getContext("2d", { willReadFrequently: true });
+        if (!lc) return null;
+        const src = await loadImg(cut ?? photo);
+        const fit = cut ? Math.min(DOG.w / src.width, DOG.h / src.height) : Math.max(DOG.w / src.width, DOG.h / src.height);
+        lc.drawImage(src, (DOG.w - src.width * fit) / 2, (DOG.h - src.height * fit) / 2, src.width * fit, src.height * fit);
+        if (!cut) {
+          const g = lc.createRadialGradient(DOG.w / 2, DOG.h / 2, 0, DOG.w / 2, DOG.h / 2, Math.max(DOG.w, DOG.h) / 2);
+          g.addColorStop(0, "#fff");
+          g.addColorStop(0.86, "#fff");
+          g.addColorStop(1, "rgba(255,255,255,0)");
+          lc.save();
+          lc.globalCompositeOperation = "destination-in";
+          lc.translate(DOG.w / 2, DOG.h / 2);
+          lc.scale(DOG.w / Math.max(DOG.w, DOG.h), DOG.h / Math.max(DOG.w, DOG.h));
+          lc.translate(-DOG.w / 2, -DOG.h / 2);
+          lc.fillStyle = g;
+          lc.fillRect(0, 0, DOG.w, DOG.h);
+          lc.restore();
+        }
+        const px = lc.getImageData(0, 0, DOG.w, DOG.h);
+        const d = px.data;
+        for (let i = 0; i < d.length; i += 4) {
+          let v = 0.2126 * d[i] + 0.7152 * d[i + 1] + 0.0722 * d[i + 2];
+          v = ((v - 128) * 1.15 + 128) * 1.05;
+          d[i] = d[i + 1] = d[i + 2] = Math.max(0, Math.min(255, v));
+        }
+        lc.putImageData(px, 0, 0);
+        const cx = DOG.x + DOG.w / 2, cy = DOG.y + DOG.h / 2;
+        ctx.translate(cx + (panX / 100) * DOG.w, cy + (panY / 100) * DOG.h);
+        ctx.scale(zoom, zoom);
+        ctx.translate(-cx, -cy);
+        ctx.drawImage(layer, DOG.x, DOG.y);
+        ctx.restore();
+
+        // crop to the print with a little tee around it
+        const cw = Math.round(bw * 2.1);
+        const out = document.createElement("canvas");
+        out.width = cw;
+        out.height = cw;
+        const oc = out.getContext("2d");
+        if (!oc) return null;
+        oc.drawImage(canvas, bx + bw / 2 - cw / 2, by + bh / 2 - cw / 2, cw, cw, 0, 0, cw, cw);
+        return out.toDataURL("image/jpeg", 0.85);
+      } catch {
+        return null;
+      }
+    };
+    return () => {
+      captureRef.current = null;
+    };
+  });
 
   return (
     <div className="petprev">
@@ -114,7 +234,7 @@ export default function PetTeePreview({ name, who }: { name: string; who: string
         <span>LIVE PREVIEW</span>
         <span>{busy ? "FINDING YOUR PET…" : typed ? "YOURS" : "SAMPLE"}</span>
       </div>
-      <div className="petprev__stage">
+      <div className="petprev__stage" ref={stageRef}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={BLANK_TEE} alt="" className="petprev__tee" width={1254} height={1254} />
         <svg
@@ -211,9 +331,9 @@ export default function PetTeePreview({ name, who }: { name: string; who: string
         <small className="petprev__note">We couldn&apos;t spot your pet automatically, so the whole photo is shown. We&apos;ll cut your pet out properly before printing.</small>
       )}
       <small className="petprev__note">
-        A rough preview: we pick out your pet's face and chest automatically, in black and white. We finish the
-        cut-out by hand and send you a proof on WhatsApp before anything is printed. Your photo stays on your
-        device until you send it to us.
+        A rough preview: we pick out your pet's face and chest automatically, in black and white. When you
+        order, this preview is emailed to us. We finish the cut-out by hand and send you a proof on WhatsApp before
+        anything is printed.
       </small>
     </div>
   );

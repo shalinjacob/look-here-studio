@@ -120,6 +120,29 @@ const achaariGend = smallTee({
   ],
 });
 
+// Full-colour photographic print (not vinyl), 18 cm wide, centred on the chest.
+const chicSheeps: Product = {
+  ...smallTee({
+    n: 31,
+    slug: "chic-sheeps",
+    name: "Chic Sheeps",
+    copy: "Two very well-dressed sheep in knitted cardigans and embroidered jackets, over a chunky 70s CHIC SHEEPS wordmark. For anyone whose wardrobe is mostly wool and attitude.",
+    colour: { id: "black", label: "Black, full-colour print" },
+    images: [
+      "/small-runs/tee-chic-sheeps-worn.webp",
+      "/small-runs/tee-chic-sheeps-print.webp",
+      "/small-runs/tee-chic-sheeps-detail.webp",
+    ],
+  }),
+  shortDescription: "Two very well-dressed sheep over a chunky 70s wordmark, on a black oversized cotton tee.",
+  description:
+    "Two very well-dressed sheep in knitted cardigans and embroidered jackets, over a chunky 70s CHIC SHEEPS wordmark in yellow. The full-colour print is 18 cm wide and sits centred on the chest of a comfortable oversized cotton tee. " + SMALL_RUN_NOTE,
+  material: "Oversized cotton tee, full-colour print",
+  finish: "Full-colour print on the chest, 18 cm wide",
+  seoTitle: "Chic Sheeps T-Shirt: Oversized Cotton Tee",
+  seoDescription: "Two well-dressed sheep over a chunky 70s wordmark, an 18 cm full-colour print on a black oversized cotton tee, XS–XXL. Small run, made to order in Bengaluru, {price}.",
+};
+
 // Custom pet-parent tee: the customer's pet name + title (MOM, DAD…) is stacked four times
 // in gold with their pet on top. Live preview on the product page (PetTeePreview).
 const petParent: Product = {
@@ -173,10 +196,8 @@ const framedFabric: Product = {
   dimensions: "A4 · frame 24 × 30 cm",
   price: 1499,
   images: [
-    "/small-runs/fabric-frame-a4.webp",
-    "/small-runs/fabric-frame-a4-detail.webp",
-    "/small-runs/fabric-frame-a4-console.webp",
-    "/small-runs/fabric-frame-a4-hallway.webp",
+    "/small-runs/fabric-frame-a4-teal-wall.webp",
+    "/small-runs/fabric-frame-a4-pink-wall.webp",
   ],
   care: "Dust the glass with a dry cloth. Keep out of direct sunlight so the fabric doesn't fade.",
   installation: "Hangs from a single nail or screw, or stands on a shelf.",
@@ -204,10 +225,8 @@ const elephantDecals: Product = {
   dimensions: "Sheet of 25 elephants · each 4.35 × 2.94 cm",
   price: 499,
   images: [
-    "/small-runs/decal-elephants.webp",
-    "/small-runs/decal-elephants-detail.webp",
-    "/small-runs/decal-elephants-bedroom.webp",
-    "/small-runs/decal-elephants-bedroom-2.webp",
+    "/small-runs/decal-elephants-blue-wall.webp",
+    "/small-runs/decal-elephants-cream-wall.webp",
   ],
   care: "Wipe gently with a dry cloth.",
   installation: "Stick onto clean, dry, smooth painted walls. To remove, warm with a hairdryer and peel slowly.",
@@ -857,6 +876,7 @@ export const smallRuns: Product[] = [
   roadTripMagnet,
   cherryMagnet,
   ovalFrameMagnet,
+  chicSheeps,
   uninstallAstrology,
   onlyFans,
   achaariGend,

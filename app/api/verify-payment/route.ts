@@ -32,7 +32,7 @@ export async function POST(req: Request) {
   console.log(`[razorpay] payment verified order=${orderId} payment=${paymentId}`);
   // Tell the studio who paid for what (best effort: never fails the payment itself).
   try {
-    await notifyStudio(orderId, paymentId);
+    await notifyStudio(orderId, paymentId, cleanPreviews(b.previews));
   } catch (e) {
     console.error("[razorpay] studio notification failed:", e);
   }
@@ -42,7 +42,7 @@ export async function POST(req: Request) {
 // Reads the order back from Razorpay (so the details are the ones that were paid for)
 // and emails them to the studio (hello@lookherestudio.in by default; ORDER_NOTIFY_TO overrides)
 // via Resend. Needs RESEND_API_KEY; without it the order is still in the Razorpay dashboard.
-async function notifyStudio(orderId: string, paymentId: string) {
+async function notifyStudio(orderId: string, paymentId: string, previews: Preview[]) {
   const to = process.env.ORDER_NOTIFY_TO || EMAIL; // hello@lookherestudio.in unless overridden
   if (!process.env.RESEND_API_KEY) return;
   const rzp = new Razorpay({ key_id: process.env.RAZORPAY_KEY_ID!, key_secret: process.env.RAZORPAY_KEY_SECRET! });
@@ -61,6 +61,9 @@ async function notifyStudio(orderId: string, paymentId: string) {
     `Email: ${n.email ?? "—"}`,
     `Address: ${n.address ?? "—"}`,
     `City: ${n.city ?? "—"} ${n.pincode ?? ""}`,
+    ...(previews.length
+      ? ["", `Customer previews attached (${previews.length}):`, ...previews.map((p, i) => `${i + 1}. ${p.label}`)]
+      : []),
   ].join("\n");
   const from = process.env.CONTACT_FROM || "Look Here Studio <onboarding@resend.dev>";
   const res = await fetch("https://api.resend.com/emails", {
@@ -72,7 +75,27 @@ async function notifyStudio(orderId: string, paymentId: string) {
       reply_to: n.email || undefined,
       subject: `New paid order: ${n.name ?? "customer"} · ₹${(Number(order.amount) / 100).toLocaleString("en-IN")}`,
       text,
+      ...(previews.length
+        ? { attachments: previews.map((p, i) => ({ filename: `preview-${i + 1}.jpg`, content: p.base64 })) }
+        : {}),
     }),
   });
   if (!res.ok) throw new Error(`resend ${res.status}`);
+}
+
+interface Preview {
+  label: string;
+  base64: string;
+}
+
+// Previews come from the browser, so keep only small JPEGs (max 5) and attach nothing else.
+function cleanPreviews(raw: unknown): Preview[] {
+  if (!Array.isArray(raw)) return [];
+  const out: Preview[] = [];
+  for (const p of raw.slice(0, 5) as { label?: unknown; dataUrl?: unknown }[]) {
+    const m = typeof p?.dataUrl === "string" ? /^data:image\/jpeg;base64,([A-Za-z0-9+/=]+)$/.exec(p.dataUrl) : null;
+    if (!m || m[1].length > 1_500_000) continue;
+    out.push({ label: String(p.label ?? "Preview").slice(0, 160), base64: m[1] });
+  }
+  return out;
 }

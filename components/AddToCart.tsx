@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useCart } from "./cart/CartContext";
 import { STATUS_CTA, WISHLIST_CTA, canOrderNow, formatPrice, hasPriceRange, isComingSoon } from "@/data/products";
 import type { Product } from "@/lib/types";
@@ -8,6 +8,7 @@ import { GALLERY_SHOW } from "./ProductGallery";
 import { SITE_URL } from "@/lib/site";
 import { buildWhatsAppLink, WA_SELECTION_EVENT } from "@/lib/whatsapp";
 import PetTeePreview from "./PetTeePreview";
+import { petText } from "@/lib/petTee";
 
 /** pre-filled WhatsApp message for the wishlist: names the object, asks for name + pincode */
 function wishlistMessage(p: Product, selection?: string) {
@@ -42,6 +43,11 @@ export default function AddToCart({ product }: { product: Product }) {
     Object.fromEntries(options.filter((o) => !o.required).map((o) => [o.id, o.choices[0].id]))
   );
   const canBuy = canOrderNow(product);
+  // pet tee: the customer's own photo has to be in before it can be ordered
+  const needsPhoto = product.livePreview === "pet-stack";
+  const [photoReady, setPhotoReady] = useState(false);
+  const captureRef = useRef<(() => Promise<string | null>) | null>(null);
+  const [saving, setSaving] = useState(false);
   const v = variants.find((x) => x.id === vid);
   const missing = options.filter((o) => !chosen[o.id]);
   const optionPrice =
@@ -66,7 +72,14 @@ export default function AddToCart({ product }: { product: Product }) {
   const needsWord =
     (!!v?.custom && word.trim().length === 0) ||
     fields.some((f) => !(values[f.id] ?? "").trim()) ||
+    (needsPhoto && !photoReady) ||
     missing.length > 0;
+  // what is still missing, spelled out under the button
+  const todo = [
+    ...missing.map((o) => o.legend.replace(/^CHOOSE YOUR /, "").toLowerCase()),
+    ...fields.filter((f) => !(values[f.id] ?? "").trim()).map((f) => (f.id === "name" ? "pet's name" : "title")),
+    ...(needsPhoto && !photoReady ? ["your pet's photo"] : []),
+  ];
 
   const optionsUi = (
     <>
@@ -150,8 +163,26 @@ export default function AddToCart({ product }: { product: Product }) {
     if (img) window.dispatchEvent(new CustomEvent(GALLERY_SHOW, { detail: img }));
   }
 
-  function handleAdd() {
-    if (needsWord) return;
+  async function handleAdd() {
+    if (needsWord || saving) return;
+    if (needsPhoto) {
+      setSaving(true);
+      const preview = (await captureRef.current?.()) ?? undefined;
+      setSaving(false);
+      const picked = options.map((o) => o.choices.find((c) => c.id === chosen[o.id])!);
+      const size = picked.find((_, i) => options[i].id === "size");
+      addItem(product, 1, {
+        label: [size?.label, `Text: ${petText(values.name ?? "", values.who ?? "")}`, "Photo: Given by customer"]
+          .filter(Boolean)
+          .join(". "),
+        price: optionPrice,
+        image: picked.find((c) => c.image)?.image,
+        personalised: true,
+        preview,
+      });
+      setAdded(true);
+      return;
+    }
     if (options.length > 0) {
       const picked = options.map((o) => o.choices.find((c) => c.id === chosen[o.id])!);
       const colour = picked.find((c) => c.image);
@@ -235,7 +266,7 @@ export default function AddToCart({ product }: { product: Product }) {
         <fieldset className="variants">
           <legend className="variants__legend">MAKE IT YOURS</legend>
           {product.livePreview === "pet-stack" && (
-            <PetTeePreview name={values.name ?? ""} who={values.who ?? ""} />
+            <PetTeePreview name={values.name ?? ""} who={values.who ?? ""} captureRef={captureRef} onReady={setPhotoReady} />
           )}
           {fields.map((f) => (
             <label key={f.id} className="variants__custom variants__custom--free">
@@ -251,7 +282,7 @@ export default function AddToCart({ product }: { product: Product }) {
               />
             </label>
           ))}
-          <small className="variants__note">{product.livePreview ? "After you order, we'll ask you on WhatsApp for your pet's photo and send a proof before we print." : "We'll confirm the lettering and colour with you on WhatsApp."}</small>
+          <small className="variants__note">{product.livePreview ? "Add your pet's photo above. When you order we email your preview to the studio, then ask for the original photo on WhatsApp and send a proof before we print." : "We'll confirm the lettering and colour with you on WhatsApp."}</small>
         </fieldset>
       )}
 
@@ -259,13 +290,16 @@ export default function AddToCart({ product }: { product: Product }) {
         <button
           className="cta cta--stamp addcart__btn"
           onClick={handleAdd}
-          disabled={added || needsWord}
+          disabled={added || needsWord || saving}
         >
           <span className="cta__label">
-            {added ? "ADDED ✓" : STATUS_CTA[product.status]}
+            {added ? "ADDED ✓" : saving ? "ADDING…" : STATUS_CTA[product.status]}
           </span>
           {!added && <span className="cta__arrow">→</span>}
         </button>
+        {!added && todo.length > 0 && (
+          <small className="variants__note" aria-live="polite">Still to add: {todo.join(", ")}.</small>
+        )}
         {added && (
           <button className="addcart__view" onClick={openCart}>
             VIEW CART →

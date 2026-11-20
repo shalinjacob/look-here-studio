@@ -95,7 +95,13 @@ export default function RazorpayButton({ blocked = false }: { blocked?: boolean 
             const v = await fetch("/api/verify-payment", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
-              body: JSON.stringify(r),
+              // customisation previews ride along so the studio email can attach them
+              body: JSON.stringify({
+                ...r,
+                previews: lines
+                  .filter((l) => l.preview)
+                  .map((l) => ({ label: `${l.name} (${l.variant ?? ""})`, dataUrl: l.preview })),
+              }),
             });
             const out = await v.json();
             if (!v.ok || !out.success) throw new Error(out.error || "Verification failed");

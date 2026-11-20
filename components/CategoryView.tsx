@@ -8,10 +8,13 @@ import { Rich, plain } from "@/lib/richText";
 import JsonLd from "@/components/JsonLd";
 import Faq from "@/components/Faq";
 import ProductTile from "@/components/ProductTile";
+import { dailyOrder } from "@/lib/dailyOrder";
 import type { Product, JournalPost } from "@/lib/types";
 
 export default function CategoryView({ c }: { c: Category }) {
-  const items = c.products.map(getProduct).filter(Boolean) as Product[];
+  const listed = c.products.map(getProduct).filter(Boolean) as Product[];
+  // the Small Runs pages shuffle their order every day (lib/dailyOrder.ts)
+  const items = c.slug === "small-runs" || c.parent === "small-runs" ? dailyOrder(listed) : listed;
   const posts = c.posts.map(getPost).filter(Boolean) as JournalPost[];
   const path = categoryPath(c);
   const url = `${SITE_URL}${path}`;

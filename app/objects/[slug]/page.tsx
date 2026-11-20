@@ -111,11 +111,14 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         }
       : {}),
   };
+  const fromSmallRuns = p.category === "Small Run";
   const crumbsLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Objects", item: `${SITE_URL}/objects` },
+      fromSmallRuns
+        ? { "@type": "ListItem", position: 1, name: "Small Runs", item: `${SITE_URL}/small-runs` }
+        : { "@type": "ListItem", position: 1, name: "Objects", item: `${SITE_URL}/objects` },
       { "@type": "ListItem", position: 2, name: p.name, item: url },
     ],
   };
@@ -140,7 +143,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
       <JsonLd data={crumbsLd} />
       <JsonLd data={faqLd(faq)} />
       <div className="pdp__top">
-        <Link href="/objects" className="pdp__back">← OBJECTS</Link>
+        <Link href={fromSmallRuns ? "/small-runs" : "/objects"} className="pdp__back">{fromSmallRuns ? "← SMALL RUNS" : "← OBJECTS"}</Link>
         <span className="pdp__marker">OBJECT {p.objectNumber}</span>
       </div>
 
