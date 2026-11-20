@@ -4,7 +4,7 @@ import Reveal from "../Reveal";
 import { getProduct } from "@/data/products";
 import { altFor } from "@/data/images";
 
-// 05 / AT HOME — lifestyle-in-space. Each image links to the featured product.
+// (not on the home page) AT HOME — lifestyle-in-space. Each image links to the featured product.
 const SLUGS = ["cat-got-your-heart", "four-letter-words", "layered-wall-clock"];
 
 export default function AtHome() {
@@ -16,7 +16,7 @@ export default function AtHome() {
     <section className="section" id="at-home" aria-label="At home">
       <div className="wrap">
         <div className="slabel">
-          <span>08 / AT HOME</span>
+          <span>AT HOME</span>
           <span className="slabel__note">SAME SPACES.<br />A LITTLE<br />MORE YOU.</span>
         </div>
         <h2 className="athome__title">A few ways these objects live in a room.</h2>

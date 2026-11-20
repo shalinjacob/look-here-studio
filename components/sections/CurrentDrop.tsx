@@ -2,7 +2,7 @@ import CTA from "../CTA";
 import { getCollection } from "@/data/collections";
 import { altFor } from "@/data/images";
 
-// 06 / CURRENT DROP — the featured collection (Editions: art in LED slim frames).
+// 05 / CURRENT DROP — the featured collection (Editions: art in LED slim frames).
 // Hovering any image lights the frame up (swaps to the "-lit" version).
 const lit = (src: string) => src.replace(/(\.\w+)$/, "-lit$1");
 
@@ -14,7 +14,7 @@ export default function CurrentDrop() {
     <section className="drop" id="current-drop" aria-label={c.name}>
       <div className="drop__grid">
         <div className="drop__text">
-          <span className="drop__index">04 / {c.name}</span>
+          <span className="drop__index">05 / {c.name}</span>
           <h2 className="drop__title">{c.title}</h2>
           <p className="drop__intro">{c.intro[0]}</p>
           <p className="drop__tags">DRAWN FROM — {c.drawnFrom.join(" / ")}</p>

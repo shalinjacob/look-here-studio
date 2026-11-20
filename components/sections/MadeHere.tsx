@@ -2,13 +2,13 @@ import VideoPlayer from "../VideoPlayer";
 import CTA from "../CTA";
 import Reveal from "../Reveal";
 
-// 04 / MADE HERE — video-led process teaser.
+// 08 / MADE HERE — video-led process teaser.
 export default function MadeHere() {
   return (
     <section className="section" id="made-here" aria-label="Made here">
       <div className="wrap">
         <div className="slabel">
-          <span>07 / MADE HERE</span>
+          <span>08 / MADE HERE</span>
           <span className="slabel__note">REAL PEOPLE.<br />ACTUAL HANDS.<br />BRIGHTER SPACES.</span>
         </div>
 

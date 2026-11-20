@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Hero from "@/components/sections/Hero";
 import SmallRunsFeature from "@/components/sections/SmallRunsFeature";
+import PetParentFeature from "@/components/sections/PetParentFeature";
 import WhyLookHere from "@/components/sections/WhyLookHere";
 import ObjectsPreview from "@/components/sections/ObjectsPreview";
 import MadeHere from "@/components/sections/MadeHere";
-import AtHome from "@/components/sections/AtHome";
 import CurrentDrop from "@/components/sections/CurrentDrop";
 import NewObjects from "@/components/sections/NewObjects";
 import NewsletterSection from "@/components/sections/NewsletterSection";
@@ -60,12 +60,12 @@ export default function HomePage() {
       <JsonLd data={orgLd} />
       <Hero />
       <SmallRunsFeature />
+      <PetParentFeature />
       <WhyLookHere />
       <CurrentDrop />
       <NewObjects />
       <ObjectsPreview />
       <MadeHere />
-      <AtHome />
       <NewsletterSection />
     </>
   );

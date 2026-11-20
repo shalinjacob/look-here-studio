@@ -1054,3 +1054,26 @@ input { font: inherit; }
 .petprev__frame { display: grid; gap: 8px; }
 .petprev__frame label { display: grid; grid-template-columns: 96px 1fr; align-items: center; gap: 10px; font-family: var(--mono); font-size: 11px; letter-spacing: .12em; color: var(--muted); }
 .petprev__frame input[type="range"] { width: 100%; accent-color: var(--ink); }
+
+/* homepage pet-parent feature (PetParentFeature + PetTeeStacker) */
+.petfeat__grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(24px, 5vw, 72px); margin-top: clamp(28px, 4vw, 56px); align-items: start; }
+.petfeat__text .objects__intro { margin-top: 20px; }
+.petfeat__points { list-style: none; padding: 0; margin: 22px 0 0; display: grid; gap: 8px; font-family: var(--mono); font-size: 13px; line-height: 1.6; color: var(--body); }
+.petfeat__points li::before { content: "— "; color: var(--muted); }
+.petfeat__price { font-family: var(--mono); font-size: 12px; letter-spacing: .12em; color: var(--muted); margin: 22px 0 0; }
+.petfeat__stacker { display: grid; grid-template-columns: minmax(150px, 220px) 1fr; gap: 18px; align-items: center; margin-top: 18px; }
+.petfeat__stage { position: relative; width: 100%; aspect-ratio: 1 / 1; overflow: hidden; background: #cfc5b6; }
+.petfeat__form { display: grid; gap: 10px; }
+.petfeat__form label { display: grid; gap: 4px; font-family: var(--mono); font-size: 11px; letter-spacing: .12em; color: var(--muted); }
+.petfeat__form input { font-family: var(--mono); font-size: 14px; padding: 10px 12px; border: 1px solid var(--ink); background: transparent; color: var(--ink); border-radius: 0; text-transform: uppercase; }
+.petfeat__form input::placeholder { text-transform: none; }
+.petfeat__form .cta { justify-self: start; margin-top: 4px; }
+.petfeat__media { display: grid; gap: 10px; }
+.petfeat__hero { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block; background: var(--paper); }
+.petfeat__strip { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.petfeat__strip img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block; background: var(--paper); }
+@media (max-width: 900px) { .petfeat__grid { grid-template-columns: 1fr; } .petfeat__media { order: -1; } }
+@media (max-width: 480px) { .petfeat__stacker { grid-template-columns: 1fr; } .petfeat__stage { max-width: 260px; } }
+.petfeat__text .objects__intro { max-width: 46ch; }
+.petfeat__zoom { position: absolute; inset: 0; transform: scale(3.1); transform-origin: 50.2% 32.2%; }
+.petfeat__stacker { grid-template-columns: minmax(170px, 250px) 1fr; }
