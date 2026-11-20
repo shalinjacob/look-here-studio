@@ -163,7 +163,7 @@ const petParent: Product = {
   occasions: ["just-because"],
   shortDescription: "An oversized black tee with your pet's name stacked in gold and your pet's face over the middle.",
   description:
-    "Your pet's name stacked four times in gold capitals, with your pet's face popping out over the middle in black and white. Type the name and a title (MOM, DAD, whatever you answer to) and the preview on this page shows how the lettering will look. After you order, send us your pet's photo on WhatsApp: we cut your pet out, finish it in black and white and send you a proof to approve before we print. Heat-pressed vinyl on an oversized black cotton tee, made to order. Personalised, so it can't be returned.",
+    "Your pet's name stacked four times in gold capitals, with your pet's face popping out over the middle. Type the name and a title (MOM, DAD, whatever you answer to) and the preview on this page shows how the lettering will look. After you order, send us your pet's photo on WhatsApp: we cut your pet out, get the art ready and send you a proof to approve before we print. Heat-pressed vinyl on an oversized black cotton tee, made to order. Personalised, so it can't be returned.",
   custom: true,
   livePreview: "pet-stack",
   personalise: [

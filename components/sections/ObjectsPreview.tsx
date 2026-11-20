@@ -3,13 +3,13 @@ import ProductTile from "../ProductTile";
 import CTA from "../CTA";
 import { getFeatured } from "@/data/products";
 
-// 03 / OBJECTS — a preview of the catalogue. Each tile is fully clickable.
+// 07 / OBJECTS — a preview of the catalogue. Each tile is fully clickable.
 export default function ObjectsPreview() {
   const featured = getFeatured();
   return (
     <section className="section" id="objects" aria-label="Objects">
       <div className="wrap">
-        <div className="slabel"><span>06 / OBJECTS</span></div>
+        <div className="slabel"><span>07 / OBJECTS</span></div>
 
         <div className="objects__head">
           <h2 className="objects__title">A few things we&apos;re making.</h2>

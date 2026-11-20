@@ -38,6 +38,15 @@ export default function AddToCart({ product }: { product: Product }) {
   const [values, setValues] = useState<Record<string, string>>(() =>
     Object.fromEntries((product.personalise ?? []).map((f) => [f.id, f.defaultValue ?? ""]))
   );
+  // arriving from the homepage pet-tee stacker: ?name=Luca&who=DAD pre-fills the fields
+  useEffect(() => {
+    if (product.livePreview !== "pet-stack") return;
+    try {
+      const q = new URLSearchParams(window.location.search);
+      const name = q.get("name"), who = q.get("who");
+      if (name || who) setValues((v) => ({ ...v, ...(name ? { name: name.slice(0, 12) } : {}), ...(who ? { who: who.slice(0, 10) } : {}) }));
+    } catch {}
+  }, [product.livePreview]);
   const options = product.options ?? [];
   const [chosen, setChosen] = useState<Record<string, string>>(() =>
     Object.fromEntries(options.filter((o) => !o.required).map((o) => [o.id, o.choices[0].id]))

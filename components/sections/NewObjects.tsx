@@ -10,7 +10,7 @@ import {
 } from "@/data/products";
 import { altFor } from "@/data/images";
 
-// 07 / NEW IN — a two-up feature for the newest objects (made to order).
+// 06 / NEW IN — a two-up feature for the newest objects (made to order).
 const SLUGS = ["cat-got-your-heart", "pickleball-shadow-box"];
 
 export default function NewObjects() {
@@ -23,7 +23,7 @@ export default function NewObjects() {
     <section className="section newin" id="new-in" aria-label="New in">
       <div className="wrap">
         <div className="slabel">
-          <span>05 / NEW IN</span>
+          <span>06 / NEW IN</span>
           <span className="slabel__note">MADE TO ORDER.<br />ONE AT A TIME.</span>
         </div>
         <h2 className="newin__title">Just off the table.</h2>
