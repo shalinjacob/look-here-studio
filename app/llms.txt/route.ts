@@ -49,7 +49,7 @@ ${items}
 
 ## Small runs and custom orders
 
-Pieces made by hand in short batches on the studio's cutting machine: vinyl on block-printed fabric (framed), gold elephant wall decals, printed fridge magnets and heat-pressed vinyl tees. Designs can retire without warning. [All small runs](${SITE_URL}/small-runs). The studio also takes custom orders from a single piece up, with a quantity discount from 5 pieces: [Custom orders](${SITE_URL}/custom).
+Pieces made by hand in short batches on the studio's cutting machine: vinyl on block-printed fabric (framed), gold elephant wall decals, printed fridge magnets and heat-pressed vinyl tees. Designs can retire without warning. [All small runs](${SITE_URL}/small-runs). The custom Pet Parent tee, also featured on the home page, is made with the customer's own pet: their pet's name and a title (MOM, DAD…) are stacked four times in gold over an oversized black tee, with the pet's face over the middle. The customer sends a photo on WhatsApp after ordering, the studio cuts the pet out and sends a proof to approve before printing. It is personalised, so it cannot be returned: [Custom Pet Parent Tee](${SITE_URL}/objects/tee-custom-pet-parent). The studio also takes custom orders from a single piece up, with a quantity discount from 5 pieces: [Custom orders](${SITE_URL}/custom).
 
 ${smallRunLines}
 
