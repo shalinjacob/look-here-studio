@@ -248,7 +248,7 @@ export const categories: Category[] = [
       { q: "Are wall decals made to order?", a: "Yes, dispatched within 10 working days. See [shipping and returns](/shipping-returns)." },
     ],
     products: ["gold-elephant-decals", "carnation-wall-stickers", "lotus-wall-stickers", "poppy-wall-stickers", "bow-wall-stickers", "cloud-wall-stickers", "rainbow-wall-stickers", "scalloped-flower-wall-stickers", "apricot-daisy-wall-stickers"],
-    posts: ["why-we-make-things-in-small-runs"],
+    posts: ["why-we-make-things-in-small-runs", "wall-stickers-vs-wallpaper-rented-home", "how-to-put-up-wall-stickers"],
   },
   {
     slug: "art",
@@ -264,7 +264,7 @@ export const categories: Category[] = [
       { q: "Can I get my own artwork made?", a: "Yes. [Send us your design](/custom) and we'll confirm the price before you pay." },
     ],
     products: ["trying-to-get-my-shit-together", "outrageous-quote-poster", "chilli-jar-print", "cat-nap-print", "two-chillies-print", "spilled-peppercorns-print"],
-    posts: ["why-we-make-things-in-small-runs"],
+    posts: ["why-we-make-things-in-small-runs", "how-to-hang-a4-prints-and-small-art"],
   },
   {
     slug: "fridge-magnets",
@@ -280,7 +280,7 @@ export const categories: Category[] = [
       { q: "Does the photo frame magnet come with a photo?", a: "No, the frame is sold empty. Slide in your own photo-booth style strip." },
     ],
     products: ["photo-frame-magnet", "swan-revolt-magnet", "no-insurance-magnet", "starry-road-trip-magnet", "cherry-bomb-magnet", "oval-photo-frame-magnet"],
-    posts: ["why-we-make-things-in-small-runs"],
+    posts: ["why-we-make-things-in-small-runs", "how-to-display-photo-booth-strips"],
   },
   {
     slug: "tees",
@@ -297,7 +297,7 @@ export const categories: Category[] = [
       { q: "What sizes do the tees come in?", a: "XS to XXL, in an oversized fit. See the [size guide](/size-guide)." },
     ],
     products: ["tee-chic-sheeps", "tee-uninstall-astrology", "tee-only-fans", "tee-achaari-gend", "tee-custom-pet-parent"],
-    posts: ["why-we-make-things-in-small-runs"],
+    posts: ["why-we-make-things-in-small-runs", "custom-tshirts-small-quantities-india"],
   },
 ];
 

@@ -23,7 +23,7 @@ Mark an item `[x]` once its draft branch exists. Add new ideas at the bottom.
 - [ ] how-to-hang-a-heavy-mirror — How to choose and hang a statement mirror (wavy, full-length, lettered)
 - [ ] wedding-gift-ideas-home-decor-india — Wedding gifts for the couple's new home (that aren't steel utensils)
 - [ ] metal-wall-art-india — Laser-cut metal wall art: how it's made, how to hang it, how to clean it
-- [ ] photobooth-strip-frame — How to display photobooth strips and small prints
+- [x] photobooth-strip-frame — How to display photobooth strips and small prints
 - [ ] gifts-under-5000-india — Thoughtful home gifts under ₹5,000 in India
 - [ ] coffee-table-styling — How to style a coffee table without clutter
 - [ ] kids-room-wall-art — Wall art for kids' rooms that grows up with them
