@@ -51,9 +51,7 @@ const teeExchangeLd = {
 /** custom/personalised pieces are final sale and tees are exchange-only, so
  *  their Offer overrides the store policy rather than inheriting one it doesn't allow */
 export const finalSaleReturnPolicyLd = (p: Product) =>
-  p.sizeChart
-    ? teeExchangeLd
-    : isFinalSale(p)
+  isFinalSale(p)
     ? {
         hasMerchantReturnPolicy: {
           "@type": "MerchantReturnPolicy",
@@ -63,6 +61,8 @@ export const finalSaleReturnPolicyLd = (p: Product) =>
           merchantReturnLink: `${SITE_URL}/shipping-returns`,
         },
       }
+    : p.sizeChart
+    ? teeExchangeLd
     : {};
 
 /**

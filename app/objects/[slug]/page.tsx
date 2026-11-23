@@ -76,10 +76,10 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
   const faq = productFaq(p);
   const cats = categoriesFor(p.slug);
   const reading = publishedPosts.filter((j) => j.products?.includes(p.slug));
-  const returnsLine = p.sizeChart
+  const returnsLine = isFinalSale(p)
+    ? "Personalised, so it\u2019s final sale (no returns or size exchanges) unless it arrives damaged or isn\u2019t what you ordered."
+    : p.sizeChart
     ? "Free size exchange within 7 days (unworn, unwashed, tags on)."
-    : isFinalSale(p)
-    ? "Personalised, so it\u2019s final sale unless it arrives damaged."
     : p.variants?.some((v) => v.custom)
       ? "7-day returns on unused pieces, with free pickup (your-own-words versions are final sale)."
       : "7-day returns on unused pieces, with free pickup.";
@@ -293,36 +293,35 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         </ol>
       </section>
 
-      {/* AT HOME — real in-room photos, or an invitation to send one */}
-      <section className="pdp__section">
-        <div className="pdp__section-head">
-          <span className="pdp__section-tag">AT HOME</span>
-          <span className="pdp__section-rule" aria-hidden />
-        </div>
-        {p.lifestyleImages[0] ? (
-          <div className="pdp__athome">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={p.lifestyleImages[0]} alt={altFor(p.lifestyleImages[0], `${fullName(p)} in a room`)} loading="lazy" decoding="async" />
+      {/* IN USE: a real photo when we have one; otherwise a product-specific invitation (never for coming-soon pieces) */}
+      {(p.lifestyleImages[0] || !soon) && (
+        <section className="pdp__section">
+          <div className="pdp__section-head">
+            <span className="pdp__section-tag">{p.sizeChart ? "WORN" : p.subcategory === "Magnet" ? "ON THE FRIDGE" : "AT HOME"}</span>
+            <span className="pdp__section-rule" aria-hidden />
           </div>
-        ) : (
-          <div className="athome-empty">
-            <p className="athome-empty__body">
-              {soon
-                ? "Coming soon: real walls, real rooms."
-                : "Coming soon: real walls, real rooms. Got one on yours? Send us a photo and we might feature it (with your permission)."}
-            </p>
-            {!soon && (
-              <WaLink
-                text={`Hi! Here's my ${p.name} at home:`}
-                className="cta cta--link"
-              >
-                <span className="cta__label">Share your wall on WhatsApp</span>
+          {p.lifestyleImages[0] ? (
+            <div className="pdp__athome">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={p.lifestyleImages[0]} alt={altFor(p.lifestyleImages[0], `${fullName(p)} in use`)} loading="lazy" decoding="async" />
+            </div>
+          ) : (
+            <div className="athome-empty">
+              <p className="athome-empty__body">
+                {p.sizeChart
+                  ? "Wearing yours? Send us a photo and we might feature it (with your permission)."
+                  : p.subcategory === "Magnet"
+                    ? "Got it up on your fridge? Send us a photo and we might feature it (with your permission)."
+                    : "Got it up on your wall? Send us a photo and we might feature it (with your permission)."}
+              </p>
+              <WaLink text={`Hi! Here's my ${p.name}:`} className="cta cta--link">
+                <span className="cta__label">{p.sizeChart ? "Share your outfit on WhatsApp" : "Share a photo on WhatsApp"}</span>
                 <span className="cta__arrow">→</span>
               </WaLink>
-            )}
-          </div>
-        )}
-      </section>
+            </div>
+          )}
+        </section>
+      )}
 
       {/* GOOD TO KNOW */}
       <section className="pdp__section">

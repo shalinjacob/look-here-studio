@@ -163,7 +163,7 @@ const petParent: Product = {
   occasions: ["just-because"],
   shortDescription: "An oversized black tee with your pet's name stacked in gold and your pet's face over the middle.",
   description:
-    "Your pet's name stacked four times in gold capitals, with your pet's face popping out over the middle. Type the name and a title (MOM, DAD, whatever you answer to) and the preview on this page shows how the lettering will look. After you order, send us your pet's photo on WhatsApp: we cut your pet out, get the art ready and send you a proof to approve before we print. Heat-pressed vinyl on an oversized black cotton tee, made to order. Personalised, so it can't be returned.",
+    "A personalised oversized tee for people whose pet is their whole personality: your pet's name stacked four times in gold capitals, with your pet's face popping out over the middle. A birthday gift for a dog mum, an anniversary present for a cat dad, or something unnecessary for yourself. Type the name and a title (MOM, DAD, whatever you answer to) and the preview on this page shows how the lettering will look. After you order, send us your pet's photo on WhatsApp: we cut your pet out, get the art ready and send you a proof to approve before we print. Heat-pressed vinyl on an oversized black cotton tee, sizes XS to XXL, made to order in Bengaluru. Personalised, so it's final sale: no returns or size exchanges, so check the size chart first. If it arrives damaged or isn't what you ordered, we replace it or refund you.",
   custom: true,
   livePreview: "pet-stack",
   personalise: [
@@ -218,7 +218,7 @@ const elephantDecals: Product = {
   occasions: ["housewarming"],
   shortDescription: "A little herd of gold elephants, scattered up a wall like wallpaper you stuck on yourself.",
   description:
-    "A sheet of 25 small gold elephants, each 4.35 × 2.94 cm, cut from permanent vinyl, made to be scattered across a wall at any spacing you like: a loose herd across a bathroom, a trail up a staircase, a few on the nursery wall. No pattern repeat, no wallpaper paste, no commitment.",
+    "Gold elephant wall decals for nurseries, bathrooms, staircases and anyone who wants a feature wall without wallpaper. One sheet holds 25 small elephants, each 4.35 × 2.94 cm, cut from permanent gold vinyl and made to be scattered across a wall at any spacing you like: a loose herd across a bathroom, a trail up a staircase, a few on the nursery wall. No pattern repeat, no wallpaper paste, no commitment. Stick them on clean, dry, smooth painted walls; to remove, warm with a hairdryer and peel slowly. At ₹499 it's also an easy housewarming gift.",
   material: "Gold permanent vinyl, cut to shape",
   finish: "Gold",
   colour: "Gold",
@@ -257,7 +257,7 @@ const photoFrameMagnet: Product = {
   occasions: ["just-because"],
   shortDescription: "A rigid fridge magnet with a printed Indian-textile border and a pocket for your photo strip.",
   description:
-    "A tall, slim fridge magnet framed in an Indian textile pattern: Kasavu, Kanjivaram, Bandhani, Ajrakh or Leheriya. The top is open, so you slide a photo-booth style strip into the pocket and it sits behind the window. Change the photo whenever you like. The magnet is a rigid sheet, so it stays flat on the fridge. The frame is sold empty: your photo isn't included.",
+    "A fridge magnet that turns a photo-booth strip into a tiny framed portrait, with a border in one of six Indian textile patterns: Kasavu, Kanjivaram, Bandhani, Bandhani Dots, Ajrakh or Leheriya. The top is open, so you slide a strip into the pocket and swap it whenever you like. It's a rigid sheet, 6.8 × 15 cm, so it stays flat on the fridge door. The frame is sold empty: your photo isn't included. Available singly, or as a set of 3 or 6 for gifting.",
   material: "Printed frame on a rigid magnet sheet",
   finish: "Matte printed border, rounded corners",
   colour: "Choose a design",
@@ -423,7 +423,7 @@ const ovalFrameMagnet: Product = {
   occasions: ["just-because"],
   shortDescription: "A rigid fridge magnet frame with a red, yellow and navy check border and an oval window for your photo.",
   description:
-    "A fridge magnet frame in a bold red, yellow and navy check, with a navy-edged oval window in the middle. Slide a photo in behind the window and it sits there like a tiny portrait on your fridge. The magnet is a rigid sheet with rounded corners, so it stays flat on the door. The frame is sold empty: your photo isn't included.",
+    "A small fridge magnet frame for a favourite photo: a bold red, yellow and navy check border around a navy-edged oval window, 8.8 × 12.6 cm. Slide a photo in behind the window and it sits there like a tiny portrait on your fridge. It's a rigid sheet with rounded corners, so it stays flat on the door. The frame is sold empty: your photo isn't included. A small, affordable gift for anyone with a fridge full of photos.",
   material: "Printed frame on a rigid magnet sheet",
   finish: "Colour print, rounded corners",
   colour: "Red, yellow and navy check",

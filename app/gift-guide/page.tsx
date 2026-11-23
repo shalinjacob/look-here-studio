@@ -8,6 +8,8 @@ import {
   homeObjects as products,
   getProduct,
   formatPrice,
+  isPurchasable,
+  isComingSoon,
   OCCASIONS,
 } from "@/data/products";
 import { edits, editTotal, editComingSoon } from "@/data/edits";
@@ -19,52 +21,57 @@ export const metadata: Metadata = {
     "Housewarming and wedding gifts that aren't another scented candle. Sorted by budget, person and occasion. Gift-wrapped.",
 };
 
-// budget tiers, computed from the catalogue: every priced object, including the ones
-// still on the wishlist (their page offers the wishlist / WhatsApp instead of the cart)
-const buyable = products.filter((p) => p.price != null).sort((a, b) => a.price! - b.price!);
+// Budget tiers lead with what can be ordered today (Small Runs); every slug is checked
+// against the catalogue so a retired or unavailable piece drops out instead of going stale.
+const orderable = (slugs: string[]) =>
+  slugs.map((s) => getProduct(s)).filter((p): p is NonNullable<typeof p> => !!p && isPurchasable(p));
+
 const tiers = [
   {
-    label: "UNDER ₹5,000",
-    note: "The safe-bet budget. None of it feels like a safe bet.",
-    items: buyable.filter((p) => p.price! < 5000).slice(0, 4),
+    label: "UNDER ₹500",
+    note: "Order today. The safe-bet budget, none of it a safe bet.",
+    items: orderable(["gold-elephant-decals", "photo-frame-magnet", "swan-revolt-magnet", "rainbow-wall-stickers"]),
   },
   {
-    label: "UNDER ₹10,000",
-    note: "The proper-present tier. Wall plates, clocks, small lights.",
-    items: buyable.filter((p) => p.price! >= 5000 && p.price! < 10000).slice(0, 4),
+    label: "UNDER ₹1,500",
+    note: "Order today. Prints with opinions, and a framed cat having a moment.",
+    items: orderable(["outrageous-quote-poster", "chilli-jar-print", "cat-nap-print", "trying-to-get-my-shit-together"]),
   },
   {
-    label: "STATEMENT GIFTS",
-    note: "For the person you actually like. Or owe something to.",
-    items: buyable.filter((p) => p.price! >= 10000).slice(0, 4),
+    label: "₹1,500 AND UP",
+    note: "Order today. Made in small runs, so the good ones don't hang around.",
+    items: orderable(["tee-custom-pet-parent", "tee-chic-sheeps", "tee-only-fans", "lotus-wall-stickers"]),
   },
 ];
 
-// recipient archetypes
+// the bigger design objects aren't open for orders yet: shown last, clearly marked
+const comingSoonPieces = products.filter((p) => p.price != null && isComingSoon(p)).slice(0, 4);
+
+// recipient archetypes (all orderable now)
 const recipients = [
+  {
+    tag: "THE PET PARENT",
+    line: "Their dog is their whole personality.",
+    copy: "A tee with their pet's name stacked four times in gold and their pet's face over the middle. A birthday gift for a dog mum or a cat dad.",
+    slug: "tee-custom-pet-parent",
+  },
   {
     tag: "THE HOST",
     line: "Feeds twelve, owns four chairs.",
-    copy: "Coasters that survive a party, and a gold-and-marble game to settle who does the dishes.",
-    slug: "x-plus-o",
-  },
-  {
-    tag: "THE ONE WHO HAS EVERYTHING",
-    line: "So get them something slightly unnecessary.",
-    copy: "A clock that's also a small painting, or noughts-and-crosses that looks like an heirloom. Useful was never the point.",
-    slug: "layered-wall-clock",
-  },
-  {
-    tag: "THE DESIGN OBSESSIVE",
-    line: "Will clock the finish. Judge accordingly.",
-    copy: "Backlit art editions and an organic-shaped mirror. Things that hold up to a long, close look.",
-    slug: "blood-moon",
+    copy: "Kitchen prints with opinions: a chilli jar, spilled peppercorns, a cat napping. For the person whose fridge is the gallery.",
+    slug: "chilli-jar-print",
   },
   {
     tag: "THE NEW ADDRESS",
     line: "Housewarming, but make it noticed.",
-    copy: "A wavy shelf, a mirror shaped like a good mood, a frame for the corner nobody knows what to do with.",
-    slug: "pink-wavy-mirror",
+    copy: "A sheet of 25 gold elephant decals to scatter across a wall. Warm with a hairdryer and peel to remove.",
+    slug: "gold-elephant-decals",
+  },
+  {
+    tag: "THE ONE WITH OPINIONS",
+    line: "Will clock the details. Judge accordingly.",
+    copy: "Block-printed fabric under glass with a cat on a litter tray, trying her best. The honest version of a motivational poster.",
+    slug: "trying-to-get-my-shit-together",
   },
 ];
 
@@ -85,9 +92,10 @@ export default function GiftGuidePage() {
         </div>
         <h1 className="pagehead__title">Gifts that get noticed.</h1>
         <p className="pagehead__sub">
-          Good gifting is just paying attention. Here&apos;s everything we make,
-          sorted by what you&apos;ll spend, who you&apos;re buying for, and why —
-          so you can stop scrolling and go back to the party.
+          Good gifting is just paying attention. Everything in the first three
+          budgets below can be ordered today, made to order in Bengaluru and
+          dispatched within 10 working days. The bigger design pieces are coming
+          soon and are marked that way.
         </p>
       </div>
 
@@ -107,6 +115,19 @@ export default function GiftGuidePage() {
             </div>
           </div>
         ))}
+        {comingSoonPieces.length > 0 && (
+          <div className="gifttier">
+            <div className="gifttier__head">
+              <h2 className="gifttier__label">COMING SOON</h2>
+              <p className="gifttier__note">Statement pieces we&apos;re still finishing. Join the wishlist on a product page to hear first.</p>
+            </div>
+            <div className="tilegrid">
+              {comingSoonPieces.map((p, i) => (
+                <ProductTile key={p.slug} product={p} delay={(i % 4) * 50} />
+              ))}
+            </div>
+          </div>
+        )}
       </section>
 
       {/* by recipient */}
@@ -153,7 +174,7 @@ export default function GiftGuidePage() {
 
       {/* curated edits */}
       <section className="giftsec">
-        <div className="slabel"><span>04 / READY-MADE EDITS</span><span className="slabel__note">WE ALREADY DID THE THINKING.</span></div>
+        <div className="slabel"><span>04 / READY-MADE EDITS</span><span className="slabel__note">COMING SOON, WITH THE OBJECTS THEY&apos;RE MADE OF.</span></div>
         <div className="giftedits">
           {edits.map((e, i) => (
             <Reveal as="article" key={e.slug} delay={(i % 3) * 70} className="edit">

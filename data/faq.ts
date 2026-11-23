@@ -46,7 +46,9 @@ function teeFaq(p: Product): QA[] {
     { q: `How do I wash it?`, a: p.care },
     {
       q: `Can I exchange it if it doesn't fit?`,
-      a: `Yes. Free size exchange within 7 days of delivery, as long as it's unworn, unwashed and the tags are on; we arrange the pickup. Tees aren't refundable unless they arrive damaged or aren't what you ordered; report that within 48 hours with an unboxing video.`,
+      a: p.custom
+        ? `No. The ${p.name} is personalised with your own name and photo, so it's final sale and can't be exchanged or returned. We send you a proof to approve before printing, so check the size chart first. If it arrives damaged or isn't what you ordered, tell us within 48 hours with an unboxing video and we'll replace it or refund you.`
+        : `Yes. Free size exchange within 7 days of delivery, as long as it's unworn, unwashed and the tags are on; we arrange the pickup. Tees aren't refundable unless they arrive damaged or aren't what you ordered; report that within 48 hours with an unboxing video.`,
     },
     {
       q: `How do I order?`,

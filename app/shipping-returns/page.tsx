@@ -75,6 +75,7 @@ export default function ShippingReturnsPage() {
           <ul>
             <li><strong>Free size exchange within 7 days</strong> of delivery, as long as the tee is unworn, unwashed and the tags are still on. Message us on <a href={WA} target="_blank" rel="noreferrer">WhatsApp</a> and we arrange the pickup.</li>
             <li>Tees are made to order, so they can be exchanged for another size but <strong>aren&apos;t refundable</strong>, unless they arrive damaged or aren&apos;t what you ordered (see below).</li>
+            <li><strong>Personalised tees</strong> (the Custom Pet Parent Tee) are the exception: they&apos;re made from your pet&apos;s name and photo, so they&apos;re final sale and can&apos;t be exchanged. We send you a proof to approve before we print, and damaged or wrong items are still replaced or refunded.</li>
             <li>Not sure of your size? Every tee page has a size chart in inches and cm.</li>
           </ul>
 
