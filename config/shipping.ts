@@ -96,3 +96,36 @@ export function shippingForCart(
   const extra = lines.reduce((n, l) => n + (BULKY_EXTRA[l.slug] ?? 0) * l.qty, 0);
   return { fee: z.fee + extra, zone: z.zone, base: z.fee, extra };
 }
+
+/**
+ * Free shipping: orders at or above the minimum ship without the zone fee.
+ * Bengaluru has a lower minimum because delivery there is cheap.
+ * Extra charges for large items (BULKY_EXTRA) always still apply.
+ * ⚠ OWNER: change these two numbers to move the minimum.
+ */
+export const FREE_SHIPPING_MIN_BENGALURU = 599;
+export const FREE_SHIPPING_MIN = 999;
+
+/** the free-shipping minimum that applies to a valid pincode, or null while it isn't valid */
+export function freeShippingMin(pincode: string): number | null {
+  const pin = pincode.trim();
+  if (!/^[1-9]\d{5}$/.test(pin)) return null;
+  return isBengaluruPin(pin) ? FREE_SHIPPING_MIN_BENGALURU : FREE_SHIPPING_MIN;
+}
+
+/**
+ * What the customer actually pays for delivery, with free shipping applied.
+ * `fee` is the amount added to the order; `toFree` is how much more they'd need
+ * to add for the zone fee to drop away (0 once it's free).
+ */
+export function orderShipping(
+  pincode: string,
+  lines: { slug: string; qty: number }[],
+  subtotal: number
+): { fee: number; zone: string; free: boolean; toFree: number } | null {
+  const s = shippingForCart(pincode, lines);
+  const min = freeShippingMin(pincode);
+  if (!s || min === null) return null;
+  const free = subtotal >= min;
+  return { fee: (free ? 0 : s.base) + s.extra, zone: s.zone, free, toFree: free ? 0 : min - subtotal };
+}

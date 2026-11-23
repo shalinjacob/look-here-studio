@@ -324,7 +324,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
             <div><p className="gtk__label">Availability</p><p className="gtk__value">Coming soon. It can&apos;t be ordered or requested on WhatsApp yet. Leave your email below and we&apos;ll tell you when it opens.</p></div>
           ) : (
             <>
-          <div><p className="gtk__label">Shipping &amp; returns</p><p className="gtk__value">Shipping across India, charged by pincode. {p.leadTime}. {returnsLine} <Link href="/shipping-returns">Shipping &amp; returns →</Link></p></div>
+          <div><p className="gtk__label">Shipping &amp; returns</p><p className="gtk__value">Free shipping on orders over ₹999 (₹599 in Bengaluru). {p.leadTime}. {returnsLine} <Link href="/shipping-returns">Shipping &amp; returns →</Link></p></div>
           <div><p className="gtk__label">Customisation</p><p className="gtk__value">{p.sizeChart ? "Need a bulk run for a team or event? Ask us on WhatsApp." : p.variantLegend && !p.variantLegend.includes("COLOUR") ? "Available in the designs shown above." : "Colour and size tweaks possible on made-to-order pieces — just ask."}</p></div>
             </>
           )}

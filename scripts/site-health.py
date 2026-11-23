@@ -116,10 +116,10 @@ def main():
     if "Disallow: /" in fetch(BASE + "/robots.txt")[1].replace("Disallow: /api", "").replace("Disallow: /_next", "") and "Disallow: /\n" in fetch(BASE + "/robots.txt")[1]:
         problems.append("robots.txt blocks the whole site")
 
-    # wording that must not come back (see CLAUDE-side rules: no free shipping, no Diwali, no wishlist-only)
+    # wording that must not come back (see CLAUDE-side rules: free shipping is now allowed, no Diwali, no wishlist-only)
     for path in ["/", "/objects", "/faq", "/shipping-returns", "/gift-guide"]:
         text = pages.get(BASE + path, "")
-        for bad in [r"free shipping", r"shipped free", r"diwali", r"Gift Promise"]:
+        for bad in [r"diwali", r"Gift Promise"]:
             if re.search(bad, text, re.I):
                 problems.append(f"{path}: contains retired wording /{bad}/")
 

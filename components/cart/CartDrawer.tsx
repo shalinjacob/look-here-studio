@@ -8,7 +8,7 @@ import WaLink from "@/components/WaLink";
 import { ONLINE_PAYMENT } from "@/lib/site";
 import RazorpayButton from "./RazorpayButton";
 import { setDelivery, useDelivery } from "@/lib/deliveryStore";
-import { shippingForCart, localOnlyBlocked } from "@/config/shipping";
+import { orderShipping, localOnlyBlocked } from "@/config/shipping";
 
 // Slide-over cart. Handles qty change, remove, subtotal, and a WhatsApp request.
 
@@ -16,7 +16,7 @@ export default function CartDrawer() {
   const delivery = useDelivery();
   const { isOpen, closeCart, lines, count, subtotal, currency, setQty, removeItem, gift, giftNote, setGift } =
     useCart();
-  const ship = shippingForCart(delivery.pincode, lines);
+  const ship = orderShipping(delivery.pincode, lines, subtotal);
   const localOnly = localOnlyBlocked(delivery.pincode, lines);
 
   // lock scroll + escape to close
@@ -119,10 +119,6 @@ export default function CartDrawer() {
             </ul>
 
             <footer className="drawer__foot">
-              <div className="drawer__subtotal">
-                <span>SUBTOTAL</span>
-                <span>{formatPrice(subtotal, currency)}</span>
-              </div>
               <label className="drawer__pin">
                 <span>DELIVERY PINCODE</span>
                 <input
@@ -139,15 +135,26 @@ export default function CartDrawer() {
                   {localOnly.join(", ")} is only delivered within Bengaluru for now. Remove it to order to this pincode, or message us and we&apos;ll tell you when it travels.
                 </p>
               )}
-              <div className="drawer__subtotal">
-                <span>SHIPPING{ship ? ` · ${ship.zone.toUpperCase()}` : ""}</span>
-                <span>{ship ? formatPrice(ship.fee, currency) : "Enter pincode"}</span>
-              </div>
-              {ship && (
-                <div className="drawer__subtotal drawer__total">
-                  <span>TOTAL</span>
-                  <span>{formatPrice(subtotal + ship.fee, currency)}</span>
-                </div>
+              {ship ? (
+                <>
+                  <div className="drawer__subtotal drawer__total">
+                    <span>TOTAL{ship.free ? " · FREE SHIPPING" : ""}</span>
+                    <span>{formatPrice(subtotal + ship.fee, currency)}</span>
+                  </div>
+                  {!ship.free && (
+                    <p className="drawer__note">
+                      Delivery to {ship.zone} is included. Add {formatPrice(ship.toFree, currency)} more for free shipping.
+                    </p>
+                  )}
+                </>
+              ) : (
+                <>
+                  <div className="drawer__subtotal">
+                    <span>ITEMS</span>
+                    <span>{formatPrice(subtotal, currency)}</span>
+                  </div>
+                  <p className="drawer__note">Enter your pincode to see your total, delivery included.</p>
+                </>
               )}
               <div className="gift">
                 <label className="gift__check">
@@ -190,7 +197,7 @@ export default function CartDrawer() {
                 </WaLink>
               </p>
               <div className="drawer__fine">
-                <p>Made to order · dispatched within 10 working days · Shipping calculated by pincode</p>
+                <p>Made to order · dispatched within 10 working days · Free shipping over ₹599 in Bengaluru, ₹999 across India</p>
                 <p>
                   7-day returns on unused standard objects; personalised pieces are final sale.{" "}
                   <Link href="/shipping-returns" onClick={closeCart}>Shipping &amp; returns</Link>

@@ -57,7 +57,7 @@ export const categories: Category[] = [
     name: "Wall clocks",
     metaTitle: "Designer Wall Clocks, Made in Bengaluru | Look Here Studio",
     metaDescription:
-      "Two silent designer wall clocks made to order in Bengaluru: the layered orange Layer Clock and the Memphis-style Layered Wall Clock. Shipping across India, charged by pincode.",
+      "Two silent designer wall clocks made to order in Bengaluru: the layered orange Layer Clock and the Memphis-style Layered Wall Clock. Free shipping on orders over ₹999 (₹599 in Bengaluru).",
     answer:
       "Look Here Studio makes two designer wall clocks in its Bengaluru studio: the [Layer Clock](/objects/layer-clock) ({price:layer-clock}), 30 cm of stacked wavy layers in a terracotta-to-orange gradient, and the [Layered Wall Clock](/objects/layered-wall-clock) ({price:layered-wall-clock}), 34 cm of overlapping primary-colour acrylic shapes. Both have silent sweep movements, are made to order and ship free anywhere in India.",
     sections: [
@@ -72,7 +72,7 @@ export const categories: Category[] = [
     faq: [
       { q: "Are your wall clocks silent?", a: "Yes. Both use silent sweep movements, so there's no ticking." },
       { q: "How are they hung?", a: "Each hangs on a single wall screw. The Layer Clock runs on one AA battery." },
-      { q: "How long does a clock take to arrive?", a: "Each clock is made to order and dispatched within 10 working days of your order being confirmed, with shipping across India charged by pincode." },
+      { q: "How long does a clock take to arrive?", a: "Each clock is made to order and dispatched within 10 working days of your order being confirmed, with free shipping on orders over ₹999 (₹599 in Bengaluru)." },
     ],
     products: ["layer-clock", "layered-wall-clock"],
     posts: ["why-we-started-with-a-clock", "in-defence-of-the-slightly-wrong"],
@@ -82,7 +82,7 @@ export const categories: Category[] = [
     name: "Mirrors",
     metaTitle: "Wavy & Statement Mirrors, Made in Bengaluru | Look Here Studio",
     metaDescription:
-      "Wavy, full-length and lettered statement mirrors in pink, butter yellow and oxblood, made to order in Bengaluru. Shipping across India, charged by pincode.",
+      "Wavy, full-length and lettered statement mirrors in pink, butter yellow and oxblood, made to order in Bengaluru. Free shipping on orders over ₹999 (₹599 in Bengaluru).",
     answer:
       "Look Here Studio makes three statement mirrors in Bengaluru: the [Pink Wavy Mirror](/objects/pink-wavy-mirror) ({price:pink-wavy-mirror}, 50 × 60 cm), the full-length [Ripple Mirror](/objects/ripple-mirror) in butter yellow ({price:ripple-mirror}, 80 × 160 cm) and [Well, Look At You](/objects/well-look-at-you), an oxblood wavy mirror with lettering around the rim ({price:well-look-at-you}, 60 × 60 cm). All are made to order and ship free across India.",
     sections: [

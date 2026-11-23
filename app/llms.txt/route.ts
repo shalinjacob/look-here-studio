@@ -33,7 +33,7 @@ export function GET() {
 ## Key facts
 
 - Made to order in Bengaluru; dispatched within 10 working days of the order being confirmed.
-- Shipping anywhere in India, charged as a flat fee per order by delivery pincode. India only. India only.
+- Shipping anywhere in India. Free on orders of ₹999 and over (₹599 and over within Bengaluru); below that a flat per-order fee set by delivery pincode is included in the cart total. Large pieces carry an extra handling fee. India only.
 - Ordering: add objects to the cart on ${SITE_URL}, then pay online (Razorpay: UPI, cards, netbanking); the studio confirms delivery details after payment. Custom orders are handled on WhatsApp.
 - Returns: unused standard objects within 7 days of delivery, with free pickup. Personalised pieces are final sale unless damaged. Damage must be reported within 48 hours with an unboxing video and is replaced or refunded. Details: ${SITE_URL}/shipping-returns
 - Personalisation: custom words, text in any language, colours and sizes on many pieces. Corporate and wedding gifting in small runs.

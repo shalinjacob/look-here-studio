@@ -3,7 +3,7 @@ import Razorpay from "razorpay";
 import { priceCart } from "@/lib/razorpayPricing";
 import { cleanCustomer } from "@/lib/orderDetails";
 import { getProduct } from "@/data/products";
-import { shippingForCart, localOnlyBlocked } from "@/config/shipping";
+import { orderShipping, shippingForCart, localOnlyBlocked } from "@/config/shipping";
 
 export const runtime = "nodejs";
 
@@ -32,8 +32,10 @@ export async function POST(req: Request) {
   const c = who.value;
 
   // shipping is set server-side from the pincode, never taken from the browser
-  const ship = shippingForCart(c.pincode, body.lines as { slug: string; qty: number }[]);
-  if (!ship) return NextResponse.json({ error: "Add a 6-digit pincode." }, { status: 400 });
+  const shipLines = body.lines as { slug: string; qty: number }[];
+  const ship = orderShipping(c.pincode, shipLines, priced.total);
+  const shipInfo = shippingForCart(c.pincode, shipLines);
+  if (!ship || !shipInfo) return NextResponse.json({ error: "Add a 6-digit pincode." }, { status: 400 });
 
   const blocked = localOnlyBlocked(c.pincode, body.lines as { slug: string }[]);
   if (blocked.length) {
@@ -57,7 +59,8 @@ export async function POST(req: Request) {
         city: c.city,
         pincode: c.pincode,
         shipping_fee: String(ship.fee),
-        shipping_extra_large_items: String(ship.extra),
+        shipping_extra_large_items: String(shipInfo.extra),
+        shipping_free: ship.free ? "yes" : "no",
         shipping_zone: ship.zone,
         items_total: String(priced.total),
         gift: body.gift === true ? "yes" : "no",

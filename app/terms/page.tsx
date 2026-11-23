@@ -3,7 +3,7 @@ import Link from "next/link";
 import { EMAIL, BRAND_NAME } from "@/lib/site";
 
 // DRAFT. OWNER + legal review required: legal entity, GST wording, governing law.
-const UPDATED = "6 October 2026";
+const UPDATED = "23 November 2026";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/terms" },
@@ -24,8 +24,18 @@ export default function TermsPage() {
         <div className="article__body policy">
           <h2>How ordering works</h2>
           <p>
-            Your cart sends us an order request on WhatsApp. An order is confirmed only when we
-            confirm the price, details and dispatch date with you there.
+            Standard objects and small-run pieces are paid for online at checkout. Your order is
+            confirmed once your payment goes through, and we then confirm your delivery details with
+            you. Custom and personalised pieces are arranged with us on WhatsApp, where we confirm the
+            price, details and dispatch date before you pay.
+          </p>
+
+          <h2>Small runs</h2>
+          <p>
+            Small-run pieces (magnets, prints, tees and similar) are made in short batches. Once a batch
+            is finished, a design can retire and may not return, so if you want one, it&apos;s best to order
+            while it&apos;s listed. Small-run pieces are ordered and paid for on the site like any other
+            object, and follow the same shipping, dispatch and returns terms below.
           </p>
 
           <h2>Made to order</h2>
@@ -37,12 +47,17 @@ export default function TermsPage() {
           <h2>Prices and payment</h2>
           <p>
             Prices are shown in Indian rupees (₹). You can pay online at checkout (UPI, cards,
-            netbanking via Razorpay), or send us your order on WhatsApp and we&apos;ll confirm it and
-            send you the payment details there.
+            netbanking via Razorpay). For custom pieces, we&apos;ll send you the payment details on
+            WhatsApp once the price is agreed. The total you see at checkout includes delivery.
           </p>
 
           <h2>Shipping</h2>
-          <p>We ship within India only, free of charge.</p>
+          <p>
+            We ship within India only. Shipping is free on orders of ₹999 and over, and on orders of ₹599
+            and over within Bengaluru. Below that, a flat delivery charge set by your pincode is included
+            in your total at checkout. Large or heavy pieces carry an additional per-piece handling
+            charge, which still applies on orders that qualify for free shipping.
+          </p>
 
           <h2>Returns, damage and custom pieces</h2>
           <p>

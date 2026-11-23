@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { cleanCustomer, type Customer } from "@/lib/orderDetails";
 import { setDelivery, useDelivery } from "@/lib/deliveryStore";
-import { shippingForCart } from "@/config/shipping";
+import { orderShipping } from "@/config/shipping";
 import { formatPrice } from "@/data/products";
 import { useCart } from "./CartContext";
 import { track } from "@/lib/analytics";
@@ -32,7 +32,7 @@ function loadScript(): Promise<boolean> {
 export default function RazorpayButton({ blocked = false }: { blocked?: boolean }) {
   const { lines, subtotal, clear, gift, giftNote } = useCart();
   const c = useDelivery();
-  const ship = shippingForCart(c.pincode, lines);
+  const ship = orderShipping(c.pincode, lines, subtotal);
   const [busy, setBusy] = useState(false);
   const [open, setOpen] = useState(false);
   const firstField = useRef<HTMLInputElement>(null);
@@ -195,10 +195,10 @@ export default function RazorpayButton({ blocked = false }: { blocked?: boolean 
               </label>
 
               <div className="paymodal__sum">
-                <span>Subtotal</span>
+                <span>Items</span>
                 <span>{formatPrice(subtotal)}</span>
-                <span>Shipping{ship ? ` · ${ship.zone}` : ""}</span>
-                <span>{ship ? formatPrice(ship.fee) : "Enter pincode"}</span>
+                <span>Delivery{ship ? ` · ${ship.zone}` : ""}</span>
+                <span>{ship ? (ship.fee === 0 ? "Free" : "Included in total") : "Enter pincode"}</span>
                 <strong>Total</strong>
                 <strong>{total ? formatPrice(total) : "—"}</strong>
               </div>
