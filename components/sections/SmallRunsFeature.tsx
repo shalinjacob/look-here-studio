@@ -6,8 +6,6 @@ import { getProduct } from "@/data/products";
 const SLUGS = [
   "no-insurance-magnet",
   "swan-revolt-magnet",
-  "starry-road-trip-magnet",
-  "photo-frame-magnet",
   "trying-to-get-my-shit-together",
   "gold-elephant-decals",
 ];
