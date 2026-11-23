@@ -1,10 +1,11 @@
 import type { Product } from "./types";
 import { isFinalSale, isPurchasable } from "@/data/products";
 import { SITE_URL, WISHLIST_MODE } from "./site";
+import { DEFAULT_ZONE, FREE_SHIPPING_MIN } from "@/config/shipping";
 
 // ---------------------------------------------------------------------------
-// Values for Google Search structured data. Product pages target *product
-// snippets* (ordering finishes on WhatsApp, so there's no on-site purchase).
+// Values for Google Search / AI-assistant structured data. Product pages carry Product
+// schema with price, size, availability, shipping and returns (orders are paid online via Razorpay).
 // Return-policy values mirror /shipping-returns — keep them in step.
 // ---------------------------------------------------------------------------
 
@@ -63,3 +64,38 @@ export const finalSaleReturnPolicyLd = (p: Product) =>
         },
       }
     : {};
+
+/**
+ * Shipping for every Offer: free over the minimum, otherwise the standard per-order fee.
+ * (Bengaluru is cheaper and large pieces carry a handling fee: both are shown in the cart.)
+ * Handling time mirrors "dispatched within 10 working days".
+ */
+export const shippingDetailsLd = () => {
+  const destination = { "@type": "DefinedRegion", addressCountry: "IN" };
+  const deliveryTime = {
+    "@type": "ShippingDeliveryTime",
+    handlingTime: { "@type": "QuantitativeValue", minValue: 0, maxValue: 10, unitCode: "DAY" },
+  };
+  return [
+    {
+      "@type": "OfferShippingDetails",
+      shippingRate: { "@type": "MonetaryAmount", value: 0, currency: "INR" },
+      shippingDestination: destination,
+      deliveryTime,
+      shippingConditions: {
+        "@type": "ShippingConditions",
+        orderValue: { "@type": "MonetaryAmount", minValue: FREE_SHIPPING_MIN, currency: "INR" },
+      },
+    },
+    {
+      "@type": "OfferShippingDetails",
+      shippingRate: { "@type": "MonetaryAmount", value: DEFAULT_ZONE.fee, currency: "INR" },
+      shippingDestination: destination,
+      deliveryTime,
+      shippingConditions: {
+        "@type": "ShippingConditions",
+        orderValue: { "@type": "MonetaryAmount", maxValue: FREE_SHIPPING_MIN - 1, currency: "INR" },
+      },
+    },
+  ];
+};

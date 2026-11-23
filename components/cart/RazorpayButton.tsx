@@ -7,7 +7,7 @@ import { setDelivery, useDelivery } from "@/lib/deliveryStore";
 import { orderShipping } from "@/config/shipping";
 import { formatPrice } from "@/data/products";
 import { useCart } from "./CartContext";
-import { track } from "@/lib/analytics";
+import { track, trafficSource, gaItem } from "@/lib/analytics";
 
 declare global {
   interface Window {
@@ -75,6 +75,7 @@ export default function RazorpayButton({ blocked = false }: { blocked?: boolean 
           customer: who.value,
           gift,
           giftNote,
+          source: trafficSource() || undefined,
         }),
       });
       const order = await res.json();
@@ -105,6 +106,12 @@ export default function RazorpayButton({ blocked = false }: { blocked?: boolean 
             });
             const out = await v.json();
             if (!v.ok || !out.success) throw new Error(out.error || "Verification failed");
+            track("purchase", {
+              transaction_id: r.razorpay_payment_id,
+              value: total ?? subtotal,
+              currency: "INR",
+              items: lines.map((l) => gaItem({ ...l, category: "" }, l.qty, l.variant)),
+            });
             track("generate_lead", { value: subtotal, currency: "INR", lead_source: "razorpay_paid" });
             clear();
             setOpen(false);

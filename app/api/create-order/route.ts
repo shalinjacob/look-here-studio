@@ -17,7 +17,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Payments are not configured" }, { status: 500 });
   }
 
-  let body: { lines?: unknown; customer?: unknown; gift?: unknown; giftNote?: unknown };
+  let body: { lines?: unknown; customer?: unknown; gift?: unknown; giftNote?: unknown; source?: unknown };
   try {
     body = await req.json();
   } catch {
@@ -63,6 +63,7 @@ export async function POST(req: Request) {
         shipping_free: ship.free ? "yes" : "no",
         shipping_zone: ship.zone,
         items_total: String(priced.total),
+        traffic_source: body.source === "chatgpt" ? "chatgpt" : "",
         gift: body.gift === true ? "yes" : "no",
         gift_note: body.gift === true ? String(body.giftNote ?? "").slice(0, 200) : "",
         ...itemNotes(body.lines as { slug: string; variant?: string; qty: number }[]),

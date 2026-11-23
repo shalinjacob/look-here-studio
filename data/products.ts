@@ -1080,3 +1080,57 @@ export const OCCASIONS: { key: Occasion; label: string; note: string }[] = [
 export function getByOccasion(o: Occasion): Product[] {
   return products.filter((p) => p.occasions?.includes(o));
 }
+
+// ---------------------------------------------------------------------------
+// Descriptive naming + plain-language summaries (search and AI-assistant friendly).
+// The creative name stays the headline; these sit alongside it.
+// ---------------------------------------------------------------------------
+
+/** what the object actually is, e.g. "Layered Orange Wall Clock, 30 cm" (from the SEO title) */
+export function descriptor(p: Product): string {
+  const i = p.seoTitle.indexOf(": ");
+  return i === -1 ? "" : p.seoTitle.slice(i + 2).trim();
+}
+
+/** creative name + what it is, e.g. "Layer Clock: Layered Orange Wall Clock, 30 cm" */
+export function fullName(p: Product): string {
+  return p.seoTitle.includes(": ") ? p.seoTitle : p.name;
+}
+
+const OCCASION_GIFT: Record<string, string> = {
+  housewarming: "housewarming",
+  wedding: "wedding",
+  "just-because": "just-because",
+};
+
+/**
+ * A factual "what it is, who it's for" sentence built only from the product's own fields
+ * (no invented claims), used on the page and in structured data.
+ */
+export function plainSummary(p: Product): string {
+  const lc = (t: string) => t.charAt(0).toLowerCase() + t.slice(1);
+  const what = descriptor(p) ? `${p.name} (${descriptor(p)})` : p.name;
+  let s = `${what} is made to order in Bengaluru, India, from ${lc(p.material)}, in ${lc(p.colour)}. Size: ${p.dimensions}.`;
+  const gifts = (p.occasions ?? []).map((o) => OCCASION_GIFT[o]).filter(Boolean);
+  s += gifts.length ? ` A good ${gifts.join(" or ")} gift, or a treat for yourself.` : " A thoughtful gift, or a treat for yourself.";
+  return s;
+}
+
+/** lowest and highest price across variants and option upcharges */
+export function priceRange(p: Product): { low: number; high: number } | null {
+  if (p.price == null) return null;
+  let low = p.price;
+  let high = p.price;
+  if (p.variants?.length) {
+    const vs = p.variants.map((v) => v.price);
+    low = Math.min(low, ...vs);
+    high = Math.max(high, ...vs);
+  }
+  if (p.options?.length) {
+    const lowD = p.options.reduce((n, o) => n + Math.min(...o.choices.map((c) => c.priceDelta ?? 0)), 0);
+    const highD = p.options.reduce((n, o) => n + Math.max(...o.choices.map((c) => c.priceDelta ?? 0)), 0);
+    low += lowD;
+    high += highD;
+  }
+  return { low, high };
+}

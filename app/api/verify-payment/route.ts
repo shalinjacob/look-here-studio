@@ -53,6 +53,7 @@ async function notifyStudio(orderId: string, paymentId: string, previews: Previe
     `PAID ONLINE: ₹${(Number(order.amount) / 100).toLocaleString("en-IN")} (items ₹${n.items_total ?? "?"} + shipping ₹${n.shipping_fee ?? "?"}, ${n.shipping_zone ?? "?"})`,
     `Razorpay order ${orderId} · payment ${paymentId}`,
     "",
+    ...(n.traffic_source ? [`Came from: ${n.traffic_source}`] : []),
     `Items: ${items || "—"}`,
     `Gift: ${n.gift ?? "no"}${n.gift_note ? ` — note: ${n.gift_note}` : ""}`,
     "",

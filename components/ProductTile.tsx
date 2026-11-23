@@ -1,7 +1,7 @@
 import Link from "next/link";
 import SmartImage from "./SmartImage";
 import Reveal from "./Reveal";
-import { badge, formatPrice, isPurchasable, hasPriceRange, isComingSoon } from "@/data/products";
+import { badge, formatPrice, isPurchasable, hasPriceRange, isComingSoon, fullName } from "@/data/products";
 import { altFor } from "@/data/images";
 import type { Product } from "@/lib/types";
 
@@ -23,7 +23,7 @@ export default function ProductTile({
         <div className={`tile__frame${p.imageFit === "cover" ? " tile__frame--cover" : ""}`}>
           <SmartImage
             src={p.images[0]}
-            alt={altFor(p.images[0], p.name)}
+            alt={altFor(p.images[0], fullName(p))}
             fit={p.imageFit ?? "contain"}
             className="tile__img"
             fallback={<div className="tile__ph">{p.objectNumber}</div>}
@@ -31,7 +31,7 @@ export default function ProductTile({
           {hoverSrc && (
             <SmartImage
               src={hoverSrc}
-              alt={altFor(hoverSrc, p.name)}
+              alt={altFor(hoverSrc, fullName(p))}
               fit="cover"
               className="tile__img tile__img--hover"
               fallback={null}

@@ -467,6 +467,7 @@ input { font: inherit; }
 .pdp__price { font-family: var(--mono); font-size: 20px; color: var(--ink); }
 .pdp__price--soon { font-size: 14px; letter-spacing: .1em; color: var(--muted); }
 .pdp__status { font-family: var(--mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.pdp__descriptor { font-family: var(--mono); font-size: 13px; letter-spacing: .04em; color: var(--faint); margin-top: 6px; }
 .pdp__lead { font-family: var(--mono); font-size: 15px; line-height: 1.7; color: var(--body); margin-top: 22px; }
 .pdp__actions { margin-top: 26px; }
 .addcart { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }

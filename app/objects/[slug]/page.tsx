@@ -21,7 +21,7 @@ import { publishedPosts } from "@/data/journal";
 import { SITE_URL, BRAND_NAME, ogImage } from "@/lib/site";
 import { altFor } from "@/data/images";
 import { gaItem } from "@/lib/analytics";
-import { SKU, schemaAvailability, finalSaleReturnPolicyLd } from "@/lib/structuredData";
+import { SKU, schemaAvailability, finalSaleReturnPolicyLd, shippingDetailsLd } from "@/lib/structuredData";
 import {
   products,
   getProduct,
@@ -37,6 +37,10 @@ import {
   canOrderNow,
   isComingSoon,
   hasPriceRange,
+  descriptor,
+  fullName,
+  plainSummary,
+  priceRange,
 } from "@/data/products";
 
 export function generateStaticParams() {
@@ -51,7 +55,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     description: metaDescription(p),
     alternates: { canonical: `/objects/${p.slug}` },
     openGraph: {
-      title: `${p.name} | ${BRAND_NAME}`,
+      title: `${fullName(p)} | ${BRAND_NAME}`,
       description: p.shortDescription,
       url: `/objects/${p.slug}`,
       images: [ogImage(p.slug)],
@@ -86,28 +90,35 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
   const productLd = {
     "@context": "https://schema.org",
     "@type": "Product",
-    name: p.name,
-    description: p.description,
+    name: fullName(p),
+    alternateName: p.name,
+    description: `${plainSummary(p)} ${p.description}`,
     image: gallery.map((src) => `${SITE_URL}${src}`),
     sku: SKU(p),
     mpn: SKU(p),
     category: p.category,
     material: p.material,
     color: p.colour,
+    size: p.dimensions,
     brand: { "@type": "Brand", name: BRAND_NAME },
     url,
     ...(p.price != null && !soon
       ? {
-          offers: {
-            "@type": "Offer",
-            url,
-            price: p.price,
-            priceCurrency: p.currency,
-            availability: schemaAvailability(p),
-            itemCondition: "https://schema.org/NewCondition",
-            seller: { "@id": `${SITE_URL}/#store` },
-            ...finalSaleReturnPolicyLd(p),
-          },
+          offers: (() => {
+            const range = priceRange(p);
+            const common = {
+              url,
+              priceCurrency: p.currency,
+              availability: schemaAvailability(p),
+              itemCondition: "https://schema.org/NewCondition",
+              seller: { "@id": `${SITE_URL}/#store` },
+              shippingDetails: shippingDetailsLd(),
+              ...finalSaleReturnPolicyLd(p),
+            };
+            return range && range.low !== range.high
+              ? { "@type": "AggregateOffer", lowPrice: range.low, highPrice: range.high, ...common }
+              : { "@type": "Offer", price: p.price, ...common };
+          })(),
         }
       : {}),
   };
@@ -152,13 +163,13 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         <div>
           <ProductGallery
             images={gallery}
-            alt={p.name}
+            alt={fullName(p)}
             fit={p.imageFit ?? "contain"}
             fallbackNumber={p.objectNumber}
           />
           {p.model3d && (
             <div className="pdp__video">
-              <ModelViewer src={p.model3d} srgbFix={p.model3dSrgb} alt={`${p.name}, interactive 3D view`} />
+              <ModelViewer src={p.model3d} srgbFix={p.model3dSrgb} alt={`${fullName(p)}, interactive 3D view`} />
             </div>
           )}
           {p.video && (
@@ -172,6 +183,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         <aside className="pdp__info">
           <p className="pdp__num">OBJECT {p.objectNumber}</p>
           <h1 className="pdp__name">{p.name}</h1>
+          {descriptor(p) && <p className="pdp__descriptor">{descriptor(p)}</p>}
           <p className="pdp__cat">
             {cats.some((c) => c.name === p.category) ? null : p.category}
             {cats.map((c, i) => (
@@ -229,6 +241,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
           <span className="pdp__section-tag">THE OBJECT</span>
           <span className="pdp__section-rule" aria-hidden />
         </div>
+        <p className="pdp__prose">{plainSummary(p)}</p>
         <p className="pdp__prose">{p.description}</p>
         {p.story && (
           <div className="pdp__story">
@@ -289,7 +302,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         {p.lifestyleImages[0] ? (
           <div className="pdp__athome">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={p.lifestyleImages[0]} alt={altFor(p.lifestyleImages[0], `${p.name} in a room`)} loading="lazy" decoding="async" />
+            <img src={p.lifestyleImages[0]} alt={altFor(p.lifestyleImages[0], `${fullName(p)} in a room`)} loading="lazy" decoding="async" />
           </div>
         ) : (
           <div className="athome-empty">
