@@ -7,7 +7,7 @@ import { setDelivery, useDelivery } from "@/lib/deliveryStore";
 import { orderShipping } from "@/config/shipping";
 import { formatPrice } from "@/data/products";
 import { useCart } from "./CartContext";
-import { track, trafficSource, gaItem } from "@/lib/analytics";
+import { track, trafficSource, gaItem, oaiMeasure } from "@/lib/analytics";
 
 declare global {
   interface Window {
@@ -112,6 +112,23 @@ export default function RazorpayButton({ blocked = false }: { blocked?: boolean 
               currency: "INR",
               items: lines.map((l) => gaItem({ ...l, category: "" }, l.qty, l.variant)),
             });
+            oaiMeasure(
+              "order_created",
+              {
+                type: "contents",
+                amount: Math.round((total ?? subtotal) * 100), // minor units (paise)
+                currency: "INR",
+                contents: lines.map((l) => ({
+                  id: l.slug,
+                  name: l.name,
+                  content_type: "product",
+                  quantity: l.qty,
+                  amount: Math.round(l.price * 100),
+                  currency: "INR",
+                })),
+              },
+              { event_id: r.razorpay_payment_id }
+            );
             track("generate_lead", { value: subtotal, currency: "INR", lead_source: "razorpay_paid" });
             clear();
             setOpen(false);
@@ -144,6 +161,17 @@ export default function RazorpayButton({ blocked = false }: { blocked?: boolean 
         onClick={() => {
           setMsg(null);
           setOpen(true);
+          oaiMeasure("checkout_started", {
+            type: "contents",
+            amount: Math.round((total ?? subtotal) * 100), // minor units (paise)
+            currency: "INR",
+            contents: lines.map((l) => ({
+              id: l.slug,
+              name: l.name,
+              content_type: "product",
+              quantity: l.qty,
+            })),
+          });
         }}
       >
         <span className="cta__label">{total ? `PAY ${formatPrice(total)} ONLINE` : "PAY ONLINE"}</span>

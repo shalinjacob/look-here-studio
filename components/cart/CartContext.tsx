@@ -11,7 +11,7 @@ import {
   useCallback,
 } from "react";
 import type { Product } from "@/lib/types";
-import { track, gaItem } from "@/lib/analytics";
+import { track, gaItem, oaiMeasure } from "@/lib/analytics";
 import { getProduct, isComingSoon } from "@/data/products";
 
 // ---------------------------------------------------------------------------
@@ -200,6 +200,21 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       currency: product.currency,
       value: price * qty,
       items: [{ ...gaItem({ ...product, price }, qty, variant?.label) }],
+    });
+    oaiMeasure("items_added", {
+      type: "contents",
+      amount: Math.round(price * qty * 100), // minor units (paise)
+      currency: product.currency,
+      contents: [
+        {
+          id: product.slug,
+          name: product.name,
+          content_type: "product",
+          quantity: qty,
+          amount: Math.round(price * 100),
+          currency: product.currency,
+        },
+      ],
     });
     setIsOpen(true);
   }, []);

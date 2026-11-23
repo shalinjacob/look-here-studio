@@ -10,6 +10,7 @@ declare global {
   interface Window {
     gtag?: (...args: unknown[]) => void;
     fbq?: (...args: unknown[]) => void;
+    oaiq?: (...args: unknown[]) => void;
   }
 }
 
@@ -83,3 +84,13 @@ export const gaItem = (p: { slug: string; name: string; price: number | null; ca
   price: p.price ?? undefined,
   quantity: qty,
 });
+
+/** OpenAI Measurement Pixel (ChatGPT Ads). A no-op unless NEXT_PUBLIC_OPENAI_PIXEL_ID is set. */
+export function oaiMeasure(event: string, data: Params, options?: Params) {
+  if (typeof window === "undefined") return;
+  try {
+    window.oaiq?.("measure", event, data, ...(options ? [options] : []));
+  } catch {
+    /* analytics must never break the page */
+  }
+}
