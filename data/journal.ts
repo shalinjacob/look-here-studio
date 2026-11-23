@@ -569,6 +569,303 @@ export const journal: JournalPost[] = [
     products: ["small-planet", "cat-got-your-heart"],
   },
   {
+    slug: "wall-stickers-vs-wallpaper-rented-home",
+    index: "015",
+    title: "Wall Stickers or Wallpaper? What Works in a Rented Home",
+    metaTitle: "Wall Stickers vs Wallpaper for a Rented Home",
+    date: "2026-11-23",
+    updated: "2026-11-23",
+    category: "Guide",
+    excerpt:
+      "Wallpaper needs paste and a landlord's blessing. Wall stickers need a clean wall and a hairdryer for later. How to choose, and where each one falls short.",
+    description:
+      "Wall stickers vs wallpaper for a rented home: what each does well, where stickers fall short, how much wall a set covers and how to take them off again.",
+    readingTime: "",
+    answer:
+      "For a rented home, wall stickers are usually the easier call: no paste, no scraping, and you decide how much wall to cover. Wallpaper wins only when you want one seamless pattern across a whole wall and you're sure you can live with the removal. Our wall stickers are cut from printed vinyl and go on clean, dry, smooth painted walls.",
+    body: [],
+    sections: [
+      {
+        heading: "Why is wallpaper a gamble in a rented home?",
+        paras: [
+          "Wallpaper is a commitment in two directions. Putting it up needs paste and a steady hand, and taking it down can mean scraping, patching and repainting, which is exactly the conversation most tenants would rather not have with a landlord.",
+          "It's also an all-or-nothing look. You paper a wall or you don't, and a half-finished wall looks like a mistake.",
+        ],
+      },
+      {
+        heading: "What do wall stickers do better?",
+        paras: [
+          "They scale to how much you're willing to do. Six carnations up a stairwell is a finished idea; so is a whole wall of lotus flowers. There's no paste, no frame and no pattern repeat to match, so you can start small and add to it later.",
+          "They also come off. To remove one, warm it with a hairdryer and peel slowly. Test a hidden spot first, because vinyl can lift paint when it's removed, and that's worth knowing before the deposit is involved.",
+        ],
+      },
+      {
+        heading: "Where do wall stickers fall short?",
+        paras: [
+          "They aren't a seamless wallpaper. Each sticker is its own shape, so you get a pattern with gaps, which is the point, but not an unbroken print edge to edge.",
+          "They also want the right wall: clean, dry, smooth and painted. That's how we make and test them. If your wall is damp, dusty or heavily textured, sort that out first or expect a weaker hold.",
+        ],
+      },
+      {
+        heading: "How much wall does one set cover?",
+        paras: [
+          "It depends on the spacing, and you can stretch a set. One [Lotus & Bud](/objects/lotus-wall-stickers) set (24 stickers, {price:lotus-wall-stickers}) covers about 8 × 8 ft at the spacing shown in the photos, and the [Poppy](/objects/poppy-wall-stickers) set ({price:poppy-wall-stickers}) does about the same. Space them wider and the set covers a bigger wall, with a lighter look.",
+        ],
+      },
+      {
+        heading: "Which look should I pick?",
+        paras: [
+          "For a block-print wallpaper feel, stagger the Lotus & Bud set in a loose grid, flower, bud, flower. For a wild meadow, scatter the Poppy set at different heights. For a nursery or a reading corner, the [Watercolour Clouds](/objects/cloud-wall-stickers) ({price:cloud-wall-stickers}) make a quiet sky. See everything on the [wall decals page](/small-runs/wall-decals).",
+          "Want a shape or colour we don't make yet? [Custom wall decals](/custom) can be cut from vinyl in a set to your design.",
+        ],
+      },
+    ],
+    faq: [
+      { q: "Will wall stickers damage my paint?", a: "They're made for clean, dry, smooth painted walls. To remove one, warm it with a hairdryer and peel slowly. Vinyl can lift paint when it's removed, so test a hidden spot first." },
+      { q: "Can I use wall stickers on a textured wall?", a: "We make and describe them for smooth painted walls. On a heavily textured wall they may not hold as well, so try one in a corner before committing a whole set." },
+      { q: "How long do wall stickers take to arrive?", a: "Wall stickers are made to order and dispatched within 10 working days of your order being confirmed." },
+      { q: "Can I get wall stickers in my own design?", a: "Yes. Send the idea on WhatsApp from our [custom orders page](/custom) and we'll confirm how it will look and the price before you pay." },
+    ],
+    products: ["lotus-wall-stickers", "poppy-wall-stickers", "cloud-wall-stickers"],
+  },
+  {
+    slug: "how-to-put-up-wall-stickers",
+    index: "016",
+    title: "How to Put Up Wall Stickers So They Look Planned, Not Random",
+    metaTitle: "How to Put Up Wall Stickers: Layouts That Work",
+    date: "2026-11-23",
+    updated: "2026-11-23",
+    category: "Guide",
+    excerpt:
+      "Grid, scatter or trail? How to plan a wall sticker layout on the floor first, so the wall only gets the version you've already approved.",
+    description:
+      "How to put up wall stickers neatly: prep the wall, plan the layout on the floor, choose between a grid, a scatter or a trail, and stick them without bubbles.",
+    readingTime: "",
+    answer:
+      "Clean the wall, lay the stickers out on the floor first, then stick them from the middle outwards. Choose a loose grid for a wallpaper look, a scatter at mixed heights for a meadow or a sky, or a trail for a staircase. Planning on the floor is the step that stops a wall from looking random.",
+    body: [],
+    sections: [
+      {
+        heading: "How do I prepare the wall?",
+        paras: [
+          "Stick onto a clean, dry, smooth painted wall. Wipe off dust and any greasy marks, let the wall dry fully, and only then start. If the paint is fresh, give it time to cure before you stick anything on it.",
+        ],
+      },
+      {
+        heading: "Why plan the layout on the floor?",
+        paras: [
+          "Because a wall forgives nothing once a sticker is on it. Lay the whole set out on a bedsheet or the floor, shuffle until the gaps feel even, and take a photo. Then work from the photo, wall in front of you, middle first.",
+          "It also tells you early whether one set is enough. If it looks thin, spread it wider on purpose rather than squeezing a second set into a gap.",
+        ],
+      },
+      {
+        heading: "Grid, scatter or trail: which layout suits which wall?",
+        paras: [
+          "A grid reads as wallpaper. The [Apricot Daisy](/objects/apricot-daisy-wall-stickers) sheet (12 daisies, about 5 cm each) is made for it: line them up neatly, and they look best on a coloured wall such as sage green, blue, pink or deep brown. The [Lotus & Bud](/objects/lotus-wall-stickers) set works as a staggered grid, flower, bud, flower.",
+          "A scatter reads as a meadow or a sky. Vary the heights and angles, and keep the spacing uneven on purpose. A trail suits a staircase or a hallway: the [Gold Elephant Decals](/objects/gold-elephant-decals) work well as a loose herd across a bathroom or a line up the stairs.",
+        ],
+      },
+      {
+        heading: "How do I get them on without bubbles?",
+        paras: [
+          "Take your time and press from the centre of each sticker outwards, smoothing as you go. Stand back after every few and check the spacing from across the room, because that's where uneven gaps show.",
+        ],
+      },
+      {
+        heading: "What if I change my mind later?",
+        paras: [
+          "Warm a sticker with a hairdryer and peel slowly. Vinyl can lift paint on its way off, so try a hidden spot first if the wall matters to you. For help choosing a set, start on the [wall decals page](/small-runs/wall-decals).",
+        ],
+      },
+    ],
+    faq: [
+      { q: "How many wall stickers do I need for one wall?", a: "It depends on the look. One Lotus & Bud set (24 stickers) or one Poppy set covers about 8 × 8 ft at the spacing shown, and you can space them wider to cover more." },
+      { q: "How do I take wall stickers off?", a: "Warm the sticker with a hairdryer and peel it off slowly. Test a hidden spot first, since vinyl can lift paint when removed." },
+      { q: "Do the Gold Elephant Decals come as a set?", a: "Yes. One sheet holds 25 small elephants, each 4.35 × 2.94 cm, cut from permanent gold vinyl." },
+      { q: "Can I order only one sheet of daisies or a small set?", a: "Yes. The Apricot Daisy sheet and the six-piece Carnation set are small, single purchases, made to order and dispatched within 10 working days." },
+    ],
+    products: ["apricot-daisy-wall-stickers", "lotus-wall-stickers", "gold-elephant-decals"],
+  },
+  {
+    slug: "custom-tshirts-small-quantities-india",
+    index: "017",
+    title: "How to Order Custom T-Shirts in Small Quantities in India",
+    metaTitle: "Custom T-Shirts in Small Quantities, From 1 Piece",
+    date: "2026-11-23",
+    updated: "2026-11-23",
+    category: "Guide",
+    excerpt:
+      "No minimum, a proof before you pay, and a price that drops from the fifth piece. How custom tee orders work at a small Bengaluru studio.",
+    description:
+      "Order custom T-shirts from one piece in India: how pricing tiers work, what files to send, how long it takes and what you approve before paying.",
+    readingTime: "",
+    answer:
+      "You can order a custom tee from a single piece. One piece is the standard price plus a small design setup fee; from 5 pieces of the same design the setup fee goes and each tee is cheaper, with a bigger discount from 10. You see a proof and the exact price before you pay.",
+    body: [],
+    sections: [
+      {
+        heading: "Is there a minimum order for custom tees?",
+        paras: [
+          "No. One piece is fine. A single custom tee is priced at the standard price plus a one-off design setup fee, because we still have to redraw your art for cutting.",
+          "Each design is priced on its own. Ten tees in the same design get the 10-piece discount; ten different designs are ten single orders.",
+        ],
+      },
+      {
+        heading: "How do the quantity tiers work?",
+        paras: [
+          "From 5 pieces of the same design the setup fee is waived and you get 10% off. From 10 pieces it's 20% off. From 25 pieces we quote by hand, because the plan, the date and the sizes matter more than a formula. Our oversized tees start at {price:tee-uninstall-astrology}, and the [custom orders page](/custom) has a price check you can try with your own quantity.",
+        ],
+      },
+      {
+        heading: "What do I send, and what happens next?",
+        paras: [
+          "Send the idea on WhatsApp: a clean logo, a sketch, a photo or just words, plus how many you need and by when. We redraw it for cutting and send back how it will look and the exact price, usually within a day. Nothing is paid until you approve.",
+          "Simple, bold shapes cut best. Very fine detail may need simplifying, and we tell you at the proof rather than after.",
+        ],
+      },
+      {
+        heading: "Can I send my own tee or garment?",
+        paras: [
+          "Yes. A plain tee, polo, tote or hoodie works best. Message us before sending anything, and we'll say whether the fabric takes a heat-pressed print and where to send it.",
+        ],
+      },
+      {
+        heading: "How long does a custom tee order take?",
+        paras: [
+          "Up to 10 pieces dispatch within 10 working days. Bigger runs get a date at the proof stage, so tell us early if the tees are for an event. Team tees, wedding favours and café uniforms are what the 10 and 25-piece tiers are for.",
+        ],
+      },
+      {
+        heading: "Can I use a cartoon character, a logo or a team crest?",
+        paras: [
+          "Only if you own the rights or have permission to use it. We don't cut licensed characters or other people's brand logos without that. If you're after something personal and original, the [Custom Pet Parent Tee](/objects/tee-custom-pet-parent) is a good example: your pet's name stacked in gold, with their face over the middle.",
+        ],
+      },
+    ],
+    faq: [
+      { q: "What is the minimum order for a custom tee?", a: "There isn't one. A single piece costs the standard price plus a design setup fee. From 5 pieces of the same design the setup fee is waived and each piece is cheaper." },
+      { q: "Can custom tees be returned?", a: "Custom and personalised pieces are final sale unless they arrive damaged or aren't what we agreed at the proof. Details on [shipping and returns](/shipping-returns)." },
+      { q: "What file format do you need?", a: "Anything is a start: a clean logo, a sketch or a photo of what you have in mind. We redraw it for cutting." },
+      { q: "How is the print applied?", a: "Our vinyl tees are heat-pressed, cut and weeded by hand. The result is a raised vinyl print on an oversized cotton tee." },
+    ],
+    products: ["tee-custom-pet-parent", "tee-uninstall-astrology", "tee-chic-sheeps"],
+  },
+  {
+    slug: "how-to-display-photo-booth-strips",
+    index: "018",
+    title: "How to Display Photo-Booth Strips So They Don't End Up in a Drawer",
+    metaTitle: "How to Display Photo-Booth Strips at Home",
+    date: "2026-11-23",
+    updated: "2026-11-23",
+    category: "Guide",
+    excerpt:
+      "A strip of four little photos deserves better than a wallet. Where to put them, how to keep them swappable, and why a fridge magnet frame is the easy answer.",
+    description:
+      "How to display photo-booth strips and small prints at home: a swappable magnet frame on the fridge, where to put it, and how to keep photos from fading.",
+    readingTime: "",
+    answer:
+      "The easiest way to display a photo-booth strip is a frame you can open from the top, so you can swap strips whenever you like. A rigid fridge magnet frame does it with no nails and no glass: slide the strip in, stick the magnet on the fridge. Our Photo Strip Frame Magnet is 6.8 × 15 cm, made for exactly that.",
+    body: [],
+    sections: [
+      {
+        heading: "Why do photo-booth strips end up in drawers?",
+        paras: [
+          "They're too small for a normal frame and too precious to bin. A strip is about the size of a bookmark, so it gets tucked into a wallet, a book or a drawer, and then you forget it exists.",
+        ],
+      },
+      {
+        heading: "What's the easiest way to display one?",
+        paras: [
+          "Put it where you already look. The fridge door is the busiest wall in most homes, and a magnet frame makes a strip look finished instead of stuck on with tape.",
+          "The [Photo Strip Frame Magnet](/objects/photo-frame-magnet) ({price:photo-frame-magnet}) is a rigid sheet, 6.8 × 15 cm, with a printed border and an open top. Slide a strip in, swap it whenever you want, and it stays flat on a steel or iron surface. The frame is sold empty, so your photos aren't included.",
+        ],
+      },
+      {
+        heading: "Which border should I choose?",
+        paras: [
+          "There are six Indian textile patterns: Kasavu (cream with gold stripes), Kanjivaram (deep red with a gold temple border), Bandhani (pink dot work), Bandhani Dots (maroon, all over dots), Ajrakh (navy with red flowers) and Leheriya (red and pink waves). Pick one that suits the strip or the kitchen. You can also buy a set of 3 or 6 for a row of strips.",
+        ],
+      },
+      {
+        heading: "What if my photo is a single portrait rather than a strip?",
+        paras: [
+          "The [Oval Check Photo Frame Magnet](/objects/oval-photo-frame-magnet) ({price:oval-photo-frame-magnet}) is 8.8 × 12.6 cm, with a red, yellow and navy check border and an oval window. Slide a photo in behind it and it sits on the fridge like a tiny portrait.",
+        ],
+      },
+      {
+        heading: "How do I keep photos looking good?",
+        paras: [
+          "Keep the frame away from water and from direct sunlight, which fades prints over time, and wipe it with a dry cloth. Also keep it away from cards with magnetic strips, since the frame is a magnet.",
+        ],
+      },
+    ],
+    faq: [
+      { q: "Does the photo frame magnet come with photos?", a: "No, the frame is sold empty. You slide in your own photo-booth strip." },
+      { q: "How big is the Photo Strip Frame Magnet?", a: "6.8 × 15 cm, a rigid magnet sheet that stays flat on the fridge." },
+      { q: "Will the magnet stick to any fridge?", a: "It sticks to steel or iron surfaces, like most fridge doors. Check that your fridge door is magnetic before you buy." },
+      { q: "Can I buy a set as a gift?", a: "Yes, the Photo Strip Frame Magnet is available singly, or as a set of 3 or 6 for gifting. See all the [fridge magnets](/small-runs/fridge-magnets)." },
+    ],
+    products: ["photo-frame-magnet", "oval-photo-frame-magnet"],
+  },
+  {
+    slug: "how-to-hang-a4-prints-and-small-art",
+    index: "019",
+    title: "Where to Hang A4 Prints and Small Framed Art (Without Losing It)",
+    metaTitle: "Where to Hang A4 Prints and Small Framed Art",
+    date: "2026-11-23",
+    updated: "2026-11-23",
+    category: "Guide",
+    excerpt:
+      "A4 is small, and that's the charm. Where small prints and framed fabric art work best, how to group them, and when a print-only version is enough.",
+    description:
+      "Where to hang A4 prints and small framed art: kitchens, desks, dressers and shelves, how to group them, and how to choose between print only or framed.",
+    readingTime: "",
+    answer:
+      "Small art works best close up: above a desk, on a dresser or sideboard, in a kitchen or beside a bed. Hang one by a single nail, lean a few on a shelf, or group three or more together so they read as a set. A4 (21 × 29.7 cm) is small on purpose, so don't leave it alone on a big wall.",
+    body: [],
+    sections: [
+      {
+        heading: "Why is small art hard to place?",
+        paras: [
+          "On a big wall, a single A4 print looks lost. The trick is to put it where people stand or sit close to it, so the detail is part of the point.",
+        ],
+      },
+      {
+        heading: "Which rooms suit small art best?",
+        paras: [
+          "Kitchens and dining nooks suit the two-colour spice prints, like the [Chilli Jar Print](/objects/chilli-jar-print), [Two Chillies](/objects/two-chillies-print) and [Spilled Peppercorns](/objects/spilled-peppercorns-print). A bedroom or reading corner suits the [Cat Nap Print](/objects/cat-nap-print) or the pink [Darling, You Can Be Outrageous](/objects/outrageous-quote-poster) print.",
+        ],
+      },
+      {
+        heading: "Should I hang, lean or group?",
+        paras: [
+          "Do all three. A framed print hangs from a single nail or screw, or simply leans on a shelf, a dresser or a sideboard. Leaning is the lowest-commitment option, and it lets you swap pieces when you feel like it.",
+          "Group two or three pieces of the same size with an even gap so they read as one idea. The spice prints and the Cat Nap Print are all two-colour prints on warm cream paper with a grainy, layered look, so they sit well together.",
+        ],
+      },
+      {
+        heading: "Print only, or framed?",
+        paras: [
+          "Each print comes as a print alone ({price:outrageous-quote-poster}) to frame yourself, or fitted in a thin frame, ready to hang. The framed version is the easy gift. Print only is better if you already own frames, or want to tape or pin it up.",
+        ],
+      },
+      {
+        heading: "Where does framed fabric art fit in?",
+        paras: [
+          "[Trying To Get My Shit Together](/objects/trying-to-get-my-shit-together) ({price:trying-to-get-my-shit-together}) is the louder cousin: white vinyl over block-printed fabric, framed under glass in a white frame (A4, frame 24 × 30 cm). It hangs from a single nail or screw, or stands on a shelf. Dust the glass with a dry cloth, and keep it out of direct sunlight so the fabric doesn't fade.",
+          "Browse the rest on the [art page](/small-runs/art), or [send us your own words](/custom) for a custom version.",
+        ],
+      },
+    ],
+    faq: [
+      { q: "What size are the prints?", a: "A4, which is 21 × 29.7 cm. The framed fabric piece is A4 inside a 24 × 30 cm frame." },
+      { q: "Do the prints come framed?", a: "You choose: print only, or the print fitted in a thin frame, ready to hang." },
+      { q: "How do I hang a small frame?", a: "A framed print hangs from a single nail or screw, or leans on a shelf." },
+      { q: "Can I get my own words or art made?", a: "Yes. Send the idea from the [custom orders page](/custom) and we'll confirm the price before you pay." },
+    ],
+    products: ["trying-to-get-my-shit-together", "outrageous-quote-poster", "chilli-jar-print"],
+  },
+  {
     // DRAFT stub: not routed, listed or in the sitemap until written.
     // Link to: /objects/old-habits, /objects/smoke-and-feathers, /objects/pomegranate-study, /objects/blood-moon
     slug: "led-wall-art-india",
